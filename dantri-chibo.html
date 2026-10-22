@@ -832,6 +832,30 @@
             background: var(--dt-green-dark);
         }
 
+    
+        /* Equalizer Soundwave Animation */
+        .equalizer {
+            display: inline-flex;
+            align-items: flex-end;
+            gap: 2.5px;
+            height: 14px;
+            margin-left: 8px;
+        }
+        .equalizer .bar {
+            width: 3px;
+            background: #008848;
+            border-radius: 1px;
+            animation: eqBounce 0.8s ease-in-out infinite alternate;
+        }
+        .equalizer .bar-1 { height: 6px; animation-delay: 0.1s; }
+        .equalizer .bar-2 { height: 14px; animation-delay: 0.3s; }
+        .equalizer .bar-3 { height: 10px; animation-delay: 0.2s; }
+        .equalizer .bar-4 { height: 8px; animation-delay: 0.4s; }
+        @keyframes eqBounce {
+            0% { height: 3px; }
+            100% { height: 14px; }
+        }
+
     </style>
 </head>
 <body>
@@ -887,22 +911,32 @@
             <div>Cập nhật: 21/10/2026 - 10:49 (GMT+7)</div>
         </div>
 
-        <!-- Audio Player AI Voice -->
+                <!-- Audio Player AI Voice (Thực tế phát âm thanh Tiếng Việt) -->
         <div class="audio-player-box">
-            <button class="audio-play-btn" id="audio-btn" onclick="toggleAudio()" title="Nghe bài viết">▶</button>
+            <button class="audio-play-btn" id="audio-btn" onclick="toggleSpeechAudio()" title="Nghe bài viết">
+                <span id="play-icon" style="font-size: 18px;">▶</span>
+            </button>
             <div class="audio-info">
                 <div class="audio-title">
                     <span>🎙 DÂN TRÍ AUDIO • Giọng đọc AI</span>
-                    <span id="audio-timer" style="font-weight: 500; font-size: 13px; color: #047857;">00:00 / 06:30</span>
+                    <div id="equalizer" class="equalizer" style="display: none;">
+                        <span class="bar bar-1"></span>
+                        <span class="bar bar-2"></span>
+                        <span class="bar bar-3"></span>
+                        <span class="bar bar-4"></span>
+                    </div>
+                    <span id="audio-timer" style="font-weight: 600; font-size: 13px; color: #047857; margin-left: auto;">00:00 / ~07:30</span>
                 </div>
-                <div class="audio-sub" id="audio-status">Nhấn để nghe bài viết (Giọng đọc AI Dân Trí truyền cảm)</div>
+                <div class="audio-sub" id="audio-status">Nhấn nút phát để nghe đọc toàn bộ bài báo (Âm thanh thực tế qua loa/tai nghe)</div>
+                <div class="audio-progress-container" onclick="seekAudioProgress(event)" style="background: #cbd5e1; height: 5px; border-radius: 3px; margin-top: 8px; cursor: pointer; position: relative;" title="Nhấn để tua bài đọc">
+                    <div id="audio-progress-bar" style="background: #008848; height: 100%; width: 0%; border-radius: 3px; transition: width 0.2s;"></div>
+                </div>
             </div>
-            <div>
-                <select class="voice-select" onchange="showToast('Đã chuyển sang ' + this.options[this.selectedIndex].text)">
-                    <option>Giọng Nam miền Bắc</option>
-                    <option selected>Giọng Nữ miền Trung</option>
-                    <option>Giọng Nam miền Nam</option>
+            <div class="audio-controls-right" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                <select class="voice-select" id="voice-select" onchange="onVoiceChange()">
+                    <option value="">Giọng AI Tiếng Việt (Tự động)</option>
                 </select>
+                <button class="speed-btn" onclick="toggleAudioSpeed()" id="speed-btn" title="Tốc độ đọc" style="background: white; border: 1px solid #a7f3d0; border-radius: 6px; font-size: 12px; font-weight: 700; color: #065f46; padding: 5px 10px; cursor: pointer;">1.0x</button>
             </div>
         </div>
 
@@ -1159,36 +1193,217 @@
         });
     }
 
-    // Audio Player Simulator
-    let isPlaying = false;
-    let audioInterval = null;
-    let currentSeconds = 0;
-    const totalSeconds = 480; // 8 mins
+    
+    // ==========================================
+    // NATIVE WEB SPEECH SYNTHESIS ENGINE (TIẾNG VIỆT THỰC TẾ)
+    // ==========================================
+    const synth = window.speechSynthesis;
+    let speechSentences = [];
+    let currentSentenceIdx = 0;
+    let isSpeaking = false;
+    let isPaused = false;
+    let currentSpeechRate = 1.0;
+    let selectedVoiceObj = null;
+    let speechTimerInterval = null;
+    let speechElapsedSeconds = 0;
 
-    function toggleAudio() {
-        const btn = document.getElementById('audio-btn');
-        const status = document.getElementById('audio-status');
-        isPlaying = !isPlaying;
-        if (isPlaying) {
-            btn.innerHTML = '⏸';
-            status.innerText = 'Đang phát giọng đọc AI chuẩn...';
-            showToast('▶ Đang phát giọng đọc bài báo...');
-            audioInterval = setInterval(() => {
-                currentSeconds += 1;
-                const m = Math.floor(currentSeconds / 60);
-                const s = currentSeconds % 60;
-                document.getElementById('audio-timer').innerText = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s) + ' / 08:00';
-                if (currentSeconds >= totalSeconds) {
-                    toggleAudio();
-                }
-            }, 1000);
+    // Load available Vietnamese voices
+    function loadVoices() {
+        if (!synth) return;
+        const voices = synth.getVoices();
+        const voiceSelect = document.getElementById('voice-select');
+        if (!voiceSelect) return;
+        
+        voiceSelect.innerHTML = '';
+        
+        const viVoices = voices.filter(v => v.lang.toLowerCase().includes('vi') || v.name.toLowerCase().includes('viet'));
+        
+        if (viVoices.length > 0) {
+            viVoices.forEach((v, i) => {
+                const opt = document.createElement('option');
+                opt.value = v.name;
+                opt.textContent = v.name + (v.name.toLowerCase().includes('google') ? ' (Google AI)' : ' (Chuẩn)');
+                voiceSelect.appendChild(opt);
+                if (i === 0) selectedVoiceObj = v;
+            });
         } else {
-            btn.innerHTML = '▶';
-            status.innerText = 'Nhấn để nghe bài viết (Giọng đọc AI Dân Trí)';
-            clearInterval(audioInterval);
-            showToast('⏸ Đã tạm dừng đọc bài');
+            // Default fallback
+            const opt = document.createElement('option');
+            opt.value = 'default';
+            opt.textContent = 'Giọng đọc Tiếng Việt (Hệ thống)';
+            voiceSelect.appendChild(opt);
         }
     }
+
+    if (window.speechSynthesis && speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = loadVoices;
+    }
+    setTimeout(loadVoices, 300);
+
+    function onVoiceChange() {
+        const voiceName = document.getElementById('voice-select').value;
+        const voices = synth.getVoices();
+        selectedVoiceObj = voices.find(v => v.name === voiceName) || null;
+        if (isSpeaking) {
+            const resumeIdx = currentSentenceIdx;
+            synth.cancel();
+            currentSentenceIdx = resumeIdx;
+            speakSentence();
+        }
+        showToast('Đã chọn: ' + (selectedVoiceObj ? selectedVoiceObj.name : 'Giọng mặc định'));
+    }
+
+    function toggleAudioSpeed() {
+        const rates = [1.0, 1.25, 1.5, 0.8];
+        const nextRateIdx = (rates.indexOf(currentSpeechRate) + 1) % rates.length;
+        currentSpeechRate = rates[nextRateIdx];
+        document.getElementById('speed-btn').innerText = currentSpeechRate + 'x';
+        if (isSpeaking) {
+            const resumeIdx = currentSentenceIdx;
+            synth.cancel();
+            currentSentenceIdx = resumeIdx;
+            speakSentence();
+        }
+        showToast('Tốc độ đọc: ' + currentSpeechRate + 'x');
+    }
+
+    // Collect all article sentences
+    function prepareSpeechText() {
+        const title = document.querySelector('.article-headline')?.innerText || '';
+        const sapo = document.querySelector('.e-magazine__sapo')?.innerText || '';
+        const paras = Array.from(document.querySelectorAll('.article-content p'))
+                           .map(p => p.innerText.trim())
+                           .filter(t => t.length > 15);
+        
+        const fullText = title + '. ' + sapo + '. ' + paras.join(' ');
+        
+        // Split text by punctuation into natural sentence chunks
+        const raw = fullText.split(/[.!?]+[\s
+]+/);
+        speechSentences = raw.map(s => s.trim()).filter(s => s.length > 0);
+    }
+
+    function speakSentence() {
+        if (!isSpeaking || currentSentenceIdx >= speechSentences.length) {
+            stopSpeechAudio();
+            return;
+        }
+
+        const sentence = speechSentences[currentSentenceIdx];
+        const utterance = new SpeechSynthesisUtterance(sentence);
+        utterance.lang = 'vi-VN';
+        if (selectedVoiceObj) utterance.voice = selectedVoiceObj;
+        utterance.rate = currentSpeechRate;
+        utterance.pitch = 1.0;
+
+        utterance.onstart = () => {
+            document.getElementById('play-icon').innerText = '⏸';
+            document.getElementById('equalizer').style.display = 'inline-flex';
+            document.getElementById('audio-status').innerText = 'Đang đọc: “' + sentence.substring(0, 60) + (sentence.length > 60 ? '...' : '') + '”';
+            updateSpeechProgress();
+        };
+
+        utterance.onend = () => {
+            currentSentenceIdx++;
+            if (isSpeaking && !isPaused) {
+                speakSentence();
+            }
+        };
+
+        utterance.onerror = (e) => {
+            console.warn('SpeechSynthesis error:', e);
+            currentSentenceIdx++;
+            if (isSpeaking && !isPaused) {
+                speakSentence();
+            }
+        };
+
+        synth.speak(utterance);
+    }
+
+    function toggleSpeechAudio() {
+        if (!synth) {
+            alert('Trình duyệt của bạn chưa hỗ trợ giọng đọc Web Speech. Vui lòng sử dụng Chrome, Edge hoặc Safari.');
+            return;
+        }
+
+        if (isSpeaking && !isPaused) {
+            // Pause
+            synth.pause();
+            isPaused = true;
+            document.getElementById('play-icon').innerText = '▶';
+            document.getElementById('equalizer').style.display = 'none';
+            document.getElementById('audio-status').innerText = 'Đã tạm dừng giọng đọc. Nhấn tiếp tục để nghe tiếp.';
+            clearInterval(speechTimerInterval);
+            showToast('⏸ Đã tạm dừng giọng đọc');
+        } else if (isSpeaking && isPaused) {
+            // Resume
+            synth.resume();
+            isPaused = false;
+            document.getElementById('play-icon').innerText = '⏸';
+            document.getElementById('equalizer').style.display = 'inline-flex';
+            startSpeechTimer();
+            showToast('▶ Tiếp tục phát giọng đọc bài báo');
+        } else {
+            // Start from beginning or current position
+            if (speechSentences.length === 0) {
+                prepareSpeechText();
+            }
+            isSpeaking = true;
+            isPaused = false;
+            startSpeechTimer();
+            showToast('🔊 Bắt đầu phát giọng đọc AI bài báo!');
+            speakSentence();
+        }
+    }
+
+    function stopSpeechAudio() {
+        if (synth) synth.cancel();
+        isSpeaking = false;
+        isPaused = false;
+        currentSentenceIdx = 0;
+        document.getElementById('play-icon').innerText = '▶';
+        document.getElementById('equalizer').style.display = 'none';
+        document.getElementById('audio-status').innerText = 'Đã đọc xong toàn bộ bài báo. Nhấn để nghe lại.';
+        document.getElementById('audio-progress-bar').style.width = '100%';
+        clearInterval(speechTimerInterval);
+    }
+
+    function startSpeechTimer() {
+        clearInterval(speechTimerInterval);
+        speechTimerInterval = setInterval(() => {
+            speechElapsedSeconds++;
+            const m = Math.floor(speechElapsedSeconds / 60);
+            const s = speechElapsedSeconds % 60;
+            const timeStr = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+            document.getElementById('audio-timer').innerText = timeStr + ' / ~07:30';
+        }, 1000);
+    }
+
+    function updateSpeechProgress() {
+        if (speechSentences.length === 0) return;
+        const pct = (currentSentenceIdx / speechSentences.length) * 100;
+        document.getElementById('audio-progress-bar').style.width = pct + '%';
+    }
+
+    function seekAudioProgress(event) {
+        if (speechSentences.length === 0) prepareSpeechText();
+        const rect = event.currentTarget.getBoundingClientRect();
+        const clickX = event.clientX - rect.left;
+        const pct = Math.max(0, Math.min(1, clickX / rect.width));
+        currentSentenceIdx = Math.floor(pct * speechSentences.length);
+        if (synth) synth.cancel();
+        if (isSpeaking) {
+            speakSentence();
+        } else {
+            isSpeaking = true;
+            isPaused = false;
+            startSpeechTimer();
+            speakSentence();
+        }
+        showToast('Đã tua đến ' + Math.round(pct * 100) + '% nội dung bài báo');
+    }
+
 
     // Reaction click
     function addReaction(btn, emoji) {
