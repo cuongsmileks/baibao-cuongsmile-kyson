@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>“Chi bộ Đảng gia đình” ở bản biên giới, mẹ và con gái cùng tuyên thệ - Báo Dân trí</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dt-green: #008848;
+            --dt-green-dark: #006636;
+            --dt-green-light: #e6f5ee;
+            --dt-text: #222222;
+            --dt-muted: #666666;
+            --dt-border: #e5e7eb;
+            --dt-bg: #f8fafc;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            line-height: 1.85;
+            color: var(--dt-text);
+            background-color: var(--dt-bg);
+        }
+        .site-header {
+            background: #ffffff;
+            border-bottom: 2px solid var(--dt-green);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-text {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--dt-green);
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+        .logo-tag {
+            font-size: 13px;
+            color: var(--dt-muted);
+            border-left: 1px solid #cbd5e1;
+            padding-left: 12px;
+            font-weight: 500;
+        }
+        .header-meta {
+            font-size: 13px;
+            color: var(--dt-muted);
+        }
+        .article-main {
+            max-width: 860px;
+            margin: 30px auto 60px;
+            background: #ffffff;
+            padding: 40px 45px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid var(--dt-border);
+        }
+        @media(max-width: 768px) {
+            .article-main { padding: 20px 18px; margin: 0; border-radius: 0; border: none; }
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--dt-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 8px;
+        }
+        .breadcrumb a { color: var(--dt-green); text-decoration: none; }
+        .breadcrumb span { color: #94a3b8; }
+        
+        .article-headline {
+            font-size: 34px;
+            font-weight: 900;
+            line-height: 1.35;
+            color: #0f172a;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+        @media(max-width: 768px) {
+            .article-headline { font-size: 24px; }
+        }
+        .meta-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13.5px;
+            color: var(--dt-muted);
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--dt-border);
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .author-name { font-weight: 700; color: #0f172a; }
+        
+        /* Dân Trí Executive Summary (Abstract box) */
+        .dt-abstract {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid var(--dt-green);
+            padding: 20px 24px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        .dt-abstract ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .dt-abstract li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 16.5px;
+            line-height: 1.6;
+            color: #166534;
+            font-weight: 600;
+        }
+        .dt-abstract li:last-child { margin-bottom: 0; }
+        .dt-abstract li::before {
+            content: "•";
+            color: var(--dt-green);
+            font-size: 22px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .article-body p {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #1f2937;
+        }
+        figure.dt-figure {
+            margin: 30px 0;
+            text-align: center;
+        }
+        figure.dt-figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+        figcaption {
+            font-family: 'Inter', sans-serif;
+            font-size: 14.5px;
+            color: var(--dt-muted);
+            padding: 10px 15px 0;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        blockquote.dt-quote {
+            margin: 30px 0;
+            padding: 20px 25px;
+            background: #f8fafc;
+            border-left: 4px solid var(--dt-green);
+            border-radius: 0 8px 8px 0;
+            font-family: 'Merriweather', Georgia, serif;
+            font-style: italic;
+            font-size: 19px;
+            color: #0f172a;
+            line-height: 1.7;
+        }
+        .author-signature {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--dt-border);
+            text-align: right;
+            font-weight: 700;
+            font-size: 16px;
+            color: #0f172a;
+        }
+        .site-footer {
+            background: #0f172a;
+            color: #94a3b8;
+            font-size: 13px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#" class="logo-box">
+                <span class="logo-text">DÂN TRÍ</span>
+                <span class="logo-tag">Báo Điện Tử Dân Trí</span>
+            </a>
+            <div class="header-meta">Thứ Năm, 22/10/2026</div>
+        </div>
+    </header>
+
+    <main class="article-main">
+        <div class="breadcrumb">
+            <a href="#">Trang chủ</a> <span>/</span> <a href="#">Thời sự</a> <span>/</span> <a href="#">Chính trị</a>
+        </div>
+
+        <h1 class="article-headline">“Chi bộ Đảng gia đình” ở bản biên giới, mẹ và con gái cùng tuyên thệ</h1>
+
+        <div class="meta-bar">
+            <div><span class="author-name">Hoàng Lam</span> • <span>Báo Dân trí</span></div>
+            <div>Cập nhật: 21/10/2026 - 10:49</div>
+        </div>
+
+        <!-- Abstract Dân Trí đặc trưng -->
+        <div class="dt-abstract">
+            <ul>
+                <li>Chi bộ bản Thanh Dương (Nghệ An) kết nạp 4 đảng viên mới, trong đó có cặp mẹ con ruột.</li>
+                <li>Đây là lần đầu tiên một chi bộ miền núi kết nạp nhiều đảng viên cùng lúc.</li>
+                <li>Thành công nhờ sự kiên trì thuyết phục, dân vận và nêu gương của đảng viên.</li>
+                <li>Xã Sơn Lâm vượt chỉ tiêu phát triển đảng viên, nhưng còn khó khăn với đồng bào Khơ Mú.</li>
+            </ul>
+        </div>
+
+        <div class="article-body">
+            <p><strong>(Dân trí) - “Phát triển đảng viên chưa bao giờ và không bao giờ là dễ ở vùng đồng bào dân tộc thiểu số, miền núi”, ông Trần Đình Tâm, Phó Bí thư Thường trực xã Sơn Lâm, Nghệ An, đúc kết.</strong></p>
+
+            <p>Dường như, công tác phát triển đảng tại chi bộ bản Thanh Dương (xã Sơn Lâm) lại là “ngoại lệ” với nhận định của ông Tâm.</p>
+
+            <p>Ngày 4/10, Chi bộ Thanh Dương tổ chức lễ kết nạp đảng viên đối với 4 quần chúng ưu tú. Đây là lần đầu tiên chi bộ cơ sở ở miền núi kết nạp nhiều đảng viên trong một thời điểm. Trong 4 đảng viên mới, 2 người có trình độ đại học, một đảng viên là bộ đội xuất ngũ và một người là cán bộ tổ vay vốn ngân hàng chính sách xã hội của bản.</p>
+
+            <figure class="dt-figure">
+                <img src="https://cdnphoto.dantri.com.vn/CeEYEqCXfhxd7VZRsKgrzP3WwsI=/zoom/1200_630/2026/10/21/anh-1pc-1792549579328.jpg" alt="Lễ kết nạp đảng viên tại Chi bộ bản Thanh Dương">
+                <figcaption>Lễ kết nạp đảng viên mới tại Chi bộ bản Thanh Dương, xã Sơn Lâm (Nghệ An) – nơi ghi dấu sự kiện đặc biệt mẹ và con gái cùng đứng vào hàng ngũ của Đảng.</figcaption>
+            </figure>
+
+            <p>“Đặc biệt, lần đầu tiên chi bộ thực hiện lễ kết nạp đảng viên mới cùng lúc đối với 2 quần chúng là mẹ con ruột”, Bí thư Chi bộ Lương Văn Ong thông tin.</p>
+
+            <p>Khác với vẻ rụt rè như lúc mới gặp khách lạ, chị Lô Thị Chín (SN 1982, dân tộc Thái) lại hào hứng hẳn lên khi nhắc đến chuyện vào Đảng. Chị cười tươi: “Biết thế này, tôi đã xin vào Đảng từ mấy năm trước rồi!”.</p>
+
+            <p>Để người phụ nữ ấy thay đổi nhận thức là cả một quá trình kiên trì, dày công thuyết phục của Chi ủy bản Thanh Dương và Đảng ủy xã Sơn Lâm. Chị Chín đã hoàn thành lớp bồi dưỡng nhận thức về Đảng từ năm 2022. Tuy nhiên, thời điểm đó chị tự thấy mình “chưa thấm nhuần” nên dù được chi bộ động viên, hướng dẫn nhiều lần, chị vẫn ngần ngại chưa làm hồ sơ xin vào Đảng.</p>
+
+            <figure class="dt-figure">
+                <img src="https://cdnphoto.dantri.com.vn/k8HN2UVykRwq-6x7YDSsgeTIurI=/zoom/1200_630/2026/10/21/anh-2pc-1792549578119.jpg" alt="Chị Lô Thị Chín và con gái Vi Thị Phương Thảo">
+                <figcaption>Chị Lô Thị Chín (SN 1982) và con gái Vi Thị Phương Thảo (SN 2004) cùng dõng dạc đọc lời tuyên thệ dưới cờ Đảng thiêng liêng.</figcaption>
+            </figure>
+
+            <p>Bước ngoặt đến với chị vào đầu năm nay, khi cô con gái Vi Thị Phương Thảo (SN 2004) tốt nghiệp Trường Đại học Y Dược Thái Bình trở về quê. Trong thời gian học chứng chỉ hành nghề, Thảo được Chi ủy định hướng, bồi dưỡng. Chứng kiến con gái tự tin viết đơn và hoàn thiện hồ sơ xin vào Đảng, chị Chín như có thêm động lực để cùng con bước vào hàng ngũ của Đảng.</p>
+
+            <p>Ngày 4/10, dưới Đảng kỳ thiêng liêng, người phụ nữ dân tộc Thái ấy đã dõng dạc đọc lời tuyên thệ cùng con gái.</p>
+
+            <blockquote class="dt-quote">
+                “Lúc này tôi mới nhận ra mình vào Đảng muộn quá. Trước đây cứ nghĩ không vào Đảng cũng chẳng sao cả. Nhưng giờ tôi hiểu ra, vào Đảng dù không có lợi ích vật chất gì, nhưng chủ trương, chính sách của nhà nước mình đều được biết trước để về nói cho dân bản hiểu. Nói đúng, dân bản nghe theo thì uy tín của mình cũng cao hơn.”
+                <br><strong style="font-style: normal; font-size: 15px; color: var(--dt-green); display: block; margin-top: 8px;">— Chị Lô Thị Chín tâm sự</strong>
+            </blockquote>
+
+            <p>Bí thư chi bộ Lương Văn Ong dí dỏm chia sẻ nếu theo quy định 3 đảng viên đủ điều kiện thành lập một chi bộ, bản Thanh Dương phải có đến 3 “chi bộ gia đình”.</p>
+
+            <p>Khi mẹ con chị Chín kết nạp Đảng, gia đình chị đã có 3 đảng viên vì anh Vi Văn Sơn (chồng chị Chín) đã vào Đảng từ trước. Gia đình ông Ong cũng có 3 đảng viên gồm ông, vợ và con trai; người con dâu cũng đã hoàn thành lớp bồi dưỡng nhận thức về Đảng. Một gia đình khác là ông Lương Văn Thao cùng 2 con Lương Sông Thương, Lương Thái Dương đều là những đảng viên gương mẫu.</p>
+
+            <figure class="dt-figure">
+                <img src="https://cdnphoto.dantri.com.vn/KVX5i-1FoxqXebAMbxc8xUN-uFM=/zoom/1200_630/2026/10/21/anh-3pc-1792549576792.jpg" alt="Đời sống người dân bản tái định cư Thanh Dương">
+                <figcaption>Bản tái định cư Thanh Dương nay đã vươn mình mạnh mẽ, phát triển dịch vụ và du lịch cộng đồng Thác Liếp.</figcaption>
+            </figure>
+
+            <p>Bản Thanh Dương hiện có 311 hộ dân. Họ vốn là những người dân xã Kim Đa (huyện Tương Dương cũ) đã nhường lại quê hương, đất tổ để xây dựng công trình thủy điện Bản Vẽ về đây tái định cư. Thời điểm mới “hạ sơn” cách đây gần 2 thập kỷ, gần như 100% hộ dân thuộc diện hộ nghèo. Đến nay, 43% hộ đã thoát nghèo ổn định, đời sống thay đổi từng ngày.</p>
+
+            <p>Từ chỗ trông chờ, ỷ lại vào hỗ trợ, người dân Thanh Dương đã chủ động làm kinh tế, đặc biệt là phát triển dịch vụ và thương mại. Bản người Thái này hiện chiếm tới 70% hoạt động dịch vụ của toàn xã Sơn Lâm và là bản duy nhất phát triển thành công mô hình du lịch cộng đồng thác Liếp. Điều đặc biệt 10/18 chủ hộ gia đình tham gia làm du lịch cộng đồng tại đây là đảng viên.</p>
+
+            <figure class="dt-figure">
+                <img src="https://cdnphoto.dantri.com.vn/L8J1euW_b_DTGQQSNrYz09SOOss=/zoom/1200_630/2026/10/21/anh-4pc-1792549575455.jpg" alt="Mô hình du lịch sinh thái thác Liếp">
+                <figcaption>Thác Liếp – điểm đến du lịch cộng đồng nổi tiếng do chính các hộ gia đình đảng viên bản Thanh Dương tiên phong xây dựng.</figcaption>
+            </figure>
+
+            <p>“Rời quê cha đất tổ về nơi ở mới, bà con được Đảng, nhà nước và chính quyền các cấp chăm lo mọi mặt. Dân bản tin Đảng, mong muốn đứng vào hàng ngũ của Đảng để cùng nhau xây dựng bản làng bình yên, no ấm”, ông Lương Văn Ong bày tỏ.</p>
+
+            <div class="author-signature">
+                HOÀNG LAM / BÁO DÂN TRÍ
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>BÁO ĐIỆN TỬ DÂN TRÍ - CƠ QUAN CHỦ QUẢN: BỘ LAO ĐỘNG - THƯƠNG BINH VÀ XÃ HỘI</p>
+        <p>© 2026 Toàn bộ bản quyền thuộc về Báo điện tử Dân trí.</p>
+    </footer>
+</body>
+</html>
