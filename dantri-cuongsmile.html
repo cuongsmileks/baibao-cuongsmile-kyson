@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Người đảng viên gác rừng chắt chiu đồng lương để “số hóa” đại ngàn Kỳ Sơn - Báo Dân trí</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dt-green: #008848;
+            --dt-green-dark: #006636;
+            --dt-green-light: #e6f5ee;
+            --dt-text: #222222;
+            --dt-muted: #666666;
+            --dt-border: #e5e7eb;
+            --dt-bg: #f8fafc;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 18px;
+            line-height: 1.85;
+            color: var(--dt-text);
+            background-color: var(--dt-bg);
+        }
+        .site-header {
+            background: #ffffff;
+            border-bottom: 2px solid var(--dt-green);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-text {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--dt-green);
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+        .logo-tag {
+            font-size: 13px;
+            color: var(--dt-muted);
+            border-left: 1px solid #cbd5e1;
+            padding-left: 12px;
+            font-weight: 500;
+        }
+        .article-main {
+            max-width: 860px;
+            margin: 30px auto 60px;
+            background: #ffffff;
+            padding: 40px 45px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid var(--dt-border);
+        }
+        @media(max-width: 768px) {
+            .article-main { padding: 20px 18px; margin: 0; border-radius: 0; border: none; }
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--dt-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 8px;
+        }
+        .breadcrumb a { color: var(--dt-green); text-decoration: none; }
+        .breadcrumb span { color: #94a3b8; }
+        
+        .article-headline {
+            font-size: 34px;
+            font-weight: 900;
+            line-height: 1.35;
+            color: #0f172a;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+        @media(max-width: 768px) {
+            .article-headline { font-size: 24px; }
+        }
+        .meta-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13.5px;
+            color: var(--dt-muted);
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--dt-border);
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .author-name { font-weight: 700; color: #0f172a; }
+        
+        /* Dân Trí Executive Summary (Abstract box) */
+        .dt-abstract {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid var(--dt-green);
+            padding: 20px 24px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        .dt-abstract ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .dt-abstract li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 16.5px;
+            line-height: 1.6;
+            color: #166534;
+            font-weight: 600;
+        }
+        .dt-abstract li:last-child { margin-bottom: 0; }
+        .dt-abstract li::before {
+            content: "•";
+            color: var(--dt-green);
+            font-size: 22px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .article-body p {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #1f2937;
+        }
+        .article-body h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 35px 0 16px;
+            line-height: 1.4;
+        }
+        figure.dt-figure {
+            margin: 30px 0;
+            text-align: center;
+        }
+        figure.dt-figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+        figcaption {
+            font-family: 'Inter', sans-serif;
+            font-size: 14.5px;
+            color: var(--dt-muted);
+            padding: 10px 15px 0;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        blockquote.dt-quote {
+            margin: 30px 0;
+            padding: 20px 25px;
+            background: #f8fafc;
+            border-left: 4px solid var(--dt-green);
+            border-radius: 0 8px 8px 0;
+            font-family: 'Merriweather', Georgia, serif;
+            font-style: italic;
+            font-size: 19px;
+            color: #0f172a;
+            line-height: 1.7;
+        }
+        .author-signature {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--dt-border);
+            text-align: right;
+            font-weight: 700;
+            font-size: 16px;
+            color: #0f172a;
+        }
+        .site-footer {
+            background: #0f172a;
+            color: #94a3b8;
+            font-size: 13px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#" class="logo-box">
+                <span class="logo-text">DÂN TRÍ</span>
+                <span class="logo-tag">Phóng sự Chuyên đề – Gương sáng Cơ sở</span>
+            </a>
+            <div class="header-meta">Thứ Năm, 22/10/2026</div>
+        </div>
+    </header>
+
+    <main class="article-main">
+        <div class="breadcrumb">
+            <a href="#">Trang chủ</a> <span>/</span> <a href="#">Thời sự</a> <span>/</span> <a href="#">Gương sáng Đảng viên</a>
+        </div>
+
+        <h1 class="article-headline">Người đảng viên gác rừng chắt chiu đồng lương để “số hóa” đại ngàn Kỳ Sơn</h1>
+
+        <div class="meta-bar">
+            <div><span class="author-name">Phóng sự Dân trí</span> • <span>Ghi chép tại BQL Rừng phòng hộ Kỳ Sơn</span></div>
+            <div>Cập nhật: 22/10/2026 - 15:30</div>
+        </div>
+
+        <!-- Abstract Dân Trí 4 gạch đầu dòng -->
+        <div class="dt-abstract">
+            <ul>
+                <li>Người đảng viên trẻ sinh năm 1985 tại Nam Đàn chọn cống hiến nơi rừng sâu biên viễn Kỳ Sơn.</li>
+                <li>Chắt bóp từng đồng phụ cấp ít ỏi để tự đầu tư máy móc, tự học làm chủ QGIS, MapInfo và ảnh vệ tinh viễn thám.</li>
+                <li>Tự động hóa bản đồ Dịch vụ Môi trường rừng (DVMTR), bóc tách diện tích minh bạch hỗ trợ đồng bào bản làng.</li>
+                <li>Nêu cao vai trò tiền phong, gương mẫu của người đảng viên trong công cuộc chuyển đổi số ngành lâm nghiệp.</li>
+            </ul>
+        </div>
+
+        <div class="article-body">
+            <p><strong>(Dân trí) - “Người đảng viên đi trước, làng nước theo sau – nhưng ở chốn đại ngàn non cao này, đi trước không chỉ là đôi chân lội suối băng rừng, mà còn là tư duy tiên phong ứng dụng công nghệ để bảo vệ màu xanh phên dậu Tổ quốc”, đồng chí phụ trách kỹ thuật bộc bạch.</strong></p>
+
+            <figure class="dt-figure">
+                <img src="" alt="Anh Cường bên bàn làm việc với máy tính và hồ sơ lâm sinh">
+                <figcaption>Người đảng viên CUONGSMILE miệt mài bên máy tính xử lý cơ sở dữ liệu số hóa tài nguyên rừng tại Ban Quản lý Rừng phòng hộ Kỳ Sơn.</figcaption>
+            </figure>
+
+            <h2>Những bước chân bám đá và nỗi trăn trở từ thực tiễn</h2>
+
+            <p>Sinh năm 1985 tại vùng quê giàu truyền thống hiếu học Nam Đàn (Nghệ An), mang trong mình nhiệt huyết của người đảng viên trẻ, anh Cường (đồng nghiệp thường gọi với biệt danh thân mật là <em>CUONGSMILE</em>) đã gắn bó nhiều năm với những cánh rừng phòng hộ Kỳ Sơn – địa bàn phên dậu hiểm trở bậc nhất miền Tây xứ Nghệ.</p>
+
+            <p>Phụ trách bộ phận Kế hoạch – Kỹ thuật, trực tiếp theo dõi mảng Lâm sinh và Quản lý bảo vệ rừng, anh thấu hiểu sâu sắc sự gian nan của công tác tuần rừng. Mỗi chuyến thẩm định thực địa là một lần lội bộ ròng rã nhiều ngày đêm qua vách đá cheo leo, ba lô trĩu nặng, bữa trưa đùm tạm trên nền lá rừng nguyên sinh.</p>
+
+            <figure class="dt-figure">
+                <img src="" alt="Cán bộ lâm sinh đứng trên đỉnh núi sương mù">
+                <figcaption>Vượt qua những triền dốc đá sạt trượt giữa mây mù biên giới – thử thách thường nhật của người giữ rừng Kỳ Sơn.</figcaption>
+            </figure>
+
+            <h2>Nêu cao tính tiền phong: Chắt chiu đồng lương để tự học thuật toán</h2>
+
+            <p>Thu nhập của cán bộ ngành lâm nghiệp vốn khiêm tốn, cuộc sống gia đình trăm bề lo toan. Nhưng trước yêu cầu cấp bách của chuyển đổi số, anh Cường không trông chờ, ỷ lại. Nhận thức sâu sắc trách nhiệm nêu gương của người đảng viên, anh đã chắt bóp từng đồng phụ cấp đi rừng, tiết kiệm chi tiêu cá nhân để sắm thêm linh kiện nâng cấp máy tính, mua tài liệu chuyên sâu.</p>
+
+            <blockquote class="dt-quote">
+                “Nếu người đảng viên cứ chờ kinh phí dự án mới chịu học công nghệ thì biết đến bao giờ rừng mới được quản lý hiện đại? Khó mấy cũng phải học, tự mình làm được trước rồi mới chia sẻ, lan tỏa cho anh em đồng đội.”
+                <br><strong style="font-style: normal; font-size: 15px; color: var(--dt-green); display: block; margin-top: 8px;">— CUONGSMILE chia sẻ</strong>
+            </blockquote>
+
+            <p>Những đêm đông Kỳ Sơn buốt giá, gian phòng làm việc của anh luôn là nơi tắt đèn muộn nhất. Không qua trường lớp đào tạo công nghệ thông tin bài bản, anh kiên trì tự nghiên cứu tài liệu, giải mã từng cấu trúc cơ sở dữ liệu GIS, làm chủ thành thạo phần mềm <strong>QGIS</strong>, <strong>MapInfo</strong>, tích hợp chuỗi ảnh vệ tinh viễn thám đa thời gian <strong>Sentinel-2</strong> và <strong>Planet NICFI</strong>.</p>
+
+            <figure class="dt-figure">
+                <img src="" alt="Bữa cơm giữa rừng sâu của tổ tuần tra">
+                <figcaption>Bữa cơm vội vã lót lá rừng của tổ công tác sau những giờ đo đạc hiện trường gian nan.</figcaption>
+            </figure>
+
+            <h2>“Quả ngọt” phụng sự nhân dân và bảo vệ biên cương</h2>
+
+            <p>Sự kiên trì ấy đã đem lại những kết quả mang tính đột phá cho đơn vị. Quy trình tự động hóa bản đồ chi trả Dịch vụ Môi trường rừng (DVMTR) do anh xây dựng đã rút ngắn thời gian xử lý từ hàng tháng xuống chỉ còn vài ngày, bóc tách chính xác từng lô, khoảnh rừng giao khoán cho từng cộng đồng bản làng.</p>
+
+            <p>Nhờ dữ liệu số minh bạch, tiền hỗ trợ bảo vệ rừng đến tay bà con dân tộc thiểu số nhanh chóng, chính xác tuyệt đối, củng cố vững chắc niềm tin của đồng bào vùng biên vào sự lãnh đạo của Đảng và chính sách của Nhà nước. Đồng thời, hệ thống ảnh viễn thám vệ tinh quét định kỳ 5 ngày/lần giúp phát hiện sớm các vệt suy giảm tán rừng và nguy cơ cháy rừng, bảo vệ bình yên cho hàng vạn héc-ta rừng phòng hộ đầu nguồn.</p>
+
+            <figure class="dt-figure">
+                <img src="" alt="Người lính gác rừng dạn dày bên thác nước">
+                <figcaption>Bản đồ số và công nghệ GIS đã trở thành “vũ khí” đắc lực đồng hành cùng người lính giữ rừng thời đại 4.0.</figcaption>
+            </figure>
+
+            <p>Hình ảnh người đảng viên trẻ với nụ cười đôn hậu, không quản khó khăn, miệt mài gieo mầm công nghệ giữa đại ngàn Kỳ Sơn chính là minh chứng sống động cho tinh thần đổi mới sáng tạo, dám nghĩ dám làm của thế hệ cán bộ cơ sở hôm nay.</p>
+
+            <div class="author-signature">
+                BÚT KÝ PHÓNG SỰ / BÁO DÂN TRÍ
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>BÁO ĐIỆN TỬ DÂN TRÍ - CHUYÊN TRANG PHÓNG SỰ & GƯƠNG SÁNG ĐẢNG VIÊN</p>
+        <p>© 2026 Toàn bộ bản quyền thuộc về Báo điện tử Dân trí.</p>
+    </footer>
+</body>
+</html>
