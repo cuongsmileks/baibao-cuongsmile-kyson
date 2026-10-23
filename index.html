@@ -929,25 +929,17 @@
 </div>
 </div>
 <div class="audio-controls-right" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-<select class="voice-select" id="voice-select" onchange="changeVoice(this.value)" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 13px; font-weight: 700; color: #065f46; padding: 6px 10px; cursor: pointer;">
+<select class="voice-select" id="voice-select" onchange="changeVoice(this.value)" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 13px; font-weight: 700; color: #065f46; padding: 6px 12px; cursor: pointer;">
                     <option value="gemini_aoede" selected>⭐ Google Gemini Flash 3.0 - Nữ Truyền Cảm (Aoede AI)</option>
                     <option value="gemini_puck">⚡ Google Gemini Flash 3.0 - Nam Nhiệt Huyết (Puck AI)</option>
-                    <option value="nu_bac">👩 Vbee Ngọc Huyền (Nữ Hà Nội - Chuẩn Dân Trí)</option>
-                    <option value="nam_bac">👨 Vbee Mạnh Dũng (Nam Trầm - Thời sự Phóng sự)</option>
-                    <option value="nam_tre">🎙 ElevenLabs AI (Nam Hào hùng - Hiện đại)</option>
-                    <option value="nu_nhe">🌸 MiniMax AI (Nữ Dịu dàng - Truyền cảm)</option>
                 </select>
 <button class="speed-btn" id="speed-btn" onclick="toggleAudioSpeed()" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 12px; font-weight: 700; color: #065f46; padding: 6px 10px; cursor: pointer;" title="Tốc độ đọc">1.0x</button>
 </div>
 </div>
 <div class="audio-controls-right" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-<select class="voice-select" id="voice-select" onchange="changeVoice(this.value)" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 13px; font-weight: 700; color: #065f46; padding: 6px 10px; cursor: pointer;">
+<select class="voice-select" id="voice-select" onchange="changeVoice(this.value)" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 13px; font-weight: 700; color: #065f46; padding: 6px 12px; cursor: pointer;">
                     <option value="gemini_aoede" selected>⭐ Google Gemini Flash 3.0 - Nữ Truyền Cảm (Aoede AI)</option>
                     <option value="gemini_puck">⚡ Google Gemini Flash 3.0 - Nam Nhiệt Huyết (Puck AI)</option>
-                    <option value="nu_bac">👩 Vbee Ngọc Huyền (Nữ Hà Nội - Chuẩn Dân Trí)</option>
-                    <option value="nam_bac">👨 Vbee Mạnh Dũng (Nam Trầm - Thời sự Phóng sự)</option>
-                    <option value="nam_tre">🎙 ElevenLabs AI (Nam Hào hùng - Hiện đại)</option>
-                    <option value="nu_nhe">🌸 MiniMax AI (Nữ Dịu dàng - Truyền cảm)</option>
                 </select>
 <button class="speed-btn" id="speed-btn" onclick="toggleAudioSpeed()" style="background: white; border: 1px solid #a7f3d0; border-radius: 6px; font-size: 12px; font-weight: 700; color: #065f46; padding: 5px 10px; cursor: pointer;" title="Tốc độ đọc">1.0x</button>
 </div>
@@ -1209,11 +1201,7 @@
     // ==========================================
     const voiceFiles = {
         'gemini_aoede': 'cuongsmile_voice_gemini_aoede.mp3',
-        'gemini_puck': 'cuongsmile_voice_gemini_puck.mp3',
-        'nu_bac': 'cuongsmile_voice_nu_bac.mp3',
-        'nam_bac': 'cuongsmile_voice_nam_bac.mp3',
-        'nam_tre': 'cuongsmile_voice_nam_tre.mp3',
-        'nu_nhe': 'cuongsmile_voice_nu_nhe.mp3'
+        'gemini_puck': 'cuongsmile_voice_gemini_puck.mp3'
     };
 
         const voiceLabels = {
