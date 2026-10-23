@@ -613,48 +613,48 @@
         </div>
 
         <!-- Audio Player Widget -->
-        <div class="audio-player-card">
-            <div class="audio-header">
-                <div class="audio-title-box">
-                    <div class="audio-icon-pulse">🎙️</div>
-                    <div class="audio-title-text">Nghe đọc toàn bộ bài viết</div>
-                </div>
-                <div class="audio-badge">Giọng đọc AI Gemini Flash 3.0</div>
-            </div>
-
-            <!-- Voice Selection Switcher -->
-            <div class="voice-selector-row">
-                <span class="voice-label">Chọn giọng đọc:</span>
-                <button class="voice-btn active" id="btn-voice-male" onclick="switchVoice('male')">
-                    <span>👨</span> Giọng Nam trầm ấm (Puck)
-                </button>
-                <button class="voice-btn" id="btn-voice-female" onclick="switchVoice('female')">
-                    <span>👩</span> Giọng Nữ truyền cảm (Aoede)
-                </button>
-            </div>
-
-            <!-- Audio Player Controls -->
-            <div class="player-controls">
-                <button class="play-btn" id="play-pause-btn" onclick="togglePlay()">▶</button>
-                <div class="progress-box">
-                    <input type="range" class="slider-bar" id="audio-progress" value="0" min="0" max="100" oninput="seekAudio(this.value)">
-                    <div class="time-row">
-                        <span id="current-time">00:00</span>
-                        <span id="duration-time">--:--</span>
-                    </div>
-                </div>
-                <div class="speed-control">
-                    <button class="speed-btn" onclick="setSpeed(0.85)">0.85x</button>
-                    <button class="speed-btn active" id="speed-1x" onclick="setSpeed(1.0)">1.0x</button>
-                    <button class="speed-btn" onclick="setSpeed(1.25)">1.25x</button>
-                </div>
-            </div>
-
-            <audio id="main-audio" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
-                <source id="audio-source" src="vihaithanh_voice_gemini_puck.mp3" type="audio/mpeg">
-                Trình duyệt của bạn không hỗ trợ thẻ phát âm thanh.
-            </audio>
+        <!-- UNIFIED ROBUST AUDIO PLAYER -->
+<div class="audio-player-card" style="background: linear-gradient(135deg, #064e2b, #007038); color: #ffffff; border-radius: 14px; padding: 22px 24px; margin: 30px 0 35px 0; box-shadow: 0 10px 30px rgba(0, 112, 56, 0.22); border: 1px solid rgba(255,255,255,0.18);">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.18); padding-bottom: 12px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 36px; height: 36px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">🎙️</div>
+            <div style="font-size: 16px; font-weight: 700; letter-spacing: 0.3px;">Nghe bài viết qua giọng đọc AI</div>
         </div>
+        <div style="font-size: 12px; background: rgba(255, 215, 0, 0.25); color: #ffd700; border: 1px solid rgba(255, 215, 0, 0.4); padding: 4px 10px; border-radius: 20px; font-weight: 700;">Google Gemini Flash 3.0</div>
+    </div>
+
+    <!-- Voice Selection Switcher -->
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px;">
+        <span style="font-size: 13.5px; color: #cbd5e1; font-weight: 500;">Chọn giọng đọc:</span>
+        <button class="voice-btn active" id="btn-voice-aoede" onclick="switchVoice('aoede')" style="background: #ffffff; color: #064e2b; border: 1px solid #ffffff; padding: 7px 15px; border-radius: 20px; font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: all 0.2s;">
+            <span>👩</span> Nữ Truyền Cảm (Aoede AI)
+        </button>
+        <button class="voice-btn" id="btn-voice-puck" onclick="switchVoice('puck')" style="background: rgba(255,255,255,0.14); color: #ffffff; border: 1px solid rgba(255,255,255,0.3); padding: 7px 15px; border-radius: 20px; font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+            <span>👨</span> Nam Trầm Ấm (Puck AI)
+        </button>
+    </div>
+
+    <!-- Audio Player Controls -->
+    <div style="display: flex; align-items: center; gap: 16px;">
+        <button id="play-pause-btn" onclick="togglePlay()" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #007038; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 900; box-shadow: 0 4px 14px rgba(0,0,0,0.25); flex-shrink: 0;" title="Phát bài đọc">▶</button>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+            <input type="range" id="audio-progress" value="0" min="0" max="100" oninput="seekAudio(this.value)" style="width: 100%; height: 6px; background: rgba(255,255,255,0.25); border-radius: 4px; outline: none; cursor: pointer; accent-color: #ffd700;">
+            <div style="display: flex; justify-content: space-between; font-size: 12.5px; color: #cbd5e1; font-weight: 500;">
+                <span id="current-time">00:00</span>
+                <span id="duration-time">--:--</span>
+            </div>
+        </div>
+        <div style="display: flex; gap: 4px; align-items: center;">
+            <button class="speed-btn" onclick="setSpeed(0.85, this)" style="background: rgba(255,255,255,0.15); border: none; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11.5px; font-weight: 600; cursor: pointer;">0.85x</button>
+            <button class="speed-btn active" onclick="setSpeed(1.0, this)" style="background: #ffd700; border: none; color: #064e2b; padding: 4px 8px; border-radius: 4px; font-size: 11.5px; font-weight: 700; cursor: pointer;">1.0x</button>
+            <button class="speed-btn" onclick="setSpeed(1.25, this)" style="background: rgba(255,255,255,0.15); border: none; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11.5px; font-weight: 600; cursor: pointer;">1.25x</button>
+        </div>
+    </div>
+
+    <!-- Direct audio element -->
+    <audio id="main-audio" preload="metadata" src="vihaithanh_voice_gemini_aoede.mp3"></audio>
+</div>
+<!-- END UNIFIED AUDIO PLAYER -->
 
         <div class="content-body">
             <!-- Section 1 -->
@@ -831,100 +831,195 @@
 
     <!-- Audio Player Script -->
     <script>
-        const audio = document.getElementById('main-audio');
-        const playBtn = document.getElementById('play-pause-btn');
-        const progressBar = document.getElementById('audio-progress');
-        const currentTimeSpan = document.getElementById('current-time');
-        const durationTimeSpan = document.getElementById('duration-time');
-        const topProgressBar = document.getElementById('progress-bar');
-        const btnMale = document.getElementById('btn-voice-male');
-        const btnFemale = document.getElementById('btn-voice-female');
+        
+    // ==========================================
+    // UNIFIED ROBUST AUDIO PLAYER ENGINE
+    // ==========================================
+    const audio = document.getElementById('main-audio');
+    const playBtn = document.getElementById('play-pause-btn');
+    const progressBar = document.getElementById('audio-progress');
+    const currentTimeSpan = document.getElementById('current-time');
+    const durationTimeSpan = document.getElementById('duration-time');
+    const btnAoede = document.getElementById('btn-voice-aoede');
+    const btnPuck = document.getElementById('btn-voice-puck');
 
-        const voiceFiles = {
-            'male': 'vihaithanh_voice_gemini_puck.mp3',
-            'female': 'vihaithanh_voice_gemini_aoede.mp3'
-        };
+    const voiceFiles = {
+        'aoede': 'vihaithanh_voice_gemini_aoede.mp3',
+        'puck': 'vihaithanh_voice_gemini_puck.mp3'
+    };
 
-        let currentVoice = 'male';
+    const voiceLabels = {
+        'aoede': 'Google Gemini Flash 3.0 - Nữ Truyền Cảm (Aoede AI)',
+        'puck': 'Google Gemini Flash 3.0 - Nam Trầm Ấm (Puck AI)'
+    };
 
-        function switchVoice(gender) {
-            if (currentVoice === gender) return;
-            currentVoice = gender;
-            const wasPlaying = !audio.paused;
-            const currentTime = audio.currentTime;
+    let currentVoice = 'aoede';
+    let currentSpeed = 1.0;
 
-            if (gender === 'male') {
-                btnMale.classList.add('active');
-                btnFemale.classList.remove('active');
-            } else {
-                btnFemale.classList.add('active');
-                btnMale.classList.remove('active');
-            }
+    function formatAudioTime(sec) {
+        if (isNaN(sec) || sec < 0) return '00:00';
+        const m = Math.floor(sec / 60);
+        const s = Math.floor(sec % 60);
+        return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+    }
 
-            audio.src = voiceFiles[gender];
-            audio.load();
-            audio.currentTime = currentTime;
-            if (wasPlaying) {
-                audio.play();
-            }
+    function updateDurationDisplay() {
+        if (durationTimeSpan && audio && !isNaN(audio.duration) && audio.duration > 0) {
+            durationTimeSpan.textContent = formatAudioTime(audio.duration);
         }
+    }
 
-        function togglePlay() {
-            if (audio.paused) {
-                audio.play();
+    if (audio) {
+        if (!audio.getAttribute('src')) {
+            audio.src = voiceFiles[currentVoice];
+        }
+        audio.load();
+
+        audio.addEventListener('loadedmetadata', () => {
+            updateDurationDisplay();
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            if (!isNaN(audio.duration) && audio.duration > 0) {
+                const pct = (audio.currentTime / audio.duration) * 100;
+                if (progressBar) progressBar.value = pct;
+            }
+            if (currentTimeSpan) currentTimeSpan.textContent = formatAudioTime(audio.currentTime);
+            updateDurationDisplay();
+        });
+
+        audio.addEventListener('play', () => {
+            if (playBtn) {
                 playBtn.innerHTML = '⏸';
                 playBtn.title = 'Tạm dừng';
-            } else {
-                audio.pause();
+            }
+        });
+
+        audio.addEventListener('pause', () => {
+            if (playBtn) {
                 playBtn.innerHTML = '▶';
                 playBtn.title = 'Phát';
             }
-        }
+        });
 
-        function updateAudioProgress() {
-            if (!isNaN(audio.duration)) {
-                const percent = (audio.currentTime / audio.duration) * 100;
-                progressBar.value = percent;
-                currentTimeSpan.textContent = formatTime(audio.currentTime);
-                durationTimeSpan.textContent = formatTime(audio.duration);
+        audio.addEventListener('ended', () => {
+            if (playBtn) playBtn.innerHTML = '▶';
+            if (progressBar) progressBar.value = 0;
+            if (currentTimeSpan) currentTimeSpan.textContent = '00:00';
+        });
+    }
+
+    function togglePlay() {
+        if (!audio) return;
+        if (audio.paused) {
+            if (!audio.src || audio.src === window.location.href) {
+                audio.src = voiceFiles[currentVoice];
+                audio.load();
+            }
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    if (playBtn) playBtn.innerHTML = '⏸';
+                    if (typeof showToast === 'function') {
+                        showToast('🔊 Đang phát: ' + voiceLabels[currentVoice]);
+                    }
+                }).catch(err => {
+                    console.warn('Play error:', err);
+                    if (typeof showToast === 'function') {
+                        showToast('⚠️ Vui lòng nhấn nút phát để nghe');
+                    }
+                });
+            }
+        } else {
+            audio.pause();
+            if (playBtn) playBtn.innerHTML = '▶';
+            if (typeof showToast === 'function') {
+                showToast('⏸ Đã tạm dừng');
+            }
+        }
+    }
+
+    // Backward compatibility
+    function toggleAudio() { togglePlay(); }
+    function toggleSpeechAudio() { togglePlay(); }
+
+    function switchVoice(gender) {
+        if (!audio || !voiceFiles[gender]) return;
+        const wasPlaying = !audio.paused;
+        const curTime = audio.currentTime;
+        currentVoice = gender;
+
+        if (gender === 'aoede') {
+            if (btnAoede) {
+                btnAoede.style.background = '#ffffff';
+                btnAoede.style.color = '#064e2b';
+                btnAoede.style.borderColor = '#ffffff';
+                btnAoede.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+            }
+            if (btnPuck) {
+                btnPuck.style.background = 'rgba(255,255,255,0.14)';
+                btnPuck.style.color = '#ffffff';
+                btnPuck.style.borderColor = 'rgba(255,255,255,0.3)';
+                btnPuck.style.boxShadow = 'none';
+            }
+        } else {
+            if (btnPuck) {
+                btnPuck.style.background = '#ffffff';
+                btnPuck.style.color = '#064e2b';
+                btnPuck.style.borderColor = '#ffffff';
+                btnPuck.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+            }
+            if (btnAoede) {
+                btnAoede.style.background = 'rgba(255,255,255,0.14)';
+                btnAoede.style.color = '#ffffff';
+                btnAoede.style.borderColor = 'rgba(255,255,255,0.3)';
+                btnAoede.style.boxShadow = 'none';
             }
         }
 
-        function seekAudio(val) {
-            if (!isNaN(audio.duration)) {
-                audio.currentTime = (val / 100) * audio.duration;
+        audio.src = voiceFiles[gender];
+        audio.load();
+
+        audio.onloadedmetadata = () => {
+            if (curTime < audio.duration) {
+                audio.currentTime = curTime;
             }
-        }
+            audio.playbackRate = currentSpeed;
+            updateDurationDisplay();
+            if (wasPlaying) {
+                audio.play().catch(e => console.warn(e));
+            }
+        };
 
-        function setSpeed(rate) {
-            audio.playbackRate = rate;
-            document.querySelectorAll('.speed-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        if (typeof showToast === 'function') {
+            showToast('🎙 Đã chuyển: ' + voiceLabels[gender]);
         }
+    }
 
-        function onAudioEnded() {
-            playBtn.innerHTML = '▶';
-            progressBar.value = 0;
-            currentTimeSpan.textContent = '00:00';
-        }
+    function seekAudio(val) {
+        if (!audio || isNaN(audio.duration) || audio.duration <= 0) return;
+        audio.currentTime = (val / 100) * audio.duration;
+        if (currentTimeSpan) currentTimeSpan.textContent = formatAudioTime(audio.currentTime);
+    }
 
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
-        }
-
-        // Reading scroll progress
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            topProgressBar.style.width = scrolled + '%';
+    function setSpeed(rate, btn) {
+        currentSpeed = rate;
+        if (audio) audio.playbackRate = rate;
+        document.querySelectorAll('.speed-btn').forEach(b => {
+            b.style.background = 'rgba(255,255,255,0.15)';
+            b.style.color = '#ffffff';
+            b.style.fontWeight = '600';
         });
+        if (btn) {
+            btn.style.background = '#ffd700';
+            btn.style.color = '#064e2b';
+            btn.style.fontWeight = '700';
+        }
+        if (typeof showToast === 'function') {
+            showToast('Tốc độ đọc: ' + rate + 'x');
+        }
+    }
 
-        audio.addEventListener('loadedmetadata', () => {
-            durationTimeSpan.textContent = formatTime(audio.duration);
-        });
     </script>
 </body>
 </html>
