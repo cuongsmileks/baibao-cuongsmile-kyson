@@ -930,20 +930,22 @@
 </div>
 <div class="audio-controls-right" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
 <select class="voice-select" id="voice-select" onchange="changeVoice(this.value)" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 13px; font-weight: 700; color: #065f46; padding: 6px 10px; cursor: pointer;">
-<option value="nu_bac">👩 Giọng Nữ Hà Nội (Chuẩn Dân Trí)</option>
-<option value="nam_bac">👨 Giọng Nam Trầm (Thời sự Hà Nội)</option>
-<option value="nam_tre">🎙 Giọng Nam Trẻ (Biên tập viên VTV)</option>
-<option value="nu_nhe">🌸 Giọng Nữ Truyền Cảm (Dịu dàng)</option>
-</select>
+                    <option value="nu_bac">👩 Vbee Ngọc Huyền (Nữ Hà Nội - Chuẩn Dân Trí)</option>
+                    <option value="nam_bac">👨 Vbee Mạnh Dũng (Nam Trầm - Thời sự Phóng sự)</option>
+                    <option value="nam_tre">🎙 ElevenLabs AI (Nam Hào hùng - Hiện đại)</option>
+                    <option value="nu_nhe">🌸 MiniMax AI (Nữ Dịu dàng - Truyền cảm)</option>
+                </select>
 <button class="speed-btn" id="speed-btn" onclick="toggleAudioSpeed()" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 12px; font-weight: 700; color: #065f46; padding: 6px 10px; cursor: pointer;" title="Tốc độ đọc">1.0x</button>
 </div>
 </div>
 
 <div class="audio-controls-right" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-<select class="voice-select" id="voice-select" onchange="onVoiceChange()">
-<option value="mp3">Giọng AI Tiếng Việt (Studio HD)</option>
-<option value="synth">Giọng đọc Hệ thống (Web Speech)</option>
-</select>
+<select class="voice-select" id="voice-select" onchange="changeVoice(this.value)" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 13px; font-weight: 700; color: #065f46; padding: 6px 10px; cursor: pointer;">
+                    <option value="nu_bac">👩 Vbee Ngọc Huyền (Nữ Hà Nội - Chuẩn Dân Trí)</option>
+                    <option value="nam_bac">👨 Vbee Mạnh Dũng (Nam Trầm - Thời sự Phóng sự)</option>
+                    <option value="nam_tre">🎙 ElevenLabs AI (Nam Hào hùng - Hiện đại)</option>
+                    <option value="nu_nhe">🌸 MiniMax AI (Nữ Dịu dàng - Truyền cảm)</option>
+                </select>
 <button class="speed-btn" id="speed-btn" onclick="toggleAudioSpeed()" style="background: white; border: 1px solid #a7f3d0; border-radius: 6px; font-size: 12px; font-weight: 700; color: #065f46; padding: 5px 10px; cursor: pointer;" title="Tốc độ đọc">1.0x</button>
 </div>
 
@@ -1184,11 +1186,11 @@
         'nu_nhe': 'chibo_voice_nu_nhe.mp3'
     };
 
-    const voiceLabels = {
-        'nu_bac': 'Giọng Nữ Hà Nội (Chuẩn Dân Trí)',
-        'nam_bac': 'Giọng Nam Trầm (Thời sự Hà Nội)',
-        'nam_tre': 'Giọng Nam Trẻ (Biên tập viên VTV)',
-        'nu_nhe': 'Giọng Nữ Truyền Cảm (Dịu dàng)'
+        const voiceLabels = {
+        'nu_bac': 'Vbee Ngọc Huyền (Nữ Hà Nội - Chuẩn Dân Trí)',
+        'nam_bac': 'Vbee Mạnh Dũng (Nam Trầm - Thời sự Phóng sự)',
+        'nam_tre': 'ElevenLabs AI (Nam Hào hùng - Hiện đại)',
+        'nu_nhe': 'MiniMax AI (Nữ Dịu dàng - Truyền cảm)'
     };
 
     const realAudio = document.getElementById('real-audio');
