@@ -930,6 +930,8 @@
 </div>
 <div class="audio-controls-right" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
 <select class="voice-select" id="voice-select" onchange="changeVoice(this.value)" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 13px; font-weight: 700; color: #065f46; padding: 6px 10px; cursor: pointer;">
+                    <option value="gemini_aoede" selected>⭐ Google Gemini Flash 3.0 - Nữ Truyền Cảm (Aoede AI)</option>
+                    <option value="gemini_puck">⚡ Google Gemini Flash 3.0 - Nam Nhiệt Huyết (Puck AI)</option>
                     <option value="nu_bac">👩 Vbee Ngọc Huyền (Nữ Hà Nội - Chuẩn Dân Trí)</option>
                     <option value="nam_bac">👨 Vbee Mạnh Dũng (Nam Trầm - Thời sự Phóng sự)</option>
                     <option value="nam_tre">🎙 ElevenLabs AI (Nam Hào hùng - Hiện đại)</option>
@@ -941,6 +943,8 @@
 
 <div class="audio-controls-right" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
 <select class="voice-select" id="voice-select" onchange="changeVoice(this.value)" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 13px; font-weight: 700; color: #065f46; padding: 6px 10px; cursor: pointer;">
+                    <option value="gemini_aoede" selected>⭐ Google Gemini Flash 3.0 - Nữ Truyền Cảm (Aoede AI)</option>
+                    <option value="gemini_puck">⚡ Google Gemini Flash 3.0 - Nam Nhiệt Huyết (Puck AI)</option>
                     <option value="nu_bac">👩 Vbee Ngọc Huyền (Nữ Hà Nội - Chuẩn Dân Trí)</option>
                     <option value="nam_bac">👨 Vbee Mạnh Dũng (Nam Trầm - Thời sự Phóng sự)</option>
                     <option value="nam_tre">🎙 ElevenLabs AI (Nam Hào hùng - Hiện đại)</option>
@@ -1180,6 +1184,8 @@
     // MULTI-VOICE REAL AUDIO & FALLBACK ENGINE
     // ==========================================
     const voiceFiles = {
+        'gemini_aoede': 'chibo_voice_gemini_aoede.mp3',
+        'gemini_puck': 'chibo_voice_gemini_puck.mp3',
         'nu_bac': 'chibo_voice_nu_bac.mp3',
         'nam_bac': 'chibo_voice_nam_bac.mp3',
         'nam_tre': 'chibo_voice_nam_tre.mp3',
@@ -1283,7 +1289,7 @@
 
     function changeVoice(voiceKey) {
         if (!realAudio) return;
-        const targetFile = voiceFiles[voiceKey] || voiceFiles['nu_bac'];
+        const targetFile = voiceFiles[voiceKey] || voiceFiles['gemini_aoede'];
         const wasPlaying = !realAudio.paused;
         const curTime = realAudio.currentTime;
 
