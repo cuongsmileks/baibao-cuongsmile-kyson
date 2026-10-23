@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dấu ấn đồng chí Vi Hải Thành với đại ngàn Kỳ Sơn: Từ vùng đất khó đến bình yên biên giới | Ký sự Tư liệu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007038;
+            --primary-dark: #005028;
+            --primary-light: #e8f5e9;
+            --gold: #b38024;
+            --gold-light: #fef7ec;
+            --red: #c0262d;
+            --text-main: #24292f;
+            --text-heading: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --content-width: 820px;
+            --overflow-width: 1040px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 19px;
+            line-height: 1.85;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Reading Progress */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            background: linear-gradient(90deg, #007038, #22c55e, #eab308);
+            z-index: 10000;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Header */
+        .site-header {
+            background: #ffffff;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .header-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-text {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -1.2px;
+            text-transform: uppercase;
+        }
+        .logo-tag {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 600;
+            border-left: 2px solid #cbd5e1;
+            padding-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .header-nav a {
+            color: #334155;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+        .header-nav a:hover, .header-nav a.active {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+        .header-meta {
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        /* Hero Cover */
+        .cover-wrap {
+            max-width: var(--overflow-width);
+            margin: 25px auto 10px auto;
+            padding: 0 15px;
+        }
+        .cover-inner {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.16);
+            background: #111;
+        }
+        .cover-inner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .cover-inner:hover img {
+            transform: scale(1.01);
+        }
+
+        /* Main Article Container */
+        .article-wrap {
+            max-width: var(--content-width);
+            margin: 0 auto 60px;
+            background: #ffffff;
+            padding: 45px 50px;
+            border-radius: 14px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Category & Breadcrumbs */
+        .article-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 18px;
+            background: var(--primary-light);
+            padding: 6px 14px;
+            border-radius: 30px;
+        }
+
+        /* Title */
+        h1.article-title {
+            font-family: "Merriweather", Georgia, serif;
+            font-size: 38px;
+            font-weight: 900;
+            line-height: 1.35;
+            color: var(--text-heading);
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        /* Meta Row */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14.5px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .meta-author {
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+        .meta-tag {
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12.5px;
+        }
+
+        /* Sapo */
+        .article-sapo {
+            font-family: "Lora", Georgia, serif;
+            font-size: 21.5px;
+            font-weight: 600;
+            line-height: 1.65;
+            color: #1e293b;
+            margin-bottom: 30px;
+            background: #f8fafc;
+            border-left: 5px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Audio Player Widget */
+        .audio-player-card {
+            background: linear-gradient(135deg, #064e2b, #007038);
+            color: #ffffff;
+            border-radius: 14px;
+            padding: 24px;
+            margin: 30px 0 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 112, 56, 0.25);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .audio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.18);
+            padding-bottom: 14px;
+        }
+        .audio-title-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .audio-icon-pulse {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .audio-title-text {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .audio-badge {
+            font-size: 12px;
+            background: rgba(255, 215, 0, 0.25);
+            color: #ffd700;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .voice-selector-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+        .voice-label {
+            font-size: 13.5px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        .voice-btn {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .voice-btn:hover {
+            background: rgba(255,255,255,0.22);
+        }
+        .voice-btn.active {
+            background: #ffffff;
+            color: var(--primary-dark);
+            border-color: #ffffff;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .play-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: var(--primary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 900;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background 0.2s;
+            flex-shrink: 0;
+        }
+        .play-btn:hover {
+            transform: scale(1.06);
+            background: #f8fafc;
+        }
+        .progress-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .slider-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            accent-color: #ffd700;
+        }
+        .time-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        .speed-control {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .speed-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .speed-btn.active {
+            background: #ffd700;
+            color: #064e2b;
+        }
+
+        /* Content Typography */
+        .content-body h2 {
+            font-family: "Merriweather", Georgia, serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin: 45px 0 20px;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .content-body h2::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 28px;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        .content-body p {
+            margin-bottom: 22px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Quote Callouts */
+        .quote-box {
+            margin: 35px 0;
+            padding: 26px 30px;
+            background: linear-gradient(135deg, var(--gold-light), #fff);
+            border-left: 5px solid var(--gold);
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 18px rgba(179, 128, 36, 0.08);
+            position: relative;
+        }
+        .quote-text {
+            font-family: "Lora", Georgia, serif;
+            font-size: 21px;
+            font-style: italic;
+            line-height: 1.6;
+            color: #451a03;
+            margin-bottom: 12px;
+        }
+        .quote-author {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Image Display */
+        .media-figure {
+            margin: 35px 0;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+        }
+        .media-figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .media-caption {
+            padding: 12px 18px;
+            font-size: 14.5px;
+            color: #475569;
+            background: #f8fafc;
+            border-top: 1px solid #edf2f7;
+            font-style: italic;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        /* Highlight Key Facts Card */
+        .milestones-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 25px 28px;
+            margin: 35px 0;
+        }
+        .milestones-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .milestones-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .milestones-list li {
+            font-size: 16px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            color: #1e293b;
+        }
+        .milestone-badge {
+            background: var(--primary);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        /* Article Navigation Footer */
+        .article-series-nav {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px dashed var(--border-color);
+        }
+        .series-nav-title {
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+        .series-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+        .series-nav-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px 18px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .series-nav-card:hover {
+            background: var(--primary-light);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .series-nav-card.active {
+            background: #ecfdf5;
+            border-color: var(--primary);
+            border-left: 4px solid var(--primary);
+        }
+        .series-card-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .series-card-title {
+            font-size: 14.5px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--text-heading);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-top: 60px;
+        }
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .article-wrap { padding: 25px 20px; }
+            h1.article-title { font-size: 28px; }
+            .article-sapo { font-size: 18px; padding: 15px 18px; }
+            .content-body h2 { font-size: 22px; }
+            body { font-size: 17.5px; }
+            .header-inner { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress-bar"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-box">
+                <span class="logo-text">KÝ SỰ BIÊN CƯƠNG</span>
+                <span class="logo-tag">Chuyên Trang Tư Liệu Vùng Cao</span>
+            </a>
+            <nav class="header-nav">
+                <a href="dantri-cuongsmile.html">Bài 1: Cường Smile</a>
+                <a href="dantri-chibo.html">Bài 2: Chi bộ gia đình</a>
+                <a href="dantri-vihaithanh.html" class="active">Bài 3: Đ/c Vi Hải Thành</a>
+            </nav>
+            <div class="header-meta">Kỳ Sơn, Nghệ An • Lưu trữ Lịch sử</div>
+        </div>
+    </header>
+
+    <!-- Hero Cover -->
+    <div class="cover-wrap">
+        <div class="cover-inner">
+            <img src="images/vihaithanh_field_visit_villagers.jpg" alt="Đồng chí Vi Hải Thành thăm bà con bản làng Kỳ Sơn">
+        </div>
+    </div>
+
+    <!-- Article Content -->
+    <main class="article-wrap">
+        <div class="article-category">
+            <span>★</span> HỒ SƠ NHÂN VẬT & LỊCH SỬ ĐỊA PHƯƠNG
+        </div>
+
+        <h1 class="article-title">Dấu ấn đồng chí Vi Hải Thành với đại ngàn Kỳ Sơn: Từ vùng đất khó đến bình yên biên giới</h1>
+
+        <div class="article-meta">
+            <span>Tác giả: <strong>Nhóm Phóng viên Tư liệu Miền Tây</strong></span>
+            <span>•</span>
+            <span>Địa bàn: <strong>Huyện Kỳ Sơn, tỉnh Nghệ An</strong></span>
+            <span>•</span>
+            <span class="meta-tag">Huy hiệu 50 năm tuổi Đảng</span>
+        </div>
+
+        <!-- Sapo -->
+        <div class="article-sapo">
+            Hơn 11 năm trên cương vị Bí thư Huyện ủy, Chủ tịch HĐND huyện Kỳ Sơn (2003 – 2014) và trọn đời gắn bó máu thịt với mảnh đất phên dậu miền Tây xứ Nghệ, đồng chí Vi Hải Thành được đồng bào các dân tộc thiểu số trìu mến suy tôn là <strong>“thủ lĩnh xóa nghèo”</strong>, <strong>“Anh cả đỏ miền Tây”</strong>. Bằng cái tâm trong sáng, bản lĩnh kiên cường của một người con dân tộc Thái và phong cách lãnh đạo “nói đi đôi với làm”, ông đã cùng Đảng bộ và nhân dân các dân tộc Kỳ Sơn lập nên những kỳ tích lịch sử: nhổ tận gốc cây thuốc phiện, đưa đảng viên về bản cầm tay chỉ việc giúp dân thoát nghèo, mở đường xuyên mây và củng cố vững chắc thế trận biên cương hòa bình hữu nghị.
+        </div>
+
+        <!-- Audio Player Widget -->
+        <div class="audio-player-card">
+            <div class="audio-header">
+                <div class="audio-title-box">
+                    <div class="audio-icon-pulse">🎙️</div>
+                    <div class="audio-title-text">Nghe đọc toàn bộ bài viết</div>
+                </div>
+                <div class="audio-badge">Giọng đọc AI Gemini Flash 3.0</div>
+            </div>
+
+            <!-- Voice Selection Switcher -->
+            <div class="voice-selector-row">
+                <span class="voice-label">Chọn giọng đọc:</span>
+                <button class="voice-btn active" id="btn-voice-male" onclick="switchVoice('male')">
+                    <span>👨</span> Giọng Nam trầm ấm (Puck)
+                </button>
+                <button class="voice-btn" id="btn-voice-female" onclick="switchVoice('female')">
+                    <span>👩</span> Giọng Nữ truyền cảm (Aoede)
+                </button>
+            </div>
+
+            <!-- Audio Player Controls -->
+            <div class="player-controls">
+                <button class="play-btn" id="play-pause-btn" onclick="togglePlay()">▶</button>
+                <div class="progress-box">
+                    <input type="range" class="slider-bar" id="audio-progress" value="0" min="0" max="100" oninput="seekAudio(this.value)">
+                    <div class="time-row">
+                        <span id="current-time">00:00</span>
+                        <span id="duration-time">--:--</span>
+                    </div>
+                </div>
+                <div class="speed-control">
+                    <button class="speed-btn" onclick="setSpeed(0.85)">0.85x</button>
+                    <button class="speed-btn active" id="speed-1x" onclick="setSpeed(1.0)">1.0x</button>
+                    <button class="speed-btn" onclick="setSpeed(1.25)">1.25x</button>
+                </div>
+            </div>
+
+            <audio id="main-audio" preload="metadata" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()">
+                <source id="audio-source" src="vihaithanh_voice_gemini_puck.mp3" type="audio/mpeg">
+                Trình duyệt của bạn không hỗ trợ thẻ phát âm thanh.
+            </audio>
+        </div>
+
+        <div class="content-body">
+            <!-- Section 1 -->
+            <h2>1. Bản lĩnh người đứng đầu nơi "cổng trời" miền Tây xứ Nghệ</h2>
+            <p>
+                Kỳ Sơn là vùng đất phên dậu xa xôi và hiểm trở bậc nhất của tỉnh Nghệ An, với hơn 192 km đường biên giới tiếp giáp nước bạn Lào. Nơi đây là địa bàn cư trú lâu đời của đồng bào các dân tộc Thái, H'Mông, Khơ Mú, Đan Lai. Những năm đầu thập niên 2000, Kỳ Sơn nằm trong nhóm huyện nghèo 30a đặc biệt khó khăn nhất cả nước. Địa hình núi cao vực thẳm chia cắt hiểm trở, giao thông cách trở, tỷ lệ hộ nghèo có nơi lên tới hơn 80%, đời sống bà con quanh năm đối mặt với giáp hạt, thiếu thốn.
+            </p>
+            <p>
+                Sinh năm 1954, là người con ưu tú của đồng bào dân tộc Thái lớn lên từ bản làng nghèo khó, đồng chí Vi Hải Thành thấu hiểu sâu sắc từng phong tục tập quán, nếp nghĩ và những nỗi cơ cực ngàn đời của bà con miền sơn cước. Trưởng thành từ cán bộ cơ sở, kinh qua nhiều vị trí lãnh đạo và đảm nhận trọng trách Phó Bí thư Thường trực, rồi Bí thư Huyện ủy kiêm Chủ tịch HĐND huyện Kỳ Sơn liên tục từ năm 2003 đến 2014, ông luôn đau đáu một tâm nguyện: Làm sao để đồng bào mình bớt đói, bớt nghèo, và biên cương được bình yên, no ấm.
+            </p>
+
+            <div class="media-figure">
+                <img src="images/vihaithanh_portrait_leader.jpg" alt="Chân dung đồng chí Vi Hải Thành">
+                <div class="media-caption">
+                    Đồng chí Vi Hải Thành – Nguyên Ủy viên BCH Đảng bộ tỉnh Nghệ An, nguyên Bí thư Huyện ủy, Chủ tịch HĐND huyện Kỳ Sơn, người cán bộ 50 năm tuổi Đảng kiên trung, trọn đời vì hạnh phúc của nhân dân.
+                </div>
+            </div>
+
+            <p>
+                Phương châm hành động của ông rất đỗi mộc mạc mà quyết liệt: <em>“Làm lãnh đạo ở vùng cao biên giới, nếu chỉ ngồi bàn giấy nghe báo cáo thì không bao giờ hiểu được nỗi khổ thật sự của dân. Muốn dân tin, dân theo, cán bộ phải xỏ dép rọ, khoác ba lô cuốc bộ về tận bản xa, cùng ăn, cùng ở, cùng làm, nói được tiếng của dân và đem lại ấm no cụ thể cho từng nếp nhà”</em>.
+            </p>
+            <p>
+                Hình ảnh người Bí thư Huyện ủy với vóc dáng rắn rỏi, nụ cười đôn hậu, lội suối băng rừng ngày đêm vào tận các bản làng heo hút nhất như Keng Đu, Đoọc Mạy, Huồi Tụ, Na Ngoi đã trở thành biểu tượng thân thương, gần gũi trong lòng đồng bào các dân tộc Kỳ Sơn.
+            </p>
+
+            <!-- Section 2 -->
+            <h2>2. Kỳ tích xóa sổ cây anh túc – Đánh thức sức sống trên những rẻo cao</h2>
+            <p>
+                Nhắc đến Kỳ Sơn những năm trước 2005, nhiều người vẫn chưa quên nỗi ám ảnh về cây thuốc phiện. Từng có giai đoạn, cây anh túc phủ trắng các sườn núi cao ở Mường Lống, Tây Sơn, Na Ngoi, Huồi Tụ. Bóng ma thuốc phiện kéo theo tệ nghiện ngập bủa vây từ người già đến thanh niên, cái nghèo đói truyền kiếp đè nặng lên từng nóc nhà và làm suy kiệt sức sống của giống nòi.
+            </p>
+            <p>
+                Đứng trước bài toán sinh tử của huyện nhà, Bí thư Vi Hải Thành cùng tập thể Ban Thường vụ Huyện ủy Kỳ Sơn xác định: Nhổ bỏ cây thuốc phiện bằng biện pháp hành chính hay xử phạt là chưa đủ, mà quan trọng nhất là phải giải quyết bài toán sinh kế – phải cho bà con thấy có một con đường sống khác ấm no, bền vững hơn cây thuốc phiện.
+            </p>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    "Muốn bà con nhổ bỏ cây thuốc phiện thì trước hết phải lấp đầy bồ lúa, bồ ngô của đồng bào. Khi dân có cái ăn, con cái được học hành, tự khắc bà con sẽ dứt khoát đoạn tuyệt với cây anh túc."
+                </div>
+                <div class="quote-author">— Đồng chí Vi Hải Thành</div>
+            </div>
+
+            <p>
+                Ông kiên trì cùng các lực lượng vũ trang (Bộ đội Biên phòng, Công an, Quân sự) và cán bộ nông nghiệp lặn lội đến từng bản Mông, bản Khơ Mú, tranh thủ uy tín của các già làng, trưởng bản và người có uy tín trong dòng họ để vận động, thuyết phục. Đồng thời, huyện quyết liệt chuyển đổi cơ cấu cây trồng: đưa các giống mận tam hoa, đào bản địa, chè shan tuyết, gừng Kỳ Sơn, mở rộng diện tích ngô lai và phát triển chăn nuôi bò hàng hóa.
+            </p>
+
+            <div class="media-figure">
+                <img src="images/kyson_poppy_to_orchards.jpg" alt="Mường Lống Kỳ Sơn bạt ngàn hoa mận và cây ăn quả">
+                <div class="media-caption">
+                    Thung lũng Mường Lống (Kỳ Sơn) bừng sáng sức sống mới với bạt ngàn vườn mận tam hoa, đào đặc sản và hoa trắng ngút ngàn, thay thế hoàn toàn những nương rẫy thuốc phiện năm xưa.
+                </div>
+            </div>
+
+            <p>
+                Nhờ sự bền bỉ, thấu tình đạt lý và quyết liệt ấy, Kỳ Sơn đã làm nên kỳ tích lịch sử: xóa sổ hoàn toàn diện tích cây thuốc phiện trên toàn địa bàn. Thung lũng Mường Lống từ chỗ chìm trong khói thuốc phiện u ám đã lột xác ngoạn mục, trở thành “Đà Lạt của miền Tây xứ Nghệ” với những mùa hoa mận trắng tinh khôi, thu hút du khách và mang lại nguồn thu nhập ổn định cho hàng nghìn hộ gia đình.
+            </p>
+
+            <!-- Section 3 -->
+            <h2>3. Sáng kiến lịch sử: "Đảng viên về bản, nhận đỡ đầu hộ nghèo"</h2>
+            <p>
+                Một trong những di sản lãnh đạo nổi bật nhất mang đậm dấu ấn Vi Hải Thành chính là phong trào <strong>“Đảng viên về bản, nhận đỡ đầu hộ nghèo”</strong>. Từ đầu những năm 2000, Ban Thường vụ Huyện ủy Kỳ Sơn đã ban hành chủ trương phân công cán bộ, đảng viên từ các phòng, ban cấp huyện đến từng chi bộ cơ sở trực tiếp nhận đỡ đầu các hộ nghèo tại địa bàn.
+            </p>
+            <p>
+                Khác với các hình thức cứu trợ thụ động hay hỗ trợ phong trào, mô hình này quán triệt sâu sắc phương châm <em>“cầm tay chỉ việc”</em>:
+            </p>
+            <ul style="margin-left: 25px; margin-bottom: 22px; list-style-type: disc;">
+                <li style="margin-bottom: 10px;"><strong>Khảo sát tận gốc:</strong> Cán bộ trực tiếp xuống từng hộ gia đình được phân công để tìm hiểu căn nguyên đói nghèo (thiếu đất sản xuất, thiếu vốn, thiếu kinh nghiệm, do bệnh tật hay do tập quán canh tác lạc hậu).</li>
+                <li style="margin-bottom: 10px;"><strong>Đồng hành thực chất:</strong> Cán bộ đảng viên trích một phần tiền lương hoặc vận động nguồn lực để tặng con bê giống, lợn giống, hỗ trợ phân bón, hướng dẫn làm chuồng trại giữ ấm mùa đông, chỉ cách gieo cấy lúa nước hai vụ.</li>
+                <li style="margin-bottom: 10px;"><strong>Trách nhiệm đến cùng:</strong> Đồng hành kiên trì hàng tháng, hàng năm trời cho đến khi hộ gia đình thật sự làm chủ được cách làm ăn và tự lực vươn lên thoát nghèo bền vững.</li>
+            </ul>
+            <p>
+                Bản thân đồng chí Bí thư Huyện ủy Vi Hải Thành luôn nêu gương đi đầu. Ông trực tiếp nhận đỡ đầu những hộ nghèo khó khăn nhất ở các bản làng xa xôi. Không quản ngại đường sá trắc trở, những ngày nghỉ cuối tuần, ông lại lặn lội về thăm, kiểm tra đàn bò, xem lúa ngoài ruộng và động viên bà con. Nhiều hộ dân được ông đỡ đầu đã vươn lên xây nhà ngói khang trang, con cái được học đại học và trở thành hạt nhân phát triển kinh tế tiêu biểu của bản.
+            </p>
+            <p>
+                Mô hình “Đảng viên đỡ đầu hộ nghèo” của huyện Kỳ Sơn đã trở thành điểm sáng tiêu biểu trong toàn tỉnh Nghệ An và được nhiều tỉnh miền núi Tây Bắc, Tây Nguyên đến tham quan, học tập kinh nghiệm.
+            </p>
+
+            <!-- Section 4 -->
+            <h2>4. Mở đường xuyên núi, dựng trường nội trú và giữ yên bờ cõi biên cương</h2>
+            <p>
+                Trong suốt hơn một thập kỷ giữ trọng trách người đứng đầu Đảng bộ huyện, đồng chí Vi Hải Thành luôn kiên trì tháo gỡ hai "điểm nghẽn" lớn nhất kìm hãm sự phát triển của Kỳ Sơn: <strong>Giao thông</strong> và <strong>Giáo dục</strong>.
+            </p>
+            <p>
+                Về giao thông, ông cùng tập thể Huyện ủy quyết liệt tranh thủ mọi nguồn vốn từ Chương trình 135, Chương trình 30a của Chính phủ để mở đường vào các xã vùng sâu. Những tuyến đường huyết mạch xuyên núi nối trung tâm huyện lỵ Mường Xén với các xã biên giới sâu xa như Bắc Lý, Mỹ Lý, Keng Đu, Đoọc Mạy, Na Ngoi... lần lượt được khai thông và mở rộng, từng bước xóa tan thế “ốc đảo” cô lập trong mùa mưa lũ.
+            </p>
+
+            <div class="media-figure">
+                <img src="images/kyson_border_road_milestone.jpg" alt="Đường giao thông biên giới Kỳ Sơn và cột mốc chủ quyền">
+                <div class="media-caption">
+                    Đường giao thông uốn lượn xuyên qua những đỉnh núi hiểm trở của Kỳ Sơn nối liền các xã phên dậu, khẳng định chủ quyền biên cương và mở ra cơ hội giao thương, phát triển văn hóa - xã hội cho đồng bào.
+                </div>
+            </div>
+
+            <p>
+                Về giáo dục, ông trăn trở khôn nguôi về tương lai của con em đồng bào các dân tộc thiểu số. Dưới sự chỉ đạo quyết liệt của ông, hệ thống trường Phổ thông Dân tộc nội trú, bán trú tại trung tâm huyện và các cụm xã được đầu tư xây dựng khang trang. Nhờ có trường nội trú, các em nhỏ người Mông, người Khơ Mú, người Thái từ các bản xa không còn phải vượt núi hàng chục cây số đi học, được chăm lo từng bữa ăn, manh áo để yên tâm học con chữ. Rất nhiều học sinh Kỳ Sơn thời kỳ ấy nay đã trở thành bác sĩ, kỹ sư, thầy cô giáo và cán bộ chủ chốt của các cơ quan nhà nước.
+            </p>
+            <p>
+                Về an ninh biên giới, với vai trò là địa bàn trọng yếu có hơn 192 km đường biên tiếp giáp nước bạn Lào, đồng chí Vi Hải Thành luôn chú trọng xây dựng "thế trận lòng dân" vững chắc; thắt chặt mối quan hệ đoàn kết, kết nghĩa hữu nghị đặc biệt giữa các bản làng hai bên biên giới Việt - Lào, giữ vững toàn vẹn chủ quyền thiêng liêng của Tổ quốc.
+            </p>
+
+            <!-- Section 5 -->
+            <h2>5. Cây cao bóng cả và nửa thế kỷ sắt son một niềm tin theo Đảng</h2>
+            <p>
+                Tháng 4 năm 2024, Ban Thường vụ Tỉnh ủy Nghệ An và Huyện ủy Kỳ Sơn đã long trọng tổ chức lễ trao tặng <strong>Huy hiệu 50 năm tuổi Đảng</strong> cho đồng chí Vi Hải Thành. Đây là phần thưởng cao quý, là sự tôn vinh xứng đáng của Đảng, Nhà nước và nhân dân đối với nửa thế kỷ tận tụy, kiên trung của người cán bộ người dân tộc Thái cho sự nghiệp cách mạng của quê hương, đất nước.
+            </p>
+
+            <div class="milestones-card">
+                <div class="milestones-title">
+                    <span>🎖️</span> NHỮNG DẤU ẤN LỊCH SỬ CỦA ĐỒNG CHÍ VI HẢI THÀNH
+                </div>
+                <ul class="milestones-list">
+                    <li>
+                        <span class="milestone-badge">1954</span>
+                        <span>Sinh ra tại mảnh đất miền Tây xứ Nghệ, cội nguồn dân tộc Thái gắn bó máu thịt với đồng bào rẻo cao.</span>
+                    </li>
+                    <li>
+                        <span class="milestone-badge">2003 - 2014</span>
+                        <span>Hơn 11 năm giữ cương vị Ủy viên BCH Đảng bộ tỉnh Nghệ An, Bí thư Huyện ủy kiêm Chủ tịch HĐND huyện Kỳ Sơn.</span>
+                    </li>
+                    <li>
+                        <span class="milestone-badge">Tiên phong</span>
+                        <span>Khởi xướng phong trào "Đảng viên về bản, đỡ đầu hộ nghèo" và quyết liệt chỉ đạo xóa sổ hoàn toàn cây thuốc phiện tại Kỳ Sơn.</span>
+                    </li>
+                    <li>
+                        <span class="milestone-badge">Hạ tầng</span>
+                        <span>Đột phá mở đường giao thông liên xã xuyên núi, phát triển hệ thống trường Phổ thông Dân tộc nội trú và giữ vững 192 km biên giới Việt - Lào.</span>
+                    </li>
+                    <li>
+                        <span class="milestone-badge">04/2024</span>
+                        <span>Vinh dự đón nhận Huy hiệu 50 năm tuổi Đảng – biểu tượng của lòng trung kiên và tấm gương sáng trọn đời vì dân.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <p>
+                Hôm nay, dù đã rời cương vị công tác và trở về với cuộc sống đời thường thanh bạch, đồng chí Vi Hải Thành vẫn luôn là “cây cao bóng cả” tỏa bóng mát ân tình giữa đại ngàn Kỳ Sơn. Mỗi khi huyện nhà có sự kiện lớn hay đứng trước những quyết sách quan trọng, các thế hệ lãnh đạo kế cận và nhân dân vẫn thường xuyên đến thăm, lắng nghe những lời căn dặn tâm huyết, giàu kinh nghiệm của người Bí thư tiền bối.
+            </p>
+            <p>
+                Những kỳ tích xóa nghèo, những con đường xuyên mây và tình cảm kính trọng, yêu thương mà đồng bào các dân tộc Kỳ Sơn dành cho đồng chí Vi Hải Thành chính là minh chứng sống động nhất cho chân lý: Người cán bộ thực sự vì dân, hòa mình vào cuộc sống của nhân dân thì hình ảnh và công lao ấy sẽ mãi mãi khắc sâu trong tâm khảm của đại ngàn biên cương.
+            </p>
+
+            <!-- Article Series Navigation -->
+            <div class="article-series-nav">
+                <div class="series-nav-title">Chuyên mục: Ký sự & Gương sáng miền Tây Nghệ An</div>
+                <div class="series-nav-grid">
+                    <a href="dantri-cuongsmile.html" class="series-nav-card">
+                        <div>
+                            <div class="series-card-label">Bài 1 • Chuyên đề Lâm nghiệp</div>
+                            <div class="series-card-title">Cường Smile: Người kỹ sư đưa công nghệ số canh giữ rừng biên cương Kỳ Sơn</div>
+                        </div>
+                    </a>
+                    <a href="dantri-chibo.html" class="series-nav-card">
+                        <div>
+                            <div class="series-card-label">Bài 2 • Xây dựng Đảng</div>
+                            <div class="series-card-title">“Chi bộ Đảng gia đình” ở bản biên giới: Mẹ và con gái cùng tuyên thệ</div>
+                        </div>
+                    </a>
+                    <a href="dantri-vihaithanh.html" class="series-nav-card active">
+                        <div>
+                            <div class="series-card-label">Bài 3 • Nhân vật & Lịch sử</div>
+                            <div class="series-card-title">Dấu ấn đồng chí Vi Hải Thành: "Thủ lĩnh xóa nghèo" của đại ngàn Kỳ Sơn</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-brand">KÝ SỰ BIÊN CƯƠNG • ĐẠI NGÀN KỲ SƠN</div>
+        <p>Chuyên trang bài viết tư liệu, ký sự nhân vật và gương điển hình tiên tiến huyện Kỳ Sơn, tỉnh Nghệ An.</p>
+        <p style="margin-top: 8px; font-size: 13px; color: #64748b;">Nội dung tư liệu lịch sử được tổng hợp phục vụ mục đích tuyên truyền và giáo dục truyền thống yêu nước.</p>
+    </footer>
+
+    <!-- Audio Player Script -->
+    <script>
+        const audio = document.getElementById('main-audio');
+        const playBtn = document.getElementById('play-pause-btn');
+        const progressBar = document.getElementById('audio-progress');
+        const currentTimeSpan = document.getElementById('current-time');
+        const durationTimeSpan = document.getElementById('duration-time');
+        const topProgressBar = document.getElementById('progress-bar');
+        const btnMale = document.getElementById('btn-voice-male');
+        const btnFemale = document.getElementById('btn-voice-female');
+
+        const voiceFiles = {
+            'male': 'vihaithanh_voice_gemini_puck.mp3',
+            'female': 'vihaithanh_voice_gemini_aoede.mp3'
+        };
+
+        let currentVoice = 'male';
+
+        function switchVoice(gender) {
+            if (currentVoice === gender) return;
+            currentVoice = gender;
+            const wasPlaying = !audio.paused;
+            const currentTime = audio.currentTime;
+
+            if (gender === 'male') {
+                btnMale.classList.add('active');
+                btnFemale.classList.remove('active');
+            } else {
+                btnFemale.classList.add('active');
+                btnMale.classList.remove('active');
+            }
+
+            audio.src = voiceFiles[gender];
+            audio.load();
+            audio.currentTime = currentTime;
+            if (wasPlaying) {
+                audio.play();
+            }
+        }
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerHTML = '⏸';
+                playBtn.title = 'Tạm dừng';
+            } else {
+                audio.pause();
+                playBtn.innerHTML = '▶';
+                playBtn.title = 'Phát';
+            }
+        }
+
+        function updateAudioProgress() {
+            if (!isNaN(audio.duration)) {
+                const percent = (audio.currentTime / audio.duration) * 100;
+                progressBar.value = percent;
+                currentTimeSpan.textContent = formatTime(audio.currentTime);
+                durationTimeSpan.textContent = formatTime(audio.duration);
+            }
+        }
+
+        function seekAudio(val) {
+            if (!isNaN(audio.duration)) {
+                audio.currentTime = (val / 100) * audio.duration;
+            }
+        }
+
+        function setSpeed(rate) {
+            audio.playbackRate = rate;
+            document.querySelectorAll('.speed-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function onAudioEnded() {
+            playBtn.innerHTML = '▶';
+            progressBar.value = 0;
+            currentTimeSpan.textContent = '00:00';
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        // Reading scroll progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            topProgressBar.style.width = scrolled + '%';
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            durationTimeSpan.textContent = formatTime(audio.duration);
+        });
+    </script>
+</body>
+</html>
