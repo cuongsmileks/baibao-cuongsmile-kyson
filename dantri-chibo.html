@@ -907,45 +907,50 @@
 </div>
 <!-- Audio Player AI Voice (Thực tế phát âm thanh Tiếng Việt) -->
 <!-- Audio Player AI Voice (Thực tế phát âm thanh Tiếng Việt đa giọng đọc) -->
-<div class="audio-player-box">
-<audio id="real-audio" preload="metadata" src="chibo_voice_nu_bac.mp3"></audio>
-<button class="audio-play-btn" id="audio-btn" onclick="toggleAudio()" title="Nghe bài viết">
-<span id="play-icon" style="font-size: 18px;">▶</span>
-</button>
-<div class="audio-info">
-<div class="audio-title">
-<span>🎙 RADIO ĐẠI NGÀN • Giọng đọc AI</span>
-<div class="equalizer" id="equalizer" style="display: none;">
-<span class="bar bar-1"></span>
-<span class="bar bar-2"></span>
-<span class="bar bar-3"></span>
-<span class="bar bar-4"></span>
-</div>
-<span id="audio-timer" style="font-weight: 600; font-size: 13px; color: #047857; margin-left: auto;">00:00 / 03:18</span>
-</div>
-<div class="audio-sub" id="audio-status">Nhấn nút phát (▶) để nghe đọc toàn bộ bài báo qua loa/tai nghe</div>
-<div class="audio-progress-container" onclick="seekAudioProgress(event)" style="background: #cbd5e1; height: 6px; border-radius: 3px; margin-top: 8px; cursor: pointer; position: relative;" title="Nhấn để tua bài đọc">
-<div id="audio-progress-bar" style="background: #008848; height: 100%; width: 0%; border-radius: 3px; transition: width 0.15s;"></div>
-</div>
-</div>
-<div class="audio-controls-right" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-<select class="voice-select" id="voice-select" onchange="changeVoice(this.value)" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 13px; font-weight: 700; color: #065f46; padding: 6px 12px; cursor: pointer;">
-                    <option value="gemini_aoede" selected>⭐ Google Gemini Flash 3.0 - Nữ Truyền Cảm (Aoede AI)</option>
-                    <option value="gemini_puck">⚡ Google Gemini Flash 3.0 - Nam Nhiệt Huyết (Puck AI)</option>
-                </select>
-<button class="speed-btn" id="speed-btn" onclick="toggleAudioSpeed()" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 12px; font-weight: 700; color: #065f46; padding: 6px 10px; cursor: pointer;" title="Tốc độ đọc">1.0x</button>
-</div>
-</div>
+<!-- UNIFIED ROBUST AUDIO PLAYER -->
+<div class="audio-player-card" style="background: linear-gradient(135deg, #064e2b, #007038); color: #ffffff; border-radius: 14px; padding: 22px 24px; margin: 30px 0 35px 0; box-shadow: 0 10px 30px rgba(0, 112, 56, 0.22); border: 1px solid rgba(255,255,255,0.18);">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.18); padding-bottom: 12px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 36px; height: 36px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">🎙️</div>
+            <div style="font-size: 16px; font-weight: 700; letter-spacing: 0.3px;">Nghe bài viết qua giọng đọc AI</div>
+        </div>
+        <div style="font-size: 12px; background: rgba(255, 215, 0, 0.25); color: #ffd700; border: 1px solid rgba(255, 215, 0, 0.4); padding: 4px 10px; border-radius: 20px; font-weight: 700;">Google Gemini Flash 3.0</div>
+    </div>
 
-<div class="audio-controls-right" style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-<select class="voice-select" id="voice-select" onchange="changeVoice(this.value)" style="background: white; border: 1.5px solid #008848; border-radius: 6px; font-size: 13px; font-weight: 700; color: #065f46; padding: 6px 12px; cursor: pointer;">
-                    <option value="gemini_aoede" selected>⭐ Google Gemini Flash 3.0 - Nữ Truyền Cảm (Aoede AI)</option>
-                    <option value="gemini_puck">⚡ Google Gemini Flash 3.0 - Nam Nhiệt Huyết (Puck AI)</option>
-                </select>
-<button class="speed-btn" id="speed-btn" onclick="toggleAudioSpeed()" style="background: white; border: 1px solid #a7f3d0; border-radius: 6px; font-size: 12px; font-weight: 700; color: #065f46; padding: 5px 10px; cursor: pointer;" title="Tốc độ đọc">1.0x</button>
-</div>
+    <!-- Voice Selection Switcher -->
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px;">
+        <span style="font-size: 13.5px; color: #cbd5e1; font-weight: 500;">Chọn giọng đọc:</span>
+        <button class="voice-btn active" id="btn-voice-aoede" onclick="switchVoice('aoede')" style="background: #ffffff; color: #064e2b; border: 1px solid #ffffff; padding: 7px 15px; border-radius: 20px; font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: all 0.2s;">
+            <span>👩</span> Nữ Truyền Cảm (Aoede AI)
+        </button>
+        <button class="voice-btn" id="btn-voice-puck" onclick="switchVoice('puck')" style="background: rgba(255,255,255,0.14); color: #ffffff; border: 1px solid rgba(255,255,255,0.3); padding: 7px 15px; border-radius: 20px; font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+            <span>👨</span> Nam Trầm Ấm (Puck AI)
+        </button>
+    </div>
 
-<!-- Reading Toolbar -->
+    <!-- Audio Player Controls -->
+    <div style="display: flex; align-items: center; gap: 16px;">
+        <button id="play-pause-btn" onclick="togglePlay()" style="width: 48px; height: 48px; border-radius: 50%; background: #ffffff; color: #007038; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 900; box-shadow: 0 4px 14px rgba(0,0,0,0.25); flex-shrink: 0;" title="Phát bài đọc">▶</button>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+            <input type="range" id="audio-progress" value="0" min="0" max="100" oninput="seekAudio(this.value)" style="width: 100%; height: 6px; background: rgba(255,255,255,0.25); border-radius: 4px; outline: none; cursor: pointer; accent-color: #ffd700;">
+            <div style="display: flex; justify-content: space-between; font-size: 12.5px; color: #cbd5e1; font-weight: 500;">
+                <span id="current-time">00:00</span>
+                <span id="duration-time">--:--</span>
+            </div>
+        </div>
+        <div style="display: flex; gap: 4px; align-items: center;">
+            <button class="speed-btn" onclick="setSpeed(0.85, this)" style="background: rgba(255,255,255,0.15); border: none; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11.5px; font-weight: 600; cursor: pointer;">0.85x</button>
+            <button class="speed-btn active" onclick="setSpeed(1.0, this)" style="background: #ffd700; border: none; color: #064e2b; padding: 4px 8px; border-radius: 4px; font-size: 11.5px; font-weight: 700; cursor: pointer;">1.0x</button>
+            <button class="speed-btn" onclick="setSpeed(1.25, this)" style="background: rgba(255,255,255,0.15); border: none; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11.5px; font-weight: 600; cursor: pointer;">1.25x</button>
+        </div>
+    </div>
+
+    <!-- Direct audio element -->
+    <audio id="main-audio" preload="metadata" src="chibo_voice_gemini_aoede.mp3"></audio>
+</div>
+<!-- END UNIFIED AUDIO PLAYER -->
+
+    <!-- Reading Toolbar -->
 <div class="reading-toolbar">
 <div class="font-adjust">
 <span style="font-weight: 700; color: #475569;">Cỡ chữ:</span>
@@ -1172,172 +1177,193 @@
     }
 
     
+    
     // ==========================================
-    // MULTI-VOICE REAL AUDIO & FALLBACK ENGINE
+    // UNIFIED ROBUST AUDIO PLAYER ENGINE
     // ==========================================
+    const audio = document.getElementById('main-audio');
+    const playBtn = document.getElementById('play-pause-btn');
+    const progressBar = document.getElementById('audio-progress');
+    const currentTimeSpan = document.getElementById('current-time');
+    const durationTimeSpan = document.getElementById('duration-time');
+    const btnAoede = document.getElementById('btn-voice-aoede');
+    const btnPuck = document.getElementById('btn-voice-puck');
+
     const voiceFiles = {
-        'gemini_aoede': 'chibo_voice_gemini_aoede.mp3',
-        'gemini_puck': 'chibo_voice_gemini_puck.mp3'
+        'aoede': 'chibo_voice_gemini_aoede.mp3',
+        'puck': 'chibo_voice_gemini_puck.mp3'
     };
 
-        const voiceLabels = {
-        'nu_bac': 'Vbee Ngọc Huyền (Nữ Hà Nội)',
-        'nam_bac': 'Vbee Mạnh Dũng (Nam Trầm - Thời sự Phóng sự)',
-        'nam_tre': 'ElevenLabs AI (Nam Hào hùng - Hiện đại)',
-        'nu_nhe': 'MiniMax AI (Nữ Dịu dàng - Truyền cảm)'
+    const voiceLabels = {
+        'aoede': 'Google Gemini Flash 3.0 - Nữ Truyền Cảm (Aoede AI)',
+        'puck': 'Google Gemini Flash 3.0 - Nam Trầm Ấm (Puck AI)'
     };
 
-    const realAudio = document.getElementById('real-audio');
-    let currentSpeechRate = 1.0;
+    let currentVoice = 'aoede';
+    let currentSpeed = 1.0;
 
-    function formatTime(seconds) {
-        if (isNaN(seconds) || seconds < 0) return '00:00';
-        const m = Math.floor(seconds / 60);
-        const s = Math.floor(seconds % 60);
+    function formatAudioTime(sec) {
+        if (isNaN(sec) || sec < 0) return '00:00';
+        const m = Math.floor(sec / 60);
+        const s = Math.floor(sec % 60);
         return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
     }
 
-    function initAudioEvents() {
-        if (!realAudio) return;
+    function updateDurationDisplay() {
+        if (durationTimeSpan && audio && !isNaN(audio.duration) && audio.duration > 0) {
+            durationTimeSpan.textContent = formatAudioTime(audio.duration);
+        }
+    }
 
-        realAudio.addEventListener('loadedmetadata', () => {
-            const timerEl = document.getElementById('audio-timer');
-            if (timerEl) {
-                timerEl.innerText = formatTime(realAudio.currentTime) + ' / ' + formatTime(realAudio.duration);
+    if (audio) {
+        if (!audio.getAttribute('src')) {
+            audio.src = voiceFiles[currentVoice];
+        }
+        audio.load();
+
+        audio.addEventListener('loadedmetadata', () => {
+            updateDurationDisplay();
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            if (!isNaN(audio.duration) && audio.duration > 0) {
+                const pct = (audio.currentTime / audio.duration) * 100;
+                if (progressBar) progressBar.value = pct;
+            }
+            if (currentTimeSpan) currentTimeSpan.textContent = formatAudioTime(audio.currentTime);
+            updateDurationDisplay();
+        });
+
+        audio.addEventListener('play', () => {
+            if (playBtn) {
+                playBtn.innerHTML = '⏸';
+                playBtn.title = 'Tạm dừng';
             }
         });
 
-        realAudio.addEventListener('timeupdate', () => {
-            const current = realAudio.currentTime;
-            const duration = realAudio.duration || 1;
-            const pct = (current / duration) * 100;
-            const bar = document.getElementById('audio-progress-bar');
-            if (bar) bar.style.width = pct + '%';
-            const timerEl = document.getElementById('audio-timer');
-            if (timerEl) timerEl.innerText = formatTime(current) + ' / ' + formatTime(duration);
+        audio.addEventListener('pause', () => {
+            if (playBtn) {
+                playBtn.innerHTML = '▶';
+                playBtn.title = 'Phát';
+            }
         });
 
-        realAudio.addEventListener('play', () => {
-            const icon = document.getElementById('play-icon');
-            if (icon) icon.innerText = '⏸';
-            const eq = document.getElementById('equalizer');
-            if (eq) eq.style.display = 'inline-flex';
-            const status = document.getElementById('audio-status');
-            const vSelect = document.getElementById('voice-select');
-            const curLabel = vSelect ? voiceLabels[vSelect.value] : '';
-            if (status) status.innerText = 'Đang phát: ' + curLabel + ' (Âm thanh thực tế qua loa/tai nghe)...';
-        });
-
-        realAudio.addEventListener('pause', () => {
-            const icon = document.getElementById('play-icon');
-            if (icon) icon.innerText = '▶';
-            const eq = document.getElementById('equalizer');
-            if (eq) eq.style.display = 'none';
-            const status = document.getElementById('audio-status');
-            if (status) status.innerText = 'Đã tạm dừng giọng đọc. Nhấn tiếp tục để nghe tiếp.';
-        });
-
-        realAudio.addEventListener('ended', () => {
-            const icon = document.getElementById('play-icon');
-            if (icon) icon.innerText = '▶';
-            const eq = document.getElementById('equalizer');
-            if (eq) eq.style.display = 'none';
-            const status = document.getElementById('audio-status');
-            if (status) status.innerText = 'Đã nghe xong toàn bộ bài báo. Nhấn để nghe lại.';
-            const bar = document.getElementById('audio-progress-bar');
-            if (bar) bar.style.width = '100%';
+        audio.addEventListener('ended', () => {
+            if (playBtn) playBtn.innerHTML = '▶';
+            if (progressBar) progressBar.value = 0;
+            if (currentTimeSpan) currentTimeSpan.textContent = '00:00';
         });
     }
 
-    initAudioEvents();
-
-    function toggleAudio() {
-        if (!realAudio) return;
-
-        if (realAudio.paused) {
-            const p = realAudio.play();
-            if (p !== undefined) {
-                p.then(() => {
-                    showToast('🔊 Đang phát âm thanh bài báo!');
+    function togglePlay() {
+        if (!audio) return;
+        if (audio.paused) {
+            if (!audio.src || audio.src === window.location.href) {
+                audio.src = voiceFiles[currentVoice];
+                audio.load();
+            }
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    if (playBtn) playBtn.innerHTML = '⏸';
+                    if (typeof showToast === 'function') {
+                        showToast('🔊 Đang phát: ' + voiceLabels[currentVoice]);
+                    }
                 }).catch(err => {
                     console.warn('Play error:', err);
-                    showToast('⚠️ Vui lòng nhấn nút phát để nghe');
+                    if (typeof showToast === 'function') {
+                        showToast('⚠️ Vui lòng nhấn nút phát để nghe');
+                    }
                 });
             }
         } else {
-            realAudio.pause();
-            showToast('⏸ Đã tạm dừng giọng đọc');
+            audio.pause();
+            if (playBtn) playBtn.innerHTML = '▶';
+            if (typeof showToast === 'function') {
+                showToast('⏸ Đã tạm dừng');
+            }
         }
     }
 
-    // Backward compatibility for any onclick
-    function toggleSpeechAudio() {
-        toggleAudio();
-    }
+    // Backward compatibility
+    function toggleAudio() { togglePlay(); }
+    function toggleSpeechAudio() { togglePlay(); }
 
-    function changeVoice(voiceKey) {
-        if (!realAudio) return;
-        const targetFile = voiceFiles[voiceKey] || voiceFiles['gemini_aoede'];
-        const wasPlaying = !realAudio.paused;
-        const curTime = realAudio.currentTime;
+    function switchVoice(gender) {
+        if (!audio || !voiceFiles[gender]) return;
+        const wasPlaying = !audio.paused;
+        const curTime = audio.currentTime;
+        currentVoice = gender;
 
-        realAudio.src = targetFile;
-        realAudio.load();
-
-        realAudio.onloadedmetadata = () => {
-            if (curTime < realAudio.duration) {
-                realAudio.currentTime = curTime;
+        if (gender === 'aoede') {
+            if (btnAoede) {
+                btnAoede.style.background = '#ffffff';
+                btnAoede.style.color = '#064e2b';
+                btnAoede.style.borderColor = '#ffffff';
+                btnAoede.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
             }
-            realAudio.playbackRate = currentSpeechRate;
+            if (btnPuck) {
+                btnPuck.style.background = 'rgba(255,255,255,0.14)';
+                btnPuck.style.color = '#ffffff';
+                btnPuck.style.borderColor = 'rgba(255,255,255,0.3)';
+                btnPuck.style.boxShadow = 'none';
+            }
+        } else {
+            if (btnPuck) {
+                btnPuck.style.background = '#ffffff';
+                btnPuck.style.color = '#064e2b';
+                btnPuck.style.borderColor = '#ffffff';
+                btnPuck.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+            }
+            if (btnAoede) {
+                btnAoede.style.background = 'rgba(255,255,255,0.14)';
+                btnAoede.style.color = '#ffffff';
+                btnAoede.style.borderColor = 'rgba(255,255,255,0.3)';
+                btnAoede.style.boxShadow = 'none';
+            }
+        }
+
+        audio.src = voiceFiles[gender];
+        audio.load();
+
+        audio.onloadedmetadata = () => {
+            if (curTime < audio.duration) {
+                audio.currentTime = curTime;
+            }
+            audio.playbackRate = currentSpeed;
+            updateDurationDisplay();
             if (wasPlaying) {
-                realAudio.play().catch(e => console.warn(e));
-            }
-            const timerEl = document.getElementById('audio-timer');
-            if (timerEl) {
-                timerEl.innerText = formatTime(realAudio.currentTime) + ' / ' + formatTime(realAudio.duration);
+                audio.play().catch(e => console.warn(e));
             }
         };
 
-        showToast('🎙 Đã chuyển sang: ' + (voiceLabels[voiceKey] || voiceKey));
-    }
-
-    function onVoiceChange() {
-        const vSelect = document.getElementById('voice-select');
-        if (vSelect) changeVoice(vSelect.value);
-    }
-
-    function seekAudioProgress(event) {
-        if (!realAudio || !realAudio.duration) return;
-        const rect = event.currentTarget.getBoundingClientRect();
-        const clickX = event.clientX - rect.left;
-        const pct = Math.max(0, Math.min(1, clickX / rect.width));
-        realAudio.currentTime = pct * realAudio.duration;
-        if (realAudio.paused) {
-            realAudio.play();
+        if (typeof showToast === 'function') {
+            showToast('🎙 Đã chuyển: ' + voiceLabels[gender]);
         }
-        showToast('Đã tua đến ' + Math.round(pct * 100) + '% bài đọc');
     }
 
-    function toggleAudioSpeed() {
-        const rates = [1.0, 1.25, 1.5, 0.8];
-        const nextRateIdx = (rates.indexOf(currentSpeechRate) + 1) % rates.length;
-        currentSpeechRate = rates[nextRateIdx];
-        document.getElementById('speed-btn').innerText = currentSpeechRate + 'x';
-        if (realAudio) {
-            realAudio.playbackRate = currentSpeechRate;
+    function seekAudio(val) {
+        if (!audio || isNaN(audio.duration) || audio.duration <= 0) return;
+        audio.currentTime = (val / 100) * audio.duration;
+        if (currentTimeSpan) currentTimeSpan.textContent = formatAudioTime(audio.currentTime);
+    }
+
+    function setSpeed(rate, btn) {
+        currentSpeed = rate;
+        if (audio) audio.playbackRate = rate;
+        document.querySelectorAll('.speed-btn').forEach(b => {
+            b.style.background = 'rgba(255,255,255,0.15)';
+            b.style.color = '#ffffff';
+            b.style.fontWeight = '600';
+        });
+        if (btn) {
+            btn.style.background = '#ffd700';
+            btn.style.color = '#064e2b';
+            btn.style.fontWeight = '700';
         }
-        showToast('Tốc độ đọc: ' + currentSpeechRate + 'x');
-    }
-
-    // Reaction click
-    function addReaction(btn, emoji) {
-        const countSpan = btn.querySelector('.count');
-        let count = parseInt(countSpan.innerText.replace(',', '')) || 0;
-        count += 1;
-        countSpan.innerText = count.toLocaleString();
-        btn.style.transform = 'scale(1.2)';
-        setTimeout(() => { btn.style.transform = 'scale(1)'; }, 200);
-        showToast('Cảm ơn bạn đã gửi ' + emoji + ' tới bài viết!');
+        if (typeof showToast === 'function') {
+            showToast('Tốc độ đọc: ' + rate + 'x');
+        }
     }
 
     </script>
