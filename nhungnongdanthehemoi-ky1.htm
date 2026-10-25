@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Những nông dân thế hệ mới - Kỳ 1: Chuyện những người trở về... | Ký sự Chuyên đề</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a5c36;
+            --primary-dark: #063c22;
+            --primary-light: #e8f5e9;
+            --accent-gold: #c89326;
+            --gold-light: #fef7ec;
+            --accent-brown: #4a3525;
+            --text-main: #24292f;
+            --text-heading: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --content-width: 840px;
+            --overflow-width: 1080px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 19px;
+            line-height: 1.85;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Reading Progress */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            background: linear-gradient(90deg, #0a5c36, #22c55e, #c89326);
+            z-index: 10000;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Header */
+        .site-header {
+            background: #ffffff;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .header-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-text {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.8px;
+            text-transform: uppercase;
+        }
+        .logo-tag {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 600;
+            border-left: 2px solid #cbd5e1;
+            padding-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-nav a {
+            color: #334155;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+        .header-nav a:hover, .header-nav a.active {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+        .header-meta {
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        /* Hero Banner */
+        .hero-banner-wrap {
+            max-width: var(--overflow-width);
+            margin: 25px auto 10px auto;
+            padding: 0 15px;
+        }
+        .hero-banner-inner {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.18);
+            background: #0f172a;
+        }
+        .hero-banner-inner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .hero-banner-inner:hover img {
+            transform: scale(1.015);
+        }
+
+        /* Main Article Wrap */
+        .article-wrap {
+            max-width: var(--content-width);
+            margin: 0 auto 60px;
+            background: #ffffff;
+            padding: 45px 55px;
+            border-radius: 16px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        .article-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background: var(--primary-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1.article-title {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 38px;
+            font-weight: 900;
+            line-height: 1.32;
+            color: var(--text-heading);
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .article-meta strong {
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+        .meta-tag {
+            background: #f1f5f9;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        /* Sapo */
+        .article-sapo {
+            font-family: "Lora", Georgia, serif;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.68;
+            color: #1e293b;
+            margin-bottom: 32px;
+            background: #f8fafc;
+            border-left: 5px solid var(--primary);
+            padding: 22px 26px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        /* Modern Audio Player Widget */
+        .audio-player-card {
+            background: linear-gradient(135deg, #063c22, #0a5c36);
+            color: #ffffff;
+            border-radius: 14px;
+            padding: 22px 26px;
+            margin: 32px 0 38px 0;
+            box-shadow: 0 10px 30px rgba(10, 92, 54, 0.25);
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+        .audio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.18);
+            padding-bottom: 12px;
+        }
+        .audio-title-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .audio-icon-pulse {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .audio-title-text {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .audio-badge {
+            font-size: 12px;
+            background: rgba(255, 215, 0, 0.25);
+            color: #ffd700;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+        .voice-switcher {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+        .voice-btn {
+            padding: 7px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.14);
+            color: #ffffff;
+        }
+        .voice-btn.active {
+            background: #ffffff;
+            color: var(--primary-dark);
+            border-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .play-pause-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: var(--primary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 900;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            flex-shrink: 0;
+            transition: transform 0.15s ease;
+        }
+        .play-pause-btn:hover {
+            transform: scale(1.06);
+        }
+        .play-pause-btn:active {
+            transform: scale(0.96);
+        }
+        .progress-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .audio-progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            accent-color: #ffd700;
+        }
+        .time-box {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        .speed-box {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .speed-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .speed-btn.active {
+            background: #ffd700;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        /* Infographic Comparison Card */
+        .infographic-box {
+            background: #f1f8f4;
+            border: 1px solid #cce5d6;
+            border-radius: 14px;
+            padding: 26px 28px;
+            margin: 36px 0;
+        }
+        .infographic-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        .compare-col {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 18px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--border-color);
+        }
+        .compare-col.old-way {
+            border-top-color: #94a3b8;
+        }
+        .compare-col.new-way {
+            border-top-color: var(--primary);
+        }
+        .compare-header {
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .old-way .compare-header { color: #64748b; }
+        .new-way .compare-header { color: var(--primary); }
+        .compare-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14.5px;
+            line-height: 1.55;
+            color: #334155;
+        }
+        .compare-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .icon-check { color: #16a34a; font-weight: 800; }
+        .icon-cross { color: #dc2626; font-weight: 800; }
+
+        /* Content Headings & Typography */
+        .content-body h2 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin: 45px 0 20px 0;
+            line-height: 1.4;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eef2f6;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .content-body h2::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 26px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        .content-body h3 {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 30px 0 15px 0;
+        }
+        .content-body p {
+            margin-bottom: 22px;
+            text-align: justify;
+        }
+        .content-body strong {
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .content-body em {
+            font-style: italic;
+            color: #334155;
+        }
+
+        /* Highlights & Quotes */
+        .quote-box {
+            background: #fffbf0;
+            border-left: 5px solid var(--accent-gold);
+            padding: 24px 28px;
+            margin: 35px 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(200, 147, 38, 0.08);
+        }
+        .quote-text {
+            font-family: "Lora", Georgia, serif;
+            font-size: 21px;
+            font-style: italic;
+            line-height: 1.6;
+            color: #2c2518;
+            margin-bottom: 12px;
+        }
+        .quote-author {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Image Display & Figures */
+        .media-figure {
+            margin: 35px 0;
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+            border: 1px solid var(--border-color);
+        }
+        .media-figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .media-caption {
+            padding: 14px 20px;
+            font-size: 14.5px;
+            color: #475569;
+            background: #f8fafc;
+            border-top: 1px solid #edf2f7;
+            font-style: italic;
+            line-height: 1.55;
+            text-align: center;
+        }
+
+        /* Double / Grid Photos */
+        .media-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 35px 0;
+        }
+        .media-grid-2 .media-figure {
+            margin: 0;
+        }
+
+        /* Timeline & Milestone Cards */
+        .timeline-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 26px 30px;
+            margin: 35px 0;
+        }
+        .timeline-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .timeline-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .timeline-list li {
+            font-size: 15.5px;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        .timeline-badge {
+            background: var(--primary);
+            color: #fff;
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* Author signature */
+        .article-author-box {
+            margin-top: 45px;
+            padding: 22px 28px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            font-size: 16px;
+            color: #334155;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14.5px;
+            border-top: 4px solid var(--primary);
+        }
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .article-wrap { padding: 25px 20px; }
+            h1.article-title { font-size: 28px; }
+            .article-sapo { font-size: 18px; padding: 16px 18px; }
+            .content-body h2 { font-size: 22px; }
+            body { font-size: 17.5px; }
+            .header-inner { flex-direction: column; align-items: flex-start; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .media-grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress-bar"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-box">
+                <span class="logo-text">KÝ SỰ CHUYÊN ĐỀ</span>
+                <span class="logo-tag">Tư Liệu Sáng Tạo & Lập Nghiệp</span>
+            </a>
+            <nav class="header-nav">
+                <a href="nhungnongdanthehemoi-ky1.htm" class="active">★ Nông Dân Thế Hệ Mới (Kỳ 1)</a>
+                <a href="dauandongchivihaithanh.htm">Hồ sơ Vi Hải Thành</a>
+            </nav>
+            <div class="header-meta">Kỳ sự Miền Tây • Lưu trữ Tư liệu</div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner-wrap">
+        <div class="hero-banner-inner">
+            <img src="images_nongdan/img_00_cover-ky1_1_.jpg" alt="Những nông dân thế hệ mới - Kỳ 1: Chuyện những người trở về">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="article-wrap">
+        <div class="article-category">
+            <span>★</span> KÝ SỰ CHUYÊN ĐỀ: NÔNG DÂN THẾ HỆ MỚI
+        </div>
+
+        <h1 class="article-title">Những nông dân thế hệ mới - Kỳ 1: Chuyện những người trở về...</h1>
+
+        <div class="article-meta">
+            <span>Tác giả: <strong>Thanh Phúc - Khánh Ly</strong></span>
+            <span>•</span>
+            <span>Trình bày: <strong>Hồng Toại</strong></span>
+            <span>•</span>
+            <span class="meta-tag">Hồ Sơ Lập Nghiệp Miền Tây</span>
+        </div>
+
+        <!-- Sapo -->
+        <div class="article-sapo">
+            Có người rời công việc ổn định sau 15 năm gắn bó, có người trở về sau thời gian làm việc ở nước ngoài, có người từ bỏ mức thu nhập nhiều người mơ ước để chọn một hướng đi tưởng như ngược chiều: <strong>Về quê lập nghiệp</strong>. Đó không phải là sự chán nản với phố thị hay thiếu cơ hội việc làm, mà là lựa chọn sau khi họ nhận ra những giá trị sẵn có ở quê nhà chưa được khai thác đúng mức, chưa được nhìn nhận dưới góc độ kinh tế.
+        </div>
+
+        <!-- Audio Player Widget -->
+        <div class="audio-player-card">
+            <div class="audio-header">
+                <div class="audio-title-box">
+                    <div class="audio-icon-pulse">🎙️</div>
+                    <div class="audio-title-text">Nghe toàn bộ bài viết qua giọng đọc AI</div>
+                </div>
+                <div class="audio-badge">Google Gemini Flash 3.0</div>
+            </div>
+
+            <!-- Voice Selection Switcher -->
+            <div class="voice-switcher">
+                <span style="font-size: 13.5px; color: #cbd5e1; font-weight: 500;">Chọn giọng đọc:</span>
+                <button class="voice-btn active" id="btn-voice-aoede" onclick="switchVoice('aoede')">
+                    <span>👩</span> Nữ Truyền Cảm (Aoede AI)
+                </button>
+                <button class="voice-btn" id="btn-voice-puck" onclick="switchVoice('puck')">
+                    <span>👨</span> Nam Trầm Ấm (Puck AI)
+                </button>
+            </div>
+
+            <!-- Audio Player Controls -->
+            <div class="audio-controls">
+                <button id="play-pause-btn" class="play-pause-btn" onclick="togglePlay()" title="Phát bài đọc">▶</button>
+                <div class="progress-box">
+                    <input type="range" id="audio-progress" class="audio-progress-bar" value="0" min="0" max="100" oninput="seekAudio(this.value)">
+                    <div class="time-box">
+                        <span id="current-time">00:00</span>
+                        <span id="duration-time">--:--</span>
+                    </div>
+                </div>
+                <div class="speed-box">
+                    <button class="speed-btn" onclick="setSpeed(0.85, this)">0.85x</button>
+                    <button class="speed-btn active" onclick="setSpeed(1.0, this)">1.0x</button>
+                    <button class="speed-btn" onclick="setSpeed(1.25, this)">1.25x</button>
+                </div>
+            </div>
+
+            <!-- Direct Audio Element -->
+            <audio id="main-audio" preload="metadata" src="nongdan_voice_gemini_aoede.mp3"></audio>
+        </div>
+
+        <!-- Interactive Infographic Box -->
+        <div class="infographic-box">
+            <div class="infographic-title">
+                <span>📊</span> TƯ DUY NÔNG DÂN THẾ HỆ MỚI: BƯỚC CHUYỂN DỊCH GIÁ TRỊ
+            </div>
+            <div class="comparison-grid">
+                <div class="compare-col old-way">
+                    <div class="compare-header">Lối mòn cũ (Ly hương & Thuần nông)</div>
+                    <ul class="compare-list">
+                        <li><span class="icon-cross">✕</span> Bám trụ biên chế hoặc đi làm thuê xa xứ.</li>
+                        <li><span class="icon-cross">✕</span> Sản xuất manh mún, phụ thuộc hoàn toàn thương lái.</li>
+                        <li><span class="icon-cross">✕</span> Nông sản thô, thiếu chế biến và nhận diện thương hiệu.</li>
+                        <li><span class="icon-cross">✕</span> Văn hóa bản địa chỉ để ngắm, mai một dần theo thời gian.</li>
+                    </ul>
+                </div>
+                <div class="compare-col new-way">
+                    <div class="compare-header">Tư duy mới (Trí thức & Khởi nghiệp)</div>
+                    <ul class="compare-list">
+                        <li><span class="icon-check">✓</span> Mang chuyên môn sâu (Lâm nghiệp, Y tế, F&B) về làm chủ sinh kế.</li>
+                        <li><span class="icon-check">✓</span> Nông nghiệp tuần hoàn, an toàn sinh học và đóng gói hút chân không.</li>
+                        <li><span class="icon-check">✓</span> Ứng dụng mạng xã hội, bán trực tiếp từ trang trại đến bàn ăn.</li>
+                        <li><span class="icon-check">✓</span> Biến bản sắc dân tộc thành sản phẩm du lịch trải nghiệm cao cấp.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Body -->
+        <div class="content-body">
+            
+            <!-- Phần 1 -->
+            <h2>1. Cuộc "bỏ phố về rừng" của chàng kỹ sư Lâm nghiệp và nữ quản lý Y tế</h2>
+            
+            <p>
+                Từ trung tâm xã Nghĩa Hành, con đường vào trang trại của vợ chồng <strong>anh Nguyễn Viết Việt - chị Nguyễn Thị Nhung</strong> còn khoảng 20 km đường đất lổn nhổn đá, mù bụi. Qua khỏi khu dân cư, trang trại nằm lọt giữa núi rừng với chuồng nuôi, khu sản xuất và căn nhà tạm.
+            </p>
+            <p>
+                Ở đây, một ngày của cặp vợ chồng trẻ Việt - Nhung bắt đầu từ lúc trời còn chưa sáng và kết thúc khi những việc cuối cùng trong trang trại đã xong. Những video Nhung đưa lên mạng xã hội về cuộc sống “bỏ phố về làng” có thể đem lại cho người xem cảm giác bình yên, nhưng rất khó hình dung người đàn ông đang lúi húi giữa chuồng trại kia từng có 15 năm làm việc ổn định ở thành phố.
+            </p>
+
+            <div class="media-figure">
+                <img src="images_nongdan/img_02_v0.png" alt="Vợ chồng chị Nhung - anh Việt chia sẻ chuyện bỏ phố về làng">
+                <div class="media-caption">
+                    Vợ chồng chị Nhung - anh Việt chia sẻ chuyện "bỏ phố về làng" phát triển kinh tế trang trại giữa đại ngàn Nghĩa Hành.
+                </div>
+            </div>
+
+            <p>
+                Năm 2006, sau khi tốt nghiệp Đại học Nông Lâm với tấm bằng giỏi, anh Việt được tuyển dụng theo diện thu hút về làm việc tại Chi cục Lâm nghiệp tỉnh. Công việc đúng chuyên môn, ổn định; gia đình có nhà ở thành phố, con cái học hành nền nếp. Vậy mà năm 2020, Việt xin nghỉ việc. Anh không bị đẩy ra khỏi công việc, cũng không phải về quê vì không còn lựa chọn mà để hiện thực hoá ước mơ.
+            </p>
+            <p>
+                Bởi, từ những năm còn đi làm, anh đã có thời gian gắn với chăn nuôi, từng làm trang trại bò và luôn ấp ủ ý định có một mô hình sản xuất của riêng mình. Khi ý định ấy trở thành quyết định, điều anh phải bỏ lại không chỉ là một công việc có lương đều đặn, mà là cả một đời sống gia đình đã được gây dựng ở thành phố.
+            </p>
+
+            <div class="media-figure">
+                <img src="images_nongdan/img_03_v13.jpg" alt="Anh Nguyễn Viết Việt làm việc tại trang trại">
+                <div class="media-caption">
+                    Gần 15 năm gắn bó với công việc nhà nước, anh Việt quyết định nghỉ ngang, rời cuộc sống thành phố để về quê làm trang trại.
+                </div>
+            </div>
+
+            <p>
+                Năm 2022, anh Việt về quê trước. Chị Nhung vẫn làm việc ở thành phố. Một năm sau, mỗi lần về quê, thấy Việt da sạm, bàn tay chai, gương mặt đen, râu tóc mọc dài, Nhung trở lại thành phố, có một đêm gần như thức trắng để cân nhắc. 
+            </p>
+            <p>
+                Chị tốt nghiệp ngành y, từng làm điều dưỡng trưởng và giữ vị trí quản lý tại một số bệnh viện, doanh nghiệp liên quan đến chăm sóc sức khỏe, thu nhập 20-25 triệu đồng mỗi tháng. Một công việc như vậy không dễ từ bỏ. Nhưng cuối cùng, chị xin nghỉ việc, đồng hành với chồng. Những khoản tiền tích lũy, tài sản ở phố cùng những khoản vay mượn được dồn vào trang trại.
+            </p>
+
+            <div class="media-grid-2">
+                <div class="media-figure">
+                    <img src="images_nongdan/img_04_v6.png" alt="Chị Nhung từ bỏ công việc y tế">
+                    <div class="media-caption">
+                        Đang giữ vị trí quản lý y tế với thu nhập cao, chị Nhung cũng bỏ việc cùng chồng về quê theo đuổi làm nông nghiệp sạch.
+                    </div>
+                </div>
+                <div class="media-figure">
+                    <img src="images_nongdan/img_05_v11.jpg" alt="Chị Nhung làm nông dân thực thụ">
+                    <div class="media-caption">
+                        Thay vì ngồi phòng điều hoà, máy tính, chị Nhung trở thành một nông dân thực thụ.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thử thách và bài toán thị trường -->
+            <h3>Đứng dậy từ thất bại: Lời giải cho bài toán thị trường</h3>
+            <p>
+                Những ngày đầu, vợ chồng anh Việt mua gom đất của 11 hộ, khoảng 2,5 ha, rồi phát quang, cải tạo, dựng chuồng trại. Đất phải thuê máy để xử lý, cây trồng, vật nuôi phải tự thử nghiệm. Có những việc tưởng chỉ cần bỏ vốn là xong, nhưng đến khi làm mới thấy từng khâu đều có thể phát sinh vấn đề. Con giống mắc bệnh, vật nuôi chết, thời tiết thay đổi, kế hoạch sản xuất phải tính lại.
+            </p>
+            <p>
+                Trước khi nghĩ đến chuyện làm ra một sản phẩm có giá trị, họ phải học cách đứng vững trước những lần đối mặt với thất bại: Dịch Covid-19 bùng phát, sản xuất ra không tiêu thụ được; giá giảm, dịch tả lợn châu Phi ảnh hưởng đến chăn nuôi; các đợt lũ liên tiếp cuốn trôi vật nuôi, làm hư hỏng chuồng trại...
+            </p>
+            <p>
+                Nhưng cũng từ những thất bại ấy, họ buộc phải tìm lời giải cho câu hỏi: <em>Đã bỏ phố về quê, làm thế nào để những gì đang có trở thành sinh kế bền vững?</em>
+            </p>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    "Khó khăn nhất trong sản xuất nông nghiệp là thị trường. Làm sao để sản phẩm trồng trọt, chăn nuôi bán ra được thị trường mới là quan trọng. Khi không trông chờ thương lái mà chủ động làm chủ chất lượng và kênh truyền thông, khách hàng sẽ tìm đến tận trang trại."
+                </div>
+                <div class="quote-author">— Anh Nguyễn Viết Việt</div>
+            </div>
+
+            <p>
+                Có đất, có chuồng trại, có vật nuôi, nhưng làm ra sản phẩm chưa đồng nghĩa với việc tìm được người mua. Khi chưa có lượng khách hàng ổn định, nếu chỉ trông chờ thương lái, vợ chồng anh khó chủ động trong sản xuất.
+            </p>
+
+            <div class="media-figure">
+                <img src="images_nongdan/img_10_v17.jpg" alt="Anh Việt tính toán quy trình chăm sóc">
+                <div class="media-caption">
+                    Từ lựa chọn giống, quy trình chăm sóc, phòng trừ dịch bệnh đến thời điểm xuống giống, anh Việt đều tính toán kỹ lưỡng, chủ động đón nhu cầu thị trường.
+                </div>
+            </div>
+
+            <p>
+                Với trang trại cách khu dân cư gần 20 km đường rừng, việc đưa sản phẩm đến tay người mua vốn đã không dễ; làm sao để khách biết đến nơi sản xuất và tin tưởng chất lượng lại càng khó hơn. Để giải bài toán này, <strong>Nguyễn Thị Nhung đầu tư máy hút chân không, thuê người hỗ trợ sơ chế, đóng gói, dán nhãn</strong> và tìm phương án vận chuyển phù hợp với yêu cầu của khách.
+            </p>
+            <p>
+                Chị còn dùng điện thoại ghi lại công việc thường ngày ở trang trại, từ chăm sóc vật nuôi, thu hoạch đến sơ chế sản phẩm và cuộc sống của gia đình giữa núi rừng. Những hình ảnh chân thực dần thu hút người xem; có người hỏi mua, có người đặt hàng sau khi biết cách gia đình chăm sóc vật nuôi và chuẩn bị sản phẩm.
+            </p>
+            <p>
+                Có thời điểm, tài khoản của Nhung thu hút hơn 1.000 người theo dõi. Chiếc điện thoại trở thành cầu nối để khách hàng biết đến trang trại, còn vợ chồng chị có thêm một cách tìm kiếm đầu ra ngoài những mối quan hệ quen biết.
+            </p>
+
+            <div class="media-figure">
+                <img src="images_nongdan/img_12_trang-trai-cua-vo-chong-nguyen-viet-viet-nguyen-thi-nhung.-anh-kl.png" alt="Toàn cảnh trang trại giữa đại ngàn">
+                <div class="media-caption">
+                    Toàn cảnh trang trại nông nghiệp tuần hoàn của vợ chồng Nguyễn Viết Việt – Nguyễn Thị Nhung giữa núi rừng Nghĩa Hành.
+                </div>
+            </div>
+
+            <!-- Phần 2 -->
+            <h2>2. Sầm Ngọc Sướng và "Nhà Sam": Thổi hồn cốt văn hóa bản địa thành sinh kế</h2>
+            
+            <p>
+                Cũng “bỏ phố về làng”, anh <strong>Sầm Ngọc Sướng</strong> lại mang theo một hành trang rất khác, đó là những năm tháng làm việc trong ngành dịch vụ và cách nhìn của một người từng trải qua môi trường kinh doanh hiện đại.
+            </p>
+            <p>
+                Sinh năm 1996, trong một gia đình làm nông ở xã Mường Ham, Sướng lớn lên giữa núi rừng miền Tây, nơi điều kiện tiếp cận công nghệ, ngoại ngữ khi ấy còn nhiều hạn chế. Từ nhỏ, anh đã thích công nghệ thông tin nhưng không có điều kiện theo đuổi. Bù lại, khả năng học ngoại ngữ mở ra cho Sướng một hướng đi khác. 
+            </p>
+            <p>
+                Tốt nghiệp đại học năm 2018, một năm sau, anh sang <strong>Singapore làm việc trong ngành nhà hàng khách sạn</strong>. Từ vị trí nhân viên phục vụ, Sướng từng bước đảm nhận những công việc quản lý, được đào tạo trong môi trường kinh doanh chuyên nghiệp. Sau khoảng 4 năm ở Singapore, trở về Việt Nam, anh tiếp tục làm việc tại Thành phố Hồ Chí Minh và từng giữ vị trí <strong>Tổng Giám đốc, quản lý gần 100 nhân viên</strong> trong một chuỗi nhà hàng cao cấp.
+            </p>
+
+            <div class="media-figure">
+                <img src="images_nongdan/img_14_s12.jpg" alt="Chân dung Sầm Ngọc Sướng" style="max-width: 520px; margin: 0 auto; display: block; border-radius: 10px;">
+                <div class="media-caption">
+                    Chân dung Sầm Ngọc Sướng – Người sáng lập Nhà Sam (Home of Local Cultures).
+                </div>
+            </div>
+
+            <p>
+                Đó là một con đường nghề nghiệp có thu nhập tốt, có vị trí và những cơ hội phát triển mà nhiều người trẻ tìm kiếm. Những năm làm việc ở Singapore và Thành phố Hồ Chí Minh cho Sướng nhiều kinh nghiệm quản lý. Anh học được cách vận hành bộ máy nhân sự, xây dựng quy trình phục vụ và tạo ra trải nghiệm cho khách hàng. Trong môi trường ấy, một món ăn không chỉ được đánh giá bằng hương vị mà còn bởi nguyên liệu, cách giới thiệu, không gian thưởng thức và câu chuyện phía sau nó.
+            </p>
+            <p>
+                Sướng từng làm việc với những mô hình nhà hàng thuộc phân khúc cao cấp, nơi từng khâu phục vụ đều được tính toán kỹ lưỡng. Chính những trải nghiệm ấy dần hình thành trong anh một cách nhìn khác về giá trị của ẩm thực và văn hóa. Điều đáng nói là khi đã có vị trí trong nghề, anh lại bắt đầu nghĩ đến một nơi tưởng như cách rất xa môi trường kinh doanh mình đang theo đuổi: <strong>Quê nhà</strong>.
+            </p>
+
+            <div class="media-figure">
+                <img src="images_nongdan/img_17_s7.jpg" alt="Sầm Ngọc Sướng trở về quê hương">
+                <div class="media-caption">
+                    Năm 2025, sau nhiều năm làm việc xa quê, Sướng trở về, nhận ra tiềm năng chưa được khai thác từ cảnh đẹp, ẩm thực truyền thống, nghề dệt và nếp sống văn hóa của đồng bào Thái quê mình.
+                </div>
+            </div>
+
+            <h3>Khởi nghiệp từ những gì quê hương sẵn có</h3>
+            <p>
+                Năm 2025, sau nhiều năm làm việc xa quê, Sướng trở về và nhận ra những cảnh quan núi rừng, không gian bản làng, món ăn truyền thống, nghề dệt cùng nếp sinh hoạt của đồng bào Thái ở quê mình còn nhiều giá trị và tiềm năng du lịch cộng đồng chưa được khai thác.
+            </p>
+            <p>
+                Từng làm nhà hàng và quản lý dịch vụ, Sướng hiểu rằng điều thu hút khách không nhất thiết phải là những thứ được đầu tư cầu kỳ. Đôi khi, một bữa cơm với những món ăn bản địa, một tấm thổ cẩm được dệt bằng tay hay một buổi giao lưu văn nghệ bên choé rượu cần cũng có thể trở thành trải nghiệm đáng nhớ, nếu được tổ chức và giới thiệu đúng cách. Từ suy nghĩ ấy, anh bắt đầu hình dung một công việc mới, khởi đầu từ chính những gì quê mình đang có.
+            </p>
+            <p>
+                Sướng từng cân nhắc làm việc tại một cơ sở lưu trú mới ở địa phương, nhưng sau cùng, anh muốn tự xây dựng một mô hình của riêng mình. Thay vì tiếp tục con đường đã có sẵn, Sướng chọn trở về, thử vận dụng những gì đã học và trải nghiệm để khai thác giá trị văn hóa, ẩm thực của quê hương. Với anh, đó không chỉ là một hướng lập nghiệp mới cho bản thân, mà còn là cơ hội để những giá trị vốn quen thuộc với người dân bản địa được nhiều người biết đến hơn.
+            </p>
+
+            <div class="media-figure">
+                <img src="images_nongdan/img_18_s1.png" alt="Nhà Sam - Ngôi nhà của các nền văn hóa bản địa">
+                <div class="media-caption">
+                    Khi trở về, Sầm Ngọc Sướng đã sáng lập Nhà Sam - Ngôi nhà của các nền văn hóa bản địa, vận hành theo hệ sinh thái kết nối, trong đó, bà con giữ vai trò chủ thể, khai thác bản sắc văn hóa Thái cùng tài nguyên bản địa.
+                </div>
+            </div>
+
+            <p>
+                Quyết định ấy không được gia đình đón nhận ngay. Với những người cả đời gắn bó với bản làng, việc một người trẻ học hành đàng hoàng, từng làm việc ở nước ngoài, nay từ bỏ công việc quản lý ở thành phố để trở về làm dịch vụ từ ẩm thực, văn hóa địa phương là điều không dễ hình dung. Sướng phải đối diện với sự can ngăn của người thân và cả những ánh nhìn hoài nghi từ xung quanh.
+            </p>
+            <p>
+                Có lúc bất đồng với bố mẹ, anh phải nhờ người thân đứng ra chia sẻ, giúp hai thế hệ hiểu nhau hơn. Sướng nhận ra rằng, để được gia đình tin tưởng, chỉ giải thích về những dự định của mình là chưa đủ mà phải kiên trì bắt tay vào làm, để chính công việc và những kết quả bước đầu trở thành câu trả lời thuyết phục nhất.
+            </p>
+
+            <div class="media-grid-2">
+                <div class="media-figure">
+                    <img src="images_nongdan/img_19_s2.png" alt="Bà con tham gia dệt thổ cẩm">
+                    <div class="media-caption">
+                        Bà con người Thái tham gia dệt thổ cẩm truyền thống, tạo thành sản phẩm trải nghiệm văn hóa độc đáo.
+                    </div>
+                </div>
+                <div class="media-figure">
+                    <img src="images_nongdan/img_20_s4.png" alt="Không gian sinh hoạt tại Nhà Sam">
+                    <div class="media-caption">
+                        Ẩm thực và nếp sinh hoạt văn hóa dân tộc Thái được tổ chức chuyên nghiệp, tinh tế.
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Thế nhưng, có một khoảng cách khá lớn giữa kinh nghiệm quản lý gần 100 nhân viên ở một chuỗi nhà hàng với việc trở về bản làng. Ở thành phố, Sướng quen với quy trình, nhân sự, khách hàng, doanh thu; còn về quê, anh phải bắt đầu từ những thứ chưa được thị trường gọi tên.
+            </p>
+            <p>
+                Không có sẵn thương hiệu, không có sẵn dòng khách, càng không có sẵn một đội ngũ cùng chia sẻ cách làm. Những người biết dệt thổ cẩm, chế biến món ăn truyền thống hay biểu diễn văn nghệ ở bản vốn làm những công việc ấy như một phần đời sống, chứ chưa quen nghĩ đó là dịch vụ dành cho du khách. Ngay trong gia đình, việc tiếp xúc, trò chuyện với những người khách từ nơi khác đến cũng là trải nghiệm mới.
+            </p>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    "Muốn làm được việc, trước hết phải khiến người thân hiểu mình đang làm gì; muốn người dân cùng tham gia, phải để họ thấy những kỹ năng quen thuộc của mình có thể tạo ra giá trị. Do đó, mình phải tự gây dựng niềm tin, từng việc, từng khâu."
+                </div>
+                <div class="quote-author">— Sầm Ngọc Sướng, Sáng lập Nhà Sam - Home of Local Cultures</div>
+            </div>
+
+            <p>
+                Điều khiến Sướng suy nghĩ nhiều nhất không chỉ là làm sao có khách tìm đến, mà còn là <strong>liệu những giá trị văn hóa ấy có đủ sức giữ người trẻ ở lại quê hương</strong>. Anh lo rằng nếu nghề dệt thổ cẩm chỉ còn được nhắc đến như một truyền thống cần gìn giữ, nhưng người làm nghề không có thu nhập, thì lớp trẻ sẽ ngày càng ít mặn mà. Với ẩm thực, âm nhạc hay tiếng nói của dân tộc Thái cũng vậy, những giá trị ấy chỉ thực sự có sức sống khi tiếp tục hiện diện trong đời sống cộng đồng.
+            </p>
+            <p>
+                Từ kinh nghiệm kinh doanh dịch vụ, Sướng nhìn thấy khả năng kết nối giữa việc gìn giữ văn hóa và tạo sinh kế, dù con đường để biến ý tưởng thành công việc ổn định còn không ít thử thách.
+            </p>
+
+            <div class="media-figure">
+                <img src="images_nongdan/img_22_1792742673041_6877584659116897705_6877584659116897705_4645777a002c160d71f788300478e5b8.jpg" alt="Sinh kế bền vững cho bà con bản địa">
+                <div class="media-caption">
+                    Giá trị cốt lõi mà Sầm Ngọc Sướng theo đuổi là sinh kế bền vững. Điều này đồng nghĩa với việc bà con có khả năng tự vận hành và tạo ra thu nhập ổn định lâu dài.
+                </div>
+            </div>
+
+            <!-- Phần 3 -->
+            <h2>3. Thông điệp kết nối: Bình minh của thế hệ nông dân tri thức</h2>
+            
+            <p>
+                Hai cuộc trở về, hai điểm xuất phát rất khác nhau: Vợ chồng anh Việt - chị Nhung rời công việc ổn định để gây dựng trang trại, còn Sướng rời môi trường quản lý hiện đại để bắt đầu từ văn hóa bản làng. Họ không có sẵn câu trả lời khi đặt chân về quê.
+            </p>
+            <p>
+                Nhưng chính quá trình làm lại từ đầu khiến họ nhận ra rằng, những gì quê hương đang có không chỉ là ký ức hay nơi chốn để trở về, mà còn có thể là <strong>điểm khởi đầu cho một con đường lập nghiệp mới</strong>.
+            </p>
+            <p>
+                Đó chính là diện mạo của những <em>"Nông dân thế hệ mới"</em>: Họ không làm nông nghiệp bằng sự cam chịu hay manh mún cũ kỹ, mà mang theo tri thức khoa học, công nghệ số, tư duy thị trường và tình yêu văn hóa nguồn cội để biến tài nguyên quê hương thành những chuỗi giá trị bền vững, lan tỏa sức sống mới trên khắp các rẻo cao miền Tây.
+            </p>
+
+            <!-- Timeline Summary Card -->
+            <div class="timeline-card">
+                <div class="timeline-title">
+                    <span>📌</span> HÀNH TRÌNH TÓM LƯỢC: CỘT MỐC CỦA NHỮNG NGƯỜI TRỞ VỀ
+                </div>
+                <ul class="timeline-list">
+                    <li>
+                        <span class="timeline-badge">Năm 2006</span>
+                        <span>Nguyễn Viết Việt tốt nghiệp ĐH Nông Lâm loại Giỏi, tuyển thu hút về Chi cục Lâm nghiệp tỉnh; 15 năm cống hiến ổn định.</span>
+                    </li>
+                    <li>
+                        <span class="timeline-badge">Năm 2020 – 2023</span>
+                        <span>Anh Việt nghỉ việc nhà nước, chị Nhung từ bỏ vị trí quản lý y tế về Nghĩa Hành gom 2,5 ha đất lập trang trại tuần hoàn.</span>
+                    </li>
+                    <li>
+                        <span class="timeline-badge">Năm 2018 – 2024</span>
+                        <span>Sầm Ngọc Sướng tốt nghiệp ĐH, tu nghiệp 4 năm tại Singapore, làm Tổng giám đốc chuỗi nhà hàng cao cấp tại TP.HCM.</span>
+                    </li>
+                    <li>
+                        <span class="timeline-badge">Năm 2025</span>
+                        <span>Sầm Ngọc Sướng trở về bản làng miền Tây sáng lập Nhà Sam, biến văn hóa Thái thành mô hình du lịch trải nghiệm cộng đồng.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="article-author-box">
+                <p><strong>Nội dung:</strong> Thanh Phúc - Khánh Ly</p>
+                <p><strong>Trình bày:</strong> Hồng Toại</p>
+                <p><strong>Chuyên mục:</strong> Ký sự Kinh tế - Hồ sơ Lập nghiệp Vùng cao (Kỳ 1)</p>
+                <p style="margin-top: 6px; font-size: 13.5px; color: #64748b;"><em>(Còn tiếp Kỳ 2: Những mô hình đột phá và chuỗi liên kết giá trị mới)</em></p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-brand">KÝ SỰ CHUYÊN ĐỀ • HỒ SƠ LẬP NGHIỆP MIỀN TÂY</div>
+        <p>Chuyên trang bài viết tư liệu, ký sự nhân vật và mô hình kinh tế sáng tạo nông thôn.</p>
+        <p style="margin-top: 8px; font-size: 13px; color: #64748b;">Tư liệu báo chí chuyên đề phản ánh tinh thần khởi nghiệp và khát vọng vươn lên của tuổi trẻ.</p>
+    </footer>
+
+    <!-- Audio Player Script -->
+    <script>
+    const audio = document.getElementById('main-audio');
+    const playBtn = document.getElementById('play-pause-btn');
+    const progressBar = document.getElementById('audio-progress');
+    const currentTimeSpan = document.getElementById('current-time');
+    const durationTimeSpan = document.getElementById('duration-time');
+    const btnAoede = document.getElementById('btn-voice-aoede');
+    const btnPuck = document.getElementById('btn-voice-puck');
+
+    const voiceFiles = {
+        'aoede': 'nongdan_voice_gemini_aoede.mp3',
+        'puck': 'nongdan_voice_gemini_puck.mp3'
+    };
+
+    const voiceLabels = {
+        'aoede': 'Google Gemini Flash 3.0 - Nữ Truyền Cảm (Aoede AI)',
+        'puck': 'Google Gemini Flash 3.0 - Nam Trầm Ấm (Puck AI)'
+    };
+
+    let currentVoice = 'aoede';
+    let currentSpeed = 1.0;
+
+    function formatAudioTime(sec) {
+        if (isNaN(sec) || sec < 0) return '00:00';
+        const m = Math.floor(sec / 60);
+        const s = Math.floor(sec % 60);
+        return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+    }
+
+    function updateDurationDisplay() {
+        if (durationTimeSpan && audio && !isNaN(audio.duration) && audio.duration > 0) {
+            durationTimeSpan.textContent = formatAudioTime(audio.duration);
+        }
+    }
+
+    if (audio) {
+        if (!audio.getAttribute('src')) {
+            audio.src = voiceFiles[currentVoice];
+        }
+        audio.load();
+
+        audio.addEventListener('loadedmetadata', () => {
+            updateDurationDisplay();
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            if (!isNaN(audio.duration) && audio.duration > 0) {
+                const pct = (audio.currentTime / audio.duration) * 100;
+                if (progressBar) progressBar.value = pct;
+            }
+            if (currentTimeSpan) currentTimeSpan.textContent = formatAudioTime(audio.currentTime);
+            updateDurationDisplay();
+        });
+
+        audio.addEventListener('play', () => {
+            if (playBtn) playBtn.innerHTML = '⏸';
+        });
+
+        audio.addEventListener('pause', () => {
+            if (playBtn) playBtn.innerHTML = '▶';
+        });
+
+        audio.addEventListener('ended', () => {
+            if (playBtn) playBtn.innerHTML = '▶';
+            if (progressBar) progressBar.value = 0;
+            if (currentTimeSpan) currentTimeSpan.textContent = '00:00';
+        });
+    }
+
+    function togglePlay() {
+        if (!audio) return;
+        if (audio.paused) {
+            if (!audio.src || audio.src === window.location.href) {
+                audio.src = voiceFiles[currentVoice];
+                audio.load();
+            }
+            audio.play().then(() => {
+                if (playBtn) playBtn.innerHTML = '⏸';
+            }).catch(err => {
+                console.warn('Play error:', err);
+            });
+        } else {
+            audio.pause();
+            if (playBtn) playBtn.innerHTML = '▶';
+        }
+    }
+
+    function switchVoice(gender) {
+        if (!audio || !voiceFiles[gender]) return;
+        const wasPlaying = !audio.paused;
+        const curTime = audio.currentTime;
+        currentVoice = gender;
+
+        if (gender === 'aoede') {
+            if (btnAoede) {
+                btnAoede.classList.add('active');
+            }
+            if (btnPuck) {
+                btnPuck.classList.remove('active');
+            }
+        } else {
+            if (btnPuck) {
+                btnPuck.classList.add('active');
+            }
+            if (btnAoede) {
+                btnAoede.classList.remove('active');
+            }
+        }
+
+        audio.src = voiceFiles[gender];
+        audio.load();
+
+        audio.onloadedmetadata = () => {
+            if (curTime < audio.duration) {
+                audio.currentTime = curTime;
+            }
+            audio.playbackRate = currentSpeed;
+            updateDurationDisplay();
+            if (wasPlaying) {
+                audio.play().catch(e => console.warn(e));
+            }
+        };
+    }
+
+    function seekAudio(val) {
+        if (!audio || isNaN(audio.duration) || audio.duration <= 0) return;
+        audio.currentTime = (val / 100) * audio.duration;
+        if (currentTimeSpan) currentTimeSpan.textContent = formatAudioTime(audio.currentTime);
+    }
+
+    function setSpeed(rate, btn) {
+        currentSpeed = rate;
+        if (audio) audio.playbackRate = rate;
+        document.querySelectorAll('.speed-btn').forEach(b => {
+            b.classList.remove('active');
+        });
+        if (btn) {
+            btn.classList.add('active');
+        }
+    }
+
+    // Reading Progress Bar
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+    </script>
+</body>
+</html>
