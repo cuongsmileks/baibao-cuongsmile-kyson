@@ -4,402 +4,516 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Mòn Mỏi Đợi Chế Độ Giữa Rừng Sâu | Tạp Chí Ký Sự Đại Ngàn & Nghị Định 42/2026/NĐ-CP</title>
-    
+
     <!-- International Typography Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700&family=Cinzel:wght@600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* Color Schemes - Dark Forest (Default) */
-            --bg-body: #0a110f;
-            --bg-surface: #121c19;
-            --bg-card: #182622;
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --accent-gold: #d97706;
-            --accent-gold-light: #f59e0b;
-            --accent-red: #dc2626;
-            --forest-green: #059669;
-            --forest-dark: #064e3b;
-            --border-subtle: rgba(255, 255, 255, 0.14);
-            --paper-spread: #fdfbf7;
-            --paper-text: #1c1917;
-            --paper-border: #e7e5e0;
-            --shadow-elevation: 0 25px 65px rgba(0,0,0,0.65);
-            --font-size-base: 18px;
+            --bg-deep: #070d0a;
+            --bg-surface: #0e1713;
+            --bg-card: #15221c;
+            --bg-card-hover: #1c2d25;
+            --text-primary: #f1f5f3;
+            --text-secondary: #9cb1a6;
+            --text-muted: #647b70;
+            --accent-gold: #e5a93c;
+            --accent-amber: #d97706;
+            --accent-green: #22c55e;
+            --accent-red: #ef4444;
+            --border-subtle: rgba(229, 169, 60, 0.18);
+            --border-highlight: rgba(229, 169, 60, 0.45);
+            --shadow-spread: 0 30px 90px rgba(0, 0, 0, 0.75);
+            --font-serif: 'Newsreader', 'Playfair Display', Georgia, serif;
+            --font-display: 'Cinzel', serif;
+            --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            --font-size-base: 17.5px;
         }
 
         [data-theme="light"] {
-            --bg-body: #f4f6f8;
+            --bg-deep: #f4f6f4;
             --bg-surface: #ffffff;
-            --bg-card: #eef2f6;
-            --text-primary: #0f172a;
-            --text-secondary: #334155;
-            --text-muted: #64748b;
+            --bg-card: #f9fbf9;
+            --bg-card-hover: #f0f4f1;
+            --text-primary: #14221a;
+            --text-secondary: #3e5649;
+            --text-muted: #6c8477;
+            --accent-gold: #b45309;
+            --accent-amber: #b45309;
             --border-subtle: rgba(0, 0, 0, 0.12);
-            --shadow-elevation: 0 20px 45px rgba(0,0,0,0.12);
+            --border-highlight: rgba(180, 83, 9, 0.4);
+            --shadow-spread: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
         [data-theme="sepia"] {
-            --bg-body: #f4ecd8;
+            --bg-deep: #f3ede2;
             --bg-surface: #fbf7ee;
-            --bg-card: #ede4ce;
-            --text-primary: #2d261e;
-            --text-secondary: #4a4034;
-            --text-muted: #786a58;
-            --border-subtle: rgba(74, 64, 52, 0.16);
-            --shadow-elevation: 0 20px 45px rgba(74,64,52,0.15);
+            --bg-card: #f4ecdc;
+            --bg-card-hover: #ede3ce;
+            --text-primary: #2d2419;
+            --text-secondary: #584a38;
+            --text-muted: #7d6e5a;
+            --accent-gold: #a16207;
+            --accent-amber: #92400e;
+            --border-subtle: rgba(90, 60, 30, 0.15);
+            --border-highlight: rgba(161, 98, 7, 0.4);
+            --shadow-spread: 0 20px 60px rgba(70, 45, 20, 0.2);
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background: var(--bg-body);
+            background: var(--bg-deep);
             color: var(--text-primary);
-            font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--font-sans);
             font-size: var(--font-size-base);
-            line-height: 1.85;
+            line-height: 1.7;
             overflow-x: hidden;
-            transition: background 0.3s ease, color 0.3s ease;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
 
-        /* ========================================================= */
-        /* TOP APP BAR & EDITORIAL MASTHEAD                          */
-        /* ========================================================= */
+        /* ==========================================================================
+           TOP MASTHEAD BAR & SMART AUDIO DECK
+           ========================================================================== */
         .nyt-header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            height: 68px;
-            background: rgba(10, 17, 15, 0.96);
-            backdrop-filter: blur(16px);
+            min-height: 68px;
+            background: rgba(10, 17, 14, 0.96);
+            backdrop-filter: blur(18px);
             border-bottom: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 28px;
+            padding: 8px 24px;
             z-index: 1000;
             transition: all 0.3s;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
         [data-theme="light"] .nyt-header {
-            background: rgba(255, 255, 255, 0.96);
-            border-bottom: 1px solid #e2e8f0;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid rgba(0,0,0,0.12);
         }
 
         [data-theme="sepia"] .nyt-header {
-            background: rgba(244, 236, 216, 0.96);
-            border-bottom: 1px solid #dcd1ba;
+            background: rgba(247, 241, 230, 0.97);
+            border-bottom: 1px solid rgba(90,60,30,0.15);
         }
 
-        .nyt-brand {
+        .header-left {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
             text-decoration: none;
+            color: inherit;
+            flex-shrink: 0;
         }
 
-        .nyt-kicker-badge {
-            background: linear-gradient(135deg, #d97706, #b45309);
-            color: #fff;
-            font-size: 11px;
+        .nyt-badge {
+            background: linear-gradient(135deg, #c2410c, #b45309);
+            color: #ffffff;
+            font-size: 10.5px;
             font-weight: 800;
-            letter-spacing: 1.5px;
-            padding: 4px 10px;
-            border-radius: 3px;
+            letter-spacing: 1.8px;
+            padding: 5px 10px;
+            border-radius: 4px;
             text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(194, 65, 12, 0.4);
         }
 
         .nyt-masthead-title {
-            font-family: 'Cinzel', serif;
-            font-size: 21px;
+            font-family: var(--font-display);
+            font-size: 19px;
             font-weight: 800;
             letter-spacing: 2px;
-            color: var(--text-primary);
+            color: var(--accent-gold);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
         }
 
-        .header-center-meta {
-            font-size: 12.5px;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 600;
+        /* SMART AUDIO DECK (BỐ TRÍ GIỌNG ĐỌC KHOA HỌC THÔNG MINH TRÊN THANH) */
+        .header-audio-deck {
             display: flex;
             align-items: center;
             gap: 10px;
+            background: rgba(21, 34, 28, 0.92);
+            border: 1px solid var(--border-highlight);
+            border-radius: 50px;
+            padding: 4px 14px 4px 6px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            transition: all 0.3s ease;
         }
 
+        [data-theme="light"] .header-audio-deck {
+            background: #ffffff;
+            border: 1px solid rgba(180, 83, 9, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="sepia"] .header-audio-deck {
+            background: #fdfaf3;
+            border: 1px solid rgba(161, 98, 7, 0.3);
+        }
+
+        .audio-main-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #b45309, #d97706);
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 10px rgba(217, 119, 6, 0.35);
+        }
+
+        .audio-main-pill:hover {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            transform: translateY(-1px);
+        }
+
+        .audio-main-pill .play-icon {
+            font-size: 13px;
+            line-height: 1;
+        }
+
+        /* Animated Sound Equalizer Waves */
+        .live-audio-waves {
+            display: inline-flex;
+            align-items: flex-end;
+            gap: 2.5px;
+            height: 14px;
+            margin-left: 4px;
+        }
+
+        .live-audio-waves span {
+            width: 2.5px;
+            height: 4px;
+            background: #ffffff;
+            border-radius: 2px;
+            transition: height 0.2s ease;
+        }
+
+        .live-audio-waves.playing span:nth-child(1) {
+            animation: waveBounce 0.8s ease-in-out infinite alternate;
+        }
+        .live-audio-waves.playing span:nth-child(2) {
+            animation: waveBounce 0.6s ease-in-out infinite alternate 0.15s;
+        }
+        .live-audio-waves.playing span:nth-child(3) {
+            animation: waveBounce 0.9s ease-in-out infinite alternate 0.3s;
+        }
+        .live-audio-waves.playing span:nth-child(4) {
+            animation: waveBounce 0.7s ease-in-out infinite alternate 0.2s;
+        }
+
+        @keyframes waveBounce {
+            0% { height: 3px; opacity: 0.6; }
+            100% { height: 14px; opacity: 1; }
+        }
+
+        /* Dual Voice Selector Segmented Buttons */
+        .header-voice-switcher {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 24px;
+            padding: 2px;
+            gap: 2px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        [data-theme="light"] .header-voice-switcher,
+        [data-theme="sepia"] .header-voice-switcher {
+            background: rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .voice-segment-btn {
+            background: transparent;
+            color: var(--text-secondary);
+            border: none;
+            padding: 4px 10px;
+            border-radius: 18px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .voice-segment-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .voice-segment-btn.active {
+            background: rgba(229, 169, 60, 0.2);
+            color: var(--accent-gold);
+            font-weight: 700;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        }
+
+        [data-theme="light"] .voice-segment-btn.active {
+            background: #ffffff;
+            color: #b45309;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
+
+        /* Scrubber & Timeline */
+        .header-audio-scrubber {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .header-time-text {
+            font-size: 11.5px;
+            font-family: monospace;
+            color: var(--text-muted);
+            min-width: 36px;
+            text-align: center;
+        }
+
+        .header-slider {
+            -webkit-appearance: none;
+            width: 80px;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        [data-theme="light"] .header-slider,
+        [data-theme="sepia"] .header-slider {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .header-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            cursor: pointer;
+            box-shadow: 0 0 6px var(--accent-gold);
+        }
+
+        .header-restart-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 12px;
+            cursor: pointer;
+            padding: 2px 4px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .header-restart-btn:hover {
+            color: var(--accent-gold);
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* Header Right Actions */
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            flex-shrink: 0;
         }
 
-        /* View Mode Pill */
         .view-pill {
             display: flex;
-            background: rgba(0,0,0,0.35);
-            border: 1px solid var(--border-subtle);
+            align-items: center;
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 30px;
             padding: 3px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        [data-theme="light"] .view-pill,
+        [data-theme="sepia"] .view-pill {
+            background: rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .pill-btn {
             background: transparent;
+            color: var(--text-secondary);
             border: none;
-            color: var(--text-muted);
             padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 700;
+            border-radius: 24px;
+            font-size: 12.5px;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s ease;
             display: flex;
             align-items: center;
             gap: 6px;
+            transition: all 0.25s;
         }
 
         .pill-btn.active {
-            background: linear-gradient(135deg, #d97706, #b45309);
+            background: linear-gradient(135deg, #b45309, #d97706);
             color: #ffffff;
-            box-shadow: 0 2px 10px rgba(217,119,6,0.4);
+            box-shadow: 0 2px 8px rgba(180, 83, 9, 0.35);
         }
 
-        .action-tool-btn {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid var(--border-subtle);
-            color: var(--text-primary);
-            height: 36px;
-            padding: 0 10px;
-            border-radius: 6px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: 600;
-            gap: 6px;
-            transition: all 0.2s;
-        }
-
-        .action-tool-btn:hover {
-            background: rgba(217,119,6,0.25);
-            border-color: var(--accent-gold);
-        }
-
-        /* Theme Selector */
         .theme-select-box {
             display: flex;
-            align-items: center;
-            background: rgba(255,255,255,0.06);
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 3px;
+            border-radius: 20px;
             border: 1px solid var(--border-subtle);
-            border-radius: 6px;
-            overflow: hidden;
         }
 
         .theme-dot {
             width: 26px;
             height: 26px;
-            cursor: pointer;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
             font-size: 13px;
-            transition: background 0.2s;
+            transition: all 0.2s;
         }
 
         .theme-dot:hover {
-            background: rgba(217,119,6,0.3);
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.1);
         }
 
-        /* ========================================================= */
-        /* TWO INDEPENDENT MASTER AUDIO ELEMENTS (NO BLEED)          */
-        /* ========================================================= */
-        /* audio-aoede and audio-puck are rendered below in body */
-
-        /* Audio Wave Visualizer */
-        .audio-wave-bar {
+        .action-tool-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
             display: flex;
-            align-items: flex-end;
-            gap: 2.5px;
-            height: 16px;
-            margin-right: 6px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.2s;
         }
 
-        .wave-line {
-            width: 2.5px;
-            background: var(--accent-gold);
-            border-radius: 2px;
-            height: 4px;
-            transition: height 0.2s;
+        .action-tool-btn:hover {
+            background: rgba(229, 169, 60, 0.2);
+            border-color: var(--accent-gold);
         }
 
-        .audio-playing .wave-line:nth-child(1) { animation: wave-anim 0.65s infinite alternate ease-in-out; }
-        .audio-playing .wave-line:nth-child(2) { animation: wave-anim 0.85s infinite 0.15s alternate ease-in-out; }
-        .audio-playing .wave-line:nth-child(3) { animation: wave-anim 0.60s infinite 0.35s alternate ease-in-out; }
-        .audio-playing .wave-line:nth-child(4) { animation: wave-anim 0.75s infinite 0.10s alternate ease-in-out; }
-
-        @keyframes wave-anim {
-            0% { height: 3px; }
-            100% { height: 16px; }
-        }
-
-        /* ========================================================= */
-        /* MODE 1: INTERACTIVE 3D FLIPBOOK VIEW                      */
-        /* ========================================================= */
+        /* ==========================================================================
+           VIEWPORT 1: INTERACTIVE 3D FLIPBOOK VIEW
+           ========================================================================== */
         #flipbook-container {
-            margin-top: 68px;
-            min-height: calc(100vh - 68px);
+            margin-top: 75px;
+            min-height: calc(100vh - 75px);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 24px 20px 85px 20px;
-            position: relative;
-            background: radial-gradient(circle at center, #172420 0%, #080d0b 100%);
-            perspective: 2500px;
+            padding: 18px 20px 80px;
+            perspective: 2600px;
         }
 
-        .book-stage {
-            position: relative;
+        .magazine-viewport {
             width: 100%;
-            max-width: 1200px;
-            height: 840px;
+            max-width: 1320px;
+            min-height: 820px;
             display: flex;
-            justify-content: center;
             align-items: center;
-        }
-
-        .magazine-book {
+            justify-content: center;
             position: relative;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            box-shadow: var(--shadow-elevation);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
         }
 
-        /* Spread Container */
         .spread-container {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             display: none;
-            opacity: 0;
-            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s ease;
+            grid-template-columns: 1fr 1fr;
+            background: var(--bg-surface);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-spread);
+            border: 1px solid var(--border-subtle);
+            transform-style: preserve-3d;
+            animation: fadeInSpread 0.45s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .spread-container.active {
-            display: flex;
-            opacity: 1;
-            z-index: 10;
+            display: grid;
+        }
+
+        .spread-container.single-spread {
+            grid-template-columns: 1fr;
+            max-width: 660px;
+        }
+
+        @keyframes fadeInSpread {
+            from { opacity: 0; transform: scale(0.975) translateY(12px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .mag-page {
-            flex: 1;
-            height: 100%;
-            background: var(--paper-spread);
-            color: var(--paper-text);
-            padding: 44px 48px;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.03);
-            scrollbar-width: thin;
-        }
-
-        /* Book Spine Shadow */
-        .mag-page.left-page {
-            border-right: 1px solid rgba(0,0,0,0.12);
-            box-shadow: inset -32px 0 45px -10px rgba(0,0,0,0.15);
-            border-radius: 8px 0 0 8px;
-        }
-
-        .mag-page.right-page {
-            border-left: 1px solid rgba(255,255,255,0.4);
-            box-shadow: inset 32px 0 45px -10px rgba(0,0,0,0.15);
-            border-radius: 0 8px 8px 0;
-        }
-
-        /* Single Page Spread (Cover & Back Cover) */
-        .spread-container.single-spread .mag-page {
-            border-radius: 8px;
-            box-shadow: none;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        /* ========================================================= */
-        /* CLEAN MAGAZINE COVER: ZERO OVERLAP OVER RANGERS' FACES    */
-        /* ========================================================= */
-        .cover-broadsheet {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background: #02241b;
-            color: #fff;
+            padding: 42px 48px;
             display: flex;
             flex-direction: column;
-            padding: 30px 40px;
-            border: 6px double #d97706;
-            overflow: hidden;
-        }
-
-        .cover-top-masthead {
-            text-align: center;
-            border-bottom: 2px solid #d97706;
-            padding-bottom: 12px;
-            margin-bottom: 16px;
-        }
-
-        .cover-top-sup {
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #fde68a;
-            font-weight: 700;
-        }
-
-        .cover-top-title {
-            font-family: 'Cinzel', serif;
-            font-size: 38px;
-            font-weight: 900;
-            letter-spacing: 4px;
-            color: #ffffff;
-            margin: 4px 0;
-            text-shadow: 0 3px 12px rgba(0,0,0,0.7);
-        }
-
-        .cover-top-date {
-            font-size: 11.5px;
-            color: #94a3b8;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        /* Dedicated Pristine Photo Stage (No text covers the photo!) */
-        .cover-photo-stage {
+            justify-content: space-between;
             position: relative;
-            width: 100%;
-            height: 380px;
-            border-radius: 6px;
+            background: var(--bg-surface);
+            overflow-y: auto;
+            max-height: 860px;
+        }
+
+        .left-page {
+            border-right: 1px solid var(--border-subtle);
+            box-shadow: inset -22px 0 28px -18px rgba(0, 0, 0, 0.4);
+        }
+
+        .right-page {
+            box-shadow: inset 22px 0 28px -18px rgba(0, 0, 0, 0.4);
+        }
+
+        /* COVER PAGE ARCHITECTURE: 100% UNOBSTRUCTED PHOTO */
+        .cover-wrapper {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background: #060b08;
+            border-radius: 8px;
             overflow: hidden;
-            border: 2px solid rgba(217, 119, 6, 0.6);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-            margin-bottom: 18px;
-            flex-shrink: 0;
+        }
+
+        .cover-photo-stage {
+            width: 100%;
+            height: 480px;
+            position: relative;
+            background: #000;
+            overflow: hidden;
+            border-bottom: 2px solid var(--accent-gold);
         }
 
         .cover-photo-stage img {
@@ -408,513 +522,338 @@
             object-fit: cover;
             object-position: center 25%;
             display: block;
+            filter: contrast(1.06) saturate(1.05);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .photo-stage-tag {
+        .cover-photo-stage:hover img {
+            transform: scale(1.03);
+        }
+
+        .cover-caption-strip {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(0,0,0,0.75);
-            border: 1px solid rgba(217,119,6,0.7);
-            color: #fde68a;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 3px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            padding: 12px 24px 8px;
+            font-size: 11.5px;
+            color: #d1d5db;
+            font-style: italic;
         }
 
-        /* Clean Headline Section Situated Safely Below the Photo */
         .cover-headline-stage {
-            background: rgba(6, 46, 34, 0.85);
-            border: 1px solid rgba(217, 119, 6, 0.4);
-            border-radius: 6px;
-            padding: 18px 24px;
-            margin-bottom: auto;
+            padding: 34px 44px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: var(--bg-surface);
+            flex: 1;
         }
 
-        .cover-headline-stage .cover-kicker {
-            display: inline-block;
-            background: #b91c1c;
-            color: #fff;
-            padding: 3px 10px;
-            font-size: 11px;
+        .cover-kicker {
+            font-size: 12px;
             font-weight: 800;
-            letter-spacing: 1.5px;
-            border-radius: 2px;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            display: inline-block;
         }
 
         .cover-headline-stage h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 900;
+            font-family: var(--font-display);
+            font-size: 31px;
             line-height: 1.25;
-            color: #ffffff;
-            margin-bottom: 8px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
         .cover-headline-stage p {
-            font-family: 'Newsreader', serif;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #fef08a;
+            font-family: var(--font-serif);
+            font-size: 18.5px;
+            line-height: 1.55;
+            color: var(--text-secondary);
             font-style: italic;
         }
 
         .cover-bottom-bar {
-            border-top: 1px solid rgba(255,255,255,0.2);
-            padding-top: 12px;
+            margin-top: 26px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-subtle);
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            color: #cbd5e1;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
         }
 
-        /* Page Headers & Footers */
+        /* PAGE HEADER & FOOTER */
         .page-header {
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid #d6d3d1;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
             font-size: 11px;
             font-weight: 800;
-            color: var(--text-muted);
-            letter-spacing: 1.5px;
+            letter-spacing: 1.6px;
+            color: var(--accent-gold);
             text-transform: uppercase;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 10px;
+            margin-bottom: 22px;
         }
 
         .page-footer {
             display: flex;
             justify-content: space-between;
-            border-top: 1px solid #d6d3d1;
-            padding-top: 10px;
-            margin-top: 26px;
-            font-size: 11.5px;
-            font-weight: 700;
-            color: var(--text-muted);
-        }
-
-        /* Modern Bulletproof Audio Player Card */
-        .mag-audio-card {
-            background: linear-gradient(135deg, #064e3b, #047857);
-            color: #fff;
-            border-radius: 10px;
-            padding: 16px 20px;
-            margin-bottom: 22px;
-            box-shadow: 0 8px 25px rgba(6, 78, 59, 0.25);
-            border: 1px solid rgba(255,255,255,0.18);
-        }
-
-        .mag-audio-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.18);
-        }
-
-        .mag-audio-title {
-            font-size: 13.5px;
-            font-weight: 700;
-            color: #fde68a;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .mag-voice-switcher {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
-        }
-
-        .mag-voice-btn {
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.25);
-            color: #fff;
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .mag-voice-btn.active {
-            background: var(--accent-gold);
-            border-color: var(--accent-gold-light);
-            color: #fff;
-            box-shadow: 0 2px 8px rgba(217,119,6,0.5);
-        }
-
-        .mag-audio-controls {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .mag-play-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--accent-gold);
-            border: none;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.35);
-            transition: all 0.2s;
-            flex-shrink: 0;
-        }
-
-        .mag-play-btn:hover {
-            background: #b45309;
-            transform: scale(1.05);
-        }
-
-        .mag-progress-bar-box {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .mag-slider {
-            width: 100%;
-            height: 5px;
-            accent-color: #f59e0b;
-            cursor: pointer;
-        }
-
-        .mag-time-box {
-            display: flex;
-            justify-content: space-between;
             font-size: 11px;
-            color: #cbd5e1;
-            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 10px;
+            margin-top: 24px;
+            text-transform: uppercase;
         }
 
-        /* Page Content Elements */
+        /* TYPOGRAPHY */
         .section-tag {
-            color: var(--forest-green);
+            font-size: 11px;
             font-weight: 800;
-            font-size: 11.5px;
-            letter-spacing: 2px;
+            color: var(--accent-amber);
+            letter-spacing: 1.8px;
             text-transform: uppercase;
-            display: block;
-            margin-bottom: 6px;
+            display: inline-block;
+            margin-bottom: 8px;
         }
 
         .page-title {
-            font-family: 'Playfair Display', serif;
+            font-family: var(--font-serif);
             font-size: 26px;
-            font-weight: 800;
-            line-height: 1.25;
-            color: var(--forest-dark);
-            margin-bottom: 14px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-primary);
+            margin-bottom: 16px;
         }
 
         .page-sapo {
-            font-family: 'Newsreader', serif;
-            font-size: 16px;
-            line-height: 1.65;
-            color: #44403c;
+            font-family: var(--font-serif);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text-secondary);
             font-style: italic;
             border-left: 3px solid var(--accent-gold);
             padding-left: 16px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
+        }
+
+        .text-p {
+            font-size: 16.5px;
+            line-height: 1.72;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            text-align: justify;
         }
 
         .drop-cap {
             float: left;
-            font-family: 'Newsreader', serif;
-            font-size: 58px;
-            line-height: 0.8;
+            font-family: var(--font-display);
+            font-size: 54px;
+            line-height: 0.82;
             padding-top: 4px;
-            padding-right: 12px;
-            padding-bottom: 2px;
-            color: var(--forest-green);
-            font-weight: 700;
-        }
-
-        p.text-p {
-            font-family: 'Newsreader', serif;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #292524;
-            margin-bottom: 18px;
-            text-align: justify;
-        }
-
-        /* Pull-Quote Block */
-        .quote-box {
-            background: #f7fee7;
-            border-left: 4px solid var(--forest-green);
-            padding: 16px 20px;
-            border-radius: 0 8px 8px 0;
-            margin: 20px 0;
-        }
-
-        .quote-text {
-            font-family: 'Newsreader', serif;
-            font-size: 16.5px;
-            font-style: italic;
-            line-height: 1.6;
-            color: var(--forest-dark);
-            margin-bottom: 8px;
-        }
-
-        .quote-author {
-            font-size: 11.5px;
-            font-weight: 800;
+            padding-right: 10px;
+            padding-bottom: 0;
             color: var(--accent-gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 800;
         }
 
-        /* Real Photo Exhibits (100% UNCOVERED & CLEAN) */
+        /* PHOTO SHOWCASE IN FLIPBOOK: 100% UNOBSTRUCTED */
         .page-figure {
-            margin: 18px 0;
+            margin: 16px 0 20px;
             border-radius: 6px;
             overflow: hidden;
-            border: 1px solid #e7e5e0;
-            background: #fff;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-subtle);
+            background: #000;
         }
 
         .page-figure img {
             width: 100%;
-            height: auto;
-            max-height: 290px;
+            height: 290px;
             object-fit: cover;
             display: block;
+            filter: contrast(1.05);
+            transition: transform 0.4s ease;
+        }
+
+        .page-figure:hover img {
+            transform: scale(1.025);
         }
 
         .figure-caption {
             padding: 10px 14px;
-            font-size: 12.5px;
-            color: #57534e;
-            font-style: italic;
-            line-height: 1.5;
-            background: #fafaf9;
-            border-top: 1px solid #f5f5f4;
-        }
-
-        /* Scientific Data Stat Grid */
-        .stat-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 18px 0;
-        }
-
-        .stat-card {
-            background: #ffffff;
-            border: 1px solid #e7e5e0;
-            border-radius: 6px;
-            padding: 14px 16px;
-            border-top: 3px solid var(--forest-green);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-
-        .stat-num {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--forest-green);
-            line-height: 1.1;
-            margin-bottom: 4px;
-        }
-
-        .stat-label {
             font-size: 12px;
-            color: #57534e;
-            font-weight: 500;
-            line-height: 1.4;
+            line-height: 1.55;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-subtle);
         }
 
-        /* Scientific Comparative Salary Bar Chart */
+        .figure-caption strong {
+            color: var(--accent-gold);
+        }
+
+        /* SCIENTIFIC DATA JOURNALISM: BAR CHART */
         .chart-box {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
             border-radius: 8px;
-            padding: 18px;
-            margin: 20px 0;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+            padding: 18px 20px;
+            margin: 18px 0;
         }
 
         .chart-header {
+            display: flex;
+            justify-content: space-between;
             font-size: 12px;
             font-weight: 800;
-            color: var(--forest-dark);
+            color: var(--accent-gold);
+            margin-bottom: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 12px;
-            display: flex;
-            justify-content: space-between;
         }
 
-        .chart-row {
-            margin-bottom: 10px;
-        }
-
-        .chart-row-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12.5px;
-            margin-bottom: 3px;
-            font-weight: 600;
-        }
-
-        .chart-bar-bg {
-            height: 9px;
-            background: #f1f5f9;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        .chart-bar-fill {
-            height: 100%;
-            border-radius: 6px;
-        }
-
-        /* Policy Breakdown Table/Cards */
-        .policy-card {
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            border-radius: 6px;
-            padding: 16px;
-            margin: 16px 0;
-        }
-
-        .policy-badge {
-            display: inline-block;
-            background: var(--forest-green);
-            color: #fff;
-            font-size: 10.5px;
-            font-weight: 800;
-            padding: 3px 8px;
-            border-radius: 3px;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-        }
-
-        .policy-title {
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--forest-dark);
-            margin-bottom: 5px;
-        }
-
-        .policy-desc {
-            font-size: 13.5px;
-            color: #374151;
-            line-height: 1.55;
-        }
-
-        /* Policy Bottleneck Funnel */
-        .tree-diagram {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: 16px;
-            margin: 18px 0;
-        }
-
-        .tree-node-root {
-            background: #064e3b;
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 5px;
-            font-weight: 800;
-            font-size: 13.5px;
-            text-align: center;
+        .bar-group {
             margin-bottom: 14px;
         }
 
-        .tree-branches {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
-        }
-
-        .tree-leaf {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            border-radius: 6px;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .tree-leaf-title {
-            color: #b91c1c;
-            font-size: 11.5px;
-            font-weight: 800;
+        .bar-label-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
             margin-bottom: 4px;
-            text-transform: uppercase;
+            font-weight: 600;
         }
 
-        .tree-leaf-text {
-            font-size: 11.5px;
-            color: #4b5563;
-            line-height: 1.45;
+        .bar-track {
+            height: 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 7px;
+            overflow: hidden;
         }
 
-        /* Back Cover Styling */
-        .back-cover-wrapper {
-            position: relative;
-            width: 100%;
+        .bar-fill {
             height: 100%;
-            background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
+            border-radius: 7px;
+            transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* POLICY FUNNEL */
+        .policy-tree {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .policy-step {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 14px;
+            position: relative;
+        }
+
+        .step-num {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--accent-amber);
             color: #fff;
-            padding: 50px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: var(--text-primary);
+        }
+
+        .step-content strong {
+            color: var(--accent-gold);
+        }
+
+        /* QUOTE BOX */
+        .quote-box {
+            background: rgba(229, 169, 60, 0.08);
+            border-left: 3px solid var(--accent-gold);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 18px 0;
+        }
+
+        .quote-text {
+            font-family: var(--font-serif);
+            font-size: 16px;
+            line-height: 1.55;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .quote-author {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        /* BACK COVER / MANIFESTO */
+        .back-cover-wrapper {
+            background: linear-gradient(145deg, #09130e, #14241c);
+            padding: 50px 48px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
+        .back-cover-top {
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 18px;
+        }
+
         .back-cover-quote {
-            font-family: 'Newsreader', serif;
-            font-size: 24px;
+            font-family: var(--font-serif);
+            font-size: 23px;
+            line-height: 1.5;
             font-style: italic;
-            line-height: 1.55;
             color: #fef08a;
+            margin: 28px 0;
             text-align: center;
-            margin: 30px auto;
-            max-width: 85%;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            padding: 0 20px;
         }
 
         .back-cover-rec {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid var(--border-subtle);
             border-radius: 8px;
-            padding: 20px 24px;
-            margin-bottom: 25px;
+            padding: 24px;
         }
 
         .rec-item {
             display: flex;
-            align-items: flex-start;
             gap: 12px;
             margin-bottom: 12px;
             font-size: 13.5px;
-            line-height: 1.5;
-            color: #e2e8f0;
+            line-height: 1.6;
         }
 
         .rec-item:last-child {
@@ -922,35 +861,47 @@
         }
 
         .rec-bullet {
-            color: #f59e0b;
-            font-size: 15px;
-            line-height: 1;
+            color: var(--accent-gold);
+            font-weight: 800;
         }
 
-        /* Bottom Control Bar */
-        .book-controls {
-            position: absolute;
+        /* NAVIGATION BAR DOCK AT BOTTOM OF FLIPBOOK */
+        .flip-nav-dock {
+            position: fixed;
             bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             align-items: center;
-            gap: 16px;
-            background: rgba(4, 38, 28, 0.94);
-            backdrop-filter: blur(12px);
-            padding: 8px 26px;
+            gap: 12px;
+            background: rgba(14, 23, 19, 0.95);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--border-highlight);
+            padding: 8px 18px;
             border-radius: 40px;
-            border: 1px solid rgba(217, 119, 6, 0.45);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.5);
-            z-index: 100;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            z-index: 900;
         }
 
-        .nav-btn {
-            background: transparent;
-            border: none;
-            color: #fff;
-            font-size: 14px;
-            font-weight: 700;
-            padding: 6px 14px;
+        [data-theme="light"] .flip-nav-dock {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        [data-theme="sepia"] .flip-nav-dock {
+            background: rgba(247, 241, 230, 0.95);
+            border: 1px solid rgba(90,60,30,0.2);
+        }
+
+        .dock-nav-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            padding: 8px 16px;
             border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.2s;
             display: flex;
@@ -958,272 +909,238 @@
             gap: 6px;
         }
 
-        .nav-btn:hover {
-            background: rgba(217, 119, 6, 0.35);
-            color: #fde68a;
-        }
-
-        .page-indicator {
-            color: #fde68a;
-            font-weight: 800;
-            font-size: 13px;
-            letter-spacing: 1px;
-            min-width: 95px;
-            text-align: center;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .stage-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.6);
-            border: 1px solid rgba(255,255,255,0.25);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.25s;
-            z-index: 50;
-        }
-
-        .stage-arrow:hover {
+        .dock-nav-btn:hover:not(:disabled) {
             background: var(--accent-gold);
-            border-color: var(--accent-gold-light);
-            box-shadow: 0 0 20px rgba(217,119,6,0.6);
-            transform: translateY(-50%) scale(1.1);
+            color: #000;
         }
 
-        .stage-arrow.left { left: -24px; }
-        .stage-arrow.right { right: -24px; }
+        .dock-nav-btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
 
-        /* ========================================================= */
-        /* MODE 2: CONTINUOUS SCROLL LONGFORM VIEW (THE NYT STYLE)   */
-        /* (HERO PHOTO IS COMPLETELY VISIBLE - NO TEXT COVERS IT)    */
-        /* ========================================================= */
+        .dock-page-info {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            min-width: 140px;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ==========================================================================
+           VIEWPORT 2: CONTINUOUS SCROLL VIEW (THE NEW YORK TIMES LONGFORM)
+           ========================================================================== */
         #scroll-container {
             display: none;
-            margin-top: 68px;
-            background: var(--bg-body);
-            min-height: 100vh;
+            margin-top: 75px;
+            background: var(--bg-deep);
+            padding-bottom: 100px;
         }
 
-        .reading-progress-bar {
-            position: fixed;
-            top: 68px;
-            left: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #d97706, #10b981, #064e3b);
-            width: 0%;
-            z-index: 999;
-            transition: width 0.1s;
-        }
-
-        /* NYT Broadside Article Header (Clean Title Above the Photo) */
-        .scroll-header-stage {
-            max-width: 1080px;
+        .scroll-article {
+            max-width: 820px;
             margin: 0 auto;
-            padding: 50px 30px 30px 30px;
+            padding: 40px 24px;
+        }
+
+        .scroll-header-stage {
             text-align: center;
+            margin-bottom: 40px;
         }
 
         .scroll-header-kicker {
-            display: inline-block;
-            background: #b91c1c;
-            color: #fff;
-            padding: 4px 12px;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 800;
             letter-spacing: 2px;
-            border-radius: 3px;
+            color: var(--accent-gold);
             text-transform: uppercase;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
+            display: inline-block;
         }
 
         .scroll-header-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 46px;
+            font-family: var(--font-display);
+            font-size: 38px;
+            line-height: 1.25;
             font-weight: 900;
-            line-height: 1.2;
             color: var(--text-primary);
-            margin-bottom: 18px;
+            margin-bottom: 22px;
         }
 
         .scroll-header-deck {
-            font-family: 'Newsreader', serif;
+            font-family: var(--font-serif);
             font-size: 21px;
-            line-height: 1.6;
+            line-height: 1.55;
             color: var(--text-secondary);
             font-style: italic;
-            max-width: 880px;
-            margin: 0 auto 24px auto;
+            max-width: 720px;
+            margin: 0 auto 24px;
         }
 
-        .scroll-byline-box {
+        .scroll-meta-line {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 16px;
-            font-size: 13px;
+            font-size: 12.5px;
+            font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-top: 1px solid var(--border-subtle);
-            padding-top: 16px;
         }
 
-        /* The Uncovered Full-Width Photo Stage */
         .scroll-hero-photo-wrap {
-            max-width: 1180px;
-            margin: 0 auto 40px auto;
-            padding: 0 20px;
-        }
-
-        .scroll-hero-photo-box {
+            margin: 0 0 45px;
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid var(--border-subtle);
-            box-shadow: var(--shadow-elevation);
+            box-shadow: 0 18px 50px rgba(0,0,0,0.5);
         }
 
-        .scroll-hero-photo-box img {
+        .scroll-hero-photo-wrap img {
             width: 100%;
             height: auto;
-            max-height: 640px;
+            max-height: 580px;
             object-fit: cover;
             display: block;
         }
 
-        .scroll-hero-photo-caption {
+        .scroll-hero-caption {
             padding: 14px 20px;
-            font-size: 14px;
-            color: var(--text-muted);
-            font-style: italic;
+            font-size: 13px;
+            color: var(--text-secondary);
             background: var(--bg-surface);
             border-top: 1px solid var(--border-subtle);
-            text-align: center;
+            font-style: italic;
         }
 
-        /* Scroll Article Body */
-        .scroll-article-body {
-            max-width: 860px;
-            margin: 0 auto;
-            padding: 40px 30px 80px 30px;
-            background: var(--bg-surface);
-            border-radius: 10px;
-            box-shadow: var(--shadow-elevation);
-            border: 1px solid var(--border-subtle);
-            margin-bottom: 60px;
-        }
-
-        .scroll-article-body h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            font-weight: 800;
+        .scroll-article h2 {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.35;
+            margin: 45px 0 20px;
             color: var(--text-primary);
-            margin: 45px 0 20px 0;
-            line-height: 1.3;
-            border-bottom: 2px solid var(--border-subtle);
-            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 10px;
         }
 
-        .scroll-article-body p {
-            font-family: 'Newsreader', serif;
-            font-size: 19px;
-            line-height: 1.95;
-            color: var(--text-secondary);
+        .scroll-article p {
+            font-size: 18px;
+            line-height: 1.8;
             margin-bottom: 24px;
             text-align: justify;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 992px) {
-            .book-stage {
-                height: 860px;
+        /* Scroll Progress Bar at very top of screen */
+        .scroll-progress-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #d97706, #22c55e);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s;
+        }
+
+        /* ==========================================================================
+           RESPONSIVE DESIGN (MOBILE & TABLET)
+           ========================================================================== */
+        @media (max-width: 1080px) {
+            .magazine-viewport {
+                max-width: 95%;
             }
             .mag-page {
-                padding: 34px 24px;
-            }
-            .cover-broadsheet {
-                padding: 24px 20px;
-            }
-            .cover-top-title {
-                font-size: 28px;
-            }
-            .cover-photo-stage {
-                height: 280px;
+                padding: 30px;
             }
             .cover-headline-stage h1 {
-                font-size: 22px;
-            }
-            .scroll-header-title {
-                font-size: 32px;
-            }
-            .scroll-header-deck {
-                font-size: 18px;
-            }
-            .scroll-article-body {
-                padding: 30px 18px;
-            }
-            .scroll-article-body p {
-                font-size: 17px;
-            }
-            .stage-arrow {
-                display: none;
-            }
-            .tree-branches {
-                grid-template-columns: 1fr;
-            }
-            .header-center-meta {
-                display: none;
+                font-size: 24px;
             }
         }
 
-        @media (max-width: 640px) {
-            .nyt-masthead-title {
-                font-size: 15px;
+        @media (max-width: 820px) {
+            .nyt-header {
+                padding: 8px 14px;
             }
-            .pill-btn span.btn-label {
+            .header-audio-deck {
+                order: 3;
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 4px;
+            }
+            .header-audio-scrubber {
                 display: none;
             }
-            .book-controls {
-                padding: 6px 14px;
-                gap: 8px;
-                bottom: 12px;
+            .spread-container {
+                grid-template-columns: 1fr !important;
             }
-            .nav-btn {
-                padding: 4px 8px;
-                font-size: 12.5px;
+            .left-page {
+                border-right: none;
             }
-            .page-indicator {
-                font-size: 11.5px;
-                min-width: 70px;
+            .right-page {
+                display: none;
+            }
+            .spread-container.active .left-page {
+                display: flex;
+            }
+            .btn-label {
+                display: none;
+            }
+            .scroll-header-title {
+                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- International Top App Bar -->
+    <!-- Reading Progress Bar -->
+    <div class="scroll-progress-line" id="scroll-progress"></div>
+
+    <!-- ========================================================= -->
+    <!-- MASTER TOP HEADER BAR & INTEGRATED SMART AUDIO READER     -->
+    <!-- ========================================================= -->
     <header class="nyt-header">
-        <a href="#" class="nyt-brand">
-            <span class="nyt-kicker-badge">Số Đặc Biệt 2026</span>
+        <!-- Left: Logo & Masthead -->
+        <a href="#cover" class="header-left" onclick="goToSpread(0); return false;">
+            <span class="nyt-badge">SỐ ĐẶC BIỆT 2026</span>
             <span class="nyt-masthead-title">ĐẠI NGÀN KÝ SỰ</span>
         </a>
 
-        <div class="header-center-meta">
-            <span>Kỳ Sơn, Nghệ An</span>
-            <span>•</span>
-            <span>Phóng Sự Điều Tra & Chính Sách</span>
-            <span>•</span>
-            <span>⏱️ 8 phút đọc</span>
+        <!-- Center: SMART AUDIO DECK (BỐ TRÍ GIỌNG ĐỌC KHOA HỌC THÔNG MINH TRÊN THANH) -->
+        <div class="header-audio-deck" id="top-audio-deck">
+            <!-- Main Play/Pause Button -->
+            <button class="audio-main-pill" id="top-play-btn" onclick="togglePlayMaster()" title="Bấm để nghe hoặc tạm dừng bài đọc">
+                <span class="play-icon" id="top-play-icon">▶</span>
+                <span id="top-play-label">Nghe Bài Báo</span>
+                <div class="live-audio-waves" id="top-live-waves">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </button>
+
+            <!-- Dual Voice Switcher -->
+            <div class="header-voice-switcher">
+                <button class="voice-segment-btn active" id="btn-top-aoede" onclick="selectVoice('aoede')" title="Giọng đọc Nữ truyền cảm (Aoede AI)">
+                    <span>👩</span> <span>Giọng Nữ</span>
+                </button>
+                <button class="voice-segment-btn" id="btn-top-puck" onclick="selectVoice('puck')" title="Giọng đọc Nam trầm ấm (Puck AI)">
+                    <span>👨</span> <span>Giọng Nam</span>
+                </button>
+            </div>
+
+            <!-- Scrubber & Time Tracker -->
+            <div class="header-audio-scrubber">
+                <span class="header-time-text" id="top-cur-time">00:00</span>
+                <input type="range" class="header-slider" id="top-slider" value="0" min="0" max="100" oninput="seekMasterAudio(this.value)" title="Kéo để tua đoạn đọc">
+                <span class="header-time-text" id="top-dur-time">03:01</span>
+                <button class="header-restart-btn" onclick="restartAudio()" title="Nghe lại từ đầu">⏮</button>
+            </div>
         </div>
 
+        <!-- Right: View Modes & Display Controls -->
         <div class="header-actions">
             <!-- Mode Switcher -->
             <div class="view-pill">
@@ -1248,13 +1165,13 @@
 
             <!-- Fullscreen Button -->
             <button class="action-tool-btn" onclick="toggleFullScreen()" title="Toàn màn hình">⛶</button>
-            <!-- Audio Sound Toggle -->
+            <!-- Flip Sound Toggle -->
             <button class="action-tool-btn" id="btn-sound-toggle" onclick="toggleSound()" title="Bật/Tắt âm thanh lật trang">🔊</button>
         </div>
     </header>
 
     <!-- ========================================================= -->
-    <!-- DUAL INDEPENDENT AUDIO PLAYERS (PREVENTS BLEED / OVERLAP)  -->
+    <!-- DUAL INDEPENDENT AUDIO ENGINES (ZERO BLEED / ZERO DELAY)   -->
     <!-- ========================================================= -->
     <audio id="audio-aoede" preload="metadata" src="forest_voice_gemini_aoede.mp3"></audio>
     <audio id="audio-puck" preload="metadata" src="forest_voice_gemini_puck.mp3"></audio>
@@ -1263,34 +1180,25 @@
     <!-- VIEWPORT 1: INTERACTIVE 3D FLIPBOOK VIEW                  -->
     <!-- ========================================================= -->
     <div id="flipbook-container">
-        
-        <div class="book-stage">
-            <!-- Left / Right Floating Arrows -->
-            <button class="stage-arrow left" onclick="prevSpread()" title="Trang trước">❮</button>
-            <button class="stage-arrow right" onclick="nextSpread()" title="Trang tiếp">❯</button>
+        <div class="magazine-viewport">
 
-            <div class="magazine-book" id="magazine-element">
-                
-                <!-- SPREAD 0: FRONT COVER (Single Page Poster - Clean, Zero Text Over Rangers) -->
-                <div class="spread-container single-spread active" data-spread="0" data-page-left="1" data-page-right="1">
-                    <div class="mag-page cover-broadsheet">
-                        <div class="cover-top-masthead">
-                            <div class="cover-top-sup">TẠP CHÍ ĐIỀU TRA & TƯ LIỆU QUỐC GIA VỀ RỪNG</div>
-                            <div class="cover-top-title">ĐẠI NGÀN KÝ SỰ</div>
-                            <div class="cover-top-date">TẬP VI • SỐ ĐẶC BIỆT NĂM 2026 • LƯU TRỮ LÂM NGHIỆP</div>
+            <!-- SPREAD 0: COVER SPREAD (100% UNOBSTRUCTED PHOTO) -->
+            <div class="spread-container single-spread active" data-spread="0" data-page-left="1" data-page-right="1">
+                <div class="mag-page cover-wrapper">
+                    <!-- Photo Stage: 0% text over photo -->
+                    <div class="cover-photo-stage">
+                        <img src="images/real_forest_ranger_patrol_cover.jpg" alt="Đội hình tuần tra của lực lượng chuyên trách bảo vệ rừng">
+                        <div class="cover-caption-strip">
+                            Đội tuần tra luồn rừng của lực lượng chuyên trách bảo vệ rừng vượt qua thảm thực vật rậm rạp giữa đại ngàn nguyên sinh (Ảnh phóng sự tài liệu).
                         </div>
+                    </div>
 
-                        <!-- 100% UNCOVERED PHOTO STAGE: Rangers clearly visible -->
-                        <div class="cover-photo-stage">
-                            <img src="images/real_forest_ranger_patrol_cover.jpg" alt="Lực lượng chuyên trách bảo vệ rừng tuần tra trên các cung đường rừng nguyên sinh">
-                            <div class="photo-stage-tag">Ảnh Phóng Sự Tư Liệu Hiện Trường</div>
-                        </div>
-
-                        <!-- HEADLINE STAGE BELOW THE PHOTO -->
-                        <div class="cover-headline-stage">
-                            <span class="cover-kicker">CHỦ TRƯƠNG LỚN & VƯỚNG MẮC THỰC THI</span>
+                    <!-- Editorial Headline Stage Below Photo -->
+                    <div class="cover-headline-stage">
+                        <div>
+                            <span class="cover-kicker">CHỦ TRƯƠNG LỚN & NÚT THẮT THỰC THI</span>
                             <h1>MÒN MỎI ĐỢI CHẾ ĐỘ GIỮA RỪNG SÂU</h1>
-                            <p>Khi Nghị định 42/2026/NĐ-CP đã ban hành trao chế độ như kiểm lâm, nhưng chiếc dạ dày người giữ rừng vẫn quặn thắt vì "chính sách treo".</p>
+                            <p>Khi Nghị định 42/2026/NĐ-CP đã ban hành trao chế độ như Kiểm lâm, nhưng chiếc dạ dày người giữ rừng vẫn quặn thắt vì "chính sách treo".</p>
                         </div>
 
                         <div class="cover-bottom-bar">
@@ -1299,430 +1207,369 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- SPREAD 1: SPREAD 1 (Page 2 & Page 3) -->
-                <div class="spread-container" data-spread="1" data-page-left="2" data-page-right="3">
-                    <!-- Left Page: Page 2 -->
-                    <div class="mag-page left-page">
-                        <div class="page-header">
-                            <span>LỜI TÒA SOẠN • BỨC TRANH TOÀN CẢNH</span>
-                            <span>TRANG 02</span>
-                        </div>
-
-                        <!-- Bulletproof Audio Player Card -->
-                        <div class="mag-audio-card" id="mag-audio-box">
-                            <div class="mag-audio-header">
-                                <div class="mag-audio-title">
-                                    <div class="audio-wave-bar" id="audio-wave-box">
-                                        <div class="wave-line"></div>
-                                        <div class="wave-line"></div>
-                                        <div class="wave-line"></div>
-                                        <div class="wave-line"></div>
-                                    </div>
-                                    <span id="audio-voice-status">Nghe Bài Báo (Giọng Nữ Aoede AI)</span>
-                                </div>
-                                <span style="font-size: 11px; color: #fde68a; background: rgba(0,0,0,0.3); padding: 3px 8px; border-radius: 4px; font-weight: 700;">Gemini Flash 3.0</span>
-                            </div>
-
-                            <div class="mag-voice-switcher">
-                                <span style="font-size: 12px; color: #e2e8f0; align-self: center;">Chọn giọng đọc:</span>
-                                <button class="mag-voice-btn active" id="btn-audio-aoede" onclick="selectVoice('aoede')">
-                                    <span>👩</span> Nữ Truyền Cảm (Aoede AI)
-                                </button>
-                                <button class="mag-voice-btn" id="btn-audio-puck" onclick="selectVoice('puck')">
-                                    <span>👨</span> Nam Trầm Ấm (Puck AI)
-                                </button>
-                                <button class="mag-voice-btn" style="background: rgba(255,255,255,0.08); font-size: 11px;" onclick="restartAudio()" title="Phát lại từ đầu">
-                                    <span>⏮</span> Từ đầu
-                                </button>
-                            </div>
-
-                            <div class="mag-audio-controls">
-                                <button class="mag-play-btn" id="audio-play-btn" onclick="togglePlayMaster()">▶</button>
-                                <div class="mag-progress-bar-box">
-                                    <input type="range" class="mag-slider" id="audio-slider" value="0" min="0" max="100" oninput="seekMasterAudio(this.value)">
-                                    <div class="mag-time-box">
-                                        <span id="audio-cur-time">00:00</span>
-                                        <span id="audio-dur-time">--:--</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <span class="section-tag">TỔNG QUAN HIỆN TRẠNG</span>
-                        <h2 class="page-title">Những bước chân thầm lặng gánh trên vai lá phổi xanh tổ quốc</h2>
-
-                        <div class="page-sapo">
-                            "Hơn 14,7 triệu hecta rừng trên toàn quốc đang được che chở bởi những người lính không mang quân hàm. Nhưng sau lưng họ là áp lực cơm áo và nỗi âu lo từng ngày..."
-                        </div>
-
-                        <p class="text-p">
-                            <span class="drop-cap">G</span>iữa trập trùng đại ngàn biên giới, nơi rừng già giáp ranh đất bạn Lào hay những cánh rừng nguyên sinh miền Trung, Tây Nguyên, có một lực lượng ngày đêm bám trụ rừng sâu: <strong>Lực lượng chuyên trách bảo vệ rừng</strong> của các Ban quản lý rừng phòng hộ, rừng đặc dụng và công ty lâm nghiệp.
-                        </p>
-                        <p class="text-p">
-                            Không có trụ sở khang trang, không có chế độ công chức, hành trang của họ là những chiếc lán bạt chênh vênh bên sườn đá, ba lô trĩu nặng lương khô và chiếc gậy luồn rừng mòn vẹt. Họ là bức tường thành đầu tiên và kiên trung nhất ngăn chặn bước chân của lâm tặc.
-                        </p>
-
-                        <!-- Stat Grid -->
-                        <div class="stat-grid">
-                            <div class="stat-card">
-                                <div class="stat-num">1.200 ha</div>
-                                <div class="stat-label">Diện tích rừng bình quân 1 cán bộ chuyên trách phải gánh vác tuần tra.</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-num">4.5 Triệu</div>
-                                <div class="stat-label">Mức thu nhập hàng tháng bình quân, thấp hơn lương công nhân phổ thông.</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-num">&gt; 65%</div>
-                                <div class="stat-label">Tỷ lệ lực lượng trực tiếp tuần rừng là lao động hợp đồng thời vụ.</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-num">0 Đơn vị</div>
-                                <div class="stat-label">Số đơn vị đã triển khai chi trả phụ cấp theo Nghị định 42/2026/NĐ-CP.</div>
-                            </div>
-                        </div>
-
-                        <div class="page-footer">
-                            <span>ĐẠI NGÀN KÝ SỰ • TƯ LIỆU LÂM NGHIỆP</span>
-                            <span>Trang 02</span>
-                        </div>
-                    </div>
-
-                    <!-- Right Page: Page 3 -->
-                    <div class="mag-page right-page">
-                        <div class="page-header">
-                            <span>KÝ SỰ HIỆN TRƯỜNG • PHẦN I</span>
-                            <span>TRANG 03</span>
-                        </div>
-
-                        <span class="section-tag">HIỆN TRƯỜNG THỰC TẾ</span>
-                        <h2 class="page-title">Bữa cơm cắm lán và những đêm lạnh thấu xương giữa rừng già</h2>
-
-                        <!-- 100% UNCOVERED PHOTO -->
-                        <div class="page-figure">
-                            <img src="images/real_forest_ranger_shelter_meal.jpg" alt="Bữa cơm đạm bạc của cán bộ bảo vệ rừng trong lán tạm giữa rừng già">
-                            <div class="figure-caption">
-                                <strong>Ảnh phóng sự tư liệu chân thật:</strong> Căn lán dã chiến bên bếp lửa bập bùng giữa rừng sâu. Bữa cơm chỉ có nồi cơm độn, gói mì tôm, cá khô mặn và ít rau rừng hái vội sau hàng giờ leo dốc đá.
-                            </div>
-                        </div>
-
-                        <p class="text-p">
-                            Chuyến tuần rừng kéo dài 5 ngày 4 đêm của đội bảo vệ rừng bắt đầu từ sáng sớm khi sương mù còn đặc quánh. Trên lưng mỗi người là gùi quân tư trang nặng hơn 20kg: gạo, cá khô, muối trắng, nồi niêu và võng dù.
-                        </p>
-                        <p class="text-p">
-                            Đôi giày vải cấp phát hàng năm chỉ đi được 2 tháng là bung chỉ, rách toạc đế vì đá tai mèo sắc nhọn. Mùa mưa, vắt rừng bám đỏ ống chân; mùa đông, nhiệt độ vùng cao hạ xuống dưới 5 độ C, manh áo lính phong phanh không đủ xua đi cái rét buốt thấu xương thịt.
-                        </p>
-
-                        <div class="quote-box">
-                            <div class="quote-text">"Đói lạnh thì chịu quen rồi, nhưng đau nhất là khi con ốm ở quê gọi điện lên trạm xin tiền đi viện mà tài khoản bố chỉ còn vài trăm nghìn đồng tiền lương ứng trước..."</div>
-                            <div class="quote-author">— Tâm sự nghẹn ngào của một nhân viên bảo vệ rừng với hơn 11 năm bám trụ đại ngàn</div>
-                        </div>
-
-                        <div class="page-footer">
-                            <span>SỐ ĐẶC BIỆT 2026</span>
-                            <span>Trang 03</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SPREAD 2: SPREAD 2 (Page 4 & Page 5) -->
-                <div class="spread-container" data-spread="2" data-page-left="4" data-page-right="5">
-                    <!-- Left Page: Page 4 -->
-                    <div class="mag-page left-page">
-                        <div class="page-header">
-                            <span>KÝ SỰ HIỆN TRƯỜNG • PHẦN II</span>
-                            <span>TRANG 04</span>
-                        </div>
-
-                        <span class="section-tag">ĐỐI MẶT HIỂM NGUY</span>
-                        <h2 class="page-title">Lằn ranh sinh tử đối đầu "lâm tặc" và nghịch lý "tay không bắt giặc"</h2>
-
-                        <!-- 100% UNCOVERED PHOTO -->
-                        <div class="page-figure">
-                            <img src="images/real_forest_ranger_stream_hazard.jpg" alt="Cán bộ bảo vệ rừng băng qua dòng thác lũ chảy xiết">
-                            <div class="figure-caption">
-                                <strong>Ảnh tư liệu thực địa:</strong> Đội tuần tra dìu nhau vượt qua con suối đá ngầm chảy xiết mùa mưa lũ. Chỉ một bước sẩy chân là có thể bị dòng nước dữ cuốn trôi.
-                            </div>
-                        </div>
-
-                        <p class="text-p">
-                            Lâm tặc ngày nay cực kỳ manh động và liều lĩnh. Chúng trang bị cưa xăng công suất lớn, dao phát sắc lẹm, thậm chí cả súng tự chế sẵn sàng chống trả quyết liệt khi bị phát hiện.
-                        </p>
-                        <p class="text-p">
-                            Trong khi đó, lực lượng chuyên trách bảo vệ rừng chỉ được trang bị gậy cao su, bộ đàm yếu sóng và chiếc đèn pin đội đầu. Thẩm quyền trước đây rất hạn hẹp, không có công cụ tự vệ tương xứng, khiến nhiều cán bộ phải đánh đổi bằng thương tật vĩnh viễn, thậm chí hy sinh mạng sống giữa rừng sâu.
-                        </p>
-
-                        <!-- Scientific Bar Chart: Salary Comparison -->
-                        <div class="chart-box">
-                            <div class="chart-header">
-                                <span>BẢNG SO SÁNH THU NHẬP BÌNH QUÂN (TRIỆU ĐỒNG/THÁNG)</span>
-                                <span>NĂM 2026</span>
-                            </div>
-                            <div class="chart-row">
-                                <div class="chart-row-meta">
-                                    <span>Công nhân Khu công nghiệp</span>
-                                    <span>8.2 Triệu đ</span>
-                                </div>
-                                <div class="chart-bar-bg">
-                                    <div class="chart-bar-fill" style="width: 82%; background: #3b82f6;"></div>
-                                </div>
-                            </div>
-                            <div class="chart-row">
-                                <div class="chart-row-meta">
-                                    <span>Kiểm lâm địa bàn (có phụ cấp nghề)</span>
-                                    <span>9.5 Triệu đ</span>
-                                </div>
-                                <div class="chart-bar-bg">
-                                    <div class="chart-bar-fill" style="width: 95%; background: #10b981;"></div>
-                                </div>
-                            </div>
-                            <div class="chart-row">
-                                <div class="chart-row-meta">
-                                    <span>Lực lượng bảo vệ rừng chuyên trách</span>
-                                    <span style="color: #dc2626; font-weight: 800;">4.5 Triệu đ</span>
-                                </div>
-                                <div class="chart-bar-bg">
-                                    <div class="chart-bar-fill" style="width: 45%; background: #dc2626;"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="page-footer">
-                            <span>ĐẠI NGÀN KÝ SỰ • TƯ LIỆU LÂM NGHIỆP</span>
-                            <span>Trang 04</span>
-                        </div>
-                    </div>
-
-                    <!-- Right Page: Page 5 -->
-                    <div class="mag-page right-page">
-                        <div class="page-header">
-                            <span>BƯỚC NGOẶT THỂ CHẾ • PHẦN III</span>
-                            <span>TRANG 05</span>
-                        </div>
-
-                        <span class="section-tag">CHỦ TRƯƠNG LỚN CỦA ĐẢNG & CHÍNH PHỦ</span>
-                        <h2 class="page-title">Ánh sáng hy vọng từ Nghị định số 42/2026/NĐ-CP</h2>
-
-                        <div class="page-sapo">
-                            "Ngày 26/01/2026, Chính phủ ban hành Nghị định 42/2026/NĐ-CP sửa đổi Nghị định 01/2019/NĐ-CP. Lần đầu tiên, viên chức bảo vệ rừng được công nhận quyền hạn và chế độ như Kiểm lâm."
-                        </div>
-
-                        <p class="text-p">
-                            Đây là quyết sách lịch sử, thể hiện sự thấu hiểu sâu sắc và tính nhân văn cao cả của Đảng và Nhà nước đối với những người lính cắm bản giữ rừng.
-                        </p>
-
-                        <!-- Policy 1 -->
-                        <div class="policy-card">
-                            <span class="policy-badge">SỬA ĐỔI ĐIỀU 14 • QUYỀN HẠN THỰC THI</span>
-                            <div class="policy-title">Trao quyền lập biên bản vi phạm hành chính & giữ hiện trường</div>
-                            <div class="policy-desc">
-                                Viên chức bảo vệ rừng khi làm nhiệm vụ được quyền lập biên bản vi phạm hành chính, bảo vệ hiện trường, tạm giữ tang vật phương tiện vi phạm và kịp thời báo cáo cơ quan thẩm quyền xử lý. Chấm dứt cảnh "bất lực nhìn lâm tặc tẩu tán gỗ".
-                            </div>
-                        </div>
-
-                        <!-- Policy 2 -->
-                        <div class="policy-card" style="background: #fffbeb; border-color: #fde68a;">
-                            <span class="policy-badge" style="background: #d97706;">SỬA ĐỔI ĐIỀU 16 • CHẾ ĐỘ ĐÃI NGỘ</span>
-                            <div class="policy-title">Hưởng chế độ lương và phụ cấp ưu đãi nghề như Kiểm lâm</div>
-                            <div class="policy-desc">
-                                Quy định rõ: Viên chức thuộc lực lượng chuyên trách bảo vệ rừng được hưởng chế độ lương, phụ cấp ưu đãi nghề (25% - 50%), phụ cấp thâm niên nghề như Kiểm lâm (trừ phụ cấp công vụ). Một sự tăng thêm vô cùng quý giá cho chiếc dạ dày của người giữ rừng.
-                            </div>
-                        </div>
-
-                        <p class="text-p">
-                            Những ngày đầu năm 2026, khắp các trạm gác rừng từ Bắc vào Nam rộn rã niềm vui. Anh em ôm chầm lấy nhau mừng rơi nước mắt, ngỡ như chiếc phao cứu sinh đã cập bến.
-                        </p>
-
-                        <div class="page-footer">
-                            <span>SỐ ĐẶC BIỆT 2026</span>
-                            <span>Trang 05</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SPREAD 3: SPREAD 3 (Page 6 & Page 7) -->
-                <div class="spread-container" data-spread="3" data-page-left="6" data-page-right="7">
-                    <!-- Left Page: Page 6 -->
-                    <div class="mag-page left-page">
-                        <div class="page-header">
-                            <span>ĐỒ HỌA INFOGRAPHIC • PHẦN IV</span>
-                            <span>TRANG 06</span>
-                        </div>
-
-                        <span class="section-tag">PHÂN TÍCH KHOA HỌC CHÍNH SÁCH</span>
-                        <h2 class="page-title">Vì sao "Bảo bối" Nghị định 42 vẫn nằm im trên bàn giấy?</h2>
-
-                        <div class="page-sapo">
-                            Đã nhiều tháng trôi qua kể từ khi Nghị định ban hành, nhưng thực tế nghiệt ngã: Chưa một cán bộ bảo vệ rừng nào nhận được một đồng phụ cấp mới.
-                        </div>
-
-                        <!-- Tree Diagram Infographic -->
-                        <div class="tree-diagram">
-                            <div class="tree-node-root">
-                                ⚖️ NGHỊ ĐỊNH SỐ 42/2026/NĐ-CP (Có hiệu lực từ 26/01/2026)
-                            </div>
-                            <div class="tree-branches">
-                                <div class="tree-leaf">
-                                    <div class="tree-leaf-title">NÚT THẮT 1: VĂN BẢN</div>
-                                    <div class="tree-leaf-text">
-                                        <strong>Chưa có Thông tư liên tịch</strong> giữa Bộ Nông nghiệp, Tài chính, Nội vụ hướng dẫn xếp ngạch bậc và hồ sơ chi trả.
-                                    </div>
-                                </div>
-                                <div class="tree-leaf">
-                                    <div class="tree-leaf-title">NÚT THẮT 2: KINH PHÍ</div>
-                                    <div class="tree-leaf-text">
-                                        <strong>BQL rừng tự chủ kiệt quệ</strong> do nguồn DVMTR giảm; Ngân sách tỉnh lúng túng chờ nguồn bổ sung từ Trung ương.
-                                    </div>
-                                </div>
-                                <div class="tree-leaf">
-                                    <div class="tree-leaf-title">NÚT THẮT 3: ĐỐI TƯỢNG</div>
-                                    <div class="tree-leaf-text">
-                                        <strong>Lực lượng hợp đồng chiếm &gt;65%</strong> quân số trực tiếp tuần rừng nhưng không thuộc diện "viên chức" để hưởng.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p class="text-p">
-                            Các Ban quản lý rừng rơi vào vòng luẩn quẩn: Muốn chi trả nhưng Kho bạc Nhà nước không duyệt vì thiếu Thông tư hướng dẫn; muốn lập dự toán thì cơ chế tự chủ tài chính không cho phép chi vượt nguồn thu DVMTR đang ngày càng teo tóp.
-                        </p>
-
-                        <div class="page-footer">
-                            <span>ĐẠI NGÀN KÝ SỰ • TƯ LIỆU LÂM NGHIỆP</span>
-                            <span>Trang 06</span>
-                        </div>
-                    </div>
-
-                    <!-- Right Page: Page 7 -->
-                    <div class="mag-page right-page">
-                        <div class="page-header">
-                            <span>TIẾNG KÊU CỨU TỪ RỪNG GIÀ • PHẦN V</span>
-                            <span>TRANG 07</span>
-                        </div>
-
-                        <span class="section-tag">BÁO ĐỘNG ĐỎ NHÂN SỰ</span>
-                        <h2 class="page-title">Làn sóng xin thôi việc và những khoảng trống rợn người</h2>
-
-                        <!-- 100% UNCOVERED PHOTO -->
-                        <div class="page-figure">
-                            <img src="images/real_forest_ranger_boundary_check.jpg" alt="Lực lượng chuyên trách bảo vệ rừng kiểm tra đường ranh, mốc giới rừng">
-                            <div class="figure-caption">
-                                <strong>Ảnh tư liệu thực tế:</strong> Tuần tra phát dọn đường băng cản lửa, cắm mốc ranh giới rừng. Công việc nhọc nhằn đòi hỏi sức khỏe và lòng yêu rừng sắt son, nhưng đang đứng trước nguy cơ thiếu hụt nhân lực trầm trọng.
-                            </div>
-                        </div>
-
-                        <p class="text-p">
-                            Khi niềm hy vọng chuyển thành sự mòn mỏi chờ đợi, sự kiên nhẫn của những người giữ rừng đã chạm đến giới hạn chịu đựng. 
-                        </p>
-                        <p class="text-p">
-                            Trên bàn làm việc của nhiều Giám đốc Ban quản lý rừng phòng hộ, những lá đơn xin thôi việc cứ dày thêm theo từng tháng. Những kỹ sư lâm nghiệp trẻ, những chàng trai người bản địa thông thạo từng hốc đá khe suối đành gạt nước mắt nộp lại bộ đồ lính sờn vai để xuống các khu công nghiệp Bắc Ninh, Bình Dương làm công nhân, hoặc ra thành phố chạy xe ôm công nghệ.
-                        </p>
-
-                        <div class="quote-box" style="background: #fff1f2; border-left-color: #e11d48;">
-                            <div class="quote-text" style="color: #9f1239;">"Rời rừng chúng tôi khóc. Nhưng vợ con ở nhà nợ tiền phân bón, tiền học phí của con đến hạn phải nộp, không thể cứ mang tình yêu rừng ra để trả nợ được..."</div>
-                            <div class="quote-author" style="color: #be123c;">— Lời trần tình trong lá đơn xin nghỉ việc của một cán bộ bảo vệ rừng trẻ tuổi</div>
-                        </div>
-
-                        <p class="text-p">
-                            Mỗi một người giữ rừng dứt áo ra đi là một trạm gác bị bỏ hoang, một tuyến tuần tra bị đứt gãy. Lâm tặc chỉ chực chờ những khoảng trống ấy để đưa cưa máy vào xâu xé những thân cây cổ thụ trăm năm tuổi.
-                        </p>
-
-                        <div class="page-footer">
-                            <span>SỐ ĐẶC BIỆT 2026</span>
-                            <span>Trang 07</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SPREAD 4: BACK COVER & MANIFESTO (Single Page Poster) -->
-                <div class="spread-container single-spread" data-spread="4" data-page-left="8" data-page-right="8">
-                    <div class="mag-page back-cover-wrapper">
-                        <div class="back-cover-top">
-                            <span class="nyt-kicker-badge">TUYÊN NGÔN HÀNH ĐỘNG</span>
-                            <span style="font-size: 13.5px; color: #cbd5e1; margin-left: 15px; letter-spacing: 1px;">VÌ SỰ SỐNG CỦA ĐẠI NGÀN</span>
-                        </div>
-
-                        <div class="back-cover-quote">
-                            "Rừng xanh là bức tường thành che chắn lũ dữ cho hàng triệu người dân ở đồng bằng. Nhưng bức tường thành ấy sẽ sụp đổ nếu những người giữ thành vẫn phải oằn mình trong nỗi lo đứt bữa!"
-                        </div>
-
-                        <div class="back-cover-rec">
-                            <h3 style="color: #fde68a; font-size: 15.5px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800;">3 KIẾN NGHỊ CẤP BÁCH THÁO GỠ NÚT THẮT NGHỊ ĐỊNH 42:</h3>
-                            <div class="rec-item">
-                                <span class="rec-bullet">❶</span>
-                                <div><strong>Khẩn cấp ban hành Thông tư liên tịch:</strong> Bộ Nông nghiệp & Môi trường phối hợp Bộ Nội vụ, Bộ Tài chính ban hành hướng dẫn chi tiết về xếp ngạch bậc, chức danh và thủ tục thanh quyết toán chế độ phụ cấp ưu đãi nghề.</div>
-                            </div>
-                            <div class="rec-item">
-                                <span class="rec-bullet">❷</span>
-                                <div><strong>Bố trí kinh phí từ Ngân sách Nhà nước:</strong> Nhà nước cấp bổ sung có mục tiêu nguồn ngân sách chi trả phụ cấp cho các đơn vị bảo vệ rừng khó khăn, không khoán trắng tài chính cho đơn vị tự chủ nghèo nàn.</div>
-                            </div>
-                            <div class="rec-item">
-                                <span class="rec-bullet">❸</span>
-                                <div><strong>Mở rộng cơ chế cho lực lượng hợp đồng:</strong> Xây dựng khung chính sách bảo đảm quyền lợi phụ cấp tương xứng cho lực lượng hợp đồng lao động đang trực tiếp tuần rừng ngày đêm.</div>
-                            </div>
-                        </div>
-
-                        <div class="cover-bottom-bar" style="border-top-color: rgba(255,255,255,0.25);">
-                            <div>
-                                <strong style="color: #fde68a; font-size: 13px;">ẤN PHẨM TƯ LIỆU ĐẶC BIỆT NĂM 2026</strong><br>
-                                <span style="font-size: 12px; color: #94a3b8;">Bản quyền nội dung & đồ họa tương tác • Bảo tồn Di sản Rừng Việt Nam</span>
-                            </div>
-                            <div>
-                                <span style="font-size: 12px; color: #cbd5e1;">HẾT BÀI BÁO</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Bottom Floating Control Bar -->
-            <div class="book-controls">
-                <button class="nav-btn" onclick="prevSpread()">❮ Trang trước</button>
-                <div class="page-indicator" id="page-display">Bìa Trước (1/8)</div>
-                <button class="nav-btn" onclick="nextSpread()">Trang sau ❯</button>
+            <!-- SPREAD 1: SPREAD 1 (Page 2 & Page 3) -->
+            <div class="spread-container" data-spread="1" data-page-left="2" data-page-right="3">
+                <!-- Left Page: Page 2 -->
+                <div class="mag-page left-page">
+                    <div class="page-header">
+                        <span>LỜI TÒA SOẠN • BỨC TRANH TOÀN CẢNH</span>
+                        <span>TRANG 02</span>
+                    </div>
+
+                    <span class="section-tag">TỔNG QUAN HIỆN TRẠNG</span>
+                    <h2 class="page-title">Những bước chân thầm lặng gánh trên vai lá phổi xanh Tổ quốc</h2>
+
+                    <div class="page-sapo">
+                        "Hơn 14,7 triệu hecta rừng trên toàn quốc đang được che chở bởi những người lính không mang quân hàm. Nhưng sau lưng họ là áp lực cơm áo và nỗi âu lo từng ngày..."
+                    </div>
+
+                    <p class="text-p">
+                        <span class="drop-cap">G</span>iữa trập trùng đại ngàn biên giới, nơi rừng già giáp ranh đất bạn Lào hay những cánh rừng nguyên sinh miền Trung, Tây Nguyên, có một lực lượng ngày đêm bám trụ rừng sâu: Lực lượng chuyên trách bảo vệ rừng của các Ban quản lý rừng phòng hộ, rừng đặc dụng và công ty lâm nghiệp.
+                    </p>
+                    <p class="text-p">
+                        Không có trụ sở khang trang, không có chế độ công chức, hành trang của họ là những chiếc lán bạt chênh vênh bên sườn đá, ba lô trĩu nặng lương khô và chiếc gậy luồn rừng mòn vẹt. Họ là bức tường thành đầu tiên và kiên trung nhất ngăn chặn bước chân của lâm tặc.
+                    </p>
+
+                    <div class="quote-box">
+                        <div class="quote-text">"Chúng tôi giữ cho rừng bình yên, nhưng gia đình mình thì không ai che chở được khỏi nỗi lo cơm áo..."</div>
+                        <div class="quote-author">— Tâm sự của một nhân viên bảo vệ rừng hơn 12 năm công tác</div>
+                    </div>
+
+                    <div class="page-footer">
+                        <span>ĐẠI NGÀN KÝ SỰ • TƯ LIỆU LÂM NGHIỆP</span>
+                        <span>Trang 02</span>
+                    </div>
+                </div>
+
+                <!-- Right Page: Page 3 -->
+                <div class="mag-page right-page">
+                    <div class="page-header">
+                        <span>KÝ SỰ HIỆN TRƯỜNG • PHẦN I</span>
+                        <span>TRANG 03</span>
+                    </div>
+
+                    <span class="section-tag">HIỆN TRƯỜNG THỰC TẾ</span>
+                    <h2 class="page-title">Bữa cơm cắm lán và những đêm lạnh thấu xương giữa rừng già</h2>
+
+                    <!-- 100% UNCOVERED PHOTO -->
+                    <div class="page-figure">
+                        <img src="images/real_forest_ranger_shelter_meal.jpg" alt="Căn lán dã chiến và bữa cơm giữa rừng già">
+                        <div class="figure-caption">
+                            <strong>Ảnh tư liệu chân thật:</strong> Căn lán dã chiến bên bếp lửa bập bùng giữa rừng sâu. Bữa cơm chỉ có nồi cơm độn, gói mì tôm, cá khô mặn và ít rau rừng hái vội sau hàng giờ leo dốc đá.
+                        </div>
+                    </div>
+
+                    <p class="text-p">
+                        Chuyến tuần rừng kéo dài 5 ngày 4 đêm của đội bảo vệ rừng bắt đầu từ sáng sớm khi sương mù còn đặc quánh. Trên lưng mỗi người là gùi quân tư trang nặng hơn 20kg: gạo, cá khô, muối trắng, nồi niêu và võng dù.
+                    </p>
+                    <p class="text-p">
+                        Đôi giày vải cấp phát hàng năm chỉ đi được 2 tháng là bung chỉ, rách toạc đế vì đá tai mèo sắc nhọn. Mùa mưa, vắt rừng bám đỏ ống chân; mùa đông, nhiệt độ vùng cao hạ xuống dưới 5 độ C, manh áo lính mỏng manh không đủ xua đi cái rét buốt thấu xương thịt.
+                    </p>
+
+                    <div class="page-footer">
+                        <span>SỐ ĐẶC BIỆT 2026</span>
+                        <span>Trang 03</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- SPREAD 2: SPREAD 2 (Page 4 & Page 5) -->
+            <div class="spread-container" data-spread="2" data-page-left="4" data-page-right="5">
+                <!-- Left Page: Page 4 -->
+                <div class="mag-page left-page">
+                    <div class="page-header">
+                        <span>KÝ SỰ HIỆN TRƯỜNG • PHẦN II</span>
+                        <span>TRANG 04</span>
+                    </div>
+
+                    <span class="section-tag">ĐỐI MẶT HIỂM NGUY</span>
+                    <h2 class="page-title">Ngâm mình dòng nước xiết & lằn ranh sinh tử đối đầu lâm tặc</h2>
+
+                    <!-- 100% UNCOVERED HARDSHIP PHOTO -->
+                    <div class="page-figure">
+                        <img src="images/hardship_submerged_crossing.jpg" alt="Cán bộ bảo vệ rừng ngâm mình dưới dòng nước lũ sâu ngang cổ">
+                        <div class="figure-caption">
+                            <strong>Khoảnh khắc nghẹt thở:</strong> Cán bộ bảo vệ rừng ngâm mình dưới dòng nước ngập đến cổ, hai tay giơ cao chiếc ba lô quân trang nặng trĩu trên đỉnh đầu để bảo vệ máy bộ đàm, lương khô và tài liệu khỏi bị ướt (Ảnh phóng sự tài liệu).
+                        </div>
+                    </div>
+
+                    <p class="text-p">
+                        Lâm tặc ngày nay cực kỳ manh động và liều lĩnh. Chúng trang bị cưa xăng công suất lớn, dao phát sắc lẹm, thậm chí cả súng tự chế sẵn sàng chống trả quyết liệt khi bị phát hiện.
+                    </p>
+                    <p class="text-p">
+                        Trong khi đó, lực lượng chuyên trách bảo vệ rừng chỉ được trang bị gậy cao su, bộ đàm yếu sóng và chiếc đèn pin đội đầu. Thẩm quyền trước đây rất hạn hẹp, không có công cụ tự vệ tương xứng, khiến nhiều cán bộ phải đánh đổi bằng thương tật vĩnh viễn, thậm chí hy sinh mạng sống giữa rừng sâu.
+                    </p>
+
+                    <!-- Scientific Bar Chart: Salary Comparison -->
+                    <div class="chart-box">
+                        <div class="chart-header">
+                            <span>BẢNG SO SÁNH THU NHẬP BÌNH QUÂN (TRIỆU ĐỒNG/THÁNG)</span>
+                            <span>NĂM 2026</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label-row">
+                                <span>Công nhân Khu công nghiệp</span>
+                                <span>8.2 Triệu đ</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 82%; background: #3b82f6;"></div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label-row">
+                                <span>Kiểm lâm địa bàn (có phụ cấp nghề)</span>
+                                <span>9.5 Triệu đ</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 95%; background: #10b981;"></div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label-row">
+                                <span style="color: #ef4444; font-weight: 800;">Lực lượng bảo vệ rừng chuyên trách</span>
+                                <span style="color: #ef4444; font-weight: 800;">4.5 Triệu đ</span>
+                            </div>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 45%; background: #ef4444;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page-footer">
+                        <span>ĐẠI NGÀN KÝ SỰ • TƯ LIỆU LÂM NGHIỆP</span>
+                        <span>Trang 04</span>
+                    </div>
+                </div>
+
+                <!-- Right Page: Page 5 -->
+                <div class="mag-page right-page">
+                    <div class="page-header">
+                        <span>BƯỚC NGOẶT THỂ CHẾ • PHẦN III</span>
+                        <span>TRANG 05</span>
+                    </div>
+
+                    <span class="section-tag">CHỦ TRƯƠNG LỚN CỦA ĐẢNG & CHÍNH PHỦ</span>
+                    <h2 class="page-title">Ánh sáng hy vọng từ Nghị định số 42/2026/NĐ-CP</h2>
+
+                    <!-- 100% UNCOVERED HARDSHIP PHOTO -->
+                    <div class="page-figure">
+                        <img src="images/hardship_cliff_climbing.jpg" alt="Chiến sĩ bảo vệ rừng leo vách đá tai mèo dựng đứng">
+                        <div class="figure-caption">
+                            <strong>Hiểm nguy rình rập:</strong> Cán bộ bảo vệ rừng bám tay trần và đi dép quai hậu leo ngược vách đá tai mèo dựng đứng hiểm trở giữa rừng thẳm để kiểm tra đường ranh tuần tra (Ảnh tư liệu hiện trường).
+                        </div>
+                    </div>
+
+                    <div class="page-sapo">
+                        "Ngày 26/01/2026, Chính phủ ban hành Nghị định 42/2026/NĐ-CP sửa đổi Nghị định 01/2019/NĐ-CP. Lần đầu tiên, viên chức bảo vệ rừng được công nhận quyền hạn và chế độ như Kiểm lâm."
+                    </div>
+
+                    <p class="text-p">
+                        Đây là quyết sách lịch sử, thể hiện sự thấu hiểu sâu sắc và tính nhân văn cao cả của Đảng và Nhà nước đối với những người lính cắm bản giữ rừng.
+                    </p>
+
+                    <div class="policy-tree">
+                        <div class="policy-step">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <strong>Sửa đổi Điều 14 • Quyền hạn thực thi:</strong> Viên chức bảo vệ rừng khi làm nhiệm vụ được quyền lập biên bản vi phạm hành chính, bảo vệ hiện trường, tạm giữ tang vật phương tiện vi phạm và kịp thời báo cáo cơ quan thẩm quyền xử lý. Chấm dứt cảnh "bất lực nhìn lâm tặc tẩu tán gỗ".
+                            </div>
+                        </div>
+                        <div class="policy-step">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <strong>Sửa đổi Điều 16 • Chế độ đãi ngộ:</strong> Quy định rõ viên chức thuộc lực lượng chuyên trách bảo vệ rừng được hưởng chế độ lương, phụ cấp ưu đãi nghề (25% - 50%), phụ cấp thâm niên nghề như Kiểm lâm. Một sự bổ sung vô cùng quý giá cho chiếc dạ dày của người giữ rừng.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page-footer">
+                        <span>SỐ ĐẶC BIỆT 2026</span>
+                        <span>Trang 05</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPREAD 3: SPREAD 3 (Page 6 & Page 7) -->
+            <div class="spread-container" data-spread="3" data-page-left="6" data-page-right="7">
+                <!-- Left Page: Page 6 -->
+                <div class="mag-page left-page">
+                    <div class="page-header">
+                        <span>ĐỒ HỌA INFOGRAPHIC • PHẦN IV</span>
+                        <span>TRANG 06</span>
+                    </div>
+
+                    <span class="section-tag">PHÂN TÍCH KHOA HỌC CHÍNH SÁCH</span>
+                    <h2 class="page-title">Vì sao "Bảo bối" Nghị định 42 vẫn nằm im trên bàn giấy?</h2>
+
+                    <!-- 100% UNCOVERED HARDSHIP PHOTO -->
+                    <div class="page-figure">
+                        <img src="images/hardship_torrent_pole.jpg" alt="Đội tuần tra bám sào vượt dòng nước xiết">
+                        <div class="figure-caption">
+                            <strong>Gian nan vượt lũ:</strong> Đội tuần tra luồn rừng gùi bao tải lương thực trên vai, cùng bám vào một thân cây rừng để hỗ trợ nhau vượt qua con suối đá trơn trượt mùa mưa lũ (Ảnh thực tế hiện trường).
+                        </div>
+                    </div>
+
+                    <div class="page-sapo">
+                        Đã nhiều tháng trôi qua kể từ khi Nghị định ban hành, nhưng thực tế nghiệt ngã: Chưa một cán bộ bảo vệ rừng nào nhận được một đồng phụ cấp mới.
+                    </div>
+
+                    <!-- 3 Policy Funnel Bottlenecks -->
+                    <div class="policy-tree">
+                        <div class="policy-step">
+                            <div class="step-num" style="background: #ef4444;">1</div>
+                            <div class="step-content">
+                                <strong>Nút thắt 1 • Chưa có văn bản hướng dẫn:</strong> Chưa có Thông tư liên tịch giữa Bộ Nông nghiệp và Phát triển nông thôn, Bộ Tài chính, Bộ Nội vụ hướng dẫn xếp ngạch bậc và hồ sơ chi trả.
+                            </div>
+                        </div>
+                        <div class="policy-step">
+                            <div class="step-num" style="background: #ef4444;">2</div>
+                            <div class="step-content">
+                                <strong>Nút thắt 2 • Kiệt quệ tài chính:</strong> BQL rừng tự chủ kiệt quệ do nguồn DVMTR giảm; Ngân sách tỉnh lúng túng chờ nguồn bổ sung có mục tiêu từ Trung ương.
+                            </div>
+                        </div>
+                        <div class="policy-step">
+                            <div class="step-num" style="background: #ef4444;">3</div>
+                            <div class="step-content">
+                                <strong>Nút thắt 3 • Khoảng trống pháp lý hợp đồng:</strong> Lực lượng hợp đồng chiếm >65% quân số trực tiếp tuần rừng nhưng không thuộc diện "viên chức" để hưởng.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page-footer">
+                        <span>ĐẠI NGÀN KÝ SỰ • TƯ LIỆU LÂM NGHIỆP</span>
+                        <span>Trang 06</span>
+                    </div>
+                </div>
+
+                <!-- Right Page: Page 7 -->
+                <div class="mag-page right-page">
+                    <div class="page-header">
+                        <span>TIẾNG KÊU CỨU TỪ RỪNG GIÀ • PHẦN V</span>
+                        <span>TRANG 07</span>
+                    </div>
+
+                    <span class="section-tag">BÁO ĐỘNG ĐỎ NHÂN SỰ</span>
+                    <h2 class="page-title">Làn sóng xin thôi việc và những khoảng trống rợn người</h2>
+
+                    <!-- 100% UNCOVERED HARDSHIP PHOTO -->
+                    <div class="page-figure">
+                        <img src="images/hardship_pumat_river.jpg" alt="Tuần tra lội sông bảo vệ rừng vùng lõi Pù Mát">
+                        <div class="figure-caption">
+                            <strong>Địa bàn Tây Nghệ An:</strong> Cán bộ lâm nghiệp và nhân viên bảo vệ rừng mang gùi dã chiến vượt sông vào vùng lõi Pù Mát giáp biên giới Việt - Lào (Ảnh phóng sự tài liệu).
+                        </div>
+                    </div>
+
+                    <p class="text-p">
+                        Khi niềm hy vọng chuyển thành sự mòn mỏi chờ đợi, sự kiên nhẫn của những người giữ rừng đã chạm đến giới hạn chịu đựng.
+                    </p>
+                    <p class="text-p">
+                        Trên bàn làm việc của nhiều Giám đốc Ban quản lý rừng phòng hộ, những lá đơn xin thôi việc cứ dày thêm theo từng tháng. Những kỹ sư lâm nghiệp trẻ, những chàng trai người bản địa thông thạo từng hốc đá khe suối đành gạt nước mắt nộp lại bộ đồ lính sờn vai để xuống các khu công nghiệp làm công nhân, hoặc ra thành phố chạy xe ôm công nghệ.
+                    </p>
+
+                    <div class="quote-box" style="background: #fff1f2; border-left-color: #e11d48;">
+                        <div class="quote-text" style="color: #9f1239;">"Rời rừng chúng tôi khóc. Nhưng vợ con ở nhà nợ tiền phân bón, tiền học phí của con đến hạn phải nộp, không thể cứ mang tình yêu rừng ra để trả nợ được..."</div>
+                        <div class="quote-author" style="color: #be123c;">— Lời trần tình trong lá đơn xin nghỉ việc của một cán bộ bảo vệ rừng trẻ tuổi</div>
+                    </div>
+
+                    <p class="text-p">
+                        Mỗi một người giữ rừng dứt áo ra đi là một trạm gác bị bỏ hoang, một tuyến tuần tra bị đứt gãy. Lâm tặc chỉ chực chờ những khoảng trống ấy để đưa cưa máy vào xâu xé những thân cây cổ thụ trăm năm tuổi.
+                    </p>
+
+                    <div class="page-footer">
+                        <span>SỐ ĐẶC BIỆT 2026</span>
+                        <span>Trang 07</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPREAD 4: BACK COVER & MANIFESTO (Single Page Poster) -->
+            <div class="spread-container single-spread" data-spread="4" data-page-left="8" data-page-right="8">
+                <div class="mag-page back-cover-wrapper">
+                    <div class="back-cover-top">
+                        <span class="nyt-badge">TUYÊN NGÔN HÀNH ĐỘNG</span>
+                        <span style="font-size: 13.5px; color: #cbd5e1; margin-left: 15px; letter-spacing: 1px;">VÌ SỰ SỐNG CỦA ĐẠI NGÀN</span>
+                    </div>
+
+                    <div class="back-cover-quote">
+                        "Rừng xanh là bức tường thành che chắn lũ dữ cho hàng triệu người dân ở đồng bằng. Nhưng bức tường thành ấy sẽ sụp đổ nếu những người giữ thành vẫn phải oằn mình trong nỗi lo đứt bữa!"
+                    </div>
+
+                    <div class="back-cover-rec">
+                        <h3 style="color: #fde68a; font-size: 15.5px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800;">3 KIẾN NGHỊ CẤP BÁCH THÁO GỠ NÚT THẮT NGHỊ ĐỊNH 42:</h3>
+                        <div class="rec-item">
+                            <span class="rec-bullet">❶</span>
+                            <div><strong>Khẩn cấp ban hành Thông tư liên tịch:</strong> Bộ Nông nghiệp và Phát triển nông thôn phối hợp Bộ Nội vụ, Bộ Tài chính ban hành hướng dẫn chi tiết về xếp ngạch bậc, chức danh và thủ tục thanh quyết toán chế độ phụ cấp ưu đãi nghề.</div>
+                        </div>
+                        <div class="rec-item">
+                            <span class="rec-bullet">❷</span>
+                            <div><strong>Bố trí kinh phí từ Ngân sách Nhà nước:</strong> Nhà nước cấp bổ sung có mục tiêu nguồn ngân sách chi trả phụ cấp cho các đơn vị bảo vệ rừng có nguồn thu thấp, không khoán trắng tài chính cho các đơn vị tự chủ còn nhiều khó khăn.</div>
+                        </div>
+                        <div class="rec-item">
+                            <span class="rec-bullet">❸</span>
+                            <div><strong>Mở rộng cơ chế cho lực lượng hợp đồng:</strong> Xây dựng khung chính sách bảo đảm quyền lợi phụ cấp tương xứng cho lực lượng hợp đồng lao động đang trực tiếp tuần rừng ngày đêm.</div>
+                        </div>
+                    </div>
+
+                    <div class="cover-bottom-bar" style="border-top-color: rgba(255,255,255,0.25);">
+                        <div>
+                            <strong style="color: #fde68a; font-size: 13px;">ẤN PHẨM TƯ LIỆU ĐẶC BIỆT NĂM 2026</strong><br>
+                            <span style="font-size: 12px; color: #94a3b8;">Bản quyền nội dung & đồ họa tương tác • Bảo tồn Di sản Rừng Việt Nam</span>
+                        </div>
+                        <div>
+                            <span style="font-size: 12px; color: #cbd5e1;">HẾT BÀI BÁO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
+        <!-- FLIPBOOK BOTTOM DOCK CONTROLLER -->
+        <div class="flip-nav-dock">
+            <button class="dock-nav-btn" id="btn-dock-prev" onclick="prevSpread()">
+                <span>◀</span> Trang Trước
+            </button>
+            <div class="dock-page-info" id="page-display">
+                BÌA TẠP CHÍ
+            </div>
+            <button class="dock-nav-btn" id="btn-dock-next" onclick="nextSpread()">
+                Trang Sau <span>▶</span>
+            </button>
+        </div>
     </div>
 
     <!-- ========================================================= -->
-    <!-- VIEWPORT 2: CONTINUOUS SCROLL LONGFORM VIEW (THE NYT)     -->
-    <!-- (HERO PHOTO IS 100% UNCOVERED - CLEAN EDITORIAL LAYOUT)   -->
+    <!-- VIEWPORT 2: CONTINUOUS SCROLL VIEW (THE NEW YORK TIMES)   -->
     <!-- ========================================================= -->
     <div id="scroll-container">
-        <div class="reading-progress-bar" id="scroll-progress"></div>
+        <main class="scroll-article">
+            <header class="scroll-header-stage">
+                <span class="scroll-header-kicker">PHÓNG SỰ ĐIỀU TRA & CHÍNH SÁCH</span>
+                <h1 class="scroll-header-title">MÒN MỎI ĐỢI CHẾ ĐỘ GIỮA RỪNG SÂU: KHI NGHỊ ĐỊNH ĐÃ BAN HÀNH NHƯNG DẠ DÀY NGƯỜI GIỮ RỪNG VẪN QUẶN THẮT</h1>
+                <p class="scroll-header-deck">
+                    Nghị định 42/2026/NĐ-CP được ví như "phao cứu sinh" cho hàng vạn cán bộ chuyên trách bảo vệ rừng. Thế nhưng sau nhiều tháng có hiệu lực, chính sách lớn của Đảng và Nhà nước vẫn đang "ngủ yên" trên giấy tờ, còn người giữ rừng vẫn quặn lòng trước cơn bão giá.
+                </p>
+                <div class="scroll-meta-line">
+                    <span>Địa bàn: Miền Tây Nghệ An & Vùng Giáp Biên</span>
+                    <span>•</span>
+                    <span>Tư liệu điều tra</span>
+                    <span>•</span>
+                    <span>Thời gian đọc: 8 phút</span>
+                </div>
+            </header>
 
-        <!-- NYT Editorial Header: Title sits cleanly ABOVE the photo -->
-        <header class="scroll-header-stage">
-            <span class="scroll-header-kicker">PHÓNG SỰ ĐIỀU TRA & CHÍNH SÁCH</span>
-            <h1 class="scroll-header-title">MÒN MỎI ĐỢI CHẾ ĐỘ GIỮA RỪNG SÂU: KHI NGHỊ ĐỊNH ĐÃ BAN HÀNH NHƯNG DẠ DÀY NGƯỜI GIỮ RỪNG VẪN QUẶN THẮT</h1>
-            <p class="scroll-header-deck">
-                Khi Nghị định 42/2026/NĐ-CP đã ban hành trao quyền hạn và chế độ như kiểm lâm, nhưng hàng vạn cán bộ chuyên trách bảo vệ rừng vẫn chưa được hưởng vì vướng mắc hướng dẫn và tắc nghẽn nguồn kinh phí.
-            </p>
-            <div class="scroll-byline-box">
-                <span>Địa bàn: Kỳ Sơn, Nghệ An</span>
-                <span>•</span>
-                <span>Tư liệu điều tra</span>
-                <span>•</span>
-                <span>Thời gian đọc: 8 phút</span>
-            </div>
-        </header>
-
-        <!-- PURE FULL-WIDTH PHOTO: 100% visible, no text smeared across faces -->
-        <div class="scroll-hero-photo-wrap">
-            <div class="scroll-hero-photo-box">
-                <img src="images/real_forest_ranger_patrol_cover.jpg" alt="Lực lượng chuyên trách bảo vệ rừng tuần tra giữa rừng già nguyên sinh">
-                <div class="scroll-hero-photo-caption">
-                    Lực lượng chuyên trách bảo vệ rừng tuần tra xuyên rừng già nguyên sinh trên vùng biên giới Tây Nghệ An. (Ảnh phóng sự tư liệu hiện trường)
+            <!-- Scroll Hero Photo: 100% Uncovered -->
+            <div class="scroll-hero-photo-wrap">
+                <img src="images/real_forest_ranger_patrol_cover.jpg" alt="Tuần tra bảo vệ rừng nguyên sinh">
+                <div class="scroll-hero-caption">
+                    Đội tuần tra luồn rừng của lực lượng chuyên trách bảo vệ rừng vượt qua thảm thực vật rậm rạp giữa đại ngàn nguyên sinh (Ảnh phóng sự tài liệu).
                 </div>
             </div>
-        </div>
 
-        <main class="scroll-article-body">
             <div class="page-sapo">
-                Giữa bạt ngàn của đại ngàn, những dấu chân lặng lẽ của lực lượng chuyên trách bảo vệ rừng hàng ngày đối đầu với hiểm nguy, lâm tặc và thiên tai để giữ từng cây gỗ quý, từng vạt nước đầu nguồn. Đảng và Nhà nước đã thấu hiểu, Chính phủ đã ban hành Nghị định 42/2026/NĐ-CP. Thế nhưng, đến nay vẫn chưa một đơn vị nào triển khai được, người giữ rừng vẫn đang phải vay mượn từng bữa gạo để đi tuần rừng.
+                Giữa trập trùng đại ngàn biên giới, những dấu chân lặng lẽ của lực lượng chuyên trách bảo vệ rừng hàng ngày đối đầu với hiểm nguy, lâm tặc và thiên tai để giữ từng cây gỗ quý, từng vạt nước đầu nguồn. Đảng và Nhà nước đã thấu hiểu, Chính phủ đã ban hành Nghị định 42/2026/NĐ-CP. Thế nhưng, đến nay vẫn chưa một đơn vị nào triển khai được, người giữ rừng vẫn đang phải vay mượn từng bữa gạo để đi tuần rừng.
             </div>
 
             <h2>1. Bữa cơm cắm lán và lằn ranh sinh tử nơi rừng già</h2>
@@ -1731,27 +1578,32 @@
             </p>
 
             <div class="page-figure">
-                <img src="images/real_forest_ranger_shelter_meal.jpg" alt="Bữa cơm lán tạm của người giữ rừng">
-                <div class="figure-caption">Căn lán bạt ẩm ướt và bữa ăn đạm bạc của cán bộ bảo vệ rừng sau một ngày trèo đèo lội suối (Ảnh tài liệu thực tế).</div>
+                <img src="images/real_forest_ranger_shelter_meal.jpg" alt="Căn lán dã chiến và bữa cơm đơn sơ giữa rừng">
+                <div class="figure-caption">Căn lán dã chiến bên bếp lửa bập bùng giữa rừng sâu. Bữa cơm chỉ có nồi cơm độn, mì tôm và cá khô (Ảnh thực tế hiện trường).</div>
             </div>
 
             <p>
                 Mỗi chuyến tuần rừng kéo dài từ 3 đến 7 ngày. Họ gùi trên lưng 20kg quân tư trang, vượt qua những con dốc dựng đứng trơn trượt, đối mặt với vắt, muỗi sốt rét, lũ quét bất ngờ và những đêm ngủ lạnh thấu xương giữa rừng già. Đôi giày vải phát hàng năm chỉ đi được 2 tháng là rách toạc, đế mòn vẹt trơ cả gan bàn chân.
             </p>
 
-            <h2>2. Lằn ranh sinh tử đối đầu lâm tặc và nghịch lý "tay không bắt giặc"</h2>
+            <h2>2. Ngâm mình dòng nước xiết & lằn ranh sinh tử đối đầu "lâm tặc"</h2>
             <p>
                 Họ là những người trực tiếp chạm trán đầu tiên với các đối tượng phá rừng, săn bắt động vật hoang dã. Lâm tặc ngày nay liều lĩnh, mang theo cưa xăng, dao phát, thậm chí súng tự chế sẵn sàng chống trả khi bị phát hiện. Đã có biết bao cán bộ bảo vệ rừng bị thương tật vĩnh viễn, thậm chí hy sinh thân mình khi làm nhiệm vụ.
             </p>
 
             <div class="page-figure">
-                <img src="images/real_forest_ranger_stream_hazard.jpg" alt="Cán bộ bảo vệ rừng vượt suối dữ">
-                <div class="figure-caption">Những cung đường tuần tra hiểm trở, hiểm nguy rình rập trong từng bước chân qua dòng nước dữ (Ảnh phóng sự tài liệu).</div>
+                <img src="images/hardship_submerged_crossing.jpg" alt="Cán bộ bảo vệ rừng ngâm mình dưới dòng nước lũ">
+                <div class="figure-caption">Khoảnh khắc nghẹt thở: Cán bộ bảo vệ rừng ngâm mình dưới dòng nước lũ ngập ngang cổ, hai tay giơ cao ba lô quân trang nặng trĩu trên đỉnh đầu để bảo vệ máy bộ đàm, lương khô và tài liệu khỏi bị ướt (Ảnh phóng sự tài liệu).</div>
             </div>
 
             <p>
                 Trong khi đối phương hung hãn, lực lượng chuyên trách bảo vệ rừng lại có công cụ hỗ trợ hạn chế, quyền hạn yếu, không có phụ cấp công vụ, thẩm quyền xử lý trước đây gần như chỉ dừng ở việc "nhắc nhở, lập biên bản ghi nhận và báo cáo".
             </p>
+
+            <div class="page-figure">
+                <img src="images/hardship_cliff_climbing.jpg" alt="Chiến sĩ bảo vệ rừng leo vách đá tai mèo hiểm trở">
+                <div class="figure-caption">Chiến sĩ bảo vệ rừng bám tay trần và đi dép quai hậu leo ngược vách đá tai mèo dựng đứng hiểm trở giữa rừng thẳm (Ảnh tư liệu hiện trường).</div>
+            </div>
 
             <h2>3. Ánh sáng hy vọng từ Nghị định 42/2026/NĐ-CP</h2>
             <p>
@@ -1760,6 +1612,11 @@
             <p>
                 Nghị định 42 mang đến hai bước đột phá mang tính lịch sử: Sửa đổi Điều 14 trao quyền hạn thực thi pháp luật (lập biên bản vi phạm hành chính, tạm giữ tang vật phương tiện) và Sửa đổi Điều 16 cởi trói chế độ đãi ngộ: được hưởng chế độ lương, phụ cấp ưu đãi nghề và thâm niên như Kiểm lâm.
             </p>
+
+            <div class="page-figure">
+                <img src="images/hardship_torrent_pole.jpg" alt="Đội tuần tra bám sào vượt suối mùa mưa lũ">
+                <div class="figure-caption">Đội tuần tra luồn rừng gùi bao tải lương thực trên vai, cùng bám vào một thân cây rừng để hỗ trợ nhau vượt qua con suối đá trơn trượt mùa mưa lũ (Ảnh thực tế hiện trường).</div>
+            </div>
 
             <h2>4. Nghịch lý "Chính sách treo": Vì sao chưa đơn vị nào triển khai?</h2>
             <p>
@@ -1770,8 +1627,8 @@
             </p>
 
             <div class="page-figure">
-                <img src="images/real_forest_ranger_boundary_check.jpg" alt="Tuần tra kiểm tra mốc giới và bảo vệ rừng">
-                <div class="figure-caption">Cán bộ bảo vệ rừng kiểm tra mốc ranh giới và phòng chống nguy cơ xâm lấn, cháy rừng (Ảnh thực tế hiện trường).</div>
+                <img src="images/hardship_pumat_river.jpg" alt="Tuần tra bảo vệ rừng vùng lõi Pù Mát Tây Nghệ An">
+                <div class="figure-caption">Cán bộ lâm nghiệp và nhân viên bảo vệ rừng mang gùi dã chiến vượt sông lớn vào tuần tra vùng lõi Pù Mát giáp biên giới Việt - Lào (Ảnh phóng sự tài liệu).</div>
             </div>
 
             <h2>5. Lời kêu gọi hành động khẩn cấp</h2>
@@ -1788,143 +1645,110 @@
     const totalSpreads = 5;
     let soundEnabled = true;
     let audioCtx = null;
-    let currentBaseFontSize = 18;
+    let currentBaseFontSize = 17.5;
 
     const spreadLabels = [
-        "Bìa Trước (Trang 1)",
-        "Trang 02 - 03 (Hiện trường I)",
-        "Trang 04 - 05 (Chính sách 42)",
-        "Trang 06 - 07 (Nút thắt kinh phí)",
-        "Bìa Sau (Trang 8 / Hết)"
+        "BÌA TẠP CHÍ",
+        "TRANG 02 - 03: HIỆN TRƯỜNG",
+        "TRANG 04 - 05: ĐỐI MẶT HIỂM NGUY",
+        "TRANG 06 - 07: CHÍNH SÁCH TREO",
+        "TRANG CUỐI: BẢN TUYÊN NGÔN"
     ];
 
-    // =========================================================
-    // DUAL INDEPENDENT AUDIO CONTROLLER (ZERO BLEED / NO DELAY)
-    // =========================================================
+    // Dual-Engine Audio State
+    let activeVoice = 'aoede'; // 'aoede' (Female) or 'puck' (Male)
     const audioAoede = document.getElementById('audio-aoede');
     const audioPuck = document.getElementById('audio-puck');
-    const playBtn = document.getElementById('audio-play-btn');
-    const slider = document.getElementById('audio-slider');
-    const curTimeSpan = document.getElementById('audio-cur-time');
-    const durTimeSpan = document.getElementById('audio-dur-time');
-    const btnAoede = document.getElementById('btn-audio-aoede');
-    const btnPuck = document.getElementById('btn-audio-puck');
-    const waveBox = document.getElementById('audio-wave-box');
-    const voiceStatus = document.getElementById('audio-voice-status');
 
-    let activeVoice = 'aoede'; // 'aoede' or 'puck'
+    // UI Elements
+    const topPlayBtn = document.getElementById('top-play-btn');
+    const topPlayIcon = document.getElementById('top-play-icon');
+    const topPlayLabel = document.getElementById('top-play-label');
+    const topLiveWaves = document.getElementById('top-live-waves');
+    const btnTopAoede = document.getElementById('btn-top-aoede');
+    const btnTopPuck = document.getElementById('btn-top-puck');
+    const topSlider = document.getElementById('top-slider');
+    const topCurTime = document.getElementById('top-cur-time');
+    const topDurTime = document.getElementById('top-dur-time');
 
     function getActiveAudio() {
         return activeVoice === 'aoede' ? audioAoede : audioPuck;
-    }
-
-    function getInactiveAudio() {
-        return activeVoice === 'aoede' ? audioPuck : audioAoede;
     }
 
     function formatTime(sec) {
         if (isNaN(sec) || sec < 0) return '00:00';
         const m = Math.floor(sec / 60);
         const s = Math.floor(sec % 60);
-        return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+        return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
     }
 
     function updateActiveDuration() {
         const audio = getActiveAudio();
-        if (durTimeSpan && audio && !isNaN(audio.duration) && audio.duration > 0) {
-            durTimeSpan.textContent = formatTime(audio.duration);
+        if (audio && !isNaN(audio.duration) && audio.duration > 0) {
+            if (topDurTime) topDurTime.textContent = formatTime(audio.duration);
         }
     }
 
-    function bindAudioEvents(audio) {
-        audio.addEventListener('loadedmetadata', () => {
-            if (audio === getActiveAudio()) updateActiveDuration();
-        });
+    [audioAoede, audioPuck].forEach((aud) => {
+        aud.addEventListener('loadedmetadata', updateActiveDuration);
+        aud.addEventListener('durationchange', updateActiveDuration);
 
-        audio.addEventListener('timeupdate', () => {
-            if (audio === getActiveAudio()) {
-                if (!isNaN(audio.duration) && audio.duration > 0) {
-                    const pct = (audio.currentTime / audio.duration) * 100;
-                    if (slider) slider.value = pct;
-                }
-                if (curTimeSpan) curTimeSpan.textContent = formatTime(audio.currentTime);
-                updateActiveDuration();
+        aud.addEventListener('timeupdate', () => {
+            if (aud !== getActiveAudio()) return;
+            const cur = aud.currentTime;
+            const dur = aud.duration;
+            if (topCurTime) topCurTime.textContent = formatTime(cur);
+            if (!isNaN(dur) && dur > 0) {
+                const pct = (cur / dur) * 100;
+                if (topSlider) topSlider.value = pct;
+                if (topDurTime) topDurTime.textContent = formatTime(dur);
             }
         });
 
-        audio.addEventListener('play', () => {
-            if (audio === getActiveAudio()) {
-                if (playBtn) playBtn.innerHTML = '⏸';
-                if (waveBox) waveBox.classList.add('audio-playing');
-            }
+        aud.addEventListener('ended', () => {
+            if (aud !== getActiveAudio()) return;
+            if (topPlayIcon) topPlayIcon.textContent = '▶';
+            if (topPlayLabel) topPlayLabel.textContent = 'Nghe Bài Báo';
+            if (topLiveWaves) topLiveWaves.classList.remove('playing');
+            if (topSlider) topSlider.value = 0;
+            if (topCurTime) topCurTime.textContent = '00:00';
         });
-
-        audio.addEventListener('pause', () => {
-            if (audio === getActiveAudio()) {
-                if (playBtn) playBtn.innerHTML = '▶';
-                if (waveBox) waveBox.classList.remove('audio-playing');
-            }
-        });
-
-        audio.addEventListener('ended', () => {
-            if (audio === getActiveAudio()) {
-                if (playBtn) playBtn.innerHTML = '▶';
-                if (slider) slider.value = 0;
-                if (curTimeSpan) curTimeSpan.textContent = '00:00';
-                if (waveBox) waveBox.classList.remove('audio-playing');
-            }
-        });
-
-        // Fallback to online repo if local audio fails
-        audio.addEventListener('error', () => {
-            const file = (audio === audioAoede) ? 'forest_voice_gemini_aoede.mp3' : 'forest_voice_gemini_puck.mp3';
-            if (!audio.src.startsWith('https://')) {
-                audio.src = 'https://cuongsmileks.github.io/baibao-cuongsmile-kyson/' + file;
-                audio.load();
-            }
-        });
-    }
-
-    bindAudioEvents(audioAoede);
-    bindAudioEvents(audioPuck);
+    });
 
     function togglePlayMaster() {
         const audio = getActiveAudio();
-        const other = getInactiveAudio();
-        other.pause(); // Ensure other is completely muted/paused
-
         if (audio.paused) {
             audio.play().then(() => {
-                if (playBtn) playBtn.innerHTML = '⏸';
-                if (waveBox) waveBox.classList.add('audio-playing');
+                if (topPlayIcon) topPlayIcon.textContent = '⏸';
+                if (topPlayLabel) topPlayLabel.textContent = 'Tạm Dừng';
+                if (topLiveWaves) topLiveWaves.classList.add('playing');
             }).catch(e => console.warn(e));
         } else {
             audio.pause();
-            if (playBtn) playBtn.innerHTML = '▶';
-            if (waveBox) waveBox.classList.remove('audio-playing');
+            if (topPlayIcon) topPlayIcon.textContent = '▶';
+            if (topPlayLabel) topPlayLabel.textContent = 'Tiếp Tục';
+            if (topLiveWaves) topLiveWaves.classList.remove('playing');
         }
     }
 
     function selectVoice(gender) {
-        if (gender === activeVoice) return;
+        if (activeVoice === gender) return;
 
         const oldAudio = getActiveAudio();
         const wasPlaying = !oldAudio.paused;
         const curTime = oldAudio.currentTime;
 
-        // 1. INSTANTLY STOP OLD AUDIO (Zero audio bleed, never plays female at start of male!)
+        // INSTANTLY STOP OLD AUDIO (Zero audio bleed, never plays female at start of male!)
         oldAudio.pause();
 
         activeVoice = gender;
 
         if (gender === 'aoede') {
-            if (btnAoede) btnAoede.classList.add('active');
-            if (btnPuck) btnPuck.classList.remove('active');
-            if (voiceStatus) voiceStatus.textContent = 'Nghe Bài Báo (Giọng Nữ Aoede AI)';
+            if (btnTopAoede) btnTopAoede.classList.add('active');
+            if (btnTopPuck) btnTopPuck.classList.remove('active');
         } else {
-            if (btnPuck) btnPuck.classList.add('active');
-            if (btnAoede) btnAoede.classList.remove('active');
-            if (voiceStatus) voiceStatus.textContent = 'Nghe Bài Báo (Giọng Nam Puck AI)';
+            if (btnTopPuck) btnTopPuck.classList.add('active');
+            if (btnTopAoede) btnTopAoede.classList.remove('active');
         }
 
         const newAudio = getActiveAudio();
@@ -1934,18 +1758,23 @@
         updateActiveDuration();
 
         if (wasPlaying) {
-            newAudio.play().catch(e => console.warn(e));
+            newAudio.play().then(() => {
+                if (topPlayIcon) topPlayIcon.textContent = '⏸';
+                if (topPlayLabel) topPlayLabel.textContent = 'Tạm Dừng';
+                if (topLiveWaves) topLiveWaves.classList.add('playing');
+            }).catch(e => console.warn(e));
         } else {
-            if (playBtn) playBtn.innerHTML = '▶';
-            if (waveBox) waveBox.classList.remove('audio-playing');
+            if (topPlayIcon) topPlayIcon.textContent = '▶';
+            if (topPlayLabel) topPlayLabel.textContent = 'Nghe Bài Báo';
+            if (topLiveWaves) topLiveWaves.classList.remove('playing');
         }
     }
 
     function restartAudio() {
         const audio = getActiveAudio();
         audio.currentTime = 0;
-        if (slider) slider.value = 0;
-        if (curTimeSpan) curTimeSpan.textContent = '00:00';
+        if (topSlider) topSlider.value = 0;
+        if (topCurTime) topCurTime.textContent = '00:00';
         if (audio.paused) {
             togglePlayMaster();
         }
@@ -1955,7 +1784,7 @@
         const audio = getActiveAudio();
         if (!audio || isNaN(audio.duration) || audio.duration <= 0) return;
         audio.currentTime = (val / 100) * audio.duration;
-        if (curTimeSpan) curTimeSpan.textContent = formatTime(audio.currentTime);
+        if (topCurTime) topCurTime.textContent = formatTime(audio.currentTime);
     }
 
     // =========================================================
@@ -1990,9 +1819,7 @@
             filter.connect(gainNode);
             gainNode.connect(audioCtx.destination);
             noise.start();
-        } catch(e) {
-            // Silently ignore audio context errors
-        }
+        } catch(e) {}
     }
 
     function updateSpreadView() {
@@ -2009,12 +1836,17 @@
         if (display && spreadLabels[currentSpread]) {
             display.textContent = spreadLabels[currentSpread];
         }
-        playFlipSound();
+
+        const btnPrev = document.getElementById('btn-dock-prev');
+        const btnNext = document.getElementById('btn-dock-next');
+        if (btnPrev) btnPrev.disabled = (currentSpread === 0);
+        if (btnNext) btnNext.disabled = (currentSpread === totalSpreads - 1);
     }
 
     function nextSpread() {
         if (currentSpread < totalSpreads - 1) {
             currentSpread++;
+            playFlipSound();
             updateSpreadView();
         }
     }
@@ -2022,69 +1854,87 @@
     function prevSpread() {
         if (currentSpread > 0) {
             currentSpread--;
+            playFlipSound();
             updateSpreadView();
         }
     }
 
-    // Keyboard Arrow Keys
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-            nextSpread();
-        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-            prevSpread();
-        }
-    });
-
-    // Touch Swipe Gesture for Phones & Tablets
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const bookEl = document.getElementById('flipbook-container');
-
-    bookEl.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    bookEl.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, { passive: true });
-
-    function handleSwipe() {
-        const threshold = 45;
-        if (touchEndX < touchStartX - threshold) {
-            nextSpread(); // Swiped left -> next page
-        } else if (touchEndX > touchStartX + threshold) {
-            prevSpread(); // Swiped right -> prev page
+    function goToSpread(idx) {
+        if (idx >= 0 && idx < totalSpreads) {
+            currentSpread = idx;
+            playFlipSound();
+            updateSpreadView();
         }
     }
 
-    // App Mode Toggle: Flipbook vs Scroll
-    function setAppMode(mode) {
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
         const flipContainer = document.getElementById('flipbook-container');
-        const scrollContainer = document.getElementById('scroll-container');
+        if (flipContainer.style.display !== 'none') {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSpread();
+            } else if (e.key === 'ArrowLeft') {
+                prevSpread();
+            }
+        }
+    });
+
+    // Touch Swipe Gestures
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const flipViewport = document.getElementById('flipbook-container');
+    if (flipViewport) {
+        flipViewport.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        flipViewport.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+    }
+
+    function handleSwipe() {
+        const threshold = 50;
+        if (touchEndX < touchStartX - threshold) {
+            nextSpread();
+        }
+        if (touchEndX > touchStartX + threshold) {
+            prevSpread();
+        }
+    }
+
+    // =========================================================
+    // VIEW MODE SWITCHER (FLIPBOOK vs SCROLL)
+    // =========================================================
+    function setAppMode(mode) {
+        const flipBox = document.getElementById('flipbook-container');
+        const scrollBox = document.getElementById('scroll-container');
         const btnFlip = document.getElementById('btn-mode-flip');
         const btnScroll = document.getElementById('btn-mode-scroll');
 
         if (mode === 'flip') {
-            flipContainer.style.display = 'flex';
-            scrollContainer.style.display = 'none';
+            flipBox.style.display = 'flex';
+            scrollBox.style.display = 'none';
             btnFlip.classList.add('active');
             btnScroll.classList.remove('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            flipContainer.style.display = 'none';
-            scrollContainer.style.display = 'block';
+            flipBox.style.display = 'none';
+            scrollBox.style.display = 'block';
             btnScroll.classList.add('active');
             btnFlip.classList.remove('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
 
-    // Theme Switcher: Dark / Light / Sepia
-    function setTheme(themeName) {
-        document.documentElement.setAttribute('data-theme', themeName);
+    // =========================================================
+    // THEMES & DISPLAY SETTINGS
+    // =========================================================
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
     }
 
-    // Font Size Adjuster
     function adjustFontSize(delta) {
         currentBaseFontSize = Math.min(24, Math.max(15, currentBaseFontSize + delta));
         document.documentElement.style.setProperty('--font-size-base', currentBaseFontSize + 'px');
