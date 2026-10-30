@@ -888,6 +888,15 @@
             if (progressBar) progressBar.value = 0;
             if (currentTimeSpan) currentTimeSpan.textContent = '00:00';
         });
+
+        audio.addEventListener('error', (e) => {
+            console.warn('Audio error, attempting online fallback:', e);
+            const curFile = voiceFiles[currentVoice];
+            if (!audio.src.startsWith('https://') && curFile) {
+                audio.src = 'https://cuongsmileks.github.io/baibao-cuongsmile-kyson/' + curFile;
+                audio.load();
+            }
+        });
     }
 
     function togglePlay() {
