@@ -23,7 +23,7 @@
             --text-dark: #1c1917;
             --text-muted: #57534e;
             --accent-red: #b91c1c;
-            --shadow-book: 0 25px 60px rgba(0,0,0,0.35);
+            --shadow-book: 0 25px 60px rgba(0,0,0,0.45);
         }
 
         * {
@@ -34,7 +34,7 @@
         }
 
         body {
-            background: #121816;
+            background: #0f1714;
             color: var(--text-dark);
             font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
             overflow-x: hidden;
@@ -47,16 +47,16 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 60px;
-            background: rgba(6, 46, 34, 0.95);
+            height: 64px;
+            background: rgba(4, 38, 28, 0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(217, 119, 6, 0.3);
+            border-bottom: 1px solid rgba(217, 119, 6, 0.35);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 20px;
+            padding: 0 24px;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
         .brand-logo {
@@ -71,7 +71,7 @@
             color: #fff;
             font-size: 11px;
             font-weight: 800;
-            padding: 4px 8px;
+            padding: 4px 9px;
             border-radius: 4px;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -88,13 +88,13 @@
         .header-actions {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .mode-pill {
             display: flex;
-            background: rgba(0,0,0,0.35);
-            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.18);
             border-radius: 30px;
             padding: 3px;
         }
@@ -122,7 +122,7 @@
 
         .icon-btn {
             background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.18);
             color: #fff;
             width: 36px;
             height: 36px;
@@ -140,27 +140,41 @@
             border-color: #d97706;
         }
 
+        /* Modern Embedded Audio Widget in Header */
+        .header-audio-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(217, 119, 6, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: #fde68a;
+            font-size: 12.5px;
+            font-weight: 600;
+        }
+
         /* =================================================== */
         /* MODE 1: INTERACTIVE 3D FLIPBOOK VIEW                */
         /* =================================================== */
         #flipbook-container {
-            margin-top: 60px;
-            min-height: calc(100vh - 60px);
+            margin-top: 64px;
+            min-height: calc(100vh - 64px);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 20px 20px 75px 20px;
             position: relative;
-            background: radial-gradient(circle at center, #1b2622 0%, #0d1311 100%);
+            background: radial-gradient(circle at center, #1b2823 0%, #0c1411 100%);
             perspective: 2500px;
         }
 
         .book-stage {
             position: relative;
             width: 100%;
-            max-width: 1140px;
-            height: 780px;
+            max-width: 1160px;
+            height: 800px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -209,13 +223,13 @@
         /* Center Book Spine Shadow */
         .mag-page.left-page {
             border-right: 1px solid rgba(0,0,0,0.12);
-            box-shadow: inset -25px 0 35px -10px rgba(0,0,0,0.12);
+            box-shadow: inset -30px 0 40px -10px rgba(0,0,0,0.14);
             border-radius: 8px 0 0 8px;
         }
 
         .mag-page.right-page {
             border-left: 1px solid rgba(255,255,255,0.4);
-            box-shadow: inset 25px 0 35px -10px rgba(0,0,0,0.12);
+            box-shadow: inset 30px 0 40px -10px rgba(0,0,0,0.14);
             border-radius: 0 8px 8px 0;
         }
 
@@ -237,7 +251,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 50px 60px;
+            padding: 55px 65px;
             background-size: cover;
             background-position: center;
         }
@@ -245,7 +259,7 @@
         .cover-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(2,44,34,0.7) 0%, rgba(2,44,34,0.3) 40%, rgba(2,44,34,0.92) 100%);
+            background: linear-gradient(180deg, rgba(2,44,34,0.75) 0%, rgba(2,44,34,0.3) 40%, rgba(2,44,34,0.95) 100%);
             z-index: 1;
         }
 
@@ -259,8 +273,8 @@
         }
 
         .cover-masthead {
-            border-bottom: 2px solid rgba(217, 119, 6, 0.8);
-            padding-bottom: 18px;
+            border-bottom: 2px solid rgba(217, 119, 6, 0.85);
+            padding-bottom: 20px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
@@ -272,12 +286,12 @@
             font-weight: 900;
             letter-spacing: 4px;
             color: #ffffff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+            text-shadow: 0 3px 12px rgba(0,0,0,0.7);
             line-height: 1;
         }
 
         .mag-brand-sub {
-            font-size: 12px;
+            font-size: 12.5px;
             letter-spacing: 2px;
             color: #fde68a;
             font-weight: 600;
@@ -291,11 +305,12 @@
             font-weight: 700;
             color: #cbd5e1;
             letter-spacing: 1px;
+            line-height: 1.5;
         }
 
         .cover-headline-box {
             margin-top: auto;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
         .cover-badge {
@@ -318,16 +333,16 @@
             font-weight: 900;
             line-height: 1.15;
             color: #ffffff;
-            text-shadow: 0 3px 15px rgba(0,0,0,0.8);
+            text-shadow: 0 3px 15px rgba(0,0,0,0.9);
             margin-bottom: 14px;
         }
 
         .cover-sub-title {
-            font-size: 18px;
-            line-height: 1.5;
+            font-size: 18.5px;
+            line-height: 1.55;
             color: #fef08a;
             font-weight: 500;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
             max-width: 85%;
         }
 
@@ -355,10 +370,10 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.45);
             padding: 6px 12px;
             border-radius: 4px;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.18);
         }
 
         /* Page Headers & Footers */
@@ -367,7 +382,7 @@
             justify-content: space-between;
             border-bottom: 1px solid #d6d3d1;
             padding-bottom: 8px;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
             font-size: 11.5px;
             font-weight: 700;
             color: var(--text-muted);
@@ -380,10 +395,117 @@
             justify-content: space-between;
             border-top: 1px solid #d6d3d1;
             padding-top: 10px;
-            margin-top: 30px;
+            margin-top: 28px;
             font-size: 12px;
             font-weight: 700;
             color: var(--text-muted);
+        }
+
+        /* Audio Player Box inside Magazine */
+        .mag-audio-card {
+            background: linear-gradient(135deg, #064e3b, #047857);
+            color: #fff;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 25px rgba(6, 78, 59, 0.25);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .mag-audio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .mag-audio-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fde68a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mag-voice-switcher {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .mag-voice-btn {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .mag-voice-btn.active {
+            background: #d97706;
+            border-color: #f59e0b;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(217,119,6,0.5);
+        }
+
+        .mag-audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .mag-play-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #d97706;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .mag-play-btn:hover {
+            background: #b45309;
+            transform: scale(1.05);
+        }
+
+        .mag-progress-bar-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .mag-slider {
+            width: 100%;
+            height: 5px;
+            accent-color: #f59e0b;
+            cursor: pointer;
+        }
+
+        .mag-time-box {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #cbd5e1;
         }
 
         /* Page Content Elements */
@@ -394,7 +516,7 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .page-title {
@@ -403,7 +525,7 @@
             font-weight: 800;
             line-height: 1.3;
             color: var(--forest-dark);
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .page-sapo {
@@ -462,20 +584,20 @@
             text-transform: uppercase;
         }
 
-        /* Inline Media Figure */
+        /* Inline Media Figure with Real Photos */
         .page-figure {
             margin: 20px 0;
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid #e7e5e0;
             background: #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
         .page-figure img {
             width: 100%;
             height: auto;
-            max-height: 280px;
+            max-height: 290px;
             object-fit: cover;
             display: block;
         }
@@ -566,7 +688,7 @@
         }
 
         .tree-node-root {
-            background: #1e3a8a;
+            background: #064e3b;
             color: #fff;
             padding: 10px 14px;
             border-radius: 6px;
@@ -611,7 +733,7 @@
             height: 100%;
             background: linear-gradient(135deg, #022c22 0%, #064e3b 100%);
             color: #fff;
-            padding: 50px 60px;
+            padding: 55px 65px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -665,15 +787,15 @@
         /* Flipbook Bottom Control Bar */
         .book-controls {
             position: absolute;
-            bottom: 25px;
+            bottom: 20px;
             display: flex;
             align-items: center;
             gap: 15px;
-            background: rgba(6, 46, 34, 0.9);
+            background: rgba(4, 38, 28, 0.92);
             backdrop-filter: blur(10px);
             padding: 8px 24px;
             border-radius: 40px;
-            border: 1px solid rgba(217, 119, 6, 0.4);
+            border: 1px solid rgba(217, 119, 6, 0.45);
             box-shadow: 0 6px 25px rgba(0,0,0,0.5);
             z-index: 100;
         }
@@ -715,7 +837,7 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.55);
             border: 1px solid rgba(255,255,255,0.25);
             color: #fff;
             display: flex;
@@ -742,14 +864,14 @@
         /* =================================================== */
         #scroll-container {
             display: none;
-            margin-top: 60px;
+            margin-top: 64px;
             background: #f8fafc;
             min-height: 100vh;
         }
 
         .reading-progress-bar {
             position: fixed;
-            top: 60px;
+            top: 64px;
             left: 0;
             height: 4px;
             background: linear-gradient(90deg, #d97706, #10b981, #064e3b);
@@ -922,6 +1044,9 @@
         </div>
     </header>
 
+    <!-- Hidden Master Audio Player -->
+    <audio id="global-audio" preload="metadata" src="forest_voice_gemini_aoede.mp3"></audio>
+
     <!-- ========================================================= -->
     <!-- VIEWPORT 1: INTERACTIVE 3D FLIPBOOK                       -->
     <!-- ========================================================= -->
@@ -936,7 +1061,7 @@
                 
                 <!-- SPREAD 0: FRONT COVER (Single Page) -->
                 <div class="spread-container single-spread active" data-spread="0" data-page-left="1" data-page-right="1">
-                    <div class="mag-page cover-wrapper" style="background-image: url('images/vietnam_forest_ranger_ridge_patrol.jpg');">
+                    <div class="mag-page cover-wrapper" style="background-image: url('images/real_forest_ranger_patrol_cover.jpg');">
                         <div class="cover-overlay"></div>
                         <div class="cover-content">
                             <div class="cover-masthead">
@@ -959,7 +1084,7 @@
                             <div class="cover-footer">
                                 <div class="cover-teasers">
                                     <div class="cover-teaser-item">
-                                        <strong>HIỆN TRƯỜNG:</strong> Bữa cơm cắm lán & lằn ranh sinh tử
+                                        <strong>ẢNH TƯ LIỆU THẬT:</strong> Bữa cơm cắm lán & lằn ranh sinh tử
                                     </div>
                                     <div class="cover-teaser-item">
                                         <strong>NÚT THẮT:</strong> Vì sao chưa đơn vị nào triển khai được?
@@ -984,6 +1109,37 @@
                         <div class="page-header">
                             <span>LỜI TÒA SOẠN • BỨC TRANH TOÀN CẢNH</span>
                             <span>TRANG 02</span>
+                        </div>
+
+                        <!-- Embedded Gemini Audio Player Widget -->
+                        <div class="mag-audio-card">
+                            <div class="mag-audio-header">
+                                <div class="mag-audio-title">
+                                    <span>🎙️</span> Nghe Toàn Bộ Bài Viết Qua Giọng Đọc AI
+                                </div>
+                                <span style="font-size: 11px; color: #fde68a; background: rgba(0,0,0,0.25); padding: 2px 7px; border-radius: 4px;">Google Gemini Flash 3.0</span>
+                            </div>
+
+                            <div class="mag-voice-switcher">
+                                <span style="font-size: 12px; color: #e2e8f0; align-self: center;">Chọn giọng:</span>
+                                <button class="mag-voice-btn active" id="btn-audio-aoede" onclick="switchVoice('aoede')">
+                                    <span>👩</span> Nữ Truyền Cảm (Aoede AI)
+                                </button>
+                                <button class="mag-voice-btn" id="btn-audio-puck" onclick="switchVoice('puck')">
+                                    <span>👨</span> Nam Trầm Ấm (Puck AI)
+                                </button>
+                            </div>
+
+                            <div class="mag-audio-controls">
+                                <button class="mag-play-btn" id="audio-play-btn" onclick="togglePlayAudio()">▶</button>
+                                <div class="mag-progress-bar-box">
+                                    <input type="range" class="mag-slider" id="audio-slider" value="0" min="0" max="100" oninput="seekAudio(this.value)">
+                                    <div class="mag-time-box">
+                                        <span id="audio-cur-time">00:00</span>
+                                        <span id="audio-dur-time">--:--</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <span class="section-tag">TỔNG QUAN HIỆN TRẠNG</span>
@@ -1033,13 +1189,13 @@
                             <span>TRANG 03</span>
                         </div>
 
-                        <span class="section-tag">HIỆN TRƯỜNG BẢO NAM - KỲ SƠN</span>
+                        <span class="section-tag">HIỆN TRƯỜNG THỰC TẾ</span>
                         <h2 class="page-title">Bữa cơm cắm lán và những đêm lạnh thấu xương giữa rừng già</h2>
 
                         <div class="page-figure">
-                            <img src="images/vietnam_forest_rangers_shelter_meal.jpg" alt="Bữa cơm đạm bạc của cán bộ bảo vệ rừng trong lán tạm giữa rừng già">
+                            <img src="images/real_forest_ranger_shelter_meal.jpg" alt="Bữa cơm đạm bạc của cán bộ bảo vệ rừng trong lán tạm giữa rừng già">
                             <div class="figure-caption">
-                                <strong>Ảnh tư liệu hiện trường:</strong> Căn lán bạt tạm bợ bên bếp lửa củi ướt khói cay xè mắt sau 7 giờ luồn rừng dốc đứng. Bữa tối chỉ có nồi cơm độn, ít mì tôm và rau tàu bay hái vội ven suối.
+                                <strong>Ảnh phóng sự tư liệu chân thật:</strong> Căn lán dã chiến bên bếp lửa bập bùng giữa rừng sâu. Bữa cơm chỉ có nồi cơm độn, gói mì tôm, cá khô mặn và ít rau rừng hái vội sau hàng giờ leo dốc đá.
                             </div>
                         </div>
 
@@ -1052,7 +1208,7 @@
 
                         <div class="quote-box">
                             <div class="quote-text">"Đói lạnh thì chịu quen rồi, nhưng đau nhất là khi con ốm ở quê gọi điện lên trạm xin tiền đi viện mà tài khoản bố chỉ còn vài trăm nghìn đồng tiền lương ứng trước..."</div>
-                            <div class="quote-author">— Tâm sự của anh Lô Văn H., nhân viên bảo vệ rừng 11 năm kinh nghiệm</div>
+                            <div class="quote-author">— Tâm sự nghẹn ngào của một nhân viên bảo vệ rừng với hơn 11 năm bám trụ đại ngàn</div>
                         </div>
 
                         <div class="page-footer">
@@ -1075,9 +1231,9 @@
                         <h2 class="page-title">Lằn ranh sinh tử đối đầu "lâm tặc" và nghịch lý "tay không bắt giặc"</h2>
 
                         <div class="page-figure">
-                            <img src="images/vietnam_forest_rangers_stream_crossing.jpg" alt="Cán bộ bảo vệ rừng băng qua dòng thác lũ chảy xiết">
+                            <img src="images/real_forest_ranger_stream_hazard.jpg" alt="Cán bộ bảo vệ rừng băng qua dòng thác lũ chảy xiết">
                             <div class="figure-caption">
-                                <strong>Băng qua dòng nước dữ:</strong> Đội tuần tra dìu nhau vượt qua con suối đá ngầm chảy xiết mùa mưa lũ. Chỉ một bước sẩy chân là có thể bị dòng thác cuốn trôi.
+                                <strong>Ảnh tư liệu thực địa:</strong> Đội tuần tra dìu nhau vượt qua con suối đá ngầm chảy xiết mùa mưa lũ. Chỉ một bước sẩy chân là có thể bị dòng nước dữ cuốn trôi.
                             </div>
                         </div>
 
@@ -1159,7 +1315,7 @@
                         <h2 class="page-title">Vì sao "Bảo bối" Nghị định 42 vẫn nằm im trên bàn giấy?</h2>
 
                         <div class="page-sapo">
-                            Đã gần 1 năm trôi qua kể từ khi Nghị định ban hành, nhưng thực tế nghiệt ngã: Chưa một cán bộ bảo vệ rừng nào nhận được một đồng phụ cấp mới.
+                            Đã nhiều tháng trôi qua kể từ khi Nghị định ban hành, nhưng thực tế nghiệt ngã: Chưa một cán bộ bảo vệ rừng nào nhận được một đồng phụ cấp mới.
                         </div>
 
                         <!-- Tree Diagram Infographic -->
@@ -1208,6 +1364,13 @@
 
                         <span class="section-tag">BÁO ĐỘNG ĐỎ NHÂN SỰ</span>
                         <h2 class="page-title">Làn sóng xin thôi việc và những khoảng trống rợn người</h2>
+
+                        <div class="page-figure">
+                            <img src="images/real_forest_ranger_boundary_check.jpg" alt="Lực lượng chuyên trách bảo vệ rừng kiểm tra đường ranh, mốc giới rừng">
+                            <div class="figure-caption">
+                                <strong>Ảnh tư liệu thực tế:</strong> Tuần tra phát dọn đường băng cản lửa, cắm mốc ranh giới rừng. Công việc nhọc nhằn đòi hỏi sức khỏe và lòng yêu rừng sắt son, nhưng đang đứng trước nguy cơ thiếu hụt nhân lực trầm trọng.
+                            </div>
+                        </div>
 
                         <p class="text-p">
                             Khi niềm hy vọng chuyển thành sự mòn mỏi chờ đợi, sự kiên nhẫn của những người giữ rừng đã chạm đến giới hạn chịu đựng. 
@@ -1262,7 +1425,7 @@
 
                         <div class="cover-footer" style="border-top-color: rgba(255,255,255,0.2);">
                             <div>
-                                <strong style="color: #fde68a; font-size: 13px;">ẤN PHẨM TƯ LIỆU ĐẶC BIỆT THÁNG 10/2026</strong><br>
+                                <strong style="color: #fde68a; font-size: 13px;">ẤN PHẨM TƯ LIỆU ĐẶC BIỆT NĂM 2026</strong><br>
                                 <span style="font-size: 12px; color: #94a3b8;">Bản quyền nội dung & đồ họa tương tác • Bảo tồn Di sản Rừng Việt Nam</span>
                             </div>
                             <div class="cover-barcode">
@@ -1290,11 +1453,11 @@
     <div id="scroll-container">
         <div class="reading-progress-bar" id="scroll-progress"></div>
 
-        <div class="scroll-hero" style="background-image: url('images/vietnam_forest_ranger_ridge_patrol.jpg');">
+        <div class="scroll-hero" style="background-image: url('images/real_forest_ranger_patrol_cover.jpg');">
             <div class="scroll-hero-content">
                 <span class="cover-badge">KÝ SỰ ĐIỀU TRA & CHÍNH SÁCH</span>
                 <h1 class="scroll-hero-title">MÒN MỎI ĐỢI CHẾ ĐỘ GIỮA RỪNG SÂU: KHI NGHỊ ĐỊNH ĐÃ BAN HÀNH NHƯNG DẠ DÀY NGƯỜI GIỮ RỪNG VẪN QUẶN THẮT</h1>
-                <p style="font-size: 18px; color: #fef08a; line-height: 1.6;">
+                <p style="font-size: 18.5px; color: #fef08a; line-height: 1.6;">
                     Khi Nghị định 42/2026/NĐ-CP đã ban hành trao quyền hạn và chế độ như kiểm lâm, nhưng hàng vạn cán bộ chuyên trách bảo vệ rừng vẫn chưa được hưởng vì vướng mắc hướng dẫn và tắc nghẽn nguồn kinh phí.
                 </p>
             </div>
@@ -1311,8 +1474,8 @@
             </p>
 
             <div class="page-figure">
-                <img src="images/vietnam_forest_rangers_shelter_meal.jpg" alt="Bữa cơm lán tạm của người giữ rừng">
-                <div class="figure-caption">Căn lán bạt ẩm ướt và bữa ăn đạm bạc của cán bộ bảo vệ rừng sau một ngày trèo đèo lội suối.</div>
+                <img src="images/real_forest_ranger_shelter_meal.jpg" alt="Bữa cơm lán tạm của người giữ rừng">
+                <div class="figure-caption">Căn lán bạt ẩm ướt và bữa ăn đạm bạc của cán bộ bảo vệ rừng sau một ngày trèo đèo lội suối (Ảnh tài liệu thực tế).</div>
             </div>
 
             <p>
@@ -1325,8 +1488,8 @@
             </p>
 
             <div class="page-figure">
-                <img src="images/vietnam_forest_rangers_stream_crossing.jpg" alt="Cán bộ bảo vệ rừng vượt suối dữ">
-                <div class="figure-caption">Những cung đường tuần tra hiểm trở, hiểm nguy rình rập trong từng bước chân.</div>
+                <img src="images/real_forest_ranger_stream_hazard.jpg" alt="Cán bộ bảo vệ rừng vượt suối dữ">
+                <div class="figure-caption">Những cung đường tuần tra hiểm trở, hiểm nguy rình rập trong từng bước chân qua dòng nước dữ (Ảnh phóng sự tài liệu).</div>
             </div>
 
             <p>
@@ -1349,6 +1512,11 @@
                 Có 3 nguyên nhân cốt tử: Thiếu Thông tư liên tịch hướng dẫn chi tiết ngạch bậc; cơ chế tự chủ tài chính nghèo nàn khiến đơn vị không có nguồn chi trả trong khi ngân sách tỉnh chưa được trung ương bổ sung; và nỗi đau hơn 65% lực lượng tuần rừng trực tiếp là lao động hợp đồng bị bỏ ngoài vùng bao phủ của khái niệm "viên chức".
             </p>
 
+            <div class="page-figure">
+                <img src="images/real_forest_ranger_boundary_check.jpg" alt="Tuần tra kiểm tra mốc giới và bảo vệ rừng">
+                <div class="figure-caption">Cán bộ bảo vệ rừng kiểm tra mốc ranh giới và phòng chống nguy cơ xâm lấn, cháy rừng (Ảnh thực tế hiện trường).</div>
+            </div>
+
             <h2>5. Lời kêu gọi hành động khẩn cấp</h2>
             <p>
                 Rừng xanh là lá phổi của đất nước. Nhưng lá phổi ấy sẽ không thể lành lặn nếu những người đang ngày đêm đem tính mạng của mình ra che chắn cho cây vẫn phải oằn mình trong nỗi lo cơm áo. Đã đến lúc chính sách phải bước ra khỏi trang giấy, đến với từng trạm gác chông chênh giữa đại ngàn!
@@ -1356,7 +1524,7 @@
         </main>
     </div>
 
-    <!-- Web Audio API Script for Page Flip Sound & Flipbook Logic -->
+    <!-- Web Audio API Script & Interactive Dual Audio & Flipbook Logic -->
     <script>
     // State
     let currentSpread = 0;
@@ -1371,6 +1539,114 @@
         "Trang 06 - 07 (Nút thắt kinh phí)",
         "Bìa Sau (Trang 8 / Hết)"
     ];
+
+    // Master Audio Player Logic
+    const masterAudio = document.getElementById('global-audio');
+    const playBtn = document.getElementById('audio-play-btn');
+    const slider = document.getElementById('audio-slider');
+    const curTimeSpan = document.getElementById('audio-cur-time');
+    const durTimeSpan = document.getElementById('audio-dur-time');
+    const btnAoede = document.getElementById('btn-audio-aoede');
+    const btnPuck = document.getElementById('btn-audio-puck');
+
+    const voiceFiles = {
+        'aoede': 'forest_voice_gemini_aoede.mp3',
+        'puck': 'forest_voice_gemini_puck.mp3'
+    };
+    let currentVoice = 'aoede';
+
+    function formatTime(sec) {
+        if (isNaN(sec) || sec < 0) return '00:00';
+        const m = Math.floor(sec / 60);
+        const s = Math.floor(sec % 60);
+        return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+    }
+
+    function updateAudioDuration() {
+        if (durTimeSpan && masterAudio && !isNaN(masterAudio.duration) && masterAudio.duration > 0) {
+            durTimeSpan.textContent = formatTime(masterAudio.duration);
+        }
+    }
+
+    if (masterAudio) {
+        masterAudio.addEventListener('loadedmetadata', updateAudioDuration);
+        masterAudio.addEventListener('timeupdate', () => {
+            if (!isNaN(masterAudio.duration) && masterAudio.duration > 0) {
+                const pct = (masterAudio.currentTime / masterAudio.duration) * 100;
+                if (slider) slider.value = pct;
+            }
+            if (curTimeSpan) curTimeSpan.textContent = formatTime(masterAudio.currentTime);
+            updateAudioDuration();
+        });
+
+        masterAudio.addEventListener('play', () => {
+            if (playBtn) playBtn.innerHTML = '⏸';
+        });
+
+        masterAudio.addEventListener('pause', () => {
+            if (playBtn) playBtn.innerHTML = '▶';
+        });
+
+        masterAudio.addEventListener('ended', () => {
+            if (playBtn) playBtn.innerHTML = '▶';
+            if (slider) slider.value = 0;
+            if (curTimeSpan) curTimeSpan.textContent = '00:00';
+        });
+
+        // Fallback to online repo if local file fails
+        masterAudio.addEventListener('error', () => {
+            const curFile = voiceFiles[currentVoice];
+            if (!masterAudio.src.startsWith('https://') && curFile) {
+                masterAudio.src = 'https://cuongsmileks.github.io/baibao-cuongsmile-kyson/' + curFile;
+                masterAudio.load();
+            }
+        });
+    }
+
+    function togglePlayAudio() {
+        if (!masterAudio) return;
+        if (masterAudio.paused) {
+            masterAudio.play().then(() => {
+                if (playBtn) playBtn.innerHTML = '⏸';
+            }).catch(e => console.warn(e));
+        } else {
+            masterAudio.pause();
+            if (playBtn) playBtn.innerHTML = '▶';
+        }
+    }
+
+    function switchVoice(gender) {
+        if (!masterAudio || !voiceFiles[gender]) return;
+        const wasPlaying = !masterAudio.paused;
+        const curTime = masterAudio.currentTime;
+        currentVoice = gender;
+
+        if (gender === 'aoede') {
+            if (btnAoede) btnAoede.classList.add('active');
+            if (btnPuck) btnPuck.classList.remove('active');
+        } else {
+            if (btnPuck) btnPuck.classList.add('active');
+            if (btnAoede) btnAoede.classList.remove('active');
+        }
+
+        masterAudio.src = voiceFiles[gender];
+        masterAudio.load();
+        masterAudio.onloadedmetadata = () => {
+            if (curTime < masterAudio.duration) {
+                masterAudio.currentTime = curTime;
+            }
+            updateAudioDuration();
+            if (wasPlaying) {
+                masterAudio.play().catch(e => console.warn(e));
+            }
+        };
+    }
+
+    function seekAudio(val) {
+        if (!masterAudio || isNaN(masterAudio.duration) || masterAudio.duration <= 0) return;
+        masterAudio.currentTime = (val / 100) * masterAudio.duration;
+        if (curTimeSpan) curTimeSpan.textContent = formatTime(masterAudio.currentTime);
+    }
 
     // Synthesize Paper Rustle Sound via Web Audio API (No external file needed)
     function playFlipSound() {
