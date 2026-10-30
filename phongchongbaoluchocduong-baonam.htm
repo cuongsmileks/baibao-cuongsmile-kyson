@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sôi nổi buổi sinh hoạt "Phòng, chống bạo lực học đường" tại phân hiệu Bảo Nam | Ký sự Giáo dục</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e40af; /* Blue educational tone */
+            --primary-dark: #1e3a8a;
+            --primary-light: #eff6ff;
+            --accent-gold: #d97706;
+            --gold-light: #fef3c7;
+            --accent-teal: #0f766e;
+            --text-main: #1f2937;
+            --text-heading: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --content-width: 840px;
+            --overflow-width: 1080px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 19px;
+            line-height: 1.85;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Reading Progress */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            background: linear-gradient(90deg, #1e40af, #3b82f6, #06b6d4);
+            z-index: 10000;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Header */
+        .site-header {
+            background: #ffffff;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .header-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-text {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.8px;
+            text-transform: uppercase;
+        }
+        .logo-tag {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 600;
+            border-left: 2px solid #cbd5e1;
+            padding-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-nav a {
+            color: #334155;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+        .header-nav a:hover, .header-nav a.active {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+        .header-meta {
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        /* Hero Banner */
+        .hero-banner-wrap {
+            max-width: var(--overflow-width);
+            margin: 25px auto 10px auto;
+            padding: 0 15px;
+        }
+        .hero-banner-inner {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.18);
+            background: #0f172a;
+        }
+        .hero-banner-inner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .hero-banner-inner:hover img {
+            transform: scale(1.015);
+        }
+
+        /* Main Article Wrap */
+        .article-wrap {
+            max-width: var(--content-width);
+            margin: 0 auto 60px;
+            background: #ffffff;
+            padding: 45px 55px;
+            border-radius: 16px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        .article-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background: var(--primary-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1.article-title {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 36px;
+            font-weight: 900;
+            line-height: 1.34;
+            color: var(--text-heading);
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .article-meta strong {
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+        .meta-tag {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12.5px;
+            font-weight: 700;
+        }
+
+        /* Sapo */
+        .article-sapo {
+            font-family: "Lora", Georgia, serif;
+            font-size: 21.5px;
+            font-weight: 600;
+            line-height: 1.7;
+            color: #1e293b;
+            margin-bottom: 32px;
+            background: #f8fafc;
+            border-left: 5px solid var(--primary);
+            padding: 22px 26px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        /* Modern Audio Player Widget */
+        .audio-player-card {
+            background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+            color: #ffffff;
+            border-radius: 14px;
+            padding: 22px 26px;
+            margin: 32px 0 38px 0;
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.25);
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+        .audio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.18);
+            padding-bottom: 12px;
+        }
+        .audio-title-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .audio-icon-pulse {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .audio-title-text {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .audio-badge {
+            font-size: 12px;
+            background: rgba(255, 215, 0, 0.25);
+            color: #ffd700;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+        .voice-switcher {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+        .voice-btn {
+            padding: 7px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.14);
+            color: #ffffff;
+        }
+        .voice-btn.active {
+            background: #ffffff;
+            color: var(--primary-dark);
+            border-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .play-pause-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: var(--primary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 900;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+            flex-shrink: 0;
+            transition: transform 0.15s ease;
+        }
+        .play-pause-btn:hover {
+            transform: scale(1.06);
+        }
+        .play-pause-btn:active {
+            transform: scale(0.96);
+        }
+        .progress-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .audio-progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            accent-color: #ffd700;
+        }
+        .time-box {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        .speed-box {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .speed-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .speed-btn.active {
+            background: #ffd700;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        /* 5 Rules Infographic Box */
+        .infographic-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            padding: 26px 28px;
+            margin: 36px 0;
+        }
+        .infographic-title {
+            font-size: 18.5px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .rules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .rule-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 16px 18px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border-left: 4px solid var(--primary);
+        }
+        .rule-num {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .rule-title {
+            font-size: 15.5px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+        .rule-desc {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* Content Headings & Typography */
+        .content-body h2 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin: 45px 0 20px 0;
+            line-height: 1.4;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eef2f6;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .content-body h2::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 26px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        .content-body h3 {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 30px 0 15px 0;
+        }
+        .content-body p {
+            margin-bottom: 22px;
+            text-align: justify;
+        }
+        .content-body strong {
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .content-body em {
+            font-style: italic;
+            color: #334155;
+        }
+
+        /* Highlights & Quotes */
+        .quote-box {
+            background: #fffbeb;
+            border-left: 5px solid var(--accent-gold);
+            padding: 24px 28px;
+            margin: 35px 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.08);
+        }
+        .quote-text {
+            font-family: "Lora", Georgia, serif;
+            font-size: 21px;
+            font-style: italic;
+            line-height: 1.6;
+            color: #2c2518;
+            margin-bottom: 12px;
+        }
+        .quote-author {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Image Display & Figures */
+        .media-figure {
+            margin: 35px 0;
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+            border: 1px solid var(--border-color);
+        }
+        .media-figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .media-caption {
+            padding: 14px 20px;
+            font-size: 14.5px;
+            color: #475569;
+            background: #f8fafc;
+            border-top: 1px solid #edf2f7;
+            font-style: italic;
+            line-height: 1.55;
+            text-align: center;
+        }
+
+        /* Double / Grid Photos */
+        .media-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 35px 0;
+        }
+        .media-grid-2 .media-figure {
+            margin: 0;
+        }
+
+        /* Key Steps Card */
+        .steps-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 26px 30px;
+            margin: 35px 0;
+        }
+        .steps-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .steps-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .steps-list li {
+            font-size: 15.5px;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        .step-badge {
+            background: var(--primary);
+            color: #fff;
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* Author signature */
+        .article-author-box {
+            margin-top: 45px;
+            padding: 22px 28px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            font-size: 16px;
+            color: #334155;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14.5px;
+            border-top: 4px solid var(--primary);
+        }
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .article-wrap { padding: 25px 20px; }
+            h1.article-title { font-size: 26px; }
+            .article-sapo { font-size: 18px; padding: 16px 18px; }
+            .content-body h2 { font-size: 22px; }
+            body { font-size: 17.5px; }
+            .header-inner { flex-direction: column; align-items: flex-start; }
+            .rules-grid { grid-template-columns: 1fr; }
+            .media-grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress-bar"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-box">
+                <span class="logo-text">KÝ SỰ GIÁO DỤC</span>
+                <span class="logo-tag">Vì Mái Trường Hạnh Phúc</span>
+            </a>
+            <nav class="header-nav">
+                <a href="phongchongbaoluchocduong-baonam.htm" class="active">★ Phân hiệu Bảo Nam</a>
+                <a href="nhungnongdanthehemoi-ky1.htm">Nông dân thế hệ mới</a>
+                <a href="dauandongchivihaithanh.htm">Hồ sơ Vi Hải Thành</a>
+            </nav>
+            <div class="header-meta">Kỳ Sơn, Nghệ An • Lưu trữ Tư liệu</div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner-wrap">
+        <div class="hero-banner-inner">
+            <img src="images/baonam_students_courtyard.jpg" alt="Học sinh phân hiệu Bảo Nam trong khuôn viên trường học vùng cao">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="article-wrap">
+        <div class="article-category">
+            <span>★</span> CHUYÊN ĐỀ NGOẠI KHÓA & KỸ NĂNG SỐNG
+        </div>
+
+        <h1 class="article-title">Sôi nổi buổi sinh hoạt "Phòng, chống bạo lực học đường" tại phân hiệu Bảo Nam: Thắp sáng tình bạn đẹp nơi cổng trời miền Tây</h1>
+
+        <div class="article-meta">
+            <span>Đơn vị: <strong>Trường PTDTBT THCS Hữu Kiệm (Phân hiệu Bảo Nam)</strong></span>
+            <span>•</span>
+            <span>Thời gian: <strong>Chiều thứ Ba, ngày 27/10/2026</strong></span>
+            <span>•</span>
+            <span class="meta-tag">Kỹ Năng Sống Vùng Cao</span>
+        </div>
+
+        <!-- Sapo -->
+        <div class="article-sapo">
+            Giữa đại ngàn biên giới Kỳ Sơn, nơi những nóc nhà của đồng bào Khơ Mú, Thái ẩn hiện sau làn mây trắng, câu chuyện về việc xây dựng một môi trường giáo dục an toàn, thân thiện và ngập tràn tình yêu thương luôn là niềm trăn trở đau đáu của các thầy cô giáo cắm bản. Chiều ngày 27/10/2026, tại phân hiệu Bảo Nam (Trường Phổ thông Dân tộc Bán trú THCS Hữu Kiệm), một buổi sinh hoạt Câu lạc bộ chuyên đề đầy ý nghĩa với chủ đề <strong>"Phòng, chống bạo lực học đường – Xây dựng tình bạn đẹp"</strong> đã diễn ra sôi nổi, mang đến những bài học quý giá và thắp lên ngọn lửa đoàn kết trong tâm hồn các em học sinh bán trú rẻo cao.
+        </div>
+
+        <!-- Audio Player Widget -->
+        <div class="audio-player-card">
+            <div class="audio-header">
+                <div class="audio-title-box">
+                    <div class="audio-icon-pulse">🎙️</div>
+                    <div class="audio-title-text">Nghe toàn bộ bài viết qua giọng đọc AI</div>
+                </div>
+                <div class="audio-badge">Google Gemini Flash 3.0</div>
+            </div>
+
+            <!-- Voice Selection Switcher -->
+            <div class="voice-switcher">
+                <span style="font-size: 13.5px; color: #cbd5e1; font-weight: 500;">Chọn giọng đọc:</span>
+                <button class="voice-btn active" id="btn-voice-aoede" onclick="switchVoice('aoede')">
+                    <span>👩</span> Nữ Truyền Cảm (Aoede AI)
+                </button>
+                <button class="voice-btn" id="btn-voice-puck" onclick="switchVoice('puck')">
+                    <span>👨</span> Nam Trầm Ấm (Puck AI)
+                </button>
+            </div>
+
+            <!-- Audio Player Controls -->
+            <div class="audio-controls">
+                <button id="play-pause-btn" class="play-pause-btn" onclick="togglePlay()" title="Phát bài đọc">▶</button>
+                <div class="progress-box">
+                    <input type="range" id="audio-progress" class="audio-progress-bar" value="0" min="0" max="100" oninput="seekAudio(this.value)">
+                    <div class="time-box">
+                        <span id="current-time">00:00</span>
+                        <span id="duration-time">--:--</span>
+                    </div>
+                </div>
+                <div class="speed-box">
+                    <button class="speed-btn" onclick="setSpeed(0.85, this)">0.85x</button>
+                    <button class="speed-btn active" onclick="setSpeed(1.0, this)">1.0x</button>
+                    <button class="speed-btn" onclick="setSpeed(1.25, this)">1.25x</button>
+                </div>
+            </div>
+
+            <!-- Direct Audio Element -->
+            <audio id="main-audio" preload="metadata" src="baonam_voice_gemini_aoede.mp3"></audio>
+        </div>
+
+        <!-- Infographic: 4 Quy Tắc Phòng Chống Bạo Lực -->
+        <div class="infographic-box">
+            <div class="infographic-title">
+                <span>🛡️</span> THÔNG ĐIỆP HÀNH ĐỘNG: 4 NGUYÊN TẮC VÀNG VÌ TRƯỜNG HỌC HẠNH PHÚC
+            </div>
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <div class="rule-num">Nguyên tắc 01</div>
+                    <div class="rule-title">Tôn Trọng Sự Khác Biệt</div>
+                    <div class="rule-desc">Tôn trọng tiếng nói, phong tục tập quán và hoàn cảnh gia đình của bạn bè người Khơ Mú, người Thái.</div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-num">Nguyên tắc 02</div>
+                    <div class="rule-title">Bình Tĩnh & Đối Thoại</div>
+                    <div class="rule-desc">Khi xảy ra hiểu lầm, hít thở sâu, cùng ngồi lại trò chuyện hòa bình, tuyệt đối không dùng nắm đấm.</div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-num">Nguyên tắc 03</div>
+                    <div class="rule-title">Không Im Lặng Trước Bắt Nạt</div>
+                    <div class="rule-desc">Dũng cảm lên tiếng bênh vực bạn yếu thế, báo ngay cho thầy cô quản nhiệm và ban giám hiệu.</div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-num">Nguyên tắc 04</div>
+                    <div class="rule-title">Đoàn Kết Nếp Sống Bán Trú</div>
+                    <div class="rule-desc">Coi bạn cùng phòng, cùng mâm cơm như anh em ruột thịt; tương trợ nhau cùng học tập tiến bộ.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Body -->
+        <div class="content-body">
+            
+            <h2>1. Không khí ấm áp nơi điểm trường vùng khó khăn</h2>
+            <p>
+                Phân hiệu Bảo Nam (trước đây là trường THCS Bảo Nam, nay trực thuộc Trường Phổ thông Dân tộc Bán trú THCS Hữu Kiệm) nằm lọt thỏm giữa những dãy núi cao hiểm trở của huyện biên giới Kỳ Sơn. Đa số học sinh nơi đây là con em đồng bào dân tộc Khơ Mú và Thái, có hoàn cảnh gia đình thuộc diện hộ nghèo, cận nghèo. 
+            </p>
+            <p>
+                Do địa hình cách trở, đường sá đi lại vô cùng gian nan, các em học sinh phải rời bản làng từ đầu tuần để về trường ăn ở, sinh hoạt bán trú tập trung. Chính vì lẽ đó, trường học không chỉ đơn thuần là nơi dạy chữ, mà còn là tổ ấm gia đình thứ hai, nơi rèn luyện nhân cách, kỹ năng sống và sự gắn kết cộng đồng cho các em ngay từ lứa tuổi thiếu niên.
+            </p>
+
+            <div class="media-figure">
+                <img src="images/baonam_sinhhoat_1.jpg" alt="Quang cảnh buổi sinh hoạt phòng chống bạo lực học đường tại phân hiệu Bảo Nam">
+                <div class="media-caption">
+                    Toàn cảnh buổi sinh hoạt chuyên đề "Phòng, chống bạo lực học đường" chiều ngày 27/10/2026 tại phòng họp phân hiệu Bảo Nam, Trường PTDTBT THCS Hữu Kiệm.
+                </div>
+            </div>
+
+            <p>
+                Tại buổi sinh hoạt chiều ngày 27/10/2026, căn phòng họp khang trang của phân hiệu rộn rã tiếng cười nói của các em học sinh. Ngồi quây quần bên bàn tròn hội nghị, dưới lá cờ Tổ quốc và tượng Bác Hồ kính yêu, những gương mặt ngây thơ với đôi mắt sáng trong veo của các cô bé, cậu bé vùng cao chăm chú lắng nghe từng lời giảng giải, hướng dẫn ân cần của thầy giáo.
+            </p>
+
+            <h2>2. Nhận diện các hình thức bạo lực học đường và bài học từ thực tế</h2>
+            <p>
+                Không mang tính truyền thụ lý thuyết một chiều, buổi sinh hoạt diễn ra dưới hình thức trao đổi mở, đối thoại hai chiều và đóng vai xử lý tình huống. Thầy giáo phụ trách đã giúp các em hiểu rõ: Bạo lực học đường không chỉ đơn giản là những va chạm, xô xát thể xác bên ngoài, mà còn bao gồm những dạng thức vô hình nhưng gây tổn thương tinh thần sâu sắc:
+            </p>
+            <ul style="margin-left: 25px; margin-bottom: 22px; color: #334155; line-height: 1.8;">
+                <li><strong>Bạo lực tinh thần:</strong> Sự cô lập, tẩy chay bạn bè, đặt biệt danh trêu chọc mang tính miệt thị ngoại hình hay hoàn cảnh gia đình.</li>
+                <li><strong>Bạo lực ngôn ngữ:</strong> Dùng lời lẽ thô tục, xúc phạm danh dự, nói xấu sau lưng làm tổn thương lòng tự trọng của bạn.</li>
+                <li><strong>Bạo lực trên không gian mạng:</strong> Lan truyền hình ảnh xấu, bình luận ác ý trên mạng xã hội hoặc nhóm chat.</li>
+            </ul>
+
+            <div class="media-figure">
+                <img src="images/baonam_teacher_discussion.jpg" alt="Thầy giáo và học sinh thảo luận kỹ năng sống">
+                <div class="media-caption">
+                    Các em học sinh hào hứng tham gia thảo luận nhóm, giương cao khẩu hiệu "Nói không với bạo lực học đường - Vì một mái trường hạnh phúc".
+                </div>
+            </div>
+
+            <p>
+                Từ những câu chuyện va chạm thực tế trong đời sống bán trú – như việc bất đồng ý kiến khi trực nhật, tranh giành đồ dùng học tập hay hiểu lầm trong lời ăn tiếng nói hàng ngày, các em học sinh đã cùng nhau phân tích nguyên nhân và tìm ra cách hóa giải hợp lý nhất.
+            </p>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    "Ở trường bán trú, các em coi nhau như anh em ruột thịt. Khi có mâu thuẫn, nắm đấm không bao giờ giải quyết được vấn đề mà chỉ làm đau đớn cho cả hai phía. Chỉ có sự bình tĩnh, lắng nghe và tình thương chân thành mới giữ được một mái trường bình yên, hạnh phúc."
+                </div>
+                <div class="quote-author">— Thầy giáo phụ trách buổi sinh hoạt, Phân hiệu Bảo Nam</div>
+            </div>
+
+            <h2>3. Trang bị kỹ năng xử lý xung đột: 3 bước văn minh</h2>
+            <p>
+                Tại chương trình, các thầy cô giáo đã trang bị cho các em học sinh bộ công cụ xử lý tình huống nhanh khi gặp xích mích hoặc khi chứng kiến bạo lực học đường:
+            </p>
+
+            <div class="steps-card">
+                <div class="steps-title">
+                    <span>📌</span> QUY TRÌNH 3 BƯỚC HÓA GIẢI XUNG ĐỘT TRONG MÔI TRƯỜNG BÁN TRÚ
+                </div>
+                <ul class="steps-list">
+                    <li>
+                        <span class="step-badge">Bước 1: Giữ bình tĩnh</span>
+                        <span>Dừng lại mọi hành vi tranh cãi, hít thở sâu 3 lần để làm dịu cơn giận, không dùng lời lẽ khiêu khích đối phương.</span>
+                    </li>
+                    <li>
+                        <span class="step-badge">Bước 2: Đối thoại hòa bình</span>
+                        <span>Lựa chọn không gian yên tĩnh, thẳng thắn bày tỏ cảm xúc và lắng nghe lời giải thích từ bạn trên tinh thần cầu thị.</span>
+                    </li>
+                    <li>
+                        <span class="step-badge">Bước 3: Tìm kiếm sự trợ giúp</span>
+                        <span>Nếu không thể tự giải quyết hoặc phát hiện nguy cơ bắt nạt, báo ngay cho thầy cô chủ nhiệm, quản lý bán trú hoặc ban giám hiệu.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <p>
+                Đặc biệt, thông điệp <em>"Không im lặng trước bạo lực"</em> đã được các em học sinh hưởng ứng nhiệt liệt. Mỗi học sinh cam kết không làm người ngoài cuộc vô cảm; khi thấy bạn bè bị bắt nạt, các em sẽ dũng cảm can ngăn đúng cách và kịp thời thông báo cho thầy cô can thiệp, bảo vệ bạn.
+            </p>
+
+            <h2>4. Lắng đọng tình cảm và lan tỏa thông điệp yêu thương</h2>
+            <p>
+                Phần cuối của buổi sinh hoạt diễn ra trong bầu không khí xúc động và ấm áp. Những hiểu lầm nhỏ nhặt từ trước đã được các bạn học sinh chủ động giãi bày, trao cho nhau những cái bắt tay thật chặt, những cái ôm ấm áp và lời xin lỗi chân tình. 
+            </p>
+            <p>
+                Một em học sinh người Khơ Mú xúc động chia sẻ: <em>"Sau buổi sinh hoạt này, em hiểu rằng bạn bè cùng trường cũng giống như anh chị em của mình. Em sẽ luôn yêu thương, giúp đỡ các bạn trong phòng bán trú, không trêu chọc bạn và cùng nhau chăm chỉ học tập để không phụ công ơn của thầy cô giáo"</em>.
+            </p>
+            <p>
+                Buổi sinh hoạt chuyên đề tại phân hiệu Bảo Nam không chỉ trang bị kiến thức pháp luật và kỹ năng tự vệ cần thiết, mà quan trọng hơn cả là đã gieo vào tâm hồn trong sáng của các em học sinh vùng cao hạt mầm của lòng nhân ái, sự vị tha và tình đoàn kết keo sơn. 
+            </p>
+            <p>
+                Đây chính là bước đi thiết thực, giàu ý nghĩa nhân văn của Trường PTDTBT THCS Hữu Kiệm trong hành trình xây dựng <strong>"Trường học hạnh phúc"</strong> – nơi mỗi học sinh đều được yêu thương, tôn trọng và an toàn trưởng thành giữa đại ngàn biên cương Tổ quốc.
+            </p>
+
+            <div class="article-author-box">
+                <p><strong>Nguồn tin & Tư liệu:</strong> Phân hiệu Bảo Nam – Trường PTDTBT THCS Hữu Kiệm</p>
+                <p><strong>Biên tập & Trình bày:</strong> Ban Biên tập Ký sự Giáo dục Vùng cao</p>
+                <p><strong>Địa bàn:</strong> Xã Hữu Kiệm (vùng Bảo Nam), huyện Kỳ Sơn, tỉnh Nghệ An</p>
+                <p style="margin-top: 6px; font-size: 13.5px; color: #64748b;"><em>Chuyên trang tư liệu giáo dục vì sự phát triển toàn diện của trẻ em vùng đồng bào dân tộc thiểu số và miền núi.</em></p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-brand">KÝ SỰ GIÁO DỤC VÙNG CAO • VÌ MÁI TRƯỜNG HẠNH PHÚC</div>
+        <p>Chuyên trang bài viết tư liệu, hoạt động giáo dục kỹ năng sống và xây dựng môi trường học đường an toàn.</p>
+        <p style="margin-top: 8px; font-size: 13px; color: #64748b;">Đồng hành cùng học sinh và thầy cô giáo cắm bản huyện Kỳ Sơn, tỉnh Nghệ An.</p>
+    </footer>
+
+    <!-- Audio Player Script -->
+    <script>
+    const audio = document.getElementById('main-audio');
+    const playBtn = document.getElementById('play-pause-btn');
+    const progressBar = document.getElementById('audio-progress');
+    const currentTimeSpan = document.getElementById('current-time');
+    const durationTimeSpan = document.getElementById('duration-time');
+    const btnAoede = document.getElementById('btn-voice-aoede');
+    const btnPuck = document.getElementById('btn-voice-puck');
+
+    const voiceFiles = {
+        'aoede': 'baonam_voice_gemini_aoede.mp3',
+        'puck': 'baonam_voice_gemini_puck.mp3'
+    };
+
+    const voiceLabels = {
+        'aoede': 'Google Gemini Flash 3.0 - Nữ Truyền Cảm (Aoede AI)',
+        'puck': 'Google Gemini Flash 3.0 - Nam Trầm Ấm (Puck AI)'
+    };
+
+    let currentVoice = 'aoede';
+    let currentSpeed = 1.0;
+
+    function formatAudioTime(sec) {
+        if (isNaN(sec) || sec < 0) return '00:00';
+        const m = Math.floor(sec / 60);
+        const s = Math.floor(sec % 60);
+        return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+    }
+
+    function updateDurationDisplay() {
+        if (durationTimeSpan && audio && !isNaN(audio.duration) && audio.duration > 0) {
+            durationTimeSpan.textContent = formatAudioTime(audio.duration);
+        }
+    }
+
+    if (audio) {
+        if (!audio.getAttribute('src')) {
+            audio.src = voiceFiles[currentVoice];
+        }
+        audio.load();
+
+        audio.addEventListener('loadedmetadata', () => {
+            updateDurationDisplay();
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            if (!isNaN(audio.duration) && audio.duration > 0) {
+                const pct = (audio.currentTime / audio.duration) * 100;
+                if (progressBar) progressBar.value = pct;
+            }
+            if (currentTimeSpan) currentTimeSpan.textContent = formatAudioTime(audio.currentTime);
+            updateDurationDisplay();
+        });
+
+        audio.addEventListener('play', () => {
+            if (playBtn) playBtn.innerHTML = '⏸';
+        });
+
+        audio.addEventListener('pause', () => {
+            if (playBtn) playBtn.innerHTML = '▶';
+        });
+
+        audio.addEventListener('ended', () => {
+            if (playBtn) playBtn.innerHTML = '▶';
+            if (progressBar) progressBar.value = 0;
+            if (currentTimeSpan) currentTimeSpan.textContent = '00:00';
+        });
+    }
+
+    function togglePlay() {
+        if (!audio) return;
+        if (audio.paused) {
+            if (!audio.src || audio.src === window.location.href) {
+                audio.src = voiceFiles[currentVoice];
+                audio.load();
+            }
+            audio.play().then(() => {
+                if (playBtn) playBtn.innerHTML = '⏸';
+            }).catch(err => {
+                console.warn('Play error:', err);
+            });
+        } else {
+            audio.pause();
+            if (playBtn) playBtn.innerHTML = '▶';
+        }
+    }
+
+    function switchVoice(gender) {
+        if (!audio || !voiceFiles[gender]) return;
+        const wasPlaying = !audio.paused;
+        const curTime = audio.currentTime;
+        currentVoice = gender;
+
+        if (gender === 'aoede') {
+            if (btnAoede) {
+                btnAoede.classList.add('active');
+            }
+            if (btnPuck) {
+                btnPuck.classList.remove('active');
+            }
+        } else {
+            if (btnPuck) {
+                btnPuck.classList.add('active');
+            }
+            if (btnAoede) {
+                btnAoede.classList.remove('active');
+            }
+        }
+
+        audio.src = voiceFiles[gender];
+        audio.load();
+
+        audio.onloadedmetadata = () => {
+            if (curTime < audio.duration) {
+                audio.currentTime = curTime;
+            }
+            audio.playbackRate = currentSpeed;
+            updateDurationDisplay();
+            if (wasPlaying) {
+                audio.play().catch(e => console.warn(e));
+            }
+        };
+    }
+
+    function seekAudio(val) {
+        if (!audio || isNaN(audio.duration) || audio.duration <= 0) return;
+        audio.currentTime = (val / 100) * audio.duration;
+        if (currentTimeSpan) currentTimeSpan.textContent = formatAudioTime(audio.currentTime);
+    }
+
+    function setSpeed(rate, btn) {
+        currentSpeed = rate;
+        if (audio) audio.playbackRate = rate;
+        document.querySelectorAll('.speed-btn').forEach(b => {
+            b.classList.remove('active');
+        });
+        if (btn) {
+            btn.classList.add('active');
+        }
+    }
+
+    // Reading Progress Bar
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+    </script>
+</body>
+</html>
