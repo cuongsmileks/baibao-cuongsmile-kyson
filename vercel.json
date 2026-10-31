@@ -1,5 +1,26 @@
 {
-  " version\: 2,
- \name\: \baibao-cuongsmile-kyson\,
- \cleanUrls\: true
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/lucluongchuyentrachbaoverung-nghidinh42.htm"
+    },
+    {
+      "source": "/nghidinh42",
+      "destination": "/lucluongchuyentrachbaoverung-nghidinh42.htm"
+    },
+    {
+      "source": "/nghi-dinh-42",
+      "destination": "/lucluongchuyentrachbaoverung-nghidinh42.htm"
+    },
+    {
+      "source": "/baoverung",
+      "destination": "/lucluongchuyentrachbaoverung-nghidinh42.htm"
+    },
+    {
+      "source": "/lucluongchuyentrachbaoverung-nghidinh42",
+      "destination": "/lucluongchuyentrachbaoverung-nghidinh42.htm"
+    }
+  ]
 }
