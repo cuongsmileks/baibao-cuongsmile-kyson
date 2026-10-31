@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mòn mỏi đợi chế độ giữa rừng sâu: Khi Nghị định 42 đã ban hành nhưng dạ dày người giữ rừng vẫn quặn thắt | Ký sự Đại ngàn</title>
+    <meta name="description" content="Nghị định 42/2026/NĐ-CP được ví như phao cứu sinh cho hàng vạn cán bộ chuyên trách bảo vệ rừng, nhưng sau nhiều tháng ban hành vẫn đang nghẽn lại vì thiếu hướng dẫn thực thi.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Mòn mỏi đợi chế độ giữa rừng sâu: Khi Nghị định 42/2026/NĐ-CP đã ban hành nhưng dạ dày người giữ rừng vẫn quặn thắt">
+    <meta property="og:description" content="Phóng sự tư liệu thực tế từ đại ngàn miền Tây Nghệ An và cộng đồng Bảo vệ rừng chuyên trách Việt Nam về những phận đời giữ rừng khắc khổ đang mòn mỏi ngóng đợi chính sách đi vào cuộc sống.">
+    <meta property="og:image" content="https://cuongsmileks.github.io/baibao-cuongsmile-kyson/images/fb_cover_tuongduong_suoi.jpg">
+    <meta property="og:image:width" content="2048">
+    <meta property="og:image:height" content="1152">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Google Fonts: 100% Vietnamese Subset Support -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -568,28 +576,93 @@
             background: #000;
         }
 
-        .article-photo img {
+        .article-photo > img {
             width: 100%;
             height: auto;
             display: block;
+            cursor: zoom-in;
             transition: transform 0.4s ease;
         }
 
-        .article-photo:hover img {
+        .article-photo:hover > img {
+            transform: scale(1.015);
+        }
+
+        .cover-inner img {
+            cursor: zoom-in;
+        }
+
+        /* Documentary 2-Photo Diptych (3:4 Vertical Pair) */
+        .photo-diptych {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            background: var(--border-color);
+        }
+
+        .photo-diptych .diptych-cell {
+            overflow: hidden;
+            background: #000;
+            position: relative;
+        }
+
+        .photo-diptych .diptych-cell img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            display: block;
+            cursor: zoom-in;
+            transition: transform 0.4s ease;
+        }
+
+        .photo-diptych .diptych-cell:hover img {
             transform: scale(1.02);
         }
 
         .photo-caption {
-            padding: 12px 18px;
+            padding: 13px 18px;
             font-size: 13.5px;
             color: var(--text-muted);
             background: var(--card-bg);
             border-top: 1px solid var(--border-color);
-            line-height: 1.55;
+            line-height: 1.6;
         }
 
         .photo-caption strong {
             color: var(--primary);
+        }
+
+        /* Full-Resolution Image Lightbox */
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 10, 8, 0.92);
+            z-index: 20000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            cursor: zoom-out;
+            backdrop-filter: blur(4px);
+        }
+
+        .lightbox-overlay.open {
+            display: flex;
+        }
+
+        .lightbox-overlay img {
+            max-width: 95vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+        }
+
+        @media (max-width: 640px) {
+            .photo-diptych {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Quote Boxes */
@@ -804,9 +877,9 @@
     <!-- HERO COVER IMAGE -->
     <div class="cover-wrap">
         <div class="cover-inner">
-            <img src="images/real_forest_ranger_patrol_cover.jpg" alt="Đội hình tuần tra của lực lượng chuyên trách bảo vệ rừng">
+            <img src="images/fb_cover_tuongduong_suoi.jpg" alt="Đội tuần tra lực lượng chuyên trách bảo vệ rừng Tương Dương lội suối giữa rừng già mù sương">
             <div class="cover-caption">
-                Đội tuần tra luồn rừng của lực lượng chuyên trách bảo vệ rừng vượt qua thảm thực vật rậm rạp giữa đại ngàn nguyên sinh (Ảnh phóng sự tài liệu).
+                Đội tuần tra của lực lượng chuyên trách bảo vệ rừng (Ban Quản lý rừng phòng hộ Tương Dương, Nghệ An) xắn cao ống quần, đi dép nhựa và chân trần lội ngược dòng suối đá mù sương, bên hông đeo vỏ dao tre luồn sâu vào đại ngàn nguyên sinh.
             </div>
         </div>
     </div>
@@ -896,11 +969,18 @@
             </p>
         </div>
 
-        <!-- PHOTO 1: MEAL IN LEAKY SHELTER -->
+        <!-- HÌNH 1: BẾP CỦI LÁN TẠM & ĐÔI DÉP NHỰA BÊN BỜ SUỐI (CẶP ẢNH ĐÔI PHÓNG SỰ) -->
         <div class="article-photo">
-            <img src="images/real_forest_ranger_shelter_meal.jpg" alt="Căn lán dã chiến và bữa cơm giữa rừng sâu">
+            <div class="photo-diptych">
+                <div class="diptych-cell">
+                    <img src="images/fb_hinh1a_bep_lua_lan_tam.jpg" alt="Bếp củi ẩm kê bằng ba hòn đá đun xoong thức ăn trên nền đất lán tạm và đôi chân trần người giữ rừng" loading="lazy" decoding="async">
+                </div>
+                <div class="diptych-cell">
+                    <img src="images/fb_hinh1b_dep_nhua_ben_suoi.jpg" alt="Cán bộ bảo vệ rừng chuyên trách đi dép lê nhựa ngồi buộc lại ba lô bên bờ suối đá" loading="lazy" decoding="async">
+                </div>
+            </div>
             <div class="photo-caption">
-                <strong>Ảnh tư liệu thực tế:</strong> Căn lán dã chiến bên bếp lửa bập bùng giữa rừng sâu. Bữa cơm chỉ có nồi cơm độn, gói mì tôm, cá khô mặn và ít rau rừng hái vội sau hàng giờ leo dốc đá.
+                <strong>Hình 1 — Bếp củi lán tạm và đôi dép nhựa mòn vẹt nơi rừng sâu:</strong> <em>(Ảnh trái)</em> Bếp củi ẩm kê tạm bằng ba hòn đá bốc khói trắng cay xè đun nồi thức ăn dã chiến ngay trên nền đất đỏ góc lán rừng và đôi bàn chân trần của người giữ rừng vừa hạ ba lô. <em>(Ảnh phải)</em> Phút dừng chân nặng trĩu mệt nhọc bên bờ suối đá của các cán bộ bảo vệ rừng chuyên trách trong sắc áo đồng phục ngành nhưng dưới chân chỉ là đôi dép lê nhựa rẻ tiền, ngồi buộc lại chiếc ba lô dã chiến sờn cũ.
             </div>
         </div>
 
@@ -908,6 +988,14 @@
         <div class="quote-card">
             <p>"Đói lạnh thì chịu quen rồi, nhưng đau nhất là khi con ốm ở quê gọi điện lên trạm xin tiền đi viện mà tài khoản bố chỉ còn vài trăm nghìn đồng tiền lương ứng trước..."</p>
             <div class="quote-author">— Tâm sự nghẹn ngào của một nhân viên bảo vệ rừng hơn 11 năm bám trụ đại ngàn</div>
+        </div>
+
+        <!-- HÌNH 2: BỮA TRƯA CHÂN TRẦN DƯỚI TÁN RỪNG & DÒ SÓNG ĐIỆN THOẠI -->
+        <div class="article-photo">
+            <img src="images/fb_hinh2_bua_trua_do_song.jpg" alt="Bốn cán bộ chuyên trách bảo vệ rừng ngồi chân trần dưới gốc cây ăn bữa trưa đạm bạc và tranh thủ dò sóng điện thoại" loading="lazy" decoding="async">
+            <div class="photo-caption">
+                <strong>Hình 2 — Bữa trưa chân trần dưới tán rừng và vạch sóng hiếm hoi gửi về quê nhà:</strong> Các nhân viên chuyên trách bảo vệ rừng tháo đôi dép nhựa để bên thảm lá khô, ngồi chân đất ăn vội suất cơm đạm bạc giữa chặng tuần tra và tranh thủ khoảng trống sườn đồi hiếm hoi có sóng điện thoại để nhắn tin hỏi thăm vợ con.
+            </div>
         </div>
 
         <!-- SECTION 2 -->
@@ -923,19 +1011,19 @@
             </p>
         </div>
 
-        <!-- PHOTO 2: SUBMERGED RANGER -->
+        <!-- HÌNH 3: VƯỢT GHỀNH THÁC NƯỚC XIẾT TƯƠNG DƯƠNG -->
         <div class="article-photo">
-            <img src="images/hardship_submerged_crossing.jpg" alt="Chiến sĩ bảo vệ rừng ngâm mình dưới dòng lũ sâu ngang cằm">
+            <img src="images/fb_hinh3_tuongduong_vuot_thac.jpg" alt="Cán bộ bảo vệ rừng chuyên trách Tương Dương chống gậy gỗ ngâm mình vượt ghềnh thác nước xiết" loading="lazy" decoding="async">
             <div class="photo-caption">
-                <strong>Khoảnh khắc nghẹt thở:</strong> Cán bộ bảo vệ rừng ngâm mình dưới dòng nước ngập đến cằm, hai tay giơ cao ba lô quân trang nặng trĩu trên đỉnh đầu để bảo vệ máy bộ đàm, tài liệu và lương khô khỏi bị ướt (Ảnh phóng sự tài liệu).
+                <strong>Hình 3 — Căng mình vượt ghềnh nước xiết giữa rừng già Tương Dương:</strong> Tổ tuần tra thuộc Ban Quản lý rừng phòng hộ Tương Dương ôm chặt ba lô quân trang, chống gậy gỗ rừng dò dẫm từng bước ngâm mình băng qua dòng suối dữ tung bọt trắng xóa — nơi chỉ một thoáng sẩy chân trên đá trơn cũng đối mặt hiểm nguy khôn lường.
             </div>
         </div>
 
-        <!-- PHOTO 3: CLIFF CLIMBING -->
+        <!-- HÌNH 4: LEO VÁCH ĐÁ TAI MÈO -->
         <div class="article-photo">
-            <img src="images/hardship_cliff_climbing.jpg" alt="Chiến sĩ bảo vệ rừng leo vách đá tai mèo dựng đứng">
+            <img src="images/hardship_cliff_climbing.jpg" alt="Cán bộ bảo vệ rừng bám tay trần leo vách đá tai mèo dựng đứng" loading="lazy" decoding="async">
             <div class="photo-caption">
-                <strong>Hiểm nguy rình rập:</strong> Cán bộ bảo vệ rừng bám tay trần và đi dép quai hậu leo ngược vách đá tai mèo dựng đứng hiểm trở giữa rừng thẳm để kiểm tra đường ranh tuần tra (Ảnh tư liệu hiện trường).
+                <strong>Hình 4 — Bám đá tai mèo giữa lằn ranh sinh tử:</strong> Cán bộ bảo vệ rừng bám tay trần vào từng gờ đá sắc lẹm, chân đi dép quai hậu leo ngược vách đá dựng đứng hiểm trở để tuần tra, kiểm soát các tiểu khu rừng sâu hiểm yếu.
             </div>
         </div>
 
@@ -990,11 +1078,11 @@
             </div>
         </div>
 
-        <!-- PHOTO 4: TORRENT CROSSING WITH POLE -->
+        <!-- HÌNH 5: PHÚT TRẦM TƯ BÊN KHE SUỐI VẮNG -->
         <div class="article-photo">
-            <img src="images/hardship_torrent_pole.jpg" alt="Đội tuần tra bám sào vượt suối đá mùa lũ">
+            <img src="images/fb_hinh5_tram_tu_ben_suoi.jpg" alt="Tổ tuần tra bảo vệ rừng ngồi lặng lẽ chống cằm suy tư trên tảng đá rêu bên khe suối" loading="lazy" decoding="async">
             <div class="photo-caption">
-                <strong>Gian nan vượt lũ:</strong> Đội tuần tra luồn rừng gùi bao tải lương thực trên vai, cùng bám vào một thân cây rừng để hỗ trợ nhau vượt qua con suối đá trơn trượt mùa mưa lũ (Ảnh thực tế hiện trường).
+                <strong>Hình 5 — Phút chống cằm trầm tư bên khe suối vắng:</strong> Tổ tuần tra bảo vệ rừng ngồi nghỉ lặng lẽ trên những tảng đá phủ rêu sau hàng giờ băng rừng với đôi ủng cao su sũng nước và dép rọ nhựa. Phía sau màu áo xanh âm thầm giữ rừng là nỗi trăn trở cơm áo gạo tiền khi mức thu nhập thực tế suốt nhiều năm chỉ quanh quẩn 4,5 triệu đồng/tháng.
             </div>
         </div>
 
@@ -1009,6 +1097,14 @@
             <p style="margin-top: 14px;">
                 Nguyên nhân nghẽn lại ở 3 nút thắt lớn: Thứ nhất, chưa có Thông tư liên tịch giữa Bộ Nông nghiệp và Phát triển nông thôn, Bộ Tài chính, Bộ Nội vụ hướng dẫn ngạch bậc và xếp loại phụ cấp. Thứ hai, các Ban quản lý rừng tự chủ nguồn thu dịch vụ môi trường rừng sụt giảm kiệt quệ, ngân sách địa phương chưa có nguồn cấp bù. Thứ ba, hơn 65% quân số trực tiếp tuần rừng là lao động hợp đồng lại bị bỏ ngoài diện "viên chức" để thụ hưởng.
             </p>
+        </div>
+
+        <!-- HÌNH 6: TIẾNG LÒNG KHẮC KHOẢI TẠI HỘI NGHỊ NGƯỜI LAO ĐỘNG 2026 -->
+        <div class="article-photo">
+            <img src="images/fb_hinh6_tam_tu_hoi_nghi_2026.jpg" alt="Cán bộ bảo vệ rừng chuyên trách tóc điểm bạc đứng phát biểu tâm tư tại hội nghị người lao động Ban Quản lý rừng phòng hộ Tương Dương" loading="lazy" decoding="async">
+            <div class="photo-caption">
+                <strong>Hình 6 — Tiếng lòng khắc khoải từ cơ sở:</strong> Gương mặt sạm nắng gió đại ngàn và mái tóc điểm bạc của người cán bộ bảo vệ rừng chuyên trách nhiều năm gắn bó với nghề khi đứng lên bày tỏ tâm tư tại hội nghị người lao động năm 2026 của Ban Quản lý rừng phòng hộ Tương Dương — nơi anh em từng ngày ngóng đợi văn bản hướng dẫn để Nghị định 42/2026/NĐ-CP sớm đi vào cuộc sống.
+            </div>
         </div>
 
         <!-- POLICY FUNNEL -->
@@ -1033,11 +1129,11 @@
             </div>
         </div>
 
-        <!-- PHOTO 5: PÙ MÁT PATROL -->
+        <!-- HÌNH 7: GÙI LƯƠNG THỰC VƯỢT THÁC ĐÁ DƯỚI TÁN DƯƠNG XỈ CỔ THỤ -->
         <div class="article-photo">
-            <img src="images/hardship_pumat_river.jpg" alt="Tuần tra bảo vệ rừng vùng lõi Pù Mát Tây Nghệ An">
+            <img src="images/fb_hinh7_gui_gao_vuot_ghenh.jpg" alt="Đội bảo vệ rừng Tương Dương gùi bao tải lương thực, đi dép nhựa đỏ vượt thác đá dưới tán dương xỉ cổ thụ" loading="lazy" decoding="async">
             <div class="photo-caption">
-                <strong>Địa bàn Tây Nghệ An:</strong> Cán bộ lâm nghiệp và nhân viên bảo vệ rừng mang gùi dã chiến vượt sông lớn vào tuần tra vùng lõi Pù Mát giáp biên giới Việt - Lào (Ảnh phóng sự tài liệu).
+                <strong>Hình 7 — Chính sách còn "treo", bước chân giữ rừng vẫn không ngơi nghỉ:</strong> Dù chế độ phụ cấp mới chưa thể giải ngân, những người lính giữ rừng Tương Dương vẫn lặng lẽ gùi bao tải lương thực trên vai, đeo dao rừng bên hông, xỏ đôi dép nhựa đỏ vượt thác đá dưới tán dương xỉ cổ thụ cho những chuyến bám rừng dài ngày.
             </div>
         </div>
 
@@ -1054,11 +1150,11 @@
             </p>
         </div>
 
-        <!-- PHOTO 6: BOUNDARY & FIREBREAK CHECK -->
+        <!-- HÌNH 8: BẢY BÓNG LƯNG TRƯỚC BIỂN MÂY ĐẠI NGÀN -->
         <div class="article-photo">
-            <img src="images/real_forest_ranger_boundary_check.jpg" alt="Tuần tra đường băng cản lửa và kiểm tra mốc giới">
+            <img src="images/fb_hinh8_diem_tua_dai_ngan.jpg" alt="Bảy người lính bảo vệ rừng chuyên trách đi dép lê, mang ba lô và bao tải lương thực đứng trên đỉnh núi đá nhìn ra biển rừng mù sương" loading="lazy" decoding="async">
             <div class="photo-caption">
-                <strong>Bảo vệ ranh giới:</strong> Cán bộ bảo vệ rừng kiểm tra mốc ranh giới và phát dọn đường băng cản lửa phòng chống cháy rừng (Ảnh thực tế hiện trường).
+                <strong>Hình 8 — Điểm tựa thầm lặng của đại ngàn Tổ quốc:</strong> Bảy bóng lưng người giữ rừng chuyên trách với đôi dép lê mòn vẹt, ba lô quân trang và bao tải lương thực dưới chân đứng trên đỉnh núi đá chênh vênh, lặng lẽ canh giữ biển rừng mênh mông giữa sương mù — lời nhắc nhở nhói lòng để chính sách đãi ngộ sớm bước ra khỏi trang giấy, sưởi ấm những phận đời giữ màu xanh đất nước.
             </div>
         </div>
 
@@ -1287,6 +1383,26 @@
         const scrolled = (winScroll / height) * 100;
         const bar = document.getElementById('reading-progress');
         if (bar) bar.style.width = scrolled + '%';
+    });
+
+    // Full-Resolution Lightbox Zoom
+    const lb = document.createElement('div');
+    lb.className = 'lightbox-overlay';
+    const lbImg = document.createElement('img');
+    lb.appendChild(lbImg);
+    document.body.appendChild(lb);
+
+    document.querySelectorAll('.cover-inner img, .article-photo img').forEach((imgEl) => {
+        imgEl.addEventListener('click', () => {
+            lbImg.src = imgEl.src;
+            lbImg.alt = imgEl.alt || '';
+            lb.classList.add('open');
+        });
+    });
+
+    lb.addEventListener('click', () => lb.classList.remove('open'));
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') lb.classList.remove('open');
     });
     </script>
 </body>
