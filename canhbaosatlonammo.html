@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Từ nỗi đau lũ quét miền biên viễn đến “tấm bản đồ sống” thức canh giấc ngủ cho hơn 2.000 mái nhà bên dòng Nậm Mộ | Ký sự Biên cương</title>
+    <title>Từ nỗi đau lũ quét miền biên viễn đến “tấm bản đồ sống” thức canh giấc ngủ cho hơn 2.000 mái nhà bên dòng Nậm Mộ | Ký sự Chuyên đề</title>
     <meta name="description" content="Phóng sự từ vùng cao Kỳ Sơn (Nghệ An): Câu chuyện về người cán bộ kỹ thuật lâm nghiệp thức trắng nhiều đêm mưa bão để đưa núi rừng, khe suối và hơn 2.000 nếp nhà lên bản đồ số 3D cảnh báo sớm sạt lở đất, lũ ống, lũ quét.">
     <meta property="og:title" content="Từ nỗi đau lũ quét miền biên viễn đến “tấm bản đồ sống” thức canh giấc ngủ cho hơn 2.000 mái nhà bên dòng Nậm Mộ">
     <meta property="og:description" content="Khi công nghệ số bắt nguồn từ tình thương và trách nhiệm của người cán bộ bám rừng, bám bản, những dòng mã lệnh đã hóa thành tấm lá chắn ấm áp giữ bình yên cho từng nếp nhà nơi biên giới.">
-    <meta property="og:image" content="https://canhbaosatlonammo.vercel.app/images/webgis_editorial_field_survey_nammo.jpg?v=dmag1">
+    <meta property="og:image" content="https://canhbaosatlonammo.vercel.app/images/webgis_editorial_field_survey_nammo.jpg?v=bna1">
     <meta property="og:type" content="article">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #007038;
-            --primary-dark: #005028;
+            --primary: #0a5c36;
+            --primary-dark: #063c22;
             --primary-light: #e8f5e9;
-            --gold: #b38024;
+            --accent-gold: #c89326;
             --gold-light: #fef7ec;
-            --red: #c0262d;
             --text-main: #24292f;
             --text-heading: #0f172a;
             --text-muted: #64748b;
@@ -41,6 +40,18 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Reading Progress */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0%;
+            background: linear-gradient(90deg, #0a5c36, #22c55e, #c89326);
+            z-index: 10000;
+            transition: width 0.1s ease-out;
+        }
+
         /* Header */
         .site-header {
             background: #ffffff;
@@ -53,7 +64,7 @@
         .header-inner {
             max-width: 1140px;
             margin: 0 auto;
-            padding: 10px 20px;
+            padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -70,7 +81,7 @@
             font-size: 26px;
             font-weight: 900;
             color: var(--primary);
-            letter-spacing: -1px;
+            letter-spacing: -0.8px;
             text-transform: uppercase;
         }
         .logo-tag {
@@ -85,7 +96,7 @@
         .header-nav {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
         }
         .header-nav a {
@@ -101,34 +112,31 @@
             color: var(--primary);
             background: var(--primary-light);
         }
+        .header-meta {
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
 
-        /* Clean Unobstructed Cover Photo */
-        .cover-wrap {
-            max-width: var(--overflow-width);
-            margin: 24px auto 12px auto;
+        /* Hero eMagazine Cover Poster (Báo Nghệ An style) */
+        .hero-banner-wrap {
+            max-width: 960px;
+            margin: 25px auto 14px auto;
             padding: 0 15px;
         }
-        .cover-inner {
-            border-radius: 14px;
+        .hero-banner-inner {
+            position: relative;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.16);
             background: #ffffff;
             border: 1px solid var(--border-color);
         }
-        .cover-inner img {
+        .hero-banner-inner img {
             width: 100%;
             height: auto;
             display: block;
             cursor: zoom-in;
-        }
-        .cover-caption {
-            padding: 12px 20px;
-            font-size: 14.5px;
-            color: #475569;
-            background: #f8fafc;
-            border-top: 1px solid var(--border-color);
-            font-style: italic;
-            text-align: center;
         }
 
         /* Main Article Container */
@@ -136,124 +144,286 @@
             max-width: var(--content-width);
             margin: 0 auto 60px;
             background: #ffffff;
-            padding: 44px 48px;
-            border-radius: 14px;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+            padding: 45px 55px;
+            border-radius: 16px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.04);
             border: 1px solid var(--border-color);
-        }
-        @media (max-width: 768px) {
-            .article-wrap { padding: 24px 18px; }
         }
 
         .article-category {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 13.5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 13px;
+            font-weight: 800;
             color: var(--primary);
-            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             background: var(--primary-light);
             padding: 6px 14px;
-            border-radius: 30px;
+            border-radius: 20px;
+            margin-bottom: 20px;
         }
 
         h1.article-title {
-            font-family: "Merriweather", Georgia, serif;
-            font-size: clamp(26px, 3.6vw, 36px);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(28px, 3.6vw, 37px);
             font-weight: 900;
-            line-height: 1.38;
+            line-height: 1.34;
             color: var(--text-heading);
             margin-bottom: 18px;
+            letter-spacing: -0.4px;
         }
 
         .article-meta {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 14px;
+            padding-bottom: 22px;
+            margin-bottom: 28px;
+            border-bottom: 1px solid var(--border-color);
             font-size: 14.5px;
             color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 12px 0;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
+        }
+        .article-meta strong {
+            font-weight: 700;
+            color: var(--text-heading);
         }
         .meta-tag {
             background: #f1f5f9;
             padding: 3px 10px;
-            border-radius: 6px;
-            font-size: 13px;
+            border-radius: 4px;
+            font-size: 12.5px;
             font-weight: 600;
-            color: #0f172a;
+            color: #475569;
         }
 
         /* Sapo */
         .article-sapo {
             font-family: "Lora", Georgia, serif;
-            font-size: 20.5px;
+            font-size: 21px;
             font-weight: 600;
             line-height: 1.68;
             color: #1e293b;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
             background: #f8fafc;
             border-left: 5px solid var(--primary);
-            padding: 20px 24px;
-            border-radius: 0 10px 10px 0;
+            padding: 22px 26px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
-        /* Audio Player Card */
+        /* Modern Audio Player Widget */
         .audio-player-card {
-            background: linear-gradient(135deg, #064e2b, #007038);
+            background: linear-gradient(135deg, #063c22, #0a5c36);
             color: #ffffff;
             border-radius: 14px;
-            padding: 22px 24px;
-            margin: 28px 0 36px 0;
-            box-shadow: 0 10px 28px rgba(0, 112, 56, 0.2);
+            padding: 22px 26px;
+            margin: 32px 0 38px 0;
+            box-shadow: 0 10px 30px rgba(10, 92, 54, 0.25);
+            border: 1px solid rgba(255,255,255,0.18);
         }
-        .audio-top {
+        .audio-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 14px;
-            padding-bottom: 12px;
+            gap: 12px;
+            margin-bottom: 16px;
             border-bottom: 1px solid rgba(255,255,255,0.18);
+            padding-bottom: 12px;
+        }
+        .audio-title-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .audio-icon-pulse {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .audio-title-text {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .audio-badge {
+            font-size: 12px;
+            background: rgba(255, 215, 0, 0.25);
+            color: #ffd700;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+        .voice-switcher {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
         }
         .voice-btn {
-            background: rgba(255,255,255,0.14);
-            color: #ffffff;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 7px 14px;
+            padding: 7px 15px;
             border-radius: 20px;
             font-size: 13px;
             font-weight: 700;
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             transition: all 0.2s;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.14);
+            color: #ffffff;
         }
         .voice-btn.active {
             background: #ffffff;
-            color: #064e2b;
+            color: var(--primary-dark);
             border-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
-        .play-btn {
-            width: 46px;
-            height: 46px;
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .play-pause-btn {
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: #ffffff;
-            color: #007038;
+            color: var(--primary);
             border: none;
             cursor: pointer;
-            font-size: 18px;
-            font-weight: 900;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 20px;
+            font-weight: 900;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.25);
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.15s ease;
+        }
+        .play-pause-btn:hover { transform: scale(1.06); }
+        .progress-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .audio-progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            accent-color: #ffd700;
+        }
+        .time-box {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12.5px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        .speed-box {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .speed-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .speed-btn.active {
+            background: #ffd700;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        /* Infographic Comparison Card (matching Chị Nhung article style) */
+        .infographic-box {
+            background: #f1f8f4;
+            border: 1px solid #cce5d6;
+            border-radius: 14px;
+            padding: 26px 28px;
+            margin: 36px 0;
+        }
+        .infographic-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        .compare-col {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 18px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--border-color);
+        }
+        .compare-col.old-way { border-top-color: #94a3b8; }
+        .compare-col.new-way { border-top-color: var(--primary); }
+        .compare-header {
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .old-way .compare-header { color: #64748b; }
+        .new-way .compare-header { color: var(--primary); }
+        .compare-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14.5px;
+            line-height: 1.55;
+            color: #334155;
+        }
+        .compare-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .icon-check { color: #16a34a; font-weight: 800; }
+        .icon-cross { color: #dc2626; font-weight: 800; }
+
+        /* Section Sub-banner (Báo Nghệ An titphu style) */
+        .titphu-banner {
+            margin: 42px auto 18px auto;
+            text-align: center;
+        }
+        .titphu-banner img {
+            max-width: 100%;
+            height: auto;
+            max-height: 155px;
+            display: inline-block;
         }
 
         /* Content Body */
@@ -267,12 +437,14 @@
             padding: 12px 16px;
         }
         .content-body h2 {
-            font-family: "Merriweather", Georgia, serif;
-            font-size: 24px;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 25px;
             font-weight: 800;
             color: var(--text-heading);
-            margin: 40px 0 18px;
+            margin: 12px 0 18px 0;
             line-height: 1.4;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eef2f6;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -280,24 +452,24 @@
         .content-body h2::before {
             content: "";
             display: inline-block;
-            width: 6px;
+            width: 5px;
             height: 26px;
             background: var(--primary);
-            border-radius: 4px;
+            border-radius: 3px;
             flex-shrink: 0;
         }
         .content-body p {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             text-align: justify;
         }
 
         /* Clean Full-Width Figures (100% Unobstructed) */
         .media-figure {
-            margin: 32px 0;
+            margin: 34px 0;
             background: #ffffff;
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
             border: 1px solid var(--border-color);
         }
         .media-figure img {
@@ -309,37 +481,41 @@
         .media-caption {
             padding: 14px 20px;
             font-size: 14.5px;
-            color: #334155;
+            color: #475569;
             background: #f8fafc;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid #edf2f7;
+            font-style: italic;
             line-height: 1.55;
             text-align: center;
         }
         .media-caption strong {
             color: #0f172a;
+            font-style: normal;
         }
 
         /* Quote Box */
         .quote-box {
-            margin: 32px 0;
+            background: #fffbf0;
+            border-left: 5px solid var(--accent-gold);
             padding: 24px 28px;
-            background: linear-gradient(135deg, var(--gold-light), #fff);
-            border-left: 5px solid var(--gold);
+            margin: 35px 0;
             border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(200, 147, 38, 0.08);
         }
         .quote-text {
             font-family: "Lora", Georgia, serif;
-            font-size: 20px;
+            font-size: 20.5px;
             font-style: italic;
             line-height: 1.65;
-            color: #451a03;
-            margin-bottom: 10px;
+            color: #2c2518;
+            margin-bottom: 12px;
         }
         .quote-author {
-            font-size: 14px;
+            font-size: 14.5px;
             font-weight: 700;
-            color: var(--gold);
+            color: var(--accent-gold);
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Interactive 4-Layer WebGIS Viewer (Zero Overlay on Image!) */
@@ -349,7 +525,7 @@
             border-radius: 14px;
             overflow: hidden;
             border: 2px solid var(--primary);
-            box-shadow: 0 10px 30px rgba(0, 112, 56, 0.1);
+            box-shadow: 0 10px 30px rgba(10, 92, 54, 0.12);
         }
         .webgis-bar {
             background: var(--primary);
@@ -383,7 +559,7 @@
         }
         .layer-tab.active {
             background: #ffd700;
-            color: #064e2b;
+            color: #063c22;
             border-color: #ffd700;
             font-weight: 800;
         }
@@ -401,34 +577,77 @@
             background: #f0fdf4;
             border-top: 1px solid #bbf7d0;
             font-size: 14.5px;
-            color: #064e2b;
+            color: #063c22;
             text-align: center;
         }
 
-        /* Friendly Highlight Box */
-        .milestones-card {
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            border-radius: 12px;
-            padding: 24px 28px;
-            margin: 32px 0;
+        /* Timeline & Milestone Cards (matching Chị Nhung article style) */
+        .timeline-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 26px 30px;
+            margin: 35px 0;
         }
-        .milestones-title {
+        .timeline-title {
             font-size: 18px;
             font-weight: 800;
             color: var(--primary-dark);
-            margin-bottom: 14px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .milestones-list {
+        .timeline-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
-        .milestones-list li {
-            font-size: 16.5px;
-            line-height: 1.65;
+        .timeline-list li {
+            font-size: 15.5px;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
             color: #1e293b;
+            line-height: 1.6;
+        }
+        .timeline-badge {
+            background: var(--primary);
+            color: #fff;
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* Author signature box */
+        .article-author-box {
+            margin-top: 42px;
+            padding: 22px 28px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            font-size: 16px;
+            color: #334155;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14.5px;
+            border-top: 4px solid var(--primary);
+        }
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
         }
 
         /* Lightbox */
@@ -457,38 +676,44 @@
             font-size: 36px;
             cursor: pointer;
         }
+
+        @media (max-width: 768px) {
+            .article-wrap { padding: 25px 20px; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .header-inner { flex-direction: column; align-items: flex-start; }
+        }
     </style>
 </head>
 <body>
+
+    <div id="progress-bar"></div>
 
     <!-- Header -->
     <header class="site-header">
         <div class="header-inner">
             <a href="index.html" class="logo-box">
-                <span class="logo-text">KÝ SỰ BIÊN CƯƠNG</span>
-                <span class="logo-tag">Chuyên Trang Đời Sống &amp; Chuyển Đổi Số Vùng Cao</span>
+                <span class="logo-text">KÝ SỰ CHUYÊN ĐỀ</span>
+                <span class="logo-tag">Chuyển Đổi Số &amp; Đời Sống Vùng Cao</span>
             </a>
             <nav class="header-nav">
-                <a href="index.html">Chuyên đề: Đại ngàn Ký sự</a>
-                <a href="webgis-canh-bao-sat-lo-lu-quet.htm" class="active">★ Bản đồ số Cảnh báo Lũ quét &amp; Sạt lở</a>
+                <a href="webgis-canh-bao-sat-lo-lu-quet.htm" class="active">★ Bản Đồ Số Cảnh Báo Lũ Quét &amp; Sạt Lở</a>
+                <a href="nhungnongdanthehemoi-ky1.htm">Nông Dân Thế Hệ Mới</a>
             </nav>
+            <div class="header-meta">Ký sự Miền Tây • Lưu trữ Tư liệu</div>
         </div>
     </header>
 
-    <!-- D-Magazine Cover Banner -->
-    <div class="cover-wrap">
-        <div class="cover-inner">
-            <img src="images/webgis_editorial_field_survey_nammo.jpg?v=dmag1" alt="Bìa D-Magazine: Cán bộ bảo vệ rừng chuyên trách kiểm tra trạm đo mưa tự động, tháp ăng ten truyền số liệu và bản đồ cảnh báo sạt lở đất bên bờ sông Nậm Mộ" onclick="openLightbox(this.src)">
-            <div class="cover-caption">
-                <strong>Thực địa bên dòng Nậm Mộ:</strong> Cán bộ lực lượng bảo vệ rừng chuyên trách đối chiếu bản đồ cảnh báo sạt lở đất, lũ quét 3D trên máy tính bảng với trạm đo mưa tự động và tháp ăng ten truyền số liệu lắp đặt dọc tuyến Quốc lộ 7 (đoạn qua Mường Xén – Hữu Kiệm, Kỳ Sơn). <em>(Bấm vào ảnh để xem cỡ lớn)</em>
-            </div>
+    <!-- Hero Banner (Báo Nghệ An eMagazine Cover Style) -->
+    <div class="hero-banner-wrap">
+        <div class="hero-banner-inner">
+            <img src="images/webgis_editorial_field_survey_nammo.jpg?v=bna1" alt="Tấm bản đồ sống nơi biên viễn Kỳ Sơn - Thức canh giấc ngủ cho hơn 2.000 mái nhà bên dòng Nậm Mộ" onclick="openLightbox(this.src)">
         </div>
     </div>
 
     <!-- Main Article -->
     <main class="article-wrap">
         <div class="article-category">
-            <span>★</span> PHÓNG SỰ KHOA HỌC &amp; ĐỜI SỐNG VÙNG CAO
+            <span>★</span> KÝ SỰ CHUYÊN ĐỀ: CHUYỂN ĐỔI SỐ VÌ BÌNH YÊN BẢN LÀNG
         </div>
 
         <h1 class="article-title">
@@ -500,7 +725,7 @@
             <span>•</span>
             <span>Địa bàn: <strong>Xã Mường Xén – Xã Hữu Kiệm (Kỳ Sơn, Nghệ An)</strong></span>
             <span>•</span>
-            <span class="meta-tag">Chuyển đổi số vì bình yên bản làng</span>
+            <span class="meta-tag">Hồ Sơ Khoa Học &amp; Đời Sống Miền Tây</span>
         </div>
 
         <!-- Sapo -->
@@ -508,34 +733,78 @@
             Giữa những triền núi dốc đứng của vùng biên giới Kỳ Sơn (Nghệ An), nơi mỗi mùa mưa bão đi qua là nỗi phập phồng lo âu về lũ ống, lũ quét và sạt lở đất, một hệ thống bản đồ số WebGIS và mô hình 3D cảnh báo sớm vừa được dựng lên từ chính những đêm trắng trăn trở của người cán bộ gắn bó với núi rừng. Không còn là những con số khô khan trên mặt giấy, “tấm bản đồ sống” ấy chỉ rõ từng mái nhà, từng khúc cua có nguy cơ sạt trượt và vạch sẵn con đường sơ tán an toàn cho hơn <strong>2.015 hộ dân</strong> trước khi lũ dữ kịp tràn về.
         </div>
 
-        <!-- Audio Player -->
+        <!-- Audio Player Widget -->
         <div class="audio-player-card">
-            <div class="audio-top">
-                <div style="display:flex; align-items:center; gap:10px; font-weight:700; font-size:15.5px;">
-                    <span>🎙️</span>
-                    <span id="statusSegmentTxt">Nghe đọc bài phóng sự (Tự động tô sáng đoạn đang đọc)</span>
+            <div class="audio-header">
+                <div class="audio-title-box">
+                    <div class="audio-icon-pulse">🎙️</div>
+                    <div class="audio-title-text" id="statusSegmentTxt">Nghe toàn bộ bài viết qua giọng đọc AI</div>
                 </div>
-                <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                    <button class="voice-btn active" id="btnVoiceMale" onclick="switchVoice('male')">👨 Giọng Nam (Nam Minh)</button>
-                    <button class="voice-btn" id="btnVoiceFemale" onclick="switchVoice('female')">👩 Giọng Nữ (Hoài My)</button>
-                </div>
+                <div class="audio-badge">Google Gemini Flash 3.0</div>
             </div>
-            <div style="display:flex; align-items:center; gap:14px;">
-                <button class="play-btn" id="playPauseBtn" onclick="togglePlay()" title="Phát / Tạm dừng">▶</button>
-                <div style="flex:1; display:flex; flex-direction:column; gap:6px;">
-                    <input type="range" id="progressBar" value="0" min="0" max="100" step="0.1" oninput="seekAudio(this.value)" style="width:100%; cursor:pointer; accent-color:#ffd700;">
-                    <div style="display:flex; justify-content:space-between; font-size:12.5px; color:#e2e8f0;">
+
+            <div class="voice-switcher">
+                <span style="font-size: 13.5px; color: #cbd5e1; font-weight: 500;">Chọn giọng đọc:</span>
+                <button class="voice-btn active" id="btnVoiceMale" onclick="switchVoice('male')">
+                    <span>👨</span> Nam Trầm Ấm (Puck AI)
+                </button>
+                <button class="voice-btn" id="btnVoiceFemale" onclick="switchVoice('female')">
+                    <span>👩</span> Nữ Truyền Cảm (Aoede AI)
+                </button>
+            </div>
+
+            <div class="audio-controls">
+                <button class="play-pause-btn" id="playPauseBtn" onclick="togglePlay()" title="Phát / Tạm dừng">▶</button>
+                <div class="progress-box">
+                    <input type="range" id="progressBar" class="audio-progress-bar" value="0" min="0" max="100" step="0.1" oninput="seekAudio(this.value)">
+                    <div class="time-box">
                         <span id="currentTimeTxt">00:00</span>
                         <span id="totalTimeTxt">02:15</span>
                     </div>
+                </div>
+                <div class="speed-box">
+                    <button class="speed-btn" onclick="setSpeed(0.85, this)">0.85x</button>
+                    <button class="speed-btn active" onclick="setSpeed(1.0, this)">1.0x</button>
+                    <button class="speed-btn" onclick="setSpeed(1.25, this)">1.25x</button>
                 </div>
             </div>
             <audio id="articleAudio" preload="metadata" src="webgis_voice_gemini_puck.mp3"></audio>
         </div>
 
+        <!-- Infographic Box (matching Chị Nhung article style) -->
+        <div class="infographic-box">
+            <div class="infographic-title">
+                <span>📊</span> BƯỚC CHUYỂN DỊCH TRONG PHÒNG, CHỐNG LŨ QUÉT &amp; SẠT LỞ VÙNG CAO
+            </div>
+            <div class="comparison-grid">
+                <div class="compare-col old-way">
+                    <div class="compare-header">Cách làm truyền thống (Bản đồ giấy &amp; Bị động)</div>
+                    <ul class="compare-list">
+                        <li><span class="icon-cross">✕</span> Bản đồ giấy 2D phẳng, khó hình dung độ dốc vách núi và hướng nước đổ.</li>
+                        <li><span class="icon-cross">✕</span> Khó xác định chính xác hộ dân nào bị ngập trước khi mực nước dâng từng mét.</li>
+                        <li><span class="icon-cross">✕</span> Phụ thuộc mạng Internet nên dễ bị gián đoạn liên lạc khi bão làm gãy cột sóng.</li>
+                        <li><span class="icon-cross">✕</span> Lộ trình sơ tán truyền miệng, dễ lúng túng khi lũ ống đổ về trong đêm tối.</li>
+                    </ul>
+                </div>
+                <div class="compare-col new-way">
+                    <div class="compare-header">Tư duy mới (“Tấm bản đồ sống” WebGIS &amp; 3D)</div>
+                    <ul class="compare-list">
+                        <li><span class="icon-check">✓</span> Mô hình không gian 3 chiều trực quan toàn bộ 5.245 ha núi đồi, khe suối.</li>
+                        <li><span class="icon-check">✓</span> Kéo thanh trượt mực nước (+2,5m đến +8m) biết ngay danh sách hộ cần di dời.</li>
+                        <li><span class="icon-check">✓</span> Chạy độc lập 100% Offline ngay trên máy tính của xã, bản khi mất điện, mất mạng.</li>
+                        <li><span class="icon-check">✓</span> Vạch sẵn “đường xanh sơ tán an toàn” ngắn nhất cho 2.015 hộ dân về điểm cao.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <div class="content-body">
 
             <!-- SECTION 1 -->
+            <div class="titphu-banner">
+                <img src="images/webgis_titphu1.jpg?v=bna1" alt="Nỗi trăn trở sau những mùa lũ dữ nơi thung lũng hẹp">
+            </div>
+
             <div class="read-segment" id="seg-1">
                 <h2>1. Nỗi trăn trở sau những mùa lũ dữ nơi thung lũng hẹp</h2>
                 <p>
@@ -547,6 +816,13 @@
             </div>
 
             <figure class="media-figure">
+                <img src="images/webgis_bvr_tower_clean.jpg?v=bna1" alt="Cán bộ lực lượng bảo vệ rừng chuyên trách kiểm tra trạm đo mưa tự động, tháp ăng ten truyền số liệu và bản đồ 3D bên dòng Nậm Mộ" onclick="openLightbox(this.src)">
+                <figcaption class="media-caption">
+                    <strong>Thực địa bên dòng Nậm Mộ:</strong> Cán bộ lực lượng bảo vệ rừng chuyên trách đối chiếu bản đồ cảnh báo sạt lở đất, lũ quét 3D trên máy tính bảng với trạm đo mưa tự động và tháp ăng ten truyền số liệu lắp đặt dọc tuyến Quốc lộ 7 (đoạn qua Mường Xén – Hữu Kiệm, Kỳ Sơn).
+                </figcaption>
+            </figure>
+
+            <figure class="media-figure">
                 <img src="images/webgis_editorial_engineer_kyson.jpg?v=bvr2" alt="Kỹ sư lực lượng bảo vệ rừng chuyên trách thức trắng đêm mưa phân tích mô hình 3D địa hình và điểm nguy cơ sạt lở tại Kỳ Sơn" onclick="openLightbox(this.src)">
                 <figcaption class="media-caption">
                     <strong>Những đêm trắng bên trang bản đồ số:</strong> Từ dữ liệu những chuyến tuần rừng của lực lượng bảo vệ rừng chuyên trách và bản đồ địa hình, toàn bộ hình dáng núi đồi, khe suối dọc sông Nậm Mộ được đưa lên mô hình không gian 3 chiều để tìm ra những sườn dốc có nguy cơ sạt trượt khi mưa lớn kéo dài.
@@ -554,6 +830,10 @@
             </figure>
 
             <!-- SECTION 2 -->
+            <div class="titphu-banner">
+                <img src="images/webgis_titphu2.jpg?v=bna1" alt="Đưa cả vùng núi rừng lên sa bàn sống 3 chiều">
+            </div>
+
             <div class="read-segment" id="seg-2">
                 <h2>2. Đưa cả vùng núi rừng và hơn 2.000 mái nhà lên “sa bàn sống” 3 chiều</h2>
                 <p>
@@ -594,6 +874,10 @@
             </section>
 
             <!-- SECTION 3 -->
+            <div class="titphu-banner">
+                <img src="images/webgis_titphu3.jpg?v=bna1" alt="Mở được ngay cả khi mất mạng Internet giữa tâm bão">
+            </div>
+
             <div class="read-segment" id="seg-3">
                 <h2>3. Mở được ngay cả khi mất mạng Internet giữa tâm bão</h2>
                 <p>
@@ -622,6 +906,10 @@
             </figure>
 
             <!-- SECTION 4 -->
+            <div class="titphu-banner">
+                <img src="images/webgis_titphu4.jpg?v=bna1" alt="Giữ lá chắn rừng xanh kết hợp lá chắn số vì bình yên bản làng">
+            </div>
+
             <div class="read-segment" id="seg-4">
                 <h2>4. Giữ “lá chắn rừng xanh” kết hợp “lá chắn số” vì bình yên bản làng</h2>
                 <p>
@@ -635,7 +923,7 @@
                     <div class="quote-text">
                         “Giữ được rừng đầu nguồn là giữ được mái nhà dưới chân núi. Còn tấm bản đồ số WebGIS giống như người lính gác thức cùng những đêm mưa bão, giúp cán bộ cơ sở và bà con biết lúc nào cần tạm rời nhà lên điểm cao để giữ trọn bình yên tính mạng.”
                     </div>
-                    <div class="quote-author">— Tâm sự của người kỹ sư xây dựng hệ thống WebGIS Kỳ Sơn</div>
+                    <div class="quote-author">— Kỹ sư cuongsmile, Tác giả hệ thống WebGIS Kỳ Sơn</div>
                 </div>
             </div>
 
@@ -646,19 +934,46 @@
                 </figcaption>
             </figure>
 
-            <!-- SUMMARY HIGHLIGHTS -->
-            <div class="milestones-card">
-                <div class="milestones-title">📌 Những giá trị thiết thực từ hệ thống WebGIS cảnh báo sạt lở &amp; lũ quét sông Nậm Mộ:</div>
-                <ul class="milestones-list">
-                    <li>✅ <strong>Bảo vệ trực tiếp 2.015 hộ dân (hơn 8.700 người dân):</strong> Rà soát chi tiết từng cụm nhà ven sông, ven suối và dưới chân đồi dốc thuộc 18 bản, khối của hai xã Mường Xén và Hữu Kiệm.</li>
-                    <li>✅ <strong>Dễ hiểu, dễ dùng cho cả cán bộ xã và người dân:</strong> Giao diện tiếng Việt trực quan, mở được trên cả máy tính và điện thoại, hoạt động tốt ngay cả khi mất điện, mất mạng Internet giữa mùa mưa bão.</li>
-                    <li>✅ <strong>Chỉ rõ đường đi an toàn khi khẩn cấp:</strong> Mỗi bản làng có nguy cơ ngập lũ hoặc sạt lở đều được gắn với một lộ trình di chuyển cụ thể về trường học, bệnh viện hoặc trụ sở kiên cố trên đồi cao.</li>
-                    <li>✅ <strong>Sẵn sàng nhân rộng cho các vùng cao khác:</strong> Từ mô hình thực tế tại Kỳ Sơn (Nghệ An), quy trình xây dựng bản đồ đã được đóng gói hoàn chỉnh để có thể áp dụng nhanh cho nhiều xã miền núi thường xuyên chịu ảnh hưởng của lũ ống, lũ quét và sạt lở đất.</li>
+            <!-- Timeline Summary Card (matching Chị Nhung article style) -->
+            <div class="timeline-card">
+                <div class="timeline-title">
+                    <span>📌</span> NHỮNG GIÁ TRỊ THIẾT THỰC TỪ HỆ THỐNG WEBGIS CẢNH BÁO SẠT LỞ &amp; LŨ QUÉT SÔNG NẬM MỘ
+                </div>
+                <ul class="timeline-list">
+                    <li>
+                        <span class="timeline-badge">2.015 hộ dân</span>
+                        <span>Bảo vệ trực tiếp hơn 8.700 nhân khẩu tại 18 bản, khối ven sông, ven suối và dưới chân đồi dốc thuộc hai xã Mường Xén và Hữu Kiệm.</span>
+                    </li>
+                    <li>
+                        <span class="timeline-badge">5.245 héc-ta</span>
+                        <span>Tái hiện toàn cảnh không gian 3 chiều hành lang sông Nậm Mộ cùng hơn 3.589 ha rừng tự nhiên phòng hộ đầu nguồn.</span>
+                    </li>
+                    <li>
+                        <span class="timeline-badge">100% Offline</span>
+                        <span>Hoạt động độc lập ngay trên máy tính xách tay của xã, bản mà không cần mạng Internet khi mưa bão làm mất điện, mất sóng.</span>
+                    </li>
+                    <li>
+                        <span class="timeline-badge">Sơ tán an toàn</span>
+                        <span>Tích hợp lộ trình di chuyển ngắn nhất từ từng cụm nhà nguy cơ cao về trường học, trung tâm y tế và trụ sở kiên cố trên đồi cao.</span>
+                    </li>
                 </ul>
+            </div>
+
+            <div class="article-author-box">
+                <p><strong>Thực hiện &amp; Xây dựng hệ thống:</strong> Kỹ sư cuongsmile</p>
+                <p><strong>Địa bàn triển khai:</strong> Hành lang sông Nậm Mộ (Xã Mường Xén – Xã Hữu Kiệm, Kỳ Sơn, Nghệ An)</p>
+                <p><strong>Chuyên mục:</strong> Ký sự Chuyên đề – Chuyển đổi số Lâm nghiệp &amp; Phòng chống thiên tai vùng cao</p>
             </div>
 
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-brand">KÝ SỰ CHUYÊN ĐỀ • CHUYỂN ĐỔI SỐ VÙNG CAO KỲ SƠN</div>
+        <p>Chuyên trang bài viết tư liệu, ứng dụng khoa học công nghệ và bảo vệ rừng gắn với an toàn bản làng miền Tây Nghệ An.</p>
+        <p style="margin-top: 8px; font-size: 13px; color: #64748b;">Thực hiện: Kỹ sư cuongsmile • Thiết kế theo phong cách eMagazine chuyên đề.</p>
+    </footer>
 
     <!-- Lightbox Modal -->
     <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
@@ -716,6 +1031,7 @@
             female: "webgis_voice_gemini_aoede.mp3"
         };
 
+        let currentSpeed = 1.0;
         const READ_SEGMENTS = [{"id": "seg-1", "start": 0.0, "end": 45.0, "label": "Phần 1: Nỗi trăn trở sau những mùa lũ dữ nơi thung lũng hẹp"}, {"id": "seg-2", "start": 45.0, "end": 92.0, "label": "Phần 2: Đưa cả vùng núi rừng và hơn 2.000 mái nhà lên sa bàn 3 chiều"}, {"id": "seg-3", "start": 92.0, "end": 138.0, "label": "Phần 3: Mở được ngay cả khi mất mạng Internet giữa tâm bão"}, {"id": "seg-4", "start": 138.0, "end": 184.0, "label": "Phần 4: Giữ lá chắn rừng xanh kết hợp lá chắn số vì bình yên bản làng"}];
 
         function formatTime(sec) {
@@ -744,6 +1060,7 @@
             audioEl.addEventListener('loadedmetadata', function onMeta() {
                 audioEl.removeEventListener('loadedmetadata', onMeta);
                 audioEl.currentTime = Math.min(curTime, audioEl.duration - 0.5);
+                audioEl.playbackRate = currentSpeed;
                 if (wasPlaying) {
                     audioEl.play();
                     playBtn.textContent = "⏸";
@@ -755,6 +1072,13 @@
             if (audioEl.duration) {
                 audioEl.currentTime = (parseFloat(val) / 100) * audioEl.duration;
             }
+        }
+
+        function setSpeed(rate, btn) {
+            currentSpeed = rate;
+            if (audioEl) audioEl.playbackRate = rate;
+            document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
         }
 
         audioEl.addEventListener('loadedmetadata', () => {
@@ -787,6 +1111,13 @@
             playBtn.textContent = "▶";
             statusTxt.textContent = "Đã phát xong bài phóng sự";
             document.querySelectorAll('.read-segment').forEach(el => el.classList.remove('active-reading'));
+        });
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
         });
     </script>
 </body>
