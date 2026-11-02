@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ nỗi đau lũ quét miền biên viễn đến “tấm bản đồ sống” thức canh giấc ngủ cho hơn 2.000 mái nhà bên dòng Nậm Mộ | Ký sự Biên cương</title>
+    <meta name="description" content="Phóng sự từ vùng cao Kỳ Sơn (Nghệ An): Câu chuyện về người cán bộ kỹ thuật lâm nghiệp thức trắng nhiều đêm mưa bão để đưa núi rừng, khe suối và hơn 2.000 nếp nhà lên bản đồ số 3D cảnh báo sớm sạt lở đất, lũ ống, lũ quét.">
+    <meta property="og:title" content="Từ nỗi đau lũ quét miền biên viễn đến “tấm bản đồ sống” thức canh giấc ngủ cho hơn 2.000 mái nhà bên dòng Nậm Mộ">
+    <meta property="og:description" content="Khi công nghệ số bắt nguồn từ tình thương và trách nhiệm của người cán bộ bám rừng, bám bản, những dòng mã lệnh đã hóa thành tấm lá chắn ấm áp giữ bình yên cho từng nếp nhà nơi biên giới.">
+    <meta property="og:image" content="https://daingankysu.vercel.app/images/webgis_editorial_field_survey_nammo.jpg">
+    <meta property="og:type" content="article">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007038;
+            --primary-dark: #005028;
+            --primary-light: #e8f5e9;
+            --gold: #b38024;
+            --gold-light: #fef7ec;
+            --red: #c0262d;
+            --text-main: #24292f;
+            --text-heading: #0f172a;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --content-width: 840px;
+            --overflow-width: 1020px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 19px;
+            line-height: 1.85;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .site-header {
+            background: #ffffff;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .header-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-text {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+        .logo-tag {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 600;
+            border-left: 2px solid #cbd5e1;
+            padding-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            color: #334155;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+        .header-nav a:hover, .header-nav a.active {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        /* Clean Unobstructed Cover Photo */
+        .cover-wrap {
+            max-width: var(--overflow-width);
+            margin: 24px auto 12px auto;
+            padding: 0 15px;
+        }
+        .cover-inner {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+        }
+        .cover-inner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: zoom-in;
+        }
+        .cover-caption {
+            padding: 12px 20px;
+            font-size: 14.5px;
+            color: #475569;
+            background: #f8fafc;
+            border-top: 1px solid var(--border-color);
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Main Article Container */
+        .article-wrap {
+            max-width: var(--content-width);
+            margin: 0 auto 60px;
+            background: #ffffff;
+            padding: 44px 48px;
+            border-radius: 14px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+        }
+        @media (max-width: 768px) {
+            .article-wrap { padding: 24px 18px; }
+        }
+
+        .article-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            background: var(--primary-light);
+            padding: 6px 14px;
+            border-radius: 30px;
+        }
+
+        h1.article-title {
+            font-family: "Merriweather", Georgia, serif;
+            font-size: clamp(26px, 3.6vw, 36px);
+            font-weight: 900;
+            line-height: 1.38;
+            color: var(--text-heading);
+            margin-bottom: 18px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 14.5px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .meta-tag {
+            background: #f1f5f9;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        /* Sapo */
+        .article-sapo {
+            font-family: "Lora", Georgia, serif;
+            font-size: 20.5px;
+            font-weight: 600;
+            line-height: 1.68;
+            color: #1e293b;
+            margin-bottom: 28px;
+            background: #f8fafc;
+            border-left: 5px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Audio Player Card */
+        .audio-player-card {
+            background: linear-gradient(135deg, #064e2b, #007038);
+            color: #ffffff;
+            border-radius: 14px;
+            padding: 22px 24px;
+            margin: 28px 0 36px 0;
+            box-shadow: 0 10px 28px rgba(0, 112, 56, 0.2);
+        }
+        .audio-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 14px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.18);
+        }
+        .voice-btn {
+            background: rgba(255,255,255,0.14);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .voice-btn.active {
+            background: #ffffff;
+            color: #064e2b;
+            border-color: #ffffff;
+        }
+        .play-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: #007038;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Content Body */
+        .read-segment {
+            transition: background-color 0.3s ease;
+            border-radius: 10px;
+        }
+        .read-segment.active-reading {
+            background: #fefce8;
+            border-left: 4px solid #eab308;
+            padding: 12px 16px;
+        }
+        .content-body h2 {
+            font-family: "Merriweather", Georgia, serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin: 40px 0 18px;
+            line-height: 1.4;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .content-body h2::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 26px;
+            background: var(--primary);
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        .content-body p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Clean Full-Width Figures (100% Unobstructed) */
+        .media-figure {
+            margin: 32px 0;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+            border: 1px solid var(--border-color);
+        }
+        .media-figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: zoom-in;
+        }
+        .media-caption {
+            padding: 14px 20px;
+            font-size: 14.5px;
+            color: #334155;
+            background: #f8fafc;
+            border-top: 1px solid var(--border-color);
+            line-height: 1.55;
+            text-align: center;
+        }
+        .media-caption strong {
+            color: #0f172a;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            margin: 32px 0;
+            padding: 24px 28px;
+            background: linear-gradient(135deg, var(--gold-light), #fff);
+            border-left: 5px solid var(--gold);
+            border-radius: 0 12px 12px 0;
+        }
+        .quote-text {
+            font-family: "Lora", Georgia, serif;
+            font-size: 20px;
+            font-style: italic;
+            line-height: 1.65;
+            color: #451a03;
+            margin-bottom: 10px;
+        }
+        .quote-author {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        /* Interactive 4-Layer WebGIS Viewer (Zero Overlay on Image!) */
+        .webgis-showcase {
+            margin: 36px 0;
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 2px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 112, 56, 0.1);
+        }
+        .webgis-bar {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 14px 18px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .webgis-bar-title {
+            font-size: 15px;
+            font-weight: 800;
+        }
+        .layer-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .layer-tab {
+            background: rgba(255,255,255,0.16);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .layer-tab.active {
+            background: #ffd700;
+            color: #064e2b;
+            border-color: #ffd700;
+            font-weight: 800;
+        }
+        .webgis-img-wrap {
+            background: #0f172a;
+        }
+        .webgis-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: zoom-in;
+        }
+        .webgis-footer-note {
+            padding: 13px 18px;
+            background: #f0fdf4;
+            border-top: 1px solid #bbf7d0;
+            font-size: 14.5px;
+            color: #064e2b;
+            text-align: center;
+        }
+
+        /* Friendly Highlight Box */
+        .milestones-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 32px 0;
+        }
+        .milestones-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 14px;
+        }
+        .milestones-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .milestones-list li {
+            font-size: 16.5px;
+            line-height: 1.65;
+            color: #1e293b;
+        }
+
+        /* Lightbox */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 12, 16, 0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .lightbox-modal.open { display: flex; }
+        .lightbox-modal img {
+            max-width: 96vw;
+            max-height: 92vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 18px;
+            right: 26px;
+            color: #fff;
+            font-size: 36px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-box">
+                <span class="logo-text">KÝ SỰ BIÊN CƯƠNG</span>
+                <span class="logo-tag">Chuyên Trang Đời Sống &amp; Chuyển Đổi Số Vùng Cao</span>
+            </a>
+            <nav class="header-nav">
+                <a href="index.html">Chuyên đề: Đại ngàn Ký sự</a>
+                <a href="webgis-canh-bao-sat-lo-lu-quet.htm" class="active">★ Bản đồ số Cảnh báo Lũ quét &amp; Sạt lở</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 100% Clean Unobstructed Cover Photo -->
+    <div class="cover-wrap">
+        <div class="cover-inner">
+            <img src="images/webgis_editorial_field_survey_nammo.jpg" alt="Cán bộ bảo vệ rừng chuyên trách kiểm tra trạm đo mưa tự động và bản đồ cảnh báo sạt lở đất bên bờ sông Nậm Mộ" onclick="openLightbox(this.src)">
+            <div class="cover-caption">
+                <strong>Thực địa bên dòng Nậm Mộ:</strong> Cán bộ lực lượng bảo vệ rừng chuyên trách đối chiếu bản đồ cảnh báo sạt lở đất, lũ quét trên máy tính bảng với trạm đo mưa tự động lắp đặt dọc tuyến Quốc lộ 7 (đoạn qua Mường Xén – Hữu Kiệm, Kỳ Sơn). <em>(Bấm vào ảnh để xem cỡ lớn)</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Article -->
+    <main class="article-wrap">
+        <div class="article-category">
+            <span>★</span> PHÓNG SỰ KHOA HỌC &amp; ĐỜI SỐNG VÙNG CAO
+        </div>
+
+        <h1 class="article-title">
+            Từ nỗi đau lũ quét miền biên viễn đến “tấm bản đồ sống” thức canh giấc ngủ cho hơn 2.000 mái nhà bên dòng Nậm Mộ
+        </h1>
+
+        <div class="article-meta">
+            <span>Thực hiện: <strong>Kỹ sư cuongsmile</strong></span>
+            <span>•</span>
+            <span>Địa bàn: <strong>Xã Mường Xén – Xã Hữu Kiệm (Kỳ Sơn, Nghệ An)</strong></span>
+            <span>•</span>
+            <span class="meta-tag">Chuyển đổi số vì bình yên bản làng</span>
+        </div>
+
+        <!-- Sapo -->
+        <div class="article-sapo">
+            Giữa những triền núi dốc đứng của vùng biên giới Kỳ Sơn (Nghệ An), nơi mỗi mùa mưa bão đi qua là nỗi phập phồng lo âu về lũ ống, lũ quét và sạt lở đất, một hệ thống bản đồ số WebGIS và mô hình 3D cảnh báo sớm vừa được dựng lên từ chính những đêm trắng trăn trở của người cán bộ gắn bó với núi rừng. Không còn là những con số khô khan trên mặt giấy, “tấm bản đồ sống” ấy chỉ rõ từng mái nhà, từng khúc cua có nguy cơ sạt trượt và vạch sẵn con đường sơ tán an toàn cho hơn <strong>2.015 hộ dân</strong> trước khi lũ dữ kịp tràn về.
+        </div>
+
+        <!-- Audio Player -->
+        <div class="audio-player-card">
+            <div class="audio-top">
+                <div style="display:flex; align-items:center; gap:10px; font-weight:700; font-size:15.5px;">
+                    <span>🎙️</span>
+                    <span id="statusSegmentTxt">Nghe đọc bài phóng sự (Tự động tô sáng đoạn đang đọc)</span>
+                </div>
+                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                    <button class="voice-btn active" id="btnVoiceMale" onclick="switchVoice('male')">👨 Giọng Nam (Nam Minh)</button>
+                    <button class="voice-btn" id="btnVoiceFemale" onclick="switchVoice('female')">👩 Giọng Nữ (Hoài My)</button>
+                </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:14px;">
+                <button class="play-btn" id="playPauseBtn" onclick="togglePlay()" title="Phát / Tạm dừng">▶</button>
+                <div style="flex:1; display:flex; flex-direction:column; gap:6px;">
+                    <input type="range" id="progressBar" value="0" min="0" max="100" step="0.1" oninput="seekAudio(this.value)" style="width:100%; cursor:pointer; accent-color:#ffd700;">
+                    <div style="display:flex; justify-content:space-between; font-size:12.5px; color:#e2e8f0;">
+                        <span id="currentTimeTxt">00:00</span>
+                        <span id="totalTimeTxt">02:15</span>
+                    </div>
+                </div>
+            </div>
+            <audio id="articleAudio" preload="metadata" src="webgis_voice_gemini_puck.mp3"></audio>
+        </div>
+
+        <div class="content-body">
+
+            <!-- SECTION 1 -->
+            <div class="read-segment" id="seg-1">
+                <h2>1. Nỗi trăn trở sau những mùa lũ dữ nơi thung lũng hẹp</h2>
+                <p>
+                    Ai từng đi ngược Quốc lộ 7 lên miền Tây xứ Nghệ vào những tháng mùa mưa bão đều thấu hiểu sự khắc nghiệt của địa hình nơi đây. Dòng sông Nậm Mộ nhận nước từ bên kia biên giới đổ về, len lỏi qua những hẻm núi cao vút và những vách đá dựng đứng. Người dân vùng Mường Xén, Tà Cạ, Hữu Kiệm vẫn chưa thể nào quên rạng sáng kinh hoàng đầu tháng 10 năm 2022, khi sau những giờ mưa như trút nước ở thượng nguồn, cơn lũ ống, lũ quét từ khe núi Huồi Giảng bất ngờ đổ ập xuống trong đêm tối, cuốn trôi nhà cửa và vùi lấp tuyến đường độc đạo.
+                </p>
+                <p>
+                    Với những người cán bộ <strong>lực lượng bảo vệ rừng chuyên trách</strong> quanh năm khoác màu áo xanh rêu bám rừng, bám bản ở Kỳ Sơn, mỗi vết sạt lở đỏ quạch trên sườn núi sau mùa mưa lũ luôn để lại một câu hỏi day dứt: <em>“Làm sao để bà con mình và cán bộ xã biết trước ngọn đồi nào sau lưng nhà đã no nước dễ sạt lở, con suối nào sắp dâng lũ quét để kịp đưa người già, trẻ nhỏ đi lánh nạn trước khi trời tối?”</em>
+                </p>
+            </div>
+
+            <figure class="media-figure">
+                <img src="images/webgis_editorial_engineer_kyson.jpg" alt="Kỹ sư lực lượng bảo vệ rừng chuyên trách thức trắng đêm mưa phân tích mô hình 3D địa hình và điểm nguy cơ sạt lở tại Kỳ Sơn" onclick="openLightbox(this.src)">
+                <figcaption class="media-caption">
+                    <strong>Những đêm trắng bên trang bản đồ số:</strong> Từ dữ liệu những chuyến tuần rừng của lực lượng bảo vệ rừng chuyên trách và bản đồ địa hình, toàn bộ hình dáng núi đồi, khe suối dọc sông Nậm Mộ được đưa lên mô hình không gian 3 chiều để tìm ra những sườn dốc có nguy cơ sạt trượt khi mưa lớn kéo dài.
+                </figcaption>
+            </figure>
+
+            <!-- SECTION 2 -->
+            <div class="read-segment" id="seg-2">
+                <h2>2. Đưa cả vùng núi rừng và hơn 2.000 mái nhà lên “sa bàn sống” 3 chiều</h2>
+                <p>
+                    Bắt tay vào giải bài toán ấy, thay vì vẽ những tấm bản đồ giấy phức tạp chỉ dành cho giới chuyên môn, tác giả đã xây dựng nên một <strong>Hệ thống Bản đồ số WebGIS và Mô hình 3 chiều (3D)</strong> tái hiện chân thực toàn bộ vùng thung lũng sông Nậm Mộ rộng hơn <strong>5.245 héc-ta</strong> — kéo dài từ khu vực Cầu Sơn Thành (xã Mường Xén) đến Cầu Xốp Nhị (xã Hữu Kiệm).
+                </p>
+                <p>
+                    Trên màn hình máy tính hay chiếc điện thoại thông minh, cả vùng núi non hiểm trở hiện lên rõ mồn một như nhìn từ cánh chim bay. Nhờ kết hợp ảnh chụp vệ tinh sắc nét với trí tuệ nhân tạo và độ dốc thực tế của từng sườn đồi, hệ thống tự động tô màu cảnh báo rất trực quan mà bất kỳ người dân nào nhìn vào cũng hiểu ngay:
+                </p>
+                <p>
+                    Những <strong>vệt màu cam, màu đỏ</strong> là những vách núi dựng đứng dọc Quốc lộ 7, Quốc lộ 16 hoặc phía sau nhà dân có nguy cơ sạt lở đất đá rất cao khi mưa dầm thấm đất; những <strong>dải màu xanh dương</strong> là vùng nước sông Nậm Mộ dâng ngập theo từng cấp báo động; còn những <strong>luồng màu tím</strong> từ các khe núi hẹp đổ ra chính là đường đi của lũ ống, lũ quét.
+                </p>
+            </div>
+
+            <figure class="media-figure">
+                <img src="images/webgis_clean_3d_valley.jpg" alt="Mô hình không gian 3 chiều thung lũng sông Nậm Mộ hiển thị rõ vùng ngập lũ và sườn núi nguy cơ sạt lở" onclick="openLightbox(this.src)">
+                <figcaption class="media-caption">
+                    <strong>Hình ảnh 3 chiều trực quan không bị che khuất:</strong> Toàn cảnh địa hình thung lũng sông Nậm Mộ nhìn trong không gian 3D — màu xanh dương thể hiện dòng sông và vùng ngập lũ, màu tím là các khe suối có nguy cơ lũ quét, còn màu cam và đỏ chỉ rõ những sườn đồi dốc có nguy cơ sạt lở đất.
+                </figcaption>
+            </figure>
+
+            <!-- INTERACTIVE 4-LAYER WEBGIS VIEWER (ZERO OVERLAY ON MAP) -->
+            <section class="webgis-showcase" aria-label="Khám phá 4 lớp bản đồ WebGIS">
+                <div class="webgis-bar">
+                    <div class="webgis-bar-title">🌐 BẤM ĐỂ XEM TRỰC TIẾP 4 LỚP BẢN ĐỒ SỐ TRÊN HỆ THỐNG WEBGIS:</div>
+                    <div class="layer-tabs">
+                        <button class="layer-tab active" onclick="switchGisLayer('integrated', this)">1. Bản đồ Tổng hợp</button>
+                        <button class="layer-tab" onclick="switchGisLayer('flood', this)">2. Vùng ngập &amp; Lũ quét</button>
+                        <button class="layer-tab" onclick="switchGisLayer('landslide', this)">3. Sườn đồi Sạt lở</button>
+                        <button class="layer-tab" onclick="switchGisLayer('satellite', this)">4. Ảnh Vệ tinh Thực tế</button>
+                    </div>
+                </div>
+                <div class="webgis-img-wrap">
+                    <img id="interactiveGisImg" src="images/nam_mo_layer_integrated.jpg" alt="Lớp bản đồ tương tác WebGIS sông Nậm Mộ" onclick="openLightbox(this.src)">
+                </div>
+                <div class="webgis-footer-note" id="hudLayerTitle">
+                    <strong>Đang hiển thị:</strong> Lớp bản đồ tổng hợp toàn bộ vùng ngập nước sông Nậm Mộ (xanh dương), các khe lũ ống – lũ quét (màu tím) và các sườn đồi có nguy cơ sạt lở (đỏ cam). <em>(Bấm vào từng nút phía trên để chuyển đổi lớp bản đồ)</em>
+                </div>
+            </section>
+
+            <!-- SECTION 3 -->
+            <div class="read-segment" id="seg-3">
+                <h2>3. Mở được ngay cả khi mất mạng Internet giữa tâm bão</h2>
+                <p>
+                    Một chi tiết rất đời thường nhưng lại quyết định sự thành bại của công tác cứu hộ vùng cao: mỗi khi mưa lũ lớn ập về, cột điện dễ bị gãy đổ và sóng điện thoại, mạng Internet thường bị mất đầu tiên. Nếu một phần mềm cảnh báo bắt buộc phải có mạng Internet mới mở được thì lúc nguy cấp nhất lại không thể dùng.
+                </p>
+                <p>
+                    Vì vậy, toàn bộ hệ thống WebGIS và sa bàn 3D này đã được tác giả đóng gói gọn nhẹ để <strong>chạy hoàn toàn độc lập (Offline 100%) ngay trên máy tính xách tay của xã, của bản mà không cần kết nối mạng</strong>.
+                </p>
+                <p>
+                    Khi nghe tin mưa lớn ở thượng nguồn hay thủy điện thông báo xả lũ, cán bộ trực ban chỉ cần kéo nhẹ thanh trượt mực nước trên màn hình từ mức <strong>+2,5m</strong> lên <strong>+5m</strong> hoặc <strong>+8m</strong>. Tức thì, mặt nước trên mô hình 3D dâng lên tới đâu sẽ báo ngay những hộ dân nào ở <strong>Bản Sơn Thành, Bản Hòa Sơn, khu vực Bến xe Khối 1 – Khối 2 (xã Mường Xén)</strong> hay <strong>Bản Na Chảo, Bản Na Lượng, Bản Khe Tỷ, Bản Xốp Nhị (xã Hữu Kiệm)</strong> nằm trong vùng nguy hiểm cần phải sơ tán trước.
+                </p>
+            </div>
+
+            <figure class="media-figure">
+                <img src="images/webgis_clean_map_flood_landslide.jpg" alt="Bản đồ vùng ngập lũ và sạt lở trên nền ảnh vệ tinh sông Nậm Mộ" onclick="openLightbox(this.src)">
+                <figcaption class="media-caption">
+                    <strong>Nhìn rõ từng khúc sông, từng khe núi:</strong> Trên nền ảnh vệ tinh thực tế, hệ thống khoanh vùng rõ các điểm dân cư ven sông và các khe suối dốc như Khe Huồi Giảng, Khe Tỷ, Suối Nhị để chính quyền cơ sở chủ động đặt biển cảnh báo và cột đo mực nước.
+                </figcaption>
+            </figure>
+
+            <figure class="media-figure">
+                <img src="images/webgis_editorial_evacuation_drill.jpg" alt="Lực lượng bảo vệ rừng chuyên trách phối hợp hướng dẫn bà con vùng cao sơ tán theo lộ trình an toàn khi nước suối dâng cao" onclick="openLightbox(this.src)">
+                <figcaption class="media-caption">
+                    <strong>Chủ động sơ tán từ sớm, từ xa:</strong> Khi mực nước tại cột thủy chí ven suối chạm vạch báo động, các cán bộ lực lượng bảo vệ rừng chuyên trách bám địa bàn kịp thời hướng dẫn người dân di chuyển theo đúng tuyến đường an toàn đã được vạch sẵn trên bản đồ về điểm tránh trú cao ráo.
+                </figcaption>
+            </figure>
+
+            <!-- SECTION 4 -->
+            <div class="read-segment" id="seg-4">
+                <h2>4. Giữ “lá chắn rừng xanh” kết hợp “lá chắn số” vì bình yên bản làng</h2>
+                <p>
+                    Không chỉ chỉ ra nơi nguy hiểm, tấm bản đồ còn vẽ sẵn những <strong>“đường xanh sơ tán an toàn”</strong> ngắn nhất, dẫn lối cho bà con tại 18 điểm dân cư rút về các công trình kiên cố nằm trên đồi cao như <strong>Trường THPT Kỳ Sơn, Trung tâm Y tế Kỳ Sơn, Trụ sở UBND xã</strong> hay <strong>Căn cứ Ban Chỉ huy Quân sự xã Hữu Kiệm tại Bản Xốp Thạng</strong>.
+                </p>
+                <p>
+                    Và hơn hết, khi nhìn vào lớp bản đồ thảm thực vật của hệ thống, bất kỳ ai cũng nhận ra một sự thật giản dị mà thấm thía: bao bọc phía trên những bản làng ven sông Nậm Mộ là hơn <strong>3.589 héc-ta rừng tự nhiên đầu nguồn</strong>. Nơi nào cánh rừng già còn nguyên vẹn, tán cây và bộ rễ sâu như một “bể chứa nước khổng lồ” giữ chặt đất đá, làm chậm dòng lũ dữ. Ngược lại, những nơi đồi trọc hoặc vách núi bị xẻ đất làm đường mà thiếu cây rừng che phủ chính là những điểm đỏ dễ sạt lở nhất.
+                </p>
+
+                <div class="quote-box">
+                    <div class="quote-text">
+                        “Giữ được rừng đầu nguồn là giữ được mái nhà dưới chân núi. Còn tấm bản đồ số WebGIS giống như người lính gác thức cùng những đêm mưa bão, giúp cán bộ cơ sở và bà con biết lúc nào cần tạm rời nhà lên điểm cao để giữ trọn bình yên tính mạng.”
+                    </div>
+                    <div class="quote-author">— Tâm sự của người kỹ sư xây dựng hệ thống WebGIS Kỳ Sơn</div>
+                </div>
+            </div>
+
+            <figure class="media-figure">
+                <img src="images/webgis_clean_map_forest_shield.jpg" alt="Bản đồ lá chắn xanh hơn 3.589 ha rừng tự nhiên đầu nguồn bảo vệ thung lũng sông Nậm Mộ" onclick="openLightbox(this.src)">
+                <figcaption class="media-caption">
+                    <strong>“Lá chắn xanh” của đại ngàn:</strong> Hơn 3.589 héc-ta rừng tự nhiên phòng hộ đầu nguồn (màu xanh đậm) trên các đỉnh núi cao đóng vai trò giữ nước, giữ đất, kết hợp cùng hệ thống cảnh báo số bảo vệ cuộc sống của hơn 2.000 hộ dân dưới lòng thung lũng.
+                </figcaption>
+            </figure>
+
+            <!-- SUMMARY HIGHLIGHTS -->
+            <div class="milestones-card">
+                <div class="milestones-title">📌 Những giá trị thiết thực từ hệ thống WebGIS cảnh báo sạt lở &amp; lũ quét sông Nậm Mộ:</div>
+                <ul class="milestones-list">
+                    <li>✅ <strong>Bảo vệ trực tiếp 2.015 hộ dân (hơn 8.700 người dân):</strong> Rà soát chi tiết từng cụm nhà ven sông, ven suối và dưới chân đồi dốc thuộc 18 bản, khối của hai xã Mường Xén và Hữu Kiệm.</li>
+                    <li>✅ <strong>Dễ hiểu, dễ dùng cho cả cán bộ xã và người dân:</strong> Giao diện tiếng Việt trực quan, mở được trên cả máy tính và điện thoại, hoạt động tốt ngay cả khi mất điện, mất mạng Internet giữa mùa mưa bão.</li>
+                    <li>✅ <strong>Chỉ rõ đường đi an toàn khi khẩn cấp:</strong> Mỗi bản làng có nguy cơ ngập lũ hoặc sạt lở đều được gắn với một lộ trình di chuyển cụ thể về trường học, bệnh viện hoặc trụ sở kiên cố trên đồi cao.</li>
+                    <li>✅ <strong>Sẵn sàng nhân rộng cho các vùng cao khác:</strong> Từ mô hình thực tế tại Kỳ Sơn (Nghệ An), quy trình xây dựng bản đồ đã được đóng gói hoàn chỉnh để có thể áp dụng nhanh cho nhiều xã miền núi thường xuyên chịu ảnh hưởng của lũ ống, lũ quét và sạt lở đất.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightboxImg" src="" alt="Hình ảnh phóng to">
+    </div>
+
+    <script>
+        const GIS_LAYERS = {
+            integrated: {
+                src: "images/nam_mo_layer_integrated.jpg",
+                desc: "<strong>Đang hiển thị:</strong> Lớp bản đồ tổng hợp toàn bộ vùng ngập nước sông Nậm Mộ (xanh dương), các khe lũ ống – lũ quét (màu tím) và các sườn đồi có nguy cơ sạt lở (đỏ cam)."
+            },
+            flood: {
+                src: "images/nam_mo_layer_flood.jpg",
+                desc: "<strong>Đang hiển thị:</strong> Lớp bản đồ vùng nước sông Nậm Mộ dâng ngập khi lũ lớn (màu xanh) và các khe suối có nguy cơ phóng lũ ống, lũ quét trên nền ảnh vệ tinh."
+            },
+            landslide: {
+                src: "images/nam_mo_layer_landslide.jpg",
+                desc: "<strong>Đang hiển thị:</strong> Lớp bản đồ cảnh báo các sườn đồi dốc có nguy cơ sạt lở đất đá (vệt màu đỏ và cam dọc các vách núi và đường giao thông)."
+            },
+            satellite: {
+                src: "images/nam_mo_layer_satellite.jpg",
+                desc: "<strong>Đang hiển thị:</strong> Ảnh chụp vệ tinh thực tế độ nét cao toàn bộ thung lũng sông Nậm Mộ, các bản làng và thảm rừng xanh bao phủ hai bên bờ."
+            }
+        };
+
+        function switchGisLayer(key, btnEl) {
+            const item = GIS_LAYERS[key];
+            if (!item) return;
+            document.getElementById('interactiveGisImg').src = item.src;
+            document.getElementById('hudLayerTitle').innerHTML = item.desc;
+            document.querySelectorAll('.layer-tab').forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+        }
+
+        function openLightbox(src) {
+            const modal = document.getElementById('lightboxModal');
+            document.getElementById('lightboxImg').src = src;
+            modal.classList.add('open');
+        }
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.remove('open');
+        }
+
+        const audioEl = document.getElementById('articleAudio');
+        const playBtn = document.getElementById('playPauseBtn');
+        const progressBar = document.getElementById('progressBar');
+        const curTimeTxt = document.getElementById('currentTimeTxt');
+        const totTimeTxt = document.getElementById('totalTimeTxt');
+        const statusTxt = document.getElementById('statusSegmentTxt');
+
+        const VOICE_SOURCES = {
+            male: "webgis_voice_gemini_puck.mp3",
+            female: "webgis_voice_gemini_aoede.mp3"
+        };
+
+        const READ_SEGMENTS = [{"id": "seg-1", "start": 0.0, "end": 45.0, "label": "Phần 1: Nỗi trăn trở sau những mùa lũ dữ nơi thung lũng hẹp"}, {"id": "seg-2", "start": 45.0, "end": 92.0, "label": "Phần 2: Đưa cả vùng núi rừng và hơn 2.000 mái nhà lên sa bàn 3 chiều"}, {"id": "seg-3", "start": 92.0, "end": 138.0, "label": "Phần 3: Mở được ngay cả khi mất mạng Internet giữa tâm bão"}, {"id": "seg-4", "start": 138.0, "end": 184.0, "label": "Phần 4: Giữ lá chắn rừng xanh kết hợp lá chắn số vì bình yên bản làng"}];
+
+        function formatTime(sec) {
+            if (!sec || isNaN(sec)) return "00:00";
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+
+        function togglePlay() {
+            if (audioEl.paused) {
+                audioEl.play();
+                playBtn.textContent = "⏸";
+            } else {
+                audioEl.pause();
+                playBtn.textContent = "▶";
+            }
+        }
+
+        function switchVoice(gender) {
+            const wasPlaying = !audioEl.paused;
+            const curTime = audioEl.currentTime || 0;
+            audioEl.src = VOICE_SOURCES[gender];
+            document.getElementById('btnVoiceMale').classList.toggle('active', gender === 'male');
+            document.getElementById('btnVoiceFemale').classList.toggle('active', gender === 'female');
+            audioEl.addEventListener('loadedmetadata', function onMeta() {
+                audioEl.removeEventListener('loadedmetadata', onMeta);
+                audioEl.currentTime = Math.min(curTime, audioEl.duration - 0.5);
+                if (wasPlaying) {
+                    audioEl.play();
+                    playBtn.textContent = "⏸";
+                }
+            });
+        }
+
+        function seekAudio(val) {
+            if (audioEl.duration) {
+                audioEl.currentTime = (parseFloat(val) / 100) * audioEl.duration;
+            }
+        }
+
+        audioEl.addEventListener('loadedmetadata', () => {
+            totTimeTxt.textContent = formatTime(audioEl.duration);
+        });
+
+        audioEl.addEventListener('timeupdate', () => {
+            const ct = audioEl.currentTime;
+            const dur = audioEl.duration || 1;
+            progressBar.value = ((ct / dur) * 100).toFixed(1);
+            curTimeTxt.textContent = formatTime(ct);
+
+            let activeSeg = null;
+            for (const seg of READ_SEGMENTS) {
+                const el = document.getElementById(seg.id);
+                if (!el) continue;
+                if (ct >= seg.start && ct < seg.end) {
+                    el.classList.add('active-reading');
+                    activeSeg = seg;
+                } else {
+                    el.classList.remove('active-reading');
+                }
+            }
+            if (activeSeg) {
+                statusTxt.textContent = "Đang đọc: " + activeSeg.label;
+            }
+        });
+
+        audioEl.addEventListener('ended', () => {
+            playBtn.textContent = "▶";
+            statusTxt.textContent = "Đã phát xong bài phóng sự";
+            document.querySelectorAll('.read-segment').forEach(el => el.classList.remove('active-reading'));
+        });
+    </script>
+</body>
+</html>
