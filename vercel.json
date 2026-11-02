@@ -21,6 +21,22 @@
     {
       "source": "/lucluongchuyentrachbaoverung-nghidinh42",
       "destination": "/lucluongchuyentrachbaoverung-nghidinh42.htm"
+    },
+    {
+      "source": "/canhbaosatlo",
+      "destination": "/webgis-canh-bao-sat-lo-lu-quet.htm"
+    },
+    {
+      "source": "/webgis",
+      "destination": "/webgis-canh-bao-sat-lo-lu-quet.htm"
+    },
+    {
+      "source": "/satlo",
+      "destination": "/webgis-canh-bao-sat-lo-lu-quet.htm"
+    },
+    {
+      "source": "/webgis-canh-bao-sat-lo-lu-quet",
+      "destination": "/webgis-canh-bao-sat-lo-lu-quet.htm"
     }
   ]
 }
