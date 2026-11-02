@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Từ “Vết sẹo” Lũ quét Kỳ Sơn đến Hệ thống WebGIS & Bản sao số 3D Cảnh báo sớm Sạt lở đất, Lũ ống – Lũ quét</title>
+<meta name="description" content="Chuyên đề Khoa học - Công nghệ & Phòng chống thiên tai: Hệ thống WebGIS và Sa bàn số 3D cảnh báo sớm sạt lở đất 10 lớp LSI, lũ ống - lũ quét HAND - SCS-CN bảo vệ 2.015 hộ dân vùng cao Kỳ Sơn, Nghệ An.">
+<meta property="og:title" content="Hệ thống WebGIS & Bản sao số 3D Cảnh báo sớm Sạt lở đất, Lũ ống – Lũ quét vùng cao">
+<meta property="og:description" content="Giải mã công trình WebGIS & Sa bàn 3D Offline 100% tích hợp vệ tinh Sentinel-2C, AI Google DeepMind ForTy, thủy lực HAND và địa kỹ thuật 10 lớp LSI bảo vệ 2.015 hộ dân.">
+<meta property="og:image" content="https://daingankysu.vercel.app/images/webgis_master_a3.jpg">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #0f3d3e;
+  --primary-dark: #082324;
+  --accent: #d94e34;
+  --accent-gold: #d99b26;
+  --teal-bright: #0d9488;
+  --bg-paper: #faf8f5;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #52606d;
+  --border-light: #e2e8f0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Merriweather', Georgia, serif;
+  background-color: var(--bg-paper);
+  color: var(--text-main);
+  line-height: 1.85;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Top Newspaper Bar */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8, 35, 36, 0.96);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  border-bottom: 2px solid var(--accent-gold);
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+.brand-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-badge {
+  background: linear-gradient(135deg, #d94e34, #b91c1c);
+  color: #fff;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.brand-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #e2e8f0;
+  letter-spacing: 0.4px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+}
+.nav-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.nav-links a:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+.nav-links a.active-link {
+  background: rgba(217, 155, 38, 0.22);
+  color: #fcd34d;
+  border: 1px solid rgba(217, 155, 38, 0.45);
+  font-weight: 600;
+}
+
+/* Hero Cover */
+.hero-header {
+  position: relative;
+  min-height: 76vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: #07191e;
+  overflow: hidden;
+  padding: 60px 20px 56px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.48;
+  filter: contrast(1.08) saturate(1.12);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7,25,30,0.35) 0%, rgba(7,25,30,0.78) 55%, rgba(7,25,30,0.97) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  width: 100%;
+  color: #fff;
+  text-align: left;
+}
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #fcd34d;
+  background: rgba(217, 155, 38, 0.18);
+  border: 1px solid rgba(252, 211, 77, 0.4);
+  padding: 6px 14px;
+  border-radius: 30px;
+  margin-bottom: 18px;
+}
+.hero-title {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(28px, 4.2vw, 48px);
+  font-weight: 900;
+  line-height: 1.26;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+.hero-title span {
+  color: #38bdf8;
+}
+.hero-sapo {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: clamp(16px, 1.9vw, 19.5px);
+  line-height: 1.68;
+  color: #e2e8f0;
+  font-weight: 400;
+  margin-bottom: 26px;
+  border-left: 4px solid var(--accent-gold);
+  padding-left: 18px;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 13.5px;
+  color: #94a3b8;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.hero-meta strong { color: #f8fafc; }
+
+/* Sticky Audio Player */
+.audio-studio {
+  max-width: 920px;
+  margin: -28px auto 36px;
+  position: relative;
+  z-index: 20;
+  background: linear-gradient(135deg, #0b292b 0%, #134e4a 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 18px 40px rgba(8, 35, 36, 0.24);
+  border: 1px solid rgba(252, 211, 77, 0.35);
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+.audio-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.audio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fcd34d;
+}
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  animation: pulseRed 1.8s infinite;
+}
+@keyframes pulseRed {
+  0% { box-shadow: 0 0 0 0 rgba(239,68,68,0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(239,68,68,0); }
+  100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+}
+.voice-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.voice-btn {
+  background: rgba(255,255,255,0.1);
+  color: #e2e8f0;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 6px 13px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.voice-btn.active {
+  background: #fcd34d;
+  color: #082324;
+  border-color: #fcd34d;
+  font-weight: 700;
+}
+.audio-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.play-btn {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  transition: transform 0.15s;
+}
+.play-btn:hover { transform: scale(1.06); }
+.progress-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.progress-bar-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 99px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #fcd34d, #f97316);
+  border-radius: 99px;
+  transition: width 0.15s linear;
+}
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #cbd5e1;
+}
+.speed-select {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Main Article Container */
+.article-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 10px 22px 80px;
+}
+
+/* KPI Grid */
+.kpi-banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 16px;
+  margin: 28px 0 42px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+.kpi-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 16px;
+  border: 1px solid var(--border-light);
+  border-top: 4px solid var(--primary);
+  box-shadow: 0 6px 20px rgba(15, 61, 62, 0.06);
+  text-align: center;
+}
+.kpi-card.danger { border-top-color: #dc2626; }
+.kpi-card.gold { border-top-color: #d97706; }
+.kpi-card.teal { border-top-color: #0d9488; }
+.kpi-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+.kpi-card.danger .kpi-num { color: #dc2626; }
+.kpi-card.gold .kpi-num { color: #b45309; }
+.kpi-card.teal .kpi-num { color: #0f766e; }
+.kpi-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Read-Along Segment Highlight */
+.read-segment {
+  transition: background-color 0.35s ease, border-left 0.35s ease, padding 0.35s ease;
+  border-radius: 10px;
+  margin-bottom: 28px;
+}
+.read-segment.active-reading {
+  background: rgba(252, 211, 77, 0.14);
+  border-left: 4px solid #d97706;
+  padding: 14px 18px;
+}
+
+h2.sec-heading {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: clamp(22px, 2.8vw, 27px);
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin: 44px 0 18px;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+h2.sec-heading .sec-num {
+  background: var(--primary);
+  color: #fcd34d;
+  font-size: 14px;
+  padding: 4px 11px;
+  border-radius: 6px;
+  letter-spacing: 0.8px;
+  flex-shrink: 0;
+}
+p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.dropcap::first-letter {
+  float: left;
+  font-size: 62px;
+  line-height: 0.82;
+  padding-top: 6px;
+  padding-right: 12px;
+  padding-bottom: 4px;
+  font-weight: 900;
+  color: var(--accent);
+  font-family: 'Merriweather', serif;
+}
+
+/* Pullquote */
+.pullquote {
+  margin: 34px 0;
+  padding: 26px 30px;
+  background: linear-gradient(135deg, #f0fdfa 0%, #fffbeb 100%);
+  border-left: 5px solid var(--teal-bright);
+  border-radius: 0 14px 14px 0;
+  font-style: italic;
+  font-size: 19px;
+  color: #0f3d3e;
+  box-shadow: 0 8px 24px rgba(15, 61, 62, 0.06);
+}
+.pullquote cite {
+  display: block;
+  margin-top: 12px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-style: normal;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #b45309;
+}
+
+/* Figures & Maps */
+.figure-box {
+  margin: 34px -24px;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+@media (max-width: 900px) {
+  .figure-box { margin: 28px 0; }
+}
+.figure-box img {
+  width: 100%;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+.figure-box img:hover {
+  transform: scale(1.01);
+}
+.figure-caption {
+  padding: 14px 20px;
+  background: #f8fafc;
+  border-top: 1px solid var(--border-light);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.55;
+}
+.figure-caption strong {
+  color: #0f172a;
+}
+.figure-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 32px -24px;
+}
+@media (max-width: 768px) {
+  .figure-grid-2 { grid-template-columns: 1fr; margin: 24px 0; }
+}
+
+/* Interactive WebGIS Switcher Widget */
+.webgis-widget {
+  margin: 40px -36px;
+  background: #0b1922;
+  color: #f8fafc;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid #1e3a4c;
+  box-shadow: 0 22px 50px rgba(7, 25, 30, 0.32);
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+@media (max-width: 940px) {
+  .webgis-widget { margin: 32px 0; }
+}
+.widget-header {
+  background: linear-gradient(90deg, #0f293a, #134e4a);
+  padding: 16px 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.widget-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.layer-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.layer-tab {
+  background: rgba(255,255,255,0.08);
+  color: #cbd5e1;
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 7px 13px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.layer-tab:hover {
+  background: rgba(255,255,255,0.16);
+  color: #fff;
+}
+.layer-tab.active {
+  background: #0284c7;
+  color: #fff;
+  border-color: #38bdf8;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.45);
+}
+.widget-viewport {
+  position: relative;
+  background: #050d12;
+  overflow: hidden;
+}
+.widget-viewport img {
+  width: 100%;
+  display: block;
+  cursor: zoom-in;
+}
+.widget-hud {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  background: rgba(7, 20, 28, 0.86);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12.5px;
+}
+.hud-coords {
+  color: #fcd34d;
+  font-weight: 700;
+}
+
+/* Technical Data Tables */
+.data-table-wrap {
+  margin: 30px 0;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+table.tech-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+table.tech-table th {
+  background: var(--primary);
+  color: #fff;
+  text-align: left;
+  padding: 12px 14px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+table.tech-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border-light);
+  color: #334155;
+  vertical-align: top;
+}
+table.tech-table tr:nth-child(even) td {
+  background: #f8fafc;
+}
+.badge-risk {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.badge-c5 { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+.badge-c4 { background: #ffedd5; color: #c2410c; border: 1px solid #fdba74; }
+.badge-safe { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+
+/* Formula Callout Box */
+.formula-box {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 26px 0;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  border-left: 4px solid #38bdf8;
+}
+.formula-box code {
+  display: block;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 15px;
+  color: #38bdf8;
+  background: rgba(255,255,255,0.06);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+/* Author Footer Card */
+.author-card {
+  margin-top: 52px;
+  background: linear-gradient(135deg, #0f3d3e 0%, #082324 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 28px 30px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  border: 1px solid rgba(252, 211, 77, 0.35);
+}
+.author-card h3 {
+  color: #fcd34d;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.author-card p {
+  font-size: 14.5px;
+  color: #e2e8f0;
+  margin-bottom: 12px;
+  text-align: left;
+}
+.related-articles {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.related-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.12);
+  color: #fcd34d;
+  text-decoration: none;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: 1px solid rgba(252, 211, 77, 0.35);
+  transition: all 0.2s;
+}
+.related-btn:hover {
+  background: #fcd34d;
+  color: #082324;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 12, 16, 0.92);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.lightbox-modal.open { display: flex; }
+.lightbox-modal img {
+  max-width: 96vw;
+  max-height: 92vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  color: #fff;
+  font-size: 34px;
+  cursor: pointer;
+  font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAVIGATION -->
+<nav class="top-nav">
+  <div class="brand-box">
+    <span class="brand-badge">CHUYÊN ĐỀ KHOA HỌC &amp; ĐỊA KHÔNG GIAN</span>
+    <span class="brand-title">ĐẠI NGÀN KÝ SỰ • KỲ SƠN, NGHỆ AN</span>
+  </div>
+  <div class="nav-links">
+    <a href="/">Ký sự Đại ngàn (NĐ 42)</a>
+    <a href="/canhbaosatlo" class="active-link">WebGIS Cảnh báo Sạt lở &amp; Lũ quét</a>
+  </div>
+</nav>
+
+<!-- HERO HEADER -->
+<header class="hero-header">
+  <img class="hero-bg" src="images/webgis_hero_3d_nammo.jpg" alt="Mô phỏng 3D WebGIS Cảnh báo Sạt lở đất và Lũ quét Sông Nậm Mộ">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-kicker">🛰️ ĐỘT PHÁ CHUYỂN ĐỔI SỐ LÂM NGHIỆP &amp; PHÒNG CHỐNG THIÊN TAI MIỀN NÚI</div>
+    <h1 class="hero-title">
+      Từ “Vết sẹo” Lũ quét Khe Huồi Giảng đến <span>Hệ thống WebGIS &amp; Bản sao số 3D</span> Cảnh báo sớm Sạt lở đất, Lũ ống – Lũ quét
+    </h1>
+    <div class="hero-sapo">
+      Khởi nguồn từ những đêm trắng trăn trở sau trận lũ quét lịch sử rạng sáng 02/10/2022 tại Mường Xén – Kỳ Sơn, một hệ thống WebGIS và Sa bàn số 3D chạy Offline 100% đã ra đời từ chính thực tiễn cơ sở. Tích hợp ảnh vệ tinh quang học Sentinel-2C (2026), trí tuệ nhân tạo Google DeepMind ForTy, mô hình thủy lực mặt thoát nước nghiêng HAND – SCS-CN và thuật toán địa kỹ thuật 10 lớp LSI trên lưới mịn 5m × 5m, công trình đã lập bản đồ tác chiến bảo vệ trực tiếp <strong>2.015 hộ dân</strong> dọc hành lang sông Nậm Mộ.
+    </div>
+    <div class="hero-meta">
+      <div><strong>Tác giả &amp; Thiết kế hệ thống:</strong> Kỹ sư Lâm nghiệp – GIS (Ban QLRPH Kỳ Sơn, Nghệ An)</div>
+      <div><strong>Hệ quy chiếu:</strong> VN-2000 KTT 104°45' Múi 3° (EPSG:9210)</div>
+      <div><strong>Phạm vi thực chiến:</strong> 5.245,74 ha • 34 Tỉnh, Thành phố</div>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY BROADCAST AUDIO PLAYER -->
+<section class="audio-studio" aria-label="Trình phát thanh đọc bài báo">
+  <div class="audio-top">
+    <div class="audio-label">
+      <span class="pulse-dot"></span>
+      <span>PHÁT THANH CHUYÊN ĐỀ (Tự động tô sáng đoạn văn đang đọc)</span>
+    </div>
+    <div class="voice-selector">
+      <button class="voice-btn active" id="btnVoiceMale" onclick="switchVoice('male')">🎙️ Giọng Nam VTV (Nam Minh)</button>
+      <button class="voice-btn" id="btnVoiceFemale" onclick="switchVoice('female')">🎙️ Giọng Nữ VTV (Hoài My)</button>
+      <select class="speed-select" id="speedSelect" onchange="changeSpeed(this.value)">
+        <option value="1">Tốc độ 1.0x</option>
+        <option value="1.12">Tốc độ 1.12x</option>
+        <option value="1.25">Tốc độ 1.25x</option>
+      </select>
+    </div>
+  </div>
+  <div class="audio-controls-row">
+    <button class="play-btn" id="playPauseBtn" onclick="togglePlay()" title="Phát / Tạm dừng">▶</button>
+    <div class="progress-wrap">
+      <div class="progress-bar-bg" id="progressBarBg" onclick="seekAudio(event)">
+        <div class="progress-bar-fill" id="progressBarFill"></div>
+      </div>
+      <div class="time-row">
+        <span id="currentTimeTxt">00:00</span>
+        <span id="statusSegmentTxt">Bấm ▶ để nghe thuyết minh toàn bộ công trình WebGIS</span>
+        <span id="totalTimeTxt">05:45</span>
+      </div>
+    </div>
+  </div>
+  <audio id="articleAudio" preload="metadata" src="webgis_voice_gemini_puck.mp3"></audio>
+</section>
+
+<!-- MAIN ARTICLE BODY -->
+<main class="article-container">
+
+  <!-- KEY METRICS BANNER -->
+  <div class="kpi-banner">
+    <div class="kpi-card">
+      <div class="kpi-num">5.245,74 ha</div>
+      <div class="kpi-label">Lưu vực khảo sát chuẩn VN-2000 lưới mịn 5m × 5m</div>
+    </div>
+    <div class="kpi-card danger">
+      <div class="kpi-num">348 vùng</div>
+      <div class="kpi-label">Nguy cơ Sạt lở đất Cao &amp; Rất cao (110,96 ha, 10 lớp LSI)</div>
+    </div>
+    <div class="kpi-card gold">
+      <div class="kpi-num">2.015 hộ</div>
+      <div class="kpi-label">Dân cư Xã Mường Xén &amp; Xã Hữu Kiệm được bảo vệ trực tiếp</div>
+    </div>
+    <div class="kpi-card teal">
+      <div class="kpi-num">100% Offline</div>
+      <div class="kpi-label">Sa bàn 3D WebGL &amp; WebGIS chạy không cần Internet</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="read-segment" id="seg-1">
+    <h2 class="sec-heading"><span class="sec-num">01</span> Từ ký ức lũ dữ Khe Huồi Giảng đến “Tấm khiên số” giữa đại ngàn</h2>
+    <p class="dropcap">
+      Người dân vùng biên viễn Kỳ Sơn (tỉnh Nghệ An) vẫn chưa thể nào quên rạng sáng định mệnh ngày 02/10/2022. Sau trận mưa cực đoan dồn dập ở thượng nguồn, hàng trăm nghìn mét khối bùn đá từ khe suối hẹp có độ dốc lòng suối vượt trên 35° tại Khe Huồi Giảng đã bất ngờ đổ ập xuống Bản Sơn Thành, Bản Hòa Sơn và trung tâm thị trấn Mường Xén (nay là <strong>Xã Mường Xén</strong>). Chỉ trong vài chục phút, dòng lũ ống – lũ quét hung hãn đã cuốn trôi nhà cửa, vùi lấp Quốc lộ 7, Quốc lộ 16 và chia cắt hoàn toàn tuyến huyết mạch lên vùng biên giới.
+    </p>
+    <p>
+      Với một người cán bộ kỹ thuật lâm nghiệp và bản đồ số gắn bó máu thịt với núi rừng tại <strong>Ban Quản lý Rừng phòng hộ Kỳ Sơn</strong>, những vết sẹo trượt lở đỏ quạch trên sườn núi sau mỗi mùa mưa bão luôn đặt ra một câu hỏi day dứt: <em>“Làm sao để công nghệ GIS, viễn thám vệ tinh và mô hình toán học không chỉ nằm trong các báo cáo khoa học, mà phải trở thành một tấm bản đồ sống, chỉ đúng từng mái nhà, từng mố cầu có nguy cơ sạt lở hay ngập lũ trước khi thiên tai ập tới?”</em>
+    </p>
+    <p>
+      Từ trăn trở ấy, công trình <strong>“Hệ thống WebGIS và Bản sao số 3D (Digital Twin) Cảnh báo sớm Sạt lở đất, Lũ ống – Lũ quét”</strong> đã được nghiên cứu, lập trình và triển khai thực chiến trên toàn bộ hành lang <strong>Sông Nậm Mộ</strong> — đoạn từ <strong>Cầu Sơn Thành</strong> (QL.16 vượt Khe Huồi Giảng, Xã Mường Xén) đến <strong>Cầu Xốp Nhị</strong> (Km 195+650 QL.7, Xã Hữu Kiệm), với chiều dài trục thung lũng chính <strong>8,5 km</strong> (mạng lưới sông suối khảo sát <strong>21,5 km</strong>) và diện tích tự nhiên <strong>5.245,74 ha</strong>.
+    </p>
+  </div>
+
+  <!-- MASTER A3 MAP -->
+  <figure class="figure-box">
+    <img src="images/webgis_master_a3.jpg" alt="Bản đồ Tổng hợp Đa thiên tai Sông Nậm Mộ A3 300DPI" onclick="openLightbox(this.src)">
+    <figcaption class="figure-caption">
+      <strong>Bản đồ Tổng hợp Đa thiên tai chuẩn xuất bản A3 (300 DPI):</strong> Tích hợp đồng bộ phân vùng nguy cơ sạt lở đất 5 cấp (10 lớp LSI), hành lang ngập lụt &amp; lũ quét 4 mức (HAND – SCS-CN) và mạng lưới 18 điểm trọng điểm dọc sông Nậm Mộ (Xã Mường Xén – Xã Hữu Kiệm, tỉnh Nghệ An). <em>(Bấm vào ảnh để phóng to độ phân giải cao)</em>
+    </figcaption>
+  </figure>
+
+  <!-- INTERACTIVE LIVE WEBGIS LAYER SWITCHER WIDGET -->
+  <section class="webgis-widget" aria-label="Trải nghiệm tương tác 4 lớp bản đồ WebGIS">
+    <div class="widget-header">
+      <div class="widget-title">🌐 TRẢI NGHIỆM TRỰC TIẾP: BỘ CHUYỂN ĐỔI 4 LỚP CHUYÊN ĐỀ WEBGIS SÔNG NẬM MỘ</div>
+      <div class="layer-tabs">
+        <button class="layer-tab active" onclick="switchGisLayer('integrated', this)">1. Tổng hợp Đa thiên tai</button>
+        <button class="layer-tab" onclick="switchGisLayer('flood', this)">2. Lũ ống – Lũ quét (HAND)</button>
+        <button class="layer-tab" onclick="switchGisLayer('landslide', this)">3. Sạt lở 10 lớp (LSI)</button>
+        <button class="layer-tab" onclick="switchGisLayer('satellite', this)">4. Vệ tinh Sentinel-2C</button>
+      </div>
+    </div>
+    <div class="widget-viewport">
+      <img id="interactiveGisImg" src="images/nam_mo_layer_integrated.jpg" alt="Lớp bản đồ tương tác WebGIS" onclick="openLightbox(this.src)">
+      <div class="widget-hud">
+        <span id="hudLayerTitle"><strong>Lớp đang bật:</strong> Tổ hợp Đa thiên tai (Ngập lụt HAND + Sạt lở 10 lớp LSI + Tuyến sơ tán 4 tại chỗ)</span>
+        <span class="hud-coords">Hệ tọa độ: VN-2000 KTT 104°45' Múi 3° • Lưới DEM 5,0m × 5,0m</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <div class="read-segment" id="seg-2">
+    <h2 class="sec-heading"><span class="sec-num">02</span> Đột phá 1: Giải bài toán Sạt lở đất bằng Mô hình Địa kỹ thuật 10 lớp LSI trên lưới mịn 5 mét</h2>
+    <p>
+      Hầu hết các bản đồ phân vùng sạt lở trước đây thường sử dụng lưới độ cao số (DEM) thô từ 30m đến 90m ở tỷ lệ nhỏ, khiến một sườn đồi bị cắt xẻ taluy dựng đứng sát nhà dân bị “làm phẳng” trên mô hình. Để khắc phục triệt để hạn chế này, hệ thống WebGIS do tác giả xây dựng đã nội suy có hướng địa hình (Topo-to-Raster) về <strong>độ phân giải siêu mịn 5,0m × 5,0m</strong> trên hệ quy chiếu phẳng <strong>VN-2000 Múi chiếu 3° (Kinh tuyến trục 104°45' tỉnh Nghệ An, hệ số biến dạng k<sub>0</sub> = 0,9999)</strong>, bao quát dải cao độ từ <strong>116,4 m</strong> (hạ lưu Cầu Xốp Nhị) đến đỉnh núi <strong>1.108,2 m</strong>.
+    </p>
+    <p>
+      Trái tim của phân hệ cảnh báo trượt lở là thuật toán <strong>Chỉ số Nhạy cảm Sạt lở đất đa tiêu chí 10 lớp (10-Layer Landslide Susceptibility Index – LSI)</strong> theo phương pháp Phân tích Thứ bậc mờ (Fuzzy-AHP), kết hợp chặt chẽ quy chuẩn lâm nghiệp (<strong>Thông tư 33/2018/TT-BNNPTNT</strong>) với viễn thám quang học đa phổ <strong>Sentinel-2C L2A</strong> (thu nhận ngày 17/02/2026, độ phủ mây 0,04%) và trí tuệ nhân tạo <strong>Google DeepMind Forest Typology (ForTy 2025)</strong>:
+    </p>
+
+    <div class="formula-box">
+      <strong>Phương trình tổ hợp trọng số Địa kỹ thuật – Viễn thám 10 lớp (LSI):</strong>
+      <code>LSI = 0,26·F_Slope + 0,12·F_TPI_TRI + 0,12·F_TWI + 0,12·F_RoadCut + 0,10·F_StreamToe + 0,10·F_NDVI_ForTy + 0,06·F_NDMI + 0,04·F_Aspect + 0,04·F_Elev + 0,04·F_Rain</code>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="tech-table">
+        <thead>
+          <tr>
+            <th>TT</th>
+            <th>Lớp nhân tố trong mô hình LSI</th>
+            <th>Trọng số</th>
+            <th>Nguồn dữ liệu &amp; Cơ chế vật lý gây trượt lở</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>01</strong></td>
+            <td><strong>Độ dốc sườn (Slope Horn °)</strong></td>
+            <td><strong>26%</strong></td>
+            <td>DEM 5m chuẩn Thông tư 33/2018/TT-BNNPTNT. Độ dốc trung bình toàn vùng đạt <strong>23,61°</strong>; sườn 25°–45° là đới phát sinh lực cắt trượt mạnh nhất.</td>
+          </tr>
+          <tr>
+            <td><strong>02</strong></td>
+            <td><strong>Độ cong địa hình &amp; Độ gồ ghề (TPI / TRI)</strong></td>
+            <td><strong>12%</strong></td>
+            <td>Nhận diện sườn lõm tụ thủy ngầm (họng phễu sạt lở) và vách sườn lồi phong hóa nứt nẻ.</td>
+          </tr>
+          <tr>
+            <td><strong>03</strong></td>
+            <td><strong>Chỉ số ẩm địa hình (TWI = ln(A<sub>s</sub>/tanβ))</strong></td>
+            <td><strong>12%</strong></td>
+            <td>Mô phỏng áp lực nước lỗ rỗng tăng vọt làm suy giảm lực dính kết đất đá (c') khi mưa kéo dài.</td>
+          </tr>
+          <tr>
+            <td><strong>04</strong></td>
+            <td><strong>Cắt xẻ chân taluy đường (QL.7 &amp; QL.16)</strong></td>
+            <td><strong>12%</strong></td>
+            <td>Buffer 0–60m từ mép đào taluy dương. Phản ánh hiện tượng mất chân khống chế cơ học dọc các tuyến quốc lộ độc đạo.</td>
+          </tr>
+          <tr>
+            <td><strong>05</strong></td>
+            <td><strong>Xâm thực chân bờ sông, khe suối</strong></td>
+            <td><strong>10%</strong></td>
+            <td>Buffer 0–50m dọc sông Nậm Mộ, Khe Huồi Giảng, Khe Tỳ, Suối Nhị bị dòng chảy lũ xoáy sâu hàm ếch.</td>
+          </tr>
+          <tr>
+            <td><strong>06</strong></td>
+            <td><strong>Độ che phủ thực vật &amp; Nguồn gốc rừng (NDVI + ForTy)</strong></td>
+            <td><strong>10%</strong></td>
+            <td>Vệ tinh Sentinel-2C L2A (NDVI trung bình <strong>0,819</strong>) kết hợp AI Google DeepMind ForTy đánh giá độ bền neo giữ đất của bộ rễ rừng tự nhiên.</td>
+          </tr>
+          <tr>
+            <td><strong>07</strong></td>
+            <td><strong>Chỉ số độ ẩm thực bì – đất mặt (NDMI)</strong></td>
+            <td><strong>06%</strong></td>
+            <td>Kênh hồng ngoại sóng ngắn SWIR (B8A – B11) phát hiện các đới đất bão hòa nước ngầm trước bão.</td>
+          </tr>
+          <tr>
+            <td><strong>08</strong></td>
+            <td><strong>Hướng phơi sườn đón gió ẩm (Aspect)</strong></td>
+            <td><strong>04%</strong></td>
+            <td>Sườn đón mưa dông địa hình và bức xạ nhiệt gây phong hóa vật lý – hóa học sâu trên nền đá phiến – granit.</td>
+          </tr>
+          <tr>
+            <td><strong>09</strong></td>
+            <td><strong>Phân tầng cao độ phong hóa (Elevation)</strong></td>
+            <td><strong>04%</strong></td>
+            <td>Đới cao độ 180m – 650m có vỏ phong hóa dày từ 3m – 12m, dễ trượt mảng lớn khi bão hòa nước.</td>
+          </tr>
+          <tr>
+            <td><strong>10</strong></td>
+            <td><strong>Hệ số kích hoạt mưa cực đoan (R<sub>3h</sub>, R<sub>24h</sub>)</strong></td>
+            <td><strong>04%</strong></td>
+            <td>Kịch bản mưa lớn cục bộ vượt ngưỡng 100–200 mm/3h tại các phễu tụ thủy sườn cao.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Kết quả tính toán tự động đã bóc tách toàn vùng thành 5 cấp nguy cơ trượt lở với <strong>1.198 đa giác vector</strong>. Trong đó, hệ thống định vị chính xác <strong>239 khoanh vùng Nguy cơ Cao – Cấp 4</strong> (diện tích <strong>99,78 ha</strong>, chiếm 1,92%) và <strong>109 khoanh vùng Nguy cơ Rất cao / Đỏ khẩn cấp – Cấp 5</strong> (diện tích <strong>11,18 ha</strong>, chiếm 0,22%) tập trung dọc vách taluy dương QL.7 (đoạn Khối 1 Mường Xén đi Bản Na Chảo – Na Lượng – Khe Tỳ – Đỉnh Gió) và sườn dốc Khe Huồi Giảng trên tuyến QL.16.
+    </p>
+  </div>
+
+  <!-- DUAL FIGURE: MAP 03 (LANDSLIDE) & MAP 02 (FLOOD) -->
+  <div class="figure-grid-2">
+    <figure class="figure-box" style="margin:0;">
+      <img src="images/webgis_bando03_satlo_lsi.jpg" alt="Bản đồ chuyên đề số 03: Phân vùng nguy cơ sạt lở đất 5 cấp" onclick="openLightbox(this.src)">
+      <figcaption class="figure-caption">
+        <strong>Bản đồ chuyên đề số 03:</strong> Phân vùng nguy cơ sạt lở đất, trượt lở taluy 5 cấp (10 lớp LSI), khoanh định 348 điểm nóng Cấp 4 và Cấp 5.
+      </figcaption>
+    </figure>
+    <figure class="figure-box" style="margin:0;">
+      <img src="images/webgis_bando02_luquet_hand.jpg" alt="Bản đồ chuyên đề số 02: Phân vùng ngập lụt và lũ quét HAND - SCS-CN" onclick="openLightbox(this.src)">
+      <figcaption class="figure-caption">
+        <strong>Bản đồ chuyên đề số 02:</strong> Mô hình thủy lực HAND – SCS-CN phân tách 4 mức ngập lụt và hành lang lũ ống, lũ quét trên nền Sentinel-2C.
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="read-segment" id="seg-3">
+    <h2 class="sec-heading"><span class="sec-num">03</span> Đột phá 2: Thuật toán Thủy lực “Mặt thoát nước nghiêng” HAND – SCS-CN xóa bỏ sai số mặt nước phẳng</h2>
+    <p>
+      Một bài toán hóc búa của ngành thủy văn miền núi là độ chênh cao đáy sông rất lớn: dọc 8,5 km sông Nậm Mộ từ thượng lưu Cầu Sơn Thành về hạ lưu Cầu Xốp Nhị, cao độ đáy sông chênh nhau hàng chục mét, còn các nhánh suối phụ như Khe Huồi Giảng, Khe Tỳ, Suối Nhị đổ từ độ cao trên 900m xuống đáy thung lũng ~140m. Nếu sử dụng mô hình ngập lụt mặt phẳng ngang truyền thống (<em>Flat-Water bathtub model</em>), khi dâng nước ở hạ lưu lên +5m thì thượng lưu vẫn khô cạn, hoặc khi ngập tới thượng lưu thì hạ lưu đã chìm sâu hàng chục mét dưới nước ảo.
+    </p>
+    <p>
+      Để giải quyết triệt để điểm nghẽn này, tác giả đã lập trình thuật toán <strong>HAND (Height Above Nearest Drainage – Độ cao tương đối so với đường thoát nước gần nhất)</strong> kết hợp mô hình dòng chảy mặt <strong>SCS Curve Number (NRCS)</strong> và cây tìm kiếm không gian <code>cKDTree</code>:
+    </p>
+
+    <div class="formula-box">
+      <strong>Phương trình Mặt nước lũ 3D nghiêng theo độ dốc thủy lực đáy sông:</strong>
+      <code>Z_water(x, y) = Z_drainage_base(x, y) + ΔH_stage &nbsp;&nbsp;|&nbsp;&nbsp; H_inundation(x, y) = max(0, ΔH_stage − HAND(x, y))</code>
+    </div>
+
+    <p>
+      Nhờ mặt nước 3D tự động uốn nghiêng bám sát cao độ đáy từng đoạn sông Nậm Mộ và từng nhánh khe suối, hệ thống đã khoanh định chính xác <strong>160 vùng nguy cơ thủy văn (tổng diện tích 213,59 ha)</strong> chia làm 4 phân cấp tác chiến rõ rệt:
+    </p>
+    <ul style="margin: 0 0 22px 26px; line-height: 1.8;">
+      <li><strong>Mức 1 – Vùng ngập thường xuyên (Báo động I, ΔH ≤ +2,5m):</strong> Diện tích <strong>67,18 ha</strong> (28 đa giác), bao gồm bãi bồi thấp và chân kè dọc sông Nậm Mộ.</li>
+      <li><strong>Mức 2 – Vùng ngập cao (Báo động II, ΔH = +2,5m đến +5,0m):</strong> Diện tích <strong>18,29 ha</strong> (31 đa giác), bắt đầu uy hiếp thềm dân cư ven sông tại Khối 1, Khối 2 Mường Xén và hạ lưu Bản Na Lượng.</li>
+      <li><strong>Mức 3 – Vùng ngập sâu đặc biệt (Báo động III / Lũ lịch sử, ΔH = +5,0m đến +8,0m):</strong> Diện tích <strong>35,46 ha</strong> (42 đa giác), tái hiện sát thực kịch bản nước dâng khi mưa lớn cực đoan kết hợp xả lũ hồ thủy điện thượng nguồn.</li>
+      <li><strong>Mức 4 – Hành lang Lũ ống, Lũ quét &amp; Quạt phóng bùn đá cửa khe:</strong> Diện tích <strong>92,66 ha</strong> (59 đa giác), nhận diện chính xác các cổ họng phễu Khe Huồi Giảng (Bản Sơn Thành – Hòa Sơn), Khe Tỳ và Suối Nhị có chỉ số <code>SPI</code> cao, nơi dòng bùn đá vận tốc lớn phóng thẳng ra thềm sông Nậm Mộ.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="read-segment" id="seg-4">
+    <h2 class="sec-heading"><span class="sec-num">04</span> Đột phá 3: Lá chắn sinh thái của 3.589 ha rừng tự nhiên đầu nguồn dưới lăng kính AI Google DeepMind</h2>
+    <p>
+      Điểm mang đậm dấu ấn nghề nghiệp của người cán bộ <strong>Ban Quản lý Rừng phòng hộ Kỳ Sơn</strong> trong công trình WebGIS này chính là sự kết hợp nhuần nhuyễn giữa <strong>Quy hoạch Lâm nghiệp</strong> và <strong>Địa kỹ thuật Phòng chống thiên tai</strong>. Lần đầu tiên tại cấp xã miền núi, bộ dữ liệu trí tuệ nhân tạo toàn cầu <strong>Google DeepMind Forest Typology (ForTy v1 – 2025, 10m)</strong> được tích hợp cùng phân cấp độ dốc chuẩn <strong>Thông tư 33/2018/TT-BNNPTNT</strong> ngay trong lõi hệ thống cảnh báo.
+    </p>
+    <p>
+      Số liệu giải đoán trên toàn lưu vực 5.245,74 ha cho thấy một bức tranh sinh thái vô cùng giá trị: <strong>68,42% diện tích lưu vực (tương đương 3.589,16 ha) là rừng tự nhiên nguyên sinh và thứ sinh phục hồi tốt</strong> ở đai cao trên 500m, với chỉ số thực vật trung bình đạt <strong>NDVI = 0,819</strong>; tiếp theo là <strong>1.169,80 ha (22,30%)</strong> rừng trồng và cây gỗ tái sinh, cùng <strong>486,78 ha (9,28%)</strong> đất trống, nương rẫy, hành lang giao thông, dân cư và mặt nước.
+    </p>
+
+    <div class="pullquote">
+      “Chính thảm rừng tự nhiên phòng hộ đầu nguồn rộng 3.589,16 ha trên các đỉnh núi cao đã hoạt động như một ‘bể điều tiết sinh học’ khổng lồ: tán rừng nhiều tầng cản phá động năng hạt mưa, còn hệ rễ sâu giữ chặt tầng đất phong hóa. Nơi nào rừng tự nhiên còn nguyên vẹn, nơi đó dòng chảy lũ quét bị kìm hãm; ngược lại, nơi nào chân sườn dốc 25°–45° bị cắt xẻ làm đường hoặc mất thảm rừng che phủ, nơi đó lập tức xuất hiện các điểm đỏ sạt lở Cấp 5.”
+      <cite>— Trích Thuyết minh Đề án Bản đồ Cảnh báo Lũ &amp; Sạt lở Sông Nậm Mộ (2026)</cite>
+    </div>
+  </div>
+
+  <!-- DUAL FIGURE: MAP 04 (FOREST & SLOPE) & MAP 05 (CADASTRE 1:5000) -->
+  <div class="figure-grid-2">
+    <figure class="figure-box" style="margin:0;">
+      <img src="images/webgis_bando04_dodoc_forty.jpg" alt="Bản đồ số 04: Phân cấp độ dốc Thông tư 33 và Nguồn gốc rừng Google DeepMind ForTy" onclick="openLightbox(this.src)">
+      <figcaption class="figure-caption">
+        <strong>Bản đồ chuyên đề số 04:</strong> Phân cấp độ dốc theo Thông tư 33/2018/TT-BNNPTNT chồng ghép dữ liệu nguồn gốc rừng AI Google DeepMind ForTy (3.589,16 ha rừng tự nhiên).
+      </figcaption>
+    </figure>
+    <figure class="figure-box" style="margin:0;">
+      <img src="images/webgis_bando05_trichdo_tram.jpg" alt="Bản đồ số 05: Trích đo chi tiết 1:5.000 hai đầu tuyến và trạm quan trắc Radar IoT" onclick="openLightbox(this.src)">
+      <figcaption class="figure-caption">
+        <strong>Bản đồ chuyên đề số 05:</strong> Trích đo địa hình 1:5.000 hai đầu tuyến (Cầu Sơn Thành &amp; Cầu Xốp Nhị), bố trí trạm Radar IoT TĐ-01, TĐ-02 và tuyến kè bảo vệ bờ.
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="read-segment" id="seg-5">
+    <h2 class="sec-heading"><span class="sec-num">05</span> Từ Sa bàn 3D WebGL chạy Offline 100% đến Phương án Tác chiến Sơ tán dân “4 Tại chỗ”</h2>
+    <p>
+      Thực tế chỉ huy phòng chống thiên tai ở vùng cao Kỳ Sơn cho thấy: ngay khi mưa lũ lớn xảy ra, lưới điện 35kV và đường truyền cáp quang viễn thông thường bị đứt gãy đầu tiên. Nếu một phần mềm WebGIS đòi hỏi phải có máy chủ đám mây hay kết nối mạng 4G mới mở được bản đồ thì sẽ hoàn toàn tê liệt đúng vào “giờ vàng” cứu hộ.
+    </p>
+    <p>
+      Thấu hiểu điều đó, tác giả đã kiến trúc toàn bộ <strong>Hệ thống Bản đồ số WebGIS 2D và Sa bàn Địa hình 3D (dựng trên nhân đồ họa Three.js r160 WebGL) đóng gói gọn trong một tệp HTML độc lập duy nhất, vận hành Offline 100% không cần Internet</strong>. Ngay tại sở chỉ huy hiện trường, lãnh đạo UBND xã, Ban Chỉ huy Phòng thủ dân sự hay cán bộ Kiểm lâm chỉ cần mở tệp bản đồ trên máy tính xách tay:
+    </p>
+    <ul style="margin: 0 0 22px 26px; line-height: 1.8;">
+      <li><strong>Thanh trượt mô phỏng lũ dâng thời gian thực (0m → 12m):</strong> Khi kéo thanh trượt mực nước dâng theo từng nấc Báo động I (+2,5m), Báo động II (+5,0m), Báo động III (+8,0m) đến cực đại +12m, mặt nước 3D dâng lên tới đâu, hệ thống lập tức điểm danh những cụm dân cư, mố cầu nào bị ngập tới đó.</li>
+      <li><strong>Kiểm định định lượng 18 điểm trọng điểm &amp; Ghép cặp sơ tán “4 tại chỗ”:</strong> Hệ thống đo chính xác độ cao tương đối <code>HAND</code> và độ dốc <code>P90</code> cho từng bản làng, ghép cặp trực tiếp từng khu dân cư nguy hiểm với điểm sơ tán an toàn tuyệt đối gần nhất.</li>
+    </ul>
+
+    <div class="data-table-wrap">
+      <table class="tech-table">
+        <thead>
+          <tr>
+            <th>Mã</th>
+            <th>Điểm dân cư / Công trình trọng điểm</th>
+            <th>Quy mô bảo vệ</th>
+            <th>Thông số địa kỹ thuật (HAND / Độ dốc)</th>
+            <th>Phân cấp &amp; Đích sơ tán an toàn “4 tại chỗ”</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>DC-01</strong></td>
+            <td><strong>Bản Sơn Thành</strong> (Xã Mường Xén – Cửa Khe Huồi Giảng)</td>
+            <td><strong>148 hộ</strong> (~650 nhân khẩu)</td>
+            <td>Cao độ 194,2m • HAND <strong>+1,8m</strong> • Dốc P90: 29,6°</td>
+            <td><span class="badge-risk badge-c5">CẤP 5 – ĐỎ KHẨN CẤP</span><br>Sơ tán ngay khi mưa &gt;100mm/3h về <strong>Trường THPT Kỳ Sơn (+10,7m)</strong> &amp; <strong>Trung tâm Y tế Kỳ Sơn (+23,8m)</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>DC-02</strong></td>
+            <td><strong>Bến xe &amp; Khu dân cư Khối 1–2</strong> (Xã Mường Xén)</td>
+            <td><strong>185 hộ</strong> (~780 nhân khẩu)</td>
+            <td>Cao độ 156,0m • HAND <strong>+2,4m</strong> • Sát bờ phải sông Nậm Mộ</td>
+            <td><span class="badge-risk badge-c4">CẤP 4 – NGUY CƠ CAO</span><br>Di dời tài sản, phương tiện lên <strong>Trụ sở UBND Xã Mường Xén (+14,2m)</strong> và <strong>THPT Kỳ Sơn</strong> khi lũ đạt BĐ II.</td>
+          </tr>
+          <tr>
+            <td><strong>DC-05</strong></td>
+            <td><strong>Bản Na Chảo</strong> (Xã Hữu Kiệm – Ven QL.7)</td>
+            <td><strong>195 hộ</strong> (~840 nhân khẩu)</td>
+            <td>Cao độ 166,4m • HAND <strong>+4,2m</strong> • Sườn taluy dốc 33,1°</td>
+            <td><span class="badge-risk badge-c5">CẤP 5 – SẠT LỞ TALUY QL.7</span><br>Sơ tán các hộ sát chân taluy dương QL.7 lên điểm cao <strong>Bản Hòa Sơn (+62,8m)</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>DC-06</strong></td>
+            <td><strong>Bản Na Lượng 1 &amp; 2</strong> (Xã Hữu Kiệm)</td>
+            <td><strong>226 hộ</strong> (~980 nhân khẩu)</td>
+            <td>Cao độ 148,5m • HAND <strong>+1,9m</strong> • Dốc sườn P90: 35,8°</td>
+            <td><span class="badge-risk badge-c5">CẤP 5 – NGẬP BĐ II &amp; SẠT LỞ</span><br>Sơ tán theo trục nội bản lên <strong>Nhà văn hóa nền cao</strong> và căn cứ <strong>Bản Xốp Thạng (+77,5m)</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>DC-07</strong></td>
+            <td><strong>Bản Khe Tỳ &amp; Cửa Suối Nhị</strong> (Xã Hữu Kiệm)</td>
+            <td><strong>132 hộ</strong> (~580 nhân khẩu)</td>
+            <td>Cao độ 141,0m • HAND <strong>+2,1m</strong> • Dốc P90: 32,7°</td>
+            <td><span class="badge-risk badge-c5">CẤP 5 – HÀNH LANG LŨ QUÉT</span><br>Rút toàn bộ hộ dân cửa khe về <strong>Trụ sở UBND &amp; Công an Xã Hữu Kiệm (+19,2m)</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>HC-03</strong></td>
+            <td><strong>Căn cứ Ban CHQS Xã Hữu Kiệm</strong> (Bản Xốp Thạng)</td>
+            <td>Sở chỉ huy &amp; Hậu cần cứu hộ</td>
+            <td>Cao độ 228,4m • HAND <strong>+77,5m</strong> • Nền địa chất ổn định</td>
+            <td><span class="badge-risk badge-safe">ĐIỂM AN TOÀN TUYỆT ĐỐI</span><br>Trung tâm chỉ huy hiệp đồng lực lượng, tập kết lương thực, xuồng cứu hộ và thông tin liên lạc.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- MAP 01 & 3D VIDEO STORYBOARD -->
+  <figure class="figure-box">
+    <img src="images/webgis_bando01_tonghop.jpg" alt="Bản đồ số 01: Tổng hợp phân vùng cảnh báo và phương án sơ tán dân cư" onclick="openLightbox(this.src)">
+    <figcaption class="figure-caption">
+      <strong>Bản đồ Hành chính – Tác chiến số 01:</strong> Sơ đồ tổng thể 18 điểm trọng điểm, lộ trình sơ tán dân cư “4 tại chỗ”, vị trí lắp đặt 08 cột thủy chí báo lũ, 22 biển cảnh báo phản quang và 02 trạm quan trắc mưa – mực nước Radar tự động (TĐ-01, TĐ-02).
+    </figcaption>
+  </figure>
+
+  <figure class="figure-box">
+    <img src="images/webgis_storyboard_12frames.jpg" alt="Storyboard 12 khung hình Video 3D Full HD 1080p mô phỏng lũ dâng và sạt lở Sông Nậm Mộ" onclick="openLightbox(this.src)">
+    <figcaption class="figure-caption">
+      <strong>Bảng phân cảnh (Storyboard) 12 khung hình từ Video 3D Full HD 1080p (90 giây):</strong> Mô phỏng trực quan toàn cảnh bay dọc thung lũng sông Nậm Mộ, diễn biến mực nước lũ dâng từ +2,5m đến +8,0m, các điểm sạt lở đỏ Cấp 5 và mũi tên sơ tán ứng cứu khẩn cấp.
+    </figcaption>
+  </figure>
+
+  <!-- SECTION 6 -->
+  <div class="read-segment" id="seg-6">
+    <h2 class="sec-heading"><span class="sec-num">06</span> Khát vọng nhân rộng Gói kỹ thuật số hóa Tự hành tới 34 tỉnh, thành phố trên toàn quốc</h2>
+    <p>
+      Không chỉ dừng lại ở các bản đồ số và sa bàn 3D, công trình còn đề xuất đồng bộ hệ thống giải pháp công trình và phi công trình sát thực tế ngân sách địa phương: lắp đặt <strong>08 cột thủy chí báo lũ sơn phản quang</strong> tại mố các cầu trọng yếu, cắm <strong>22 biển cảnh báo sạt lở – lũ quét chuẩn QCVN 41:2024/BGTVT</strong>, xây dựng <strong>02 trạm đo mưa – mực nước Radar tự động 4G/IoT dùng năng lượng mặt trời (TĐ-01 tại thượng lưu Cầu Sơn Thành và TĐ-02 tại hạ lưu Cầu Xốp Nhị)</strong>, kết hợp gia cố <strong>950m kè rọ đá/bê tông cốt thép bảo vệ chân mố cầu</strong> và <strong>1.200m rãnh cơ thu nước đỉnh taluy dương QL.7</strong> với tổng khái toán đầu tư giai đoạn 2026–2030 chỉ <strong>25,08 tỷ đồng</strong> (mang lại hiệu quả kinh tế – xã hội ròng ước đạt trên 95 tỷ đồng và bảo vệ an toàn tính mạng cho hơn 8.600 người dân).
+    </p>
+    <p>
+      Đặc biệt hơn cả, từ thành công thực tiễn tại hành lang <strong>Sông Nậm Mộ (Kỳ Sơn, Nghệ An)</strong> và điểm nóng <strong>Cầu Ông Cùng – QL.8C (Xã Sơn Giang – Xã Sơn Tiến)</strong>, tác giả đã chuẩn hóa và đóng gói toàn bộ quy trình thành <strong>Gói Kỹ thuật AI-GIS Tự hành Toàn quốc (Portable Nationwide Skill Package)</strong>. Bộ công cụ tích hợp sẵn bảng tra <strong>63 kinh tuyến trục VN-2000 Múi 3°</strong> và cấu trúc hành chính <strong>Mô hình Chính quyền địa phương 2 cấp (Tỉnh/Thành phố – Xã/Phường) tại 34 tỉnh, thành phố</strong>, bám sát tiêu chuẩn của <strong>Quyết định số 1262/QĐ-TTg ngày 27/10/2023 của Thủ tướng Chính phủ</strong> phê duyệt Đề án Cảnh báo sớm sạt lở đất, lũ quét khu vực miền núi và trung du Việt Nam.
+    </p>
+    <p>
+      Từ những đêm miệt mài viết từng dòng mã lệnh Python, hiệu chỉnh từng ô lưới địa hình 5 mét giữa núi rừng biên viễn Kỳ Sơn, hệ thống WebGIS cảnh báo sạt lở đất và lũ quét đã minh chứng một điều giản dị mà sâu sắc: <strong>Chuyển đổi số không phải là điều gì xa vời nơi đô thị lớn — khi xuất phát từ trái tim và trách nhiệm của người cán bộ bám rừng, bám bản, công nghệ sẽ hóa thành “tấm khiên số” vững chãi canh giữ sự bình yên cho từng mái nhà nơi phên dậu Tổ quốc.</strong>
+    </p>
+  </div>
+
+  <!-- AUTHOR & PROJECT FOOTER CARD -->
+  <aside class="author-card">
+    <h3>📌 THÔNG TIN CÔNG TRÌNH &amp; HỒ SƠ KỸ THUẬT SỐ HÓA</h3>
+    <p>
+      • <strong>Tên công trình:</strong> Hệ thống WebGIS, Bản sao số 3D (Digital Twin) &amp; Bộ Bản đồ Tác chiến Cảnh báo sớm Ngập lụt, Lũ ống – Lũ quét và Sạt lở đất theo mô hình Chính quyền địa phương 2 cấp.<br>
+      • <strong>Đơn vị &amp; Tác giả thực hiện:</strong> Cán bộ kỹ thuật Lâm nghiệp – GIS, Ban Quản lý Rừng phòng hộ Kỳ Sơn (Xã Mường Xén – Xã Hữu Kiệm, tỉnh Nghệ An).<br>
+      • <strong>Bộ sản phẩm xuất bản tự động:</strong> 06 Bản đồ chuyên đề chuẩn in A3 (300 DPI), WebGIS &amp; Sa bàn 3D WebGL chạy Offline 100%, Video mô phỏng 3D Full HD 1080p, Cơ sở dữ liệu GIS đa định dạng (<code>.gpkg</code>, <code>.geojson</code>, MapInfo <code>.TAB/.WOR</code>, <code>.kml</code> Google Earth) và 06 Tập Thuyết minh – Báo cáo Kinh tế Kỹ thuật.
+    </p>
+    <div class="related-articles">
+      <a class="related-btn" href="/">📖 Đọc chuyên đề: Đại ngàn Ký sự &amp; Nghị định 42/2026/NĐ-CP</a>
+      <a class="related-btn" href="# interactiveGisImg" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">⬆️ Lên đầu trang</a>
+    </div>
+  </aside>
+
+</main>
+
+<!-- LIGHTBOX MODAL -->
+<div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightboxImg" src="" alt="Phóng to bản đồ">
+</div>
+
+<script>
+// Interactive 4-Layer WebGIS Switcher
+const GIS_LAYERS = {
+  integrated: {
+    src: "images/nam_mo_layer_integrated.jpg",
+    desc: "<strong>Lớp đang bật:</strong> Tổ hợp Đa thiên tai (Ngập lụt HAND + Sạt lở 10 lớp LSI + Tuyến sơ tán 4 tại chỗ)"
+  },
+  flood: {
+    src: "images/nam_mo_layer_flood.jpg",
+    desc: "<strong>Lớp đang bật:</strong> Phân vùng Thủy lực Ngập lụt &amp; Hành lang Lũ ống – Lũ quét (HAND – SCS-CN, 213,59 ha)"
+  },
+  landslide: {
+    src: "images/nam_mo_layer_landslide.jpg",
+    desc: "<strong>Lớp đang bật:</strong> Phân vùng Địa kỹ thuật Nguy cơ Sạt lở đất 5 cấp (10 lớp LSI, 348 điểm nóng Cấp 4–5)"
+  },
+  satellite: {
+    src: "images/nam_mo_layer_satellite.jpg",
+    desc: "<strong>Lớp đang bật:</strong> Bình đồ Ảnh vệ tinh quang học Sentinel-2C L2A (NDVI = 0,819) &amp; Mạng lưới sông suối"
+  }
+};
+
+function switchGisLayer(key, btnEl) {
+  const item = GIS_LAYERS[key];
+  if (!item) return;
+  document.getElementById('interactiveGisImg').src = item.src;
+  document.getElementById('hudLayerTitle').innerHTML = item.desc;
+  document.querySelectorAll('.layer-tab').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+}
+
+// Lightbox
+function openLightbox(src) {
+  const modal = document.getElementById('lightboxModal');
+  document.getElementById('lightboxImg').src = src;
+  modal.classList.add('open');
+}
+function closeLightbox() {
+  document.getElementById('lightboxModal').classList.remove('open');
+}
+
+// Broadcast Audio & Read-Along Highlighting
+const audioEl = document.getElementById('articleAudio');
+const playBtn = document.getElementById('playPauseBtn');
+const progressFill = document.getElementById('progressBarFill');
+const curTimeTxt = document.getElementById('currentTimeTxt');
+const totTimeTxt = document.getElementById('totalTimeTxt');
+const statusTxt = document.getElementById('statusSegmentTxt');
+
+const VOICE_SOURCES = {
+  male: "webgis_voice_gemini_puck.mp3",
+  female: "webgis_voice_gemini_aoede.mp3"
+};
+
+const READ_SEGMENTS = [{"id": "seg-1", "start": 0.0, "end": 32.16, "label": "Phần 1: Từ ký ức lũ quét Khe Huồi Giảng đến Tấm khiên số"}, {"id": "seg-2", "start": 32.16, "end": 62.56, "label": "Phần 2: Mô hình Địa kỹ thuật 10 lớp LSI trên lưới mịn 5m"}, {"id": "seg-3", "start": 62.56, "end": 88.72, "label": "Phần 3: Thuật toán Thủy lực Mặt thoát nước nghiêng HAND"}, {"id": "seg-4", "start": 88.72, "end": 119.12, "label": "Phần 4: Lá chắn 3.589 ha rừng tự nhiên đầu nguồn & AI DeepMind"}, {"id": "seg-5", "start": 119.12, "end": 152.13, "label": "Phần 5: Sa bàn 3D Offline 100% & Phương án sơ tán 4 tại chỗ"}, {"id": "seg-6", "start": 152.13, "end": 183.05, "label": "Phần 6: Nhân rộng Gói kỹ thuật số hóa tới 34 tỉnh, thành phố"}];
+
+function formatTime(sec) {
+  if (!sec || isNaN(sec)) return "00:00";
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+}
+
+function togglePlay() {
+  if (audioEl.paused) {
+    audioEl.play();
+    playBtn.textContent = "⏸";
+  } else {
+    audioEl.pause();
+    playBtn.textContent = "▶";
+  }
+}
+
+function switchVoice(gender) {
+  const wasPlaying = !audioEl.paused;
+  const curTime = audioEl.currentTime || 0;
+  const curRate = audioEl.playbackRate || 1;
+  audioEl.src = VOICE_SOURCES[gender];
+  document.getElementById('btnVoiceMale').classList.toggle('active', gender === 'male');
+  document.getElementById('btnVoiceFemale').classList.toggle('active', gender === 'female');
+  audioEl.addEventListener('loadedmetadata', function onMeta() {
+    audioEl.removeEventListener('loadedmetadata', onMeta);
+    audioEl.currentTime = Math.min(curTime, audioEl.duration - 0.5);
+    audioEl.playbackRate = curRate;
+    if (wasPlaying) {
+      audioEl.play();
+      playBtn.textContent = "⏸";
+    }
+  });
+}
+
+function changeSpeed(val) {
+  audioEl.playbackRate = parseFloat(val);
+}
+
+function seekAudio(e) {
+  const rect = document.getElementById('progressBarBg').getBoundingClientRect();
+  const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+  if (audioEl.duration) {
+    audioEl.currentTime = ratio * audioEl.duration;
+  }
+}
+
+audioEl.addEventListener('loadedmetadata', () => {
+  totTimeTxt.textContent = formatTime(audioEl.duration);
+});
+
+audioEl.addEventListener('timeupdate', () => {
+  const ct = audioEl.currentTime;
+  const dur = audioEl.duration || 1;
+  progressFill.style.width = ((ct / dur) * 100).toFixed(2) + "%";
+  curTimeTxt.textContent = formatTime(ct);
+
+  let activeSeg = null;
+  for (const seg of READ_SEGMENTS) {
+    const el = document.getElementById(seg.id);
+    if (!el) continue;
+    if (ct >= seg.start && ct < seg.end) {
+      el.classList.add('active-reading');
+      activeSeg = seg;
+    } else {
+      el.classList.remove('active-reading');
+    }
+  }
+  if (activeSeg) {
+    statusTxt.textContent = "Đang đọc: " + activeSeg.label;
+  }
+});
+
+audioEl.addEventListener('ended', () => {
+  playBtn.textContent = "▶";
+  statusTxt.textContent = "Đã phát xong toàn bộ bài báo";
+  document.querySelectorAll('.read-segment').forEach(el => el.classList.remove('active-reading'));
+});
+</script>
+</body>
+</html>
