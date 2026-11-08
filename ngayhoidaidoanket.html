@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngày hội Đại đoàn kết toàn dân tộc (18/11): Sợi dây gắn kết triệu tấm lòng nơi thôn bản, khu dân cư | eMagazine</title>
+    <meta name="description" content="Chuyên đề eMagazine kỷ niệm Ngày truyền thống Mặt trận Tổ quốc Việt Nam và Ngày hội Đại đoàn kết toàn dân tộc (18/11) - Thực hiện: Kỹ sư cuongsmile.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #f7f6f1;
+            --bg-paper: #ffffff;
+            --bna-green: #165c2c;
+            --bna-green-light: #e8f5e9;
+            --bna-red: #b71c1c;
+            --bna-gold: #d97706;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --font-scale: 1;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            font-family: 'Merriweather', Georgia, serif;
+            line-height: 1.85;
+            font-size: calc(18.5px * var(--font-scale));
+            -webkit-font-smoothing: antialiased;
+        }
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(22, 92, 44, 0.96);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.16);
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .topbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+        .topbar-badge {
+            background: #ffca28;
+            color: #165c2c;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+        .topbar-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-tool {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.28);
+            padding: 5px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-tool:hover { background: rgba(255,255,255,0.28); }
+
+        .hero-cover-wrap {
+            max-width: 1120px;
+            margin: 0 auto 28px auto;
+            background: #fff;
+            box-shadow: 0 12px 38px rgba(0,0,0,0.12);
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            overflow: hidden;
+        }
+        .hero-cover-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: zoom-in;
+        }
+
+        .article-shell {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 10px 22px 64px 22px;
+        }
+
+        .audio-player-card {
+            background: linear-gradient(135deg, #ffffff 0%, #eef7f0 100%);
+            border: 1px solid #c8e6c9;
+            border-left: 6px solid var(--bna-green);
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 32px;
+            box-shadow: 0 6px 20px rgba(22, 92, 44, 0.08);
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .audio-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .audio-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--bna-green);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .voice-switch {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .voice-btn {
+            border: 1px solid var(--bna-green);
+            background: #fff;
+            color: var(--bna-green);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .voice-btn.active {
+            background: var(--bna-green);
+            color: #fff;
+        }
+        .speed-btn {
+            border: 1px solid #d1d5db;
+            background: #f9fafb;
+            color: #374151;
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .speed-btn.active {
+            background: var(--bna-red);
+            color: #fff;
+            border-color: var(--bna-red);
+        }
+        audio {
+            width: 100%;
+            height: 40px;
+            margin-top: 6px;
+        }
+
+        .meta-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 14px;
+            color: var(--text-muted);
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 14px;
+            margin-bottom: 26px;
+        }
+        .meta-author {
+            font-weight: 700;
+            color: var(--bna-green);
+        }
+
+        .sapo-box {
+            font-size: calc(20.5px * var(--font-scale));
+            font-weight: 700;
+            color: #111827;
+            line-height: 1.78;
+            margin-bottom: 32px;
+            padding: 22px 26px;
+            background: #fff;
+            border-radius: 12px;
+            border-top: 4px solid var(--bna-red);
+            box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+        }
+
+        p.story-p {
+            margin-bottom: 22px;
+            text-align: justify;
+        }
+        .dropcap::first-letter {
+            float: left;
+            font-size: 3.6em;
+            line-height: 0.82;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: var(--bna-red);
+            font-weight: 900;
+        }
+
+        .titphu-banner {
+            margin: 42px -40px 24px -40px;
+            text-align: center;
+        }
+        .titphu-banner img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        .figure-wide {
+            margin: 30px -70px;
+            background: #fff;
+            padding: 12px;
+            border-radius: 14px;
+            box-shadow: 0 8px 26px rgba(0,0,0,0.08);
+        }
+        .figure-wide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            cursor: zoom-in;
+        }
+        .figure-caption {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 14.5px;
+            color: #4b5563;
+            font-style: italic;
+            text-align: center;
+            padding: 12px 14px 4px 14px;
+            line-height: 1.55;
+        }
+
+        .pull-quote {
+            margin: 30px 0;
+            padding: 24px 30px;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-left: 6px solid var(--bna-gold);
+            border-radius: 0 14px 14px 0;
+            font-style: italic;
+            font-weight: 700;
+            color: #78350f;
+            font-size: calc(19.5px * var(--font-scale));
+            line-height: 1.75;
+        }
+
+        .comparison-table-wrap {
+            margin: 32px 0;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.07);
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .comparison-table-title {
+            background: var(--bna-green);
+            color: #fff;
+            padding: 14px 20px;
+            font-weight: 800;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        table.milestone-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+        table.milestone-table th {
+            background: #e8f5e9;
+            color: #165c2c;
+            text-align: left;
+            padding: 12px 16px;
+            font-weight: 800;
+            border-bottom: 2px solid #a5d6a7;
+        }
+        table.milestone-table td {
+            padding: 13px 16px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+            line-height: 1.6;
+        }
+        table.milestone-table tr:last-child td { border-bottom: none; }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+            margin: 34px 0;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .timeline-card {
+            background: #fff;
+            border-top: 4px solid var(--bna-green);
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+        }
+        .timeline-card h4 {
+            color: var(--bna-red);
+            font-size: 17px;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+        .timeline-card p {
+            font-size: 14.5px;
+            color: #374151;
+            line-height: 1.55;
+        }
+
+        .article-author-box {
+            margin-top: 44px;
+            background: #fff;
+            border: 2px solid #c8e6c9;
+            border-radius: 14px;
+            padding: 22px 28px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .author-name {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--bna-green);
+        }
+        .author-role {
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.88);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 96vw;
+            max-height: 92vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 920px) {
+            .titphu-banner, .figure-wide { margin-left: 0; margin-right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="topbar-brand">
+            <span class="topbar-badge">eMagazine</span>
+            <span>Mạch nguồn Văn hóa &amp; Sức mạnh Đại đoàn kết (18/11)</span>
+        </div>
+        <div class="topbar-controls">
+            <button class="btn-tool" onclick="adjustFont(-0.08)">A-</button>
+            <button class="btn-tool" onclick="adjustFont(0.08)">A+</button>
+            <button class="btn-tool" onclick="window.print()">In bài / PDF</button>
+        </div>
+    </header>
+
+    <div class="hero-cover-wrap">
+        <img src="images/daidoanket_cover_emagazine.jpg?v=ddk1" alt="Bìa eMagazine Ngày hội Đại đoàn kết toàn dân tộc 18/11 - Thực hiện: Kỹ sư cuongsmile" onclick="openLightbox(this.src)">
+    </div>
+
+    <main class="article-shell">
+
+        <div class="meta-bar">
+            <div>Chuyên đề: <strong>Kỷ niệm Ngày truyền thống MTTQ Việt Nam &amp; Ngày hội Đại đoàn kết toàn dân tộc (18/11)</strong></div>
+            <div class="meta-author">Thực hiện: Kỹ sư cuongsmile</div>
+        </div>
+
+        <section class="audio-player-card">
+            <div class="audio-header">
+                <div class="audio-title">
+                    <span>🔊 NGHE ĐỌC BÀI BÁO (AI PHÁT THANH VIÊN)</span>
+                </div>
+                <div class="voice-switch">
+                    <button id="btn-nu" class="voice-btn active" onclick="switchVoice('nu')">🎙️ Giọng Nữ (Hoài My)</button>
+                    <button id="btn-nam" class="voice-btn" onclick="switchVoice('nam')">🎙️ Giọng Nam (Nam Minh)</button>
+                    <button class="speed-btn" onclick="setSpeed(0.9, this)">0.9x</button>
+                    <button class="speed-btn active" onclick="setSpeed(1.0, this)">1.0x</button>
+                    <button class="speed-btn" onclick="setSpeed(1.15, this)">1.15x</button>
+                </div>
+            </div>
+            <audio id="article-audio" controls preload="metadata">
+                <source id="audio-source" src="daidoanket_voice_nu.mp3?v=ddk1" type="audio/mpeg">
+                Trình duyệt của bạn không hỗ trợ phát âm thanh.
+            </audio>
+        </section>
+
+        <div class="sapo-box">
+            Cứ mỗi độ tháng Mười Một về, khi những cơn gió se lạnh đầu đông chạm ngõ từng nếp nhà nơi rẻo cao xứ Nghệ cho đến các ngõ phố, xóm làng bình yên khắp mọi miền Tổ quốc, hàng vạn khu dân cư lại rộn ràng cờ hoa đón chào <strong>Ngày hội Đại đoàn kết toàn dân tộc (18/11)</strong>. Khởi nguồn từ Chỉ thị thành lập Hội Phản đế Đồng minh ngày 18/11/1930, được thể chế hóa qua Nghị quyết số 04/NQ-ĐCT-MTTW ngày 01/8/2003 và Điều 11 Luật Mặt trận Tổ quốc Việt Nam năm 2015, Ngày hội hôm nay đã vượt qua khuôn khổ của một lễ kỷ niệm truyền thống để trở thành "chất keo" gắn kết tình làng nghĩa xóm, nơi "Ý Đảng" hòa quyện cùng "Lòng Dân" trong từng mái nhà Đại đoàn kết, từng con đường nông thôn mới và những bữa cơm sum vầy ấm áp nghĩa đồng bào.
+        </div>
+
+        <div class="comparison-table-wrap">
+            <div class="comparison-table-title">📌 CÁC MỐC SON LỊCH SỬ &amp; CƠ SỞ PHÁP LÝ CỦA NGÀY HỘI ĐẠI ĐOÀN KẾT TOÀN DÂN TỘC (18/11)</div>
+            <table class="milestone-table">
+                <thead>
+                    <tr>
+                        <th style="width: 22%;">Mốc thời gian</th>
+                        <th style="width: 42%;">Dấu ấn Lịch sử &amp; Văn bản Pháp lý</th>
+                        <th style="width: 36%;">Giá trị lan tỏa tại Khu dân cư</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ngày 18/11/1930</strong></td>
+                        <td>Ban Thường vụ Trung ương Đảng Cộng sản Đông Dương ra Chỉ thị thành lập <strong>Hội Phản đế Đồng minh</strong> – hình thức đầu tiên của Mặt trận Dân tộc Thống nhất Việt Nam.</td>
+                        <td>Đặt nền móng cho chiến lược đại đoàn kết toàn dân tộc xuyên suốt các thời kỳ cách mạng Việt Nam.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Năm 1986</strong></td>
+                        <td>Ban Chấp hành Trung ương Đảng (khóa VI) quyết định lấy ngày <strong>18/11/1930</strong> làm <strong>Ngày truyền thống của Mặt trận Tổ quốc Việt Nam</strong>.</td>
+                        <td>Khẳng định vị trí, vai trò lịch sử vẻ vang của Mặt trận Tổ quốc Việt Nam trong sự nghiệp xây dựng và bảo vệ Tổ quốc.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ngày 01/8/2003</strong></td>
+                        <td>Đoàn Chủ tịch Ủy ban Trung ương MTTQ Việt Nam ban hành <strong>Nghị quyết số 04/NQ-ĐCT-MTTW</strong> về việc tổ chức <em>“Ngày hội Đại đoàn kết toàn dân tộc”</em> ở khu dân cư (từ 01/11 đến 18/11 hằng năm).</td>
+                        <td>Đưa hoạt động kỷ niệm của Mặt trận về tận từng thôn, bản, ấp, tổ dân phố; biến ngày truyền thống thành ngày hội của toàn dân.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Năm 2015</strong></td>
+                        <td>Quốc hội thông qua <strong>Luật Mặt trận Tổ quốc Việt Nam năm 2015</strong>, tại <strong>Điều 11</strong> chính thức luật hóa: <em>"Ngày 18 tháng 11 hằng năm là Ngày truyền thống của Mặt trận Tổ quốc Việt Nam và là Ngày hội đại đoàn kết toàn dân tộc"</em>.</td>
+                        <td>Tạo hành lang pháp lý vững chắc để phát huy quyền làm chủ của Nhân dân, tăng cường đồng thuận xã hội từ cơ sở.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- PHẦN 1 -->
+        <div class="titphu-banner">
+            <img src="images/daidoanket_titphu1.jpg?v=ddk1" alt="Phần 1: Mạch nguồn lịch sử 18/11/1930">
+        </div>
+
+        <p class="story-p dropcap">
+            Lịch sử hàng ngàn năm dựng nước và giữ nước của dân tộc Việt Nam đã đúc kết một chân lý bất dịch: sức mạnh lớn nhất của một quốc gia không nằm ở vũ khí hay của cải, mà nằm ở sự đồng lòng của muôn dân trăm họ. Ngay sau khi Đảng Cộng sản Việt Nam ra đời đầu năm 1930, trước yêu cầu cấp bách của phong trào cách mạng, ngày <strong>18/11/1930</strong>, Ban Thường vụ Trung ương Đảng Cộng sản Đông Dương đã ra Chỉ thị về vấn đề thành lập <strong>Hội Phản đế Đồng minh</strong> – tổ chức tiền thân đầu tiên của Mặt trận Dân tộc Thống nhất Việt Nam.
+        </p>
+
+        <p class="story-p">
+            Trải qua gần một thế kỷ đồng hành cùng vận mệnh đất nước, dưới ngọn cờ tư tưởng Hồ Chí Minh <em>"Đoàn kết, đoàn kết, đại đoàn kết / Thành công, thành công, đại thành công"</em>, Mặt trận đã mang nhiều tên gọi phù hợp với từng giai đoạn lịch sử: từ <em>Hội Phản đế Đồng minh</em> (1930), <em>Mặt trận Dân chủ Đông Dương</em> (1936–1938), <em>Mặt trận Thống nhất Dân tộc Phản đế Đông Dương</em> (1939–1941), <em>Mặt trận Việt Minh</em> (1941–1951) làm nên cuộc Cách mạng Tháng Tám năm 1945 chấn động địa cầu; đến <em>Mặt trận Liên Việt</em> (1946–1955), <em>Mặt trận Dân tộc Giải phóng miền Nam Việt Nam</em> (1960–1977) và <strong>Mặt trận Tổ quốc Việt Nam</strong> (từ năm 1955 đến nay).
+        </p>
+
+        <figure class="figure-wide">
+            <img src="images/daidoanket_hero_festival.jpg?v=ddk1" alt="Không khí rộn ràng Ngày hội Đại đoàn kết toàn dân tộc tại sân nhà văn hóa thôn bản" onclick="openLightbox(this.src)">
+            <figcaption class="figure-caption">
+                Rực rỡ sắc cờ hoa trong Ngày hội Đại đoàn kết toàn dân tộc (18/11): Bà con nhân dân các dân tộc và cán bộ cơ sở cùng nắm tay trong điệu múa sạp và vòng xòe đoàn kết tại sân nhà văn hóa cộng đồng. (Bấm vào ảnh để xem cỡ lớn)
+            </figcaption>
+        </figure>
+
+        <div class="pull-quote">
+            “Dù mang tên gọi nào qua từng chặng đường lịch sử, sứ mệnh thiêng liêng nhất của Mặt trận vẫn luôn là ngọn cờ quy tụ mọi tầng lớp Nhân dân, không phân biệt dân tộc, tôn giáo, già trẻ, gái trai, cùng chung một tấm lòng vì độc lập dân tộc và hạnh phúc của Nhân dân.”
+        </div>
+
+        <p class="story-p">
+            Năm <strong>1986</strong>, Ban Chấp hành Trung ương Đảng (khóa VI) quyết định lấy ngày <strong>18/11</strong> hằng năm làm <strong>Ngày truyền thống của Mặt trận Tổ quốc Việt Nam</strong>. Bước ngoặt mang tính đột phá hướng về cơ sở diễn ra vào ngày <strong>01/8/2003</strong>, khi Đoàn Chủ tịch Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam ban hành <strong>Nghị quyết số 04/NQ-ĐCT-MTTW</strong>, quyết định tổ chức <strong>“Ngày hội Đại đoàn kết toàn dân tộc”</strong> tại khắp các khu dân cư trong dịp kỷ niệm 18/11. Đến năm <strong>2015</strong>, giá trị lịch sử và nhân văn ấy đã được hiến định và luật hóa trang trọng tại <strong>Điều 11 Luật Mặt trận Tổ quốc Việt Nam</strong>.
+        </p>
+
+        <!-- PHẦN 2 -->
+        <div class="titphu-banner">
+            <img src="images/daidoanket_titphu2.jpg?v=ddk1" alt="Phần 2: Cầu nối Ý Đảng - Lòng Dân">
+        </div>
+
+        <p class="story-p">
+            Không diễn ra trong những hội trường lớn xa cách, nét đẹp độc đáo nhất của Ngày hội Đại đoàn kết toàn dân tộc (diễn ra sôi nổi từ <strong>ngày 01/11 đến hết ngày 18/11</strong> hằng năm) chính là không gian tổ chức ngay tại sân nhà văn hóa thôn, bản, khối, xóm, tổ dân phố – nơi gắn bó máu thịt với đời sống thường nhật của mỗi gia đình.
+        </p>
+
+        <p class="story-p">
+            Tại đây, <strong>Ban Công tác Mặt trận</strong> khu dân cư phối hợp cùng Chi bộ, Ban Quản lý thôn bản đứng ra chủ trì với hai phần hài hòa: <strong>Phần Lễ</strong> trang nghiêm, súc tích và <strong>Phần Hội</strong> tưng bừng, đậm đà bản sắc. Trong Phần Lễ, bà con cùng nhau nhìn lại thành quả một năm chung sức thực hiện cuộc vận động <em>"Toàn dân đoàn kết xây dựng nông thôn mới, đô thị văn minh"</em>; cùng biểu dương những hộ gia đình văn hóa tiêu biểu, những tấm gương hiến đất mở đường, giữ gìn an ninh trật tự, bảo vệ những cánh rừng đầu nguồn xanh ngát.
+        </p>
+
+        <figure class="figure-wide">
+            <img src="images/daidoanket_langnghe_ydang_longdan.jpg?v=ddk1" alt="Cán bộ Mặt trận và cơ sở lắng nghe tâm tư người dân bên chén chè xanh" onclick="openLightbox(this.src)">
+            <figcaption class="figure-caption">
+                Nơi "Ý Đảng" hòa nhịp cùng "Lòng Dân": Cán bộ Mặt trận và chính quyền cơ sở ân cần trò chuyện, lắng nghe ý kiến đóng góp của các bậc cao niên, người có uy tín và bà con nhân dân bên chén nước chè xanh ấm tình làng xóm. (Bấm vào ảnh để xem cỡ lớn)
+            </figcaption>
+        </figure>
+
+        <p class="story-p">
+            Đặc biệt, Ngày hội 18/11 đã trở thành diễn đàn dân chủ gần gũi nhất. Vào dịp này, các đồng chí lãnh đạo cấp ủy, chính quyền, Mặt trận từ cấp tỉnh, cấp huyện đến cấp xã đều trực tiếp về tận thôn, bản để dự lễ, ngồi bên chén nước chè xanh cùng các cụ cao niên, già làng, trưởng bản và bà con nhân dân. Không còn khoảng cách giữa người làm chính sách và người thụ hưởng; mọi tâm tư, nguyện vọng chính đáng từ chuyện con mương nội đồng, đường điện chiếu sáng ngõ xóm đến sinh kế thoát nghèo đều được lắng nghe và tháo gỡ ngay từ cơ sở.
+        </p>
+
+        <!-- PHẦN 3 -->
+        <div class="titphu-banner">
+            <img src="images/daidoanket_titphu3.jpg?v=ddk1" alt="Phần 3: Những mái Nhà Đại đoàn kết">
+        </div>
+
+        <p class="story-p">
+            Nếu cần một thước đo cụ thể nhất cho sức mạnh của khối đại đoàn kết ở khu dân cư, hãy nhìn vào những con đường bê tông phẳng lì nối dài qua từng ngõ xóm và những ngôi <strong>"Nhà Đại đoàn kết"</strong> thơm mùi vôi mới được khánh thành, bàn giao đúng vào dịp tháng Mười Một hằng năm.
+        </p>
+
+        <p class="story-p">
+            Hưởng ứng phong trào thi đua <strong>"Xóa nhà tạm, nhà dột nát"</strong> và Quỹ <em>"Vì người nghèo"</em> do Mặt trận Tổ quốc Việt Nam các cấp phát động, hàng vạn hộ gia đình có hoàn cảnh khó khăn, gia đình chính sách nơi vùng sâu, vùng xa, biên giới đã được tiếp thêm điểm tựa để "an cư lạc nghiệp". Mỗi viên gạch, mỗi tấm lợp dựng nên ngôi nhà mới không chỉ đến từ nguồn kinh phí hỗ trợ của Nhà nước và cộng đồng doanh nghiệp, mà còn thấm đẫm những ngày công lao động tự nguyện của bà con lối xóm – người góp ngày công đào móng, người phụ giúp vận chuyển vật liệu, người trao tặng cây giống, con giống cho ngày tân gia.
+        </p>
+
+        <figure class="figure-wide">
+            <img src="images/daidoanket_nha_dai_doan_ket.jpg?v=ddk1" alt="Niềm vui bên ngôi Nhà Đại đoàn kết mới khánh thành tại thôn xóm nông thôn mới" onclick="openLightbox(this.src)">
+            <figcaption class="figure-caption">
+                Niềm hạnh phúc "an cư lạc nghiệp": Bà con lối xóm và cán bộ cơ sở chung vui, chúc mừng gia đình bên ngôi "Nhà Đại đoàn kết" khang trang vừa hoàn thành dọc tuyến đường hoa nông thôn mới. (Bấm vào ảnh để xem cỡ lớn)
+            </figcaption>
+        </figure>
+
+        <div class="pull-quote">
+            “Đoàn kết ở thôn bản không phải là khẩu hiệu treo trên tường, mà hiện hữu ngay trong từng mét tường rào bà con tự nguyện lùi vào để mở rộng đường làng, trong giọt nước mắt hạnh phúc của hộ nghèo ngày bước vào ngôi Nhà Đại đoàn kết vững chãi trước mùa mưa bão.”
+        </div>
+
+        <p class="story-p">
+            Tại nhiều địa phương như tỉnh Nghệ An, Ngày hội Đại đoàn kết toàn dân tộc (18/11) còn được kết nối đồng bộ cùng các hoạt động tôn vinh di sản văn hóa dân tộc, tạo nên chuỗi ngày hội <em>"Mạch nguồn văn hóa – Sức mạnh đoàn kết"</em>. Từ miền xuôi đến các bản làng miền núi của đồng bào Thái, Mông, Khơ Mú, Thổ, Ơ Đu, tinh thần tương thân tương ái <em>"lá lành đùm lá rách"</em> đã biến những chủ trương lớn thành hành động tự giác của mỗi người dân, bảo đảm mục tiêu nhân văn không một ai bị bỏ lại phía sau.
+        </p>
+
+        <!-- PHẦN 4 -->
+        <div class="titphu-banner">
+            <img src="images/daidoanket_titphu4.jpg?v=ddk1" alt="Phần 4: Bữa cơm Đại đoàn kết">
+        </div>
+
+        <p class="story-p">
+            Giữa nhịp sống hiện đại đầy hối hả, khi đôi lúc những cánh cửa sắt nơi phố thị hay nỗi lo mưu sinh làm thưa vắng dần những cuộc trò chuyện sớm tối, thì <strong>Phần Hội</strong> và <strong>"Bữa cơm Đại đoàn kết"</strong> trong dịp 18/11 chính là liều thuốc tinh thần quý giá hâm nóng tình làng nghĩa xóm.
+        </p>
+
+        <p class="story-p">
+            Sau phần lễ trang trọng, sân nhà văn hóa khu dân cư bỗng hóa thành ngày hội lớn của tiếng trống, tiếng chiêng, điệu múa sạp rộn ràng, những màn kéo co, đẩy gậy, bóng chuyền hơi sôi nổi và các gian hàng trưng bày nông sản, sản phẩm OCOP đặc trưng của quê hương. Và rồi, khi nắng chiều dịu xuống, cả khu dân cư cùng quây quần bên những mâm cỗ giản dị của <strong>"Bữa cơm Đại đoàn kết"</strong>.
+        </p>
+
+        <figure class="figure-wide">
+            <img src="images/daidoanket_bua_com_sum_vay.jpg?v=ddk1" alt="Bữa cơm Đại đoàn kết và trò chơi kéo co dân gian rộn rã tiếng cười tại sân làng" onclick="openLightbox(this.src)">
+            <figcaption class="figure-caption">
+                Ấm áp "Bữa cơm Đại đoàn kết" và hội kéo co dân gian tại khu dân cư: Nơi mọi khoảng cách được xóa nhòa, kết nối nhiều thế hệ trong tình làng nghĩa xóm "tối lửa tắt đèn có nhau". (Bấm vào ảnh để xem cỡ lớn)
+            </figcaption>
+        </figure>
+
+        <p class="story-p">
+            Trên mâm cơm ấy, không có sự phân biệt giàu nghèo, chức vụ hay tuổi tác. Người đi làm ăn xa trở về, người mới chuyển đến khu phố, các bậc bô lão và thế hệ trẻ cùng nâng chén trà, sẻ chia chuyện mùa màng, chuyện dạy bảo con cháu học hành thành đạt, hóa giải hết những hiểu lầm nhỏ nhặt thường ngày để "tối lửa tắt đèn có nhau". Chính từ những bữa cơm chan chứa nghĩa tình và những cái nắm tay thật chặt trong vòng xòe đoàn kết ấy, thế trận lòng dân được bồi đắp vững bền từ gốc rễ, tạo nên nguồn nội lực to lớn đưa quê hương, đất nước vững bước tiến vào kỷ nguyên phát triển giàu mạnh, văn minh và hạnh phúc.
+        </p>
+
+        <div class="timeline-grid">
+            <div class="timeline-card">
+                <h4>18/11/1930</h4>
+                <p>Trung ương Đảng ban hành Chỉ thị thành lập <strong>Hội Phản đế Đồng minh</strong> – Ngày truyền thống vẻ vang của Mặt trận Tổ quốc Việt Nam.</p>
+            </div>
+            <div class="timeline-card">
+                <h4>01/8/2003</h4>
+                <p>Nghị quyết <strong>04/NQ-ĐCT-MTTW</strong> khởi xướng tổ chức <strong>Ngày hội Đại đoàn kết toàn dân tộc</strong> tại khắp các khu dân cư trên toàn quốc.</p>
+            </div>
+            <div class="timeline-card">
+                <h4>01/11 – 18/11</h4>
+                <p>Cao điểm tổ chức <strong>Phần Lễ</strong>, <strong>Phần Hội</strong>, trao tặng <strong>Nhà Đại đoàn kết</strong> và quây quần bên <strong>Bữa cơm Đại đoàn kết</strong> ấm tình đồng bào.</p>
+            </div>
+        </div>
+
+        <footer class="article-author-box">
+            <div>
+                <div class="author-name">Thực hiện: Kỹ sư cuongsmile</div>
+                <div class="author-role">Chuyên đề Đa phương tiện eMagazine • Kỷ niệm Ngày hội Đại đoàn kết toàn dân tộc (18/11)</div>
+            </div>
+            <div style="font-size: 13px; color: #165c2c; font-weight: 700;">
+                ★ Đoàn kết – Đại đoàn kết – Thành công – Đại thành công
+            </div>
+        </footer>
+
+    </main>
+
+    <div id="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="" alt="Phóng to">
+    </div>
+
+    <script>
+        const audioEl = document.getElementById('article-audio');
+        const audioSrc = document.getElementById('audio-source');
+        const voiceMap = {
+            'nu': 'daidoanket_voice_nu.mp3?v=ddk1',
+            'nam': 'daidoanket_voice_nam.mp3?v=ddk1'
+        };
+
+        function switchVoice(type) {
+            const wasPlaying = !audioEl.paused;
+            const currentRate = audioEl.playbackRate;
+            audioSrc.src = voiceMap[type];
+            audioEl.load();
+            audioEl.playbackRate = currentRate;
+            document.getElementById('btn-nu').classList.toggle('active', type === 'nu');
+            document.getElementById('btn-nam').classList.toggle('active', type === 'nam');
+            if (wasPlaying) audioEl.play();
+        }
+
+        function setSpeed(rate, btn) {
+            audioEl.playbackRate = rate;
+            document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        let currentScale = 1;
+        function adjustFont(delta) {
+            currentScale = Math.min(1.35, Math.max(0.85, currentScale + delta));
+            document.documentElement.style.setProperty('--font-scale', currentScale);
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
