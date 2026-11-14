@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Người Mở Đường Số Nơi Bản Làng: Khi thầy cô Kỳ Sơn, Tương Dương “cõng” ánh sáng số lên đỉnh mây mù | eMagazine Dự thi</title>
+    <meta name="description" content="Tác phẩm dự thi Cuộc thi viết Người Mở Đường Số Nơi Bản Làng (Báo Giáo dục và Thời đại) - Chuyên đề eMagazine về các thầy cô giáo vùng cao Kỳ Sơn, Tương Dương (Nghệ An) - Thực hiện: Kỹ sư cuongsmile.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #f7f6f1;
+            --bg-paper: #ffffff;
+            --bna-green: #165c2c;
+            --bna-green-light: #e8f5e9;
+            --bna-red: #b71c1c;
+            --bna-gold: #d97706;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --font-scale: 1;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            font-family: 'Merriweather', Georgia, serif;
+            line-height: 1.85;
+            font-size: calc(18.5px * var(--font-scale));
+            -webkit-font-smoothing: antialiased;
+        }
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(22, 92, 44, 0.96);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 10px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.16);
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .topbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .topbar-badge {
+            background: #ffca28;
+            color: #165c2c;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+        .topbar-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-tool {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.28);
+            padding: 5px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-tool:hover { background: rgba(255,255,255,0.28); }
+
+        .hero-cover-wrap {
+            max-width: 1120px;
+            margin: 0 auto 28px auto;
+            background: #fff;
+            box-shadow: 0 12px 38px rgba(0,0,0,0.12);
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            overflow: hidden;
+        }
+        .hero-cover-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: zoom-in;
+        }
+
+        .article-shell {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 10px 22px 64px 22px;
+        }
+
+        .contest-banner-card {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border: 2px solid #ffb300;
+            border-radius: 14px;
+            padding: 16px 22px;
+            margin-bottom: 24px;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 14.5px;
+            color: #5d4037;
+            line-height: 1.65;
+            box-shadow: 0 4px 16px rgba(217, 119, 6, 0.1);
+        }
+        .contest-banner-card strong {
+            color: #b71c1c;
+        }
+
+        .audio-player-card {
+            background: linear-gradient(135deg, #ffffff 0%, #eef7f0 100%);
+            border: 1px solid #c8e6c9;
+            border-left: 6px solid var(--bna-green);
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 32px;
+            box-shadow: 0 6px 20px rgba(22, 92, 44, 0.08);
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .audio-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .audio-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--bna-green);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .voice-switch {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .voice-btn {
+            border: 1px solid var(--bna-green);
+            background: #fff;
+            color: var(--bna-green);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .voice-btn.active {
+            background: var(--bna-green);
+            color: #fff;
+        }
+        .speed-btn {
+            border: 1px solid #d1d5db;
+            background: #f9fafb;
+            color: #374151;
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .speed-btn.active {
+            background: var(--bna-red);
+            color: #fff;
+            border-color: var(--bna-red);
+        }
+        audio {
+            width: 100%;
+            height: 40px;
+            margin-top: 6px;
+        }
+
+        .meta-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 14px;
+            color: var(--text-muted);
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 14px;
+            margin-bottom: 26px;
+        }
+        .meta-author {
+            font-weight: 700;
+            color: var(--bna-green);
+        }
+
+        .sapo-box {
+            font-size: calc(20px * var(--font-scale));
+            font-weight: 700;
+            color: #111827;
+            line-height: 1.78;
+            margin-bottom: 32px;
+            padding: 22px 26px;
+            background: #fff;
+            border-radius: 12px;
+            border-top: 4px solid var(--bna-red);
+            box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+        }
+
+        p.story-p {
+            margin-bottom: 22px;
+            text-align: justify;
+        }
+        .dropcap::first-letter {
+            float: left;
+            font-size: 3.6em;
+            line-height: 0.82;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: var(--bna-red);
+            font-weight: 900;
+        }
+
+        .titphu-banner {
+            margin: 42px -40px 24px -40px;
+            text-align: center;
+        }
+        .titphu-banner img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        .figure-wide {
+            margin: 30px -70px;
+            background: #fff;
+            padding: 12px;
+            border-radius: 14px;
+            box-shadow: 0 8px 26px rgba(0,0,0,0.08);
+        }
+        .figure-wide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            cursor: zoom-in;
+        }
+        .figure-caption {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 14.5px;
+            color: #4b5563;
+            font-style: italic;
+            text-align: center;
+            padding: 12px 14px 4px 14px;
+            line-height: 1.55;
+        }
+
+        .pull-quote {
+            margin: 30px 0;
+            padding: 24px 30px;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-left: 6px solid var(--bna-gold);
+            border-radius: 0 14px 14px 0;
+            font-style: italic;
+            font-weight: 700;
+            color: #78350f;
+            font-size: calc(19px * var(--font-scale));
+            line-height: 1.75;
+        }
+
+        .comparison-table-wrap {
+            margin: 32px 0;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.07);
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .comparison-table-title {
+            background: var(--bna-green);
+            color: #fff;
+            padding: 14px 20px;
+            font-weight: 800;
+            font-size: 15.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        table.milestone-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14.5px;
+        }
+        table.milestone-table th {
+            background: #e8f5e9;
+            color: #165c2c;
+            text-align: left;
+            padding: 12px 14px;
+            font-weight: 800;
+            border-bottom: 2px solid #a5d6a7;
+        }
+        table.milestone-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+            line-height: 1.58;
+        }
+        table.milestone-table tr:last-child td { border-bottom: none; }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+            margin: 34px 0;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .timeline-card {
+            background: #fff;
+            border-top: 4px solid var(--bna-green);
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+        }
+        .timeline-card h4 {
+            color: var(--bna-red);
+            font-size: 16.5px;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+        .timeline-card p {
+            font-size: 14.5px;
+            color: #374151;
+            line-height: 1.55;
+        }
+
+        .article-author-box {
+            margin-top: 44px;
+            background: #fff;
+            border: 2px solid #c8e6c9;
+            border-radius: 14px;
+            padding: 22px 28px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+        .author-name {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--bna-green);
+        }
+        .author-role {
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.88);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 96vw;
+            max-height: 92vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 920px) {
+            .titphu-banner, .figure-wide { margin-left: 0; margin-right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="topbar-brand">
+            <span class="topbar-badge">eMagazine Dự thi</span>
+            <span>Người Mở Đường Số Nơi Bản Làng • Kỳ Sơn &amp; Tương Dương</span>
+        </div>
+        <div class="topbar-controls">
+            <button class="btn-tool" onclick="adjustFont(-0.08)">A-</button>
+            <button class="btn-tool" onclick="adjustFont(0.08)">A+</button>
+            <button class="btn-tool" onclick="window.print()">In bài / PDF</button>
+        </div>
+    </header>
+
+    <div class="hero-cover-wrap">
+        <img src="images/nguoimoduongso_cover_emagazine.jpg?v=nmds1" alt="Bìa eMagazine Người Mở Đường Số Nơi Bản Làng - Thực hiện: Kỹ sư cuongsmile" onclick="openLightbox(this.src)">
+    </div>
+
+    <main class="article-shell">
+
+        <div class="contest-banner-card">
+            🏆 <strong>TÁC PHẨM DỰ THI CUỘC THI VIẾT “NGƯỜI MỞ ĐƯỜNG SỐ NƠI BẢN LÀNG”</strong><br>
+            • <strong>Đơn vị tổ chức:</strong> Báo Giáo dục và Thời đại (Cổng dự thi: <code>http://nguoimoduongso.vn/</code>)<br>
+            • <strong>Cam kết tác phẩm:</strong> 100% nhân vật thật, sự kiện thật, số liệu thật tại hai huyện vùng cao <strong>Kỳ Sơn</strong> và <strong>Tương Dương</strong> (Nghệ An); sử dụng <strong>05 ảnh chụp thực tế báo chí</strong> (tuyệt đối không hư cấu, không dùng AI giả lập nhân vật).
+        </div>
+
+        <div class="meta-bar">
+            <div>Chuyên đề: <strong>Những người thầy “cõng” ánh sáng số lên đỉnh mây mù Kỳ Sơn – Tương Dương</strong></div>
+            <div class="meta-author">Thực hiện: Kỹ sư cuongsmile</div>
+        </div>
+
+        <section class="audio-player-card">
+            <div class="audio-header">
+                <div class="audio-title">
+                    <span>🔊 NGHE ĐỌC TÁC PHẨM DỰ THI (AI PHÁT THANH VIÊN BỔ TRỢ)</span>
+                </div>
+                <div class="voice-switch">
+                    <button id="btn-nu" class="voice-btn active" onclick="switchVoice('nu')">🎙️ Giọng Nữ (Hoài My)</button>
+                    <button id="btn-nam" class="voice-btn" onclick="switchVoice('nam')">🎙️ Giọng Nam (Nam Minh)</button>
+                    <button class="speed-btn" onclick="setSpeed(0.9, this)">0.9x</button>
+                    <button class="speed-btn active" onclick="setSpeed(1.0, this)">1.0x</button>
+                    <button class="speed-btn" onclick="setSpeed(1.15, this)">1.15x</button>
+                </div>
+            </div>
+            <audio id="article-audio" controls preload="metadata">
+                <source id="audio-source" src="nguoimoduongso_voice_nu.mp3?v=nmds1" type="audio/mpeg">
+                Trình duyệt của bạn không hỗ trợ phát âm thanh.
+            </audio>
+        </section>
+
+        <div class="sapo-box">
+            Ở rẻo cao Kỳ Sơn và Tương Dương (tỉnh Nghệ An) – nơi những dãy núi đá tai mèo nối tiếp nhau chạy dọc biên giới Việt – Lào và những con suối hung dữ sẵn sàng cắt đôi con đường đến lớp sau mỗi trận mưa rừng – có những con đường không được mở bằng cuốc xẻng. Đó là con đường của tri thức và chuyển đổi số được mở bằng đôi bàn tay tê cóng quấn xích sắt vào bánh xe máy vượt dốc bùn của thầy Xồng Bá Dê, thầy Lầu Bá Xỷ ở bản Xao Va; bằng những bước chân nắm chặt tay nhau vượt suối lũ của các thầy cô Trường PTDTBT Tiểu học và THCS Bảo Thắng để giữ khô từng chiếc laptop, từng bộ học liệu điện tử; bằng 28 năm bền bỉ đưa màn hình tương tác thông minh vào giờ học Tiếng Anh của cô giáo Trương Thị Lan; bằng bộ học liệu song ngữ Việt – Mông của nữ Tiến sĩ đầu tiên vùng cao Kỳ Sơn Lã Thị Thanh Huyền, tâm huyết bồi dưỡng học trò của Thạc sĩ Lê Na; và bằng cả kỳ tích công nghệ STEM lọt Top 10 toàn quốc của cô trò Nguyễn Thị Kiều ở Trường PTDTNT THCS Tương Dương.
+        </div>
+
+        <div class="comparison-table-wrap">
+            <div class="comparison-table-title">📌 HỒ SƠ XÁC THỰC CÁC NHÂN VẬT “NGƯỜI MỞ ĐƯỜNG SỐ” TẠI KỲ SƠN &amp; TƯƠNG DƯƠNG (NGHỆ AN)</div>
+            <table class="milestone-table">
+                <thead>
+                    <tr>
+                        <th style="width: 24%;">Nhân vật &amp; Đơn vị</th>
+                        <th style="width: 30%;">Địa bàn bám bản</th>
+                        <th style="width: 46%;">Dấu ấn “Mở đường số” &amp; Thành tích thực tế</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Thầy Xồng Bá Dê, thầy Lầu Bá Xỷ &amp; Tập thể GV Trường PTDTBT TH&amp;THCS Bảo Thắng</strong></td>
+                        <td>Bản Xao Va, xã Bảo Thắng, huyện Kỳ Sơn (cách trung tâm xã 8 km đường đất dốc).</td>
+                        <td>Quấn 2 dây xích sắt vào lốp xe máy vượt dốc bùn trơn, nắm tay nhau vượt suối lũ giữ khô máy tính xách tay và các file bài giảng điện tử tải sẵn cho học trò Khơ Mú, Mông.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cô giáo Trương Thị Lan</strong> (SN 1975, dân tộc Thái) – GV Tiếng Anh Trường THPT Kỳ Sơn</td>
+                        <td>Thị trấn Mường Xén &amp; 21 xã vùng cao huyện biên giới Kỳ Sơn (từ năm 1998).</td>
+                        <td>Ứng dụng <strong>màn hình tương tác thông minh (Interactive Flat Panel)</strong>, phần mềm luyện phát âm và học liệu số giúp học sinh DTTS tự tin giao tiếp Tiếng Anh; được Bộ GD&amp;ĐT tuyên dương <strong>1 trong 200 Nhà giáo tiêu biểu toàn quốc năm 2023</strong>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cô giáo Nguyễn Thị Kiều</strong> &amp; 3 học sinh <strong>Trần Lâm Dũng, Vi Thái Di, Mạc Phương Linh</strong></td>
+                        <td>Trường PTDTNT THCS Tương Dương, huyện miền núi Tương Dương.</td>
+                        <td>Sáng chế sản phẩm STEM <strong>“Thiết bị truyền dịch thông minh”</strong> (tích hợp cảm biến đếm giọt quang học, tạo <strong>mã QR</strong> và kết nối <strong>smartphone</strong> bác sĩ); vượt qua hơn 1.200 sản phẩm cả nước lọt <strong>Top 10 bảng A toàn quốc</strong> và giành <strong>Giải Cộng đồng chung cuộc</strong> cuộc thi <em>Solve for Tomorrow</em>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tiến sĩ Lã Thị Thanh Huyền</strong> (SN 1979) – Phó Hiệu trưởng Trường PTDTBT TH&amp;THCS Tây Sơn</td>
+                        <td>Xã Tây Sơn, huyện Kỳ Sơn (cắm bản từ năm 2003 trên đỉnh núi cao sương mù).</td>
+                        <td>Nữ Tiến sĩ đầu tiên của ngành giáo dục vùng cao Kỳ Sơn; biên soạn và số hóa <strong>bộ tài liệu dạy học song ngữ Việt – Mông</strong> giúp học sinh người Mông vượt rào cản ngôn ngữ, tiếp cận công nghệ số.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Thạc sĩ Lê Na</strong> (SN 1982) – Phó Hiệu trưởng Trường PTDTNT THCS Kỳ Sơn</td>
+                        <td>Từng cắm bản tại Mường Lống, Nậm Càn; nay công tác tại Trường PTDTNT THCS Kỳ Sơn.</td>
+                        <td>Xây dựng thư viện học liệu số, bồi dưỡng học sinh DTTS đạt Thủ khoa tỉnh; được tuyên dương là <strong>1 trong 68 giáo viên tiêu biểu toàn quốc</strong> chương trình <em>“Chia sẻ cùng thầy cô”</em> năm 2022.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- PHẦN 1 -->
+        <div class="titphu-banner">
+            <img src="images/nguoimoduongso_titphu1.jpg?v=nmds1" alt="Phần 1: Xích sắt quấn bánh xe vượt dốc bùn Xao Va, Nậm Khiên">
+        </div>
+
+        <p class="story-p dropcap">
+            Muốn hiểu vì sao một file bài giảng điện tử, một đoạn video minh họa khoa học trình chiếu trên lớp học vùng cao lại quý giá đến nhường nào, phải đi cùng các thầy cô giáo Kỳ Sơn vào những ngày mưa rừng xối xả. Ở điểm trường bản Xao Va (thuộc Trường Tiểu học Bảo Thắng, xã Bảo Thắng, huyện Kỳ Sơn), con đường độc đạo dài 8 km từ trung tâm xã vào bản vốn đã cheo leo một bên là vách núi dựng đứng, một bên là vực sâu, cứ sau mỗi đợt mưa lũ lại biến thành một dải bùn đặc quánh, trơn như đổ mỡ.
+        </p>
+
+        <p class="story-p">
+            Để không một tiết học nào bị đứt quãng, chiếc xe máy cà tàng của thầy giáo <strong>Xồng Bá Dê</strong> và thầy giáo <strong>Lầu Bá Xỷ</strong> có một "phụ kiện" đặc biệt không nơi nào dưới xuôi có: <strong>hai sợi dây xích sắt lớn quấn chặt quanh lốp trước và lốp sau</strong>. Tiếng xích sắt nghiến vào đá hộc, bấu vào từng rãnh bùn lầy trộn lẫn tiếng động cơ gầm rú đưa hai người thầy vượt dốc tiến vào bản. Trên lưng các thầy, chiếc ba lô đựng máy tính xách tay, giáo án và những file bài giảng điện tử đã được tải sẵn từ tối hôm trước luôn được bọc kỹ trong hai lớp túi ni-lông chống nước.
+        </p>
+
+        <figure class="figure-wide">
+            <img src="images/thayco_real_1_vuotlu_kyson.jpg?v=nmds1" alt="Các thầy cô giáo Trường PTDTBT Tiểu học và THCS Bảo Thắng (Kỳ Sơn) nắm chặt tay nhau vượt suối lũ" onclick="openLightbox(this.src)">
+            <figcaption class="figure-caption">
+                Ảnh 1 (Ảnh chụp thực tế - Báo Nghệ An): Các thầy, cô giáo Trường PTDTBT Tiểu học và THCS Bảo Thắng (xã Bảo Thắng, huyện Kỳ Sơn, Nghệ An) nắm chặt tay nhau thành hàng ngang vượt qua dòng suối lũ chảy xiết, nâng cao những chiếc ba lô đựng giáo án, máy tính và học liệu để kịp vào trường giảng dạy cho học sinh vùng cao sau mưa lũ. (Bấm vào ảnh để xem cỡ lớn)
+            </figcaption>
+        </figure>
+
+        <p class="story-p">
+            Cách đó không xa, trên cung đường 7 km vào điểm trường bản Nậm Khiên (Trường Mầm non Nậm Càn, xã biên giới Nậm Càn, huyện Kỳ Sơn), cô giáo <strong>Nguyễn Thị Quỳnh Nga</strong> và cô giáo <strong>Vi Thị Hồng</strong> cũng phải nhờ các thầy giáo buộc xích sắt vào bánh xe mới có thể nhích từng mét đường bùn lầy lội. Còn tại tuyến đường vào <strong>Trường PTDTBT Tiểu học và THCS Bảo Thắng</strong>, mỗi khi nước lũ từ thượng nguồn đổ về cuốn trôi cầu tạm, hàng chục thầy cô giáo lại nắm chặt tay nhau thành một sợi dây sống giữa dòng nước đục ngầu chảy xiết. Tay này giữ chặt tay đồng nghiệp, tay kia nâng cao chiếc túi đựng máy tính và học liệu qua đầu. Với các thầy cô nơi đây, giữ cho chiếc máy tính không bị ướt nước lũ cũng chính là giữ cho học trò người Khơ Mú, người Mông không bị đứt lìa khỏi nhịp đập của thế giới tri thức bên ngoài dãy núi.
+        </p>
+
+        <!-- PHẦN 2 -->
+        <div class="titphu-banner">
+            <img src="images/nguoimoduongso_titphu2.jpg?v=nmds1" alt="Phần 2: 28 năm dưới chân núi Pu Xai Lai Leng và chiếc màn hình tương tác">
+        </div>
+
+        <p class="story-p">
+            Nếu những vòng xích sắt ở Xao Va, Nậm Khiên là biểu tượng cho hành trình "cõng chữ vượt lũ", thì tại ngôi trường cấp 3 duy nhất của huyện biên giới Kỳ Sơn – <strong>Trường THPT Kỳ Sơn</strong>, cô giáo người dân tộc Thái <strong>Trương Thị Lan</strong> (sinh năm 1975) lại là người bền bỉ mở cánh cửa "công dân toàn cầu" cho học trò vùng cao bằng công nghệ số suốt gần ba thập kỷ qua.
+        </p>
+
+        <p class="story-p">
+            Tốt nghiệp Khoa Sư phạm Tiếng Anh (Trường Đại học Sư phạm Vinh) năm 1998, cô gái trẻ Trương Thị Lan tình nguyện ngược ngàn lên Kỳ Sơn nhận công tác. Những năm cuối thập niên 1990, Kỳ Sơn còn là vùng "trắng" về công nghệ thông tin. Học sinh của cô hầu hết là con em đồng bào Mông, Thái, Khơ Mú từ 21 xã biên giới như Mường Lống, Huồi Tụ, Đoọc Mạy, Keng Đu, Mỹ Lý... vượt hàng chục cây số đường rừng về thị trấn Mường Xén trọ học. Với các em, nói sõi tiếng phổ thông đã là một nỗ lực lớn, huống chi là học Tiếng Anh – một ngôn ngữ hoàn toàn xa lạ khi chưa từng biết đến chiếc máy vi tính hay mạng Internet.
+        </p>
+
+        <figure class="figure-wide">
+            <img src="images/thayco_real_2_truongthilan_kyson.jpg?v=nmds1" alt="Cô giáo Trương Thị Lan ứng dụng màn hình tương tác thông minh dạy Tiếng Anh tại Trường THPT Kỳ Sơn" onclick="openLightbox(this.src)">
+            <figcaption class="figure-caption">
+                Ảnh 2 (Ảnh chụp thực tế - Báo Nghệ An): Cô giáo Trương Thị Lan (dân tộc Thái, giáo viên Tiếng Anh Trường THPT Kỳ Sơn, huyện Kỳ Sơn – 1 trong 200 Nhà giáo tiêu biểu toàn quốc năm 2023) trực tiếp ứng dụng màn hình tương tác thông minh (Interactive Flat Panel) và bài giảng số trực quan để mở cánh cửa ngoại ngữ và công nghệ cho học sinh dân tộc thiểu số nơi biên viễn. (Bấm vào ảnh để xem cỡ lớn)
+            </figcaption>
+        </figure>
+
+        <div class="pull-quote">
+            “Học sinh miền núi đặc biệt là vùng cao Kỳ Sơn vô cùng thiệt thòi. Để các em tiếp nhận kiến thức một cách tốt nhất, giáo viên phải luôn trăn trở, làm mới bài giảng bằng công nghệ, khơi gợi sự sáng tạo thông qua các hoạt động thực hành tương tác để các em không còn sợ môn ngoại ngữ.”<br>
+            <span style="font-size: 15px; font-style: normal; color: #165c2c;">— Cô giáo Trương Thị Lan (Trường THPT Kỳ Sơn, Nghệ An)</span>
+        </div>
+
+        <p class="story-p">
+            Ngay khi nhà trường được đầu tư phòng học đa phương tiện và <strong>màn hình tương tác thông minh (Interactive Flat Panel)</strong>, cô Lan là một trong những giáo viên tiên phong số hóa toàn bộ giáo án Tiếng Anh. Thay vì những tiết học ngữ pháp khô khan trên bảng phấn, trên màn hình cảm ứng lớn giữa lớp học vùng cao, cô tích hợp các đoạn hội thoại chuẩn bản ngữ, các trò chơi tương tác trực tuyến, hình ảnh trực quan gắn liền với văn hóa bản làng để học trò vừa chạm tay lên màn hình vừa luyện phát âm. Nhờ "luồng gió số" ấy, tỷ lệ học sinh đậu tốt nghiệp và đậu đại học khối D của Trường THPT Kỳ Sơn tăng lên qua từng năm; nhiều học trò người Mông, người Thái của cô đã trở thành sinh viên sư phạm, kỹ sư công nghệ, quay trở về chính mảnh đất Kỳ Sơn để tiếp nối con đường của cô. Năm 2023, cô giáo Trương Thị Lan vinh dự được Bộ Giáo dục và Đào tạo tuyên dương là <strong>1 trong 200 Nhà giáo tiêu biểu toàn quốc</strong>.
+        </p>
+
+        <!-- PHẦN 3 -->
+        <div class="titphu-banner">
+            <img src="images/nguoimoduongso_titphu3.jpg?v=nmds1" alt="Phần 3: Kỳ tích STEM từ bản làng Tương Dương">
+        </div>
+
+        <p class="story-p">
+            Rời Kỳ Sơn xuôi theo dòng sông Nậm Mộ về huyện miền núi <strong>Tương Dương</strong>, câu chuyện mở đường số lại mang một sắc màu đột phá đầy tự hào tại <strong>Trường Phổ thông Dân tộc Nội trú THCS Tương Dương</strong> – nơi những đứa trẻ lớn lên từ bản làng nghèo đã bước thẳng lên sân khấu công nghệ toàn quốc dưới sự dẫn dắt của cô giáo <strong>Nguyễn Thị Kiều</strong>.
+        </p>
+
+        <p class="story-p">
+            Xuất phát từ một lần chứng kiến các y, bác sĩ tại Trung tâm Y tế huyện miền núi phải vất vả chạy đi chạy lại giữa các buồng bệnh để canh từng chai dịch truyền cho bệnh nhân giữa đêm khuya, ba học sinh dân tộc thiểu số là <strong>Trần Lâm Dũng, Vi Thái Di và Mạc Phương Linh</strong> đã tìm đến cô giáo Nguyễn Thị Kiều với câu hỏi hồn nhiên: <em>"Cô ơi, liệu chúng em có thể dùng lập trình và cảm biến để máy tự báo về điện thoại cho bác sĩ và tự khóa dây truyền khi hết dịch không?"</em>
+        </p>
+
+        <figure class="figure-wide">
+            <img src="images/thayco_real_3_tuongduong_stem.jpg?v=nmds1" alt="Cô trò Trường PTDTNT THCS Tương Dương bên sản phẩm STEM Thiết bị truyền dịch thông minh" onclick="openLightbox(this.src)">
+            <figcaption class="figure-caption">
+                Ảnh 3 (Ảnh chụp thực tế - Báo Nghệ An): Nhóm học sinh dân tộc thiểu số Trần Lâm Dũng, Vi Thái Di, Mạc Phương Linh (Trường PTDTNT THCS Tương Dương, huyện Tương Dương, Nghệ An) dưới sự hướng dẫn của cô giáo Nguyễn Thị Kiều bên sản phẩm STEM “Thiết bị truyền dịch thông minh” tích hợp cảm biến quang học, mã QR và kết nối smartphone – công trình vượt qua hơn 1.200 sản phẩm cả nước lọt Top 10 bảng A toàn quốc và giành Giải Cộng đồng chung cuộc cuộc thi “Solve for Tomorrow”. (Bấm vào ảnh để xem cỡ lớn)
+            </figcaption>
+        </figure>
+
+        <p class="story-p">
+            Không để ước mơ của học trò dừng lại ở ý tưởng trên giấy, cô giáo Nguyễn Thị Kiều đã biến phòng thực hành của ngôi trường nội trú miền núi thành một "xưởng sáng chế STEM" thực thụ. Ở một huyện vùng cao cách thành phố Vinh gần 200 km, việc tìm mua một linh kiện cảm biến hồng ngoại hay vi mạch điều khiển không hề dễ dàng. Cô trò phải tự đặt mua linh kiện từ xa, tận dụng từng buổi tối sau giờ tự học để mày mò viết code, lắp ráp mạch điện tử và thử nghiệm hàng trăm lần với các chai nước muối sinh lý.
+        </p>
+
+        <p class="story-p">
+            Thành quả của những đêm thức trắng nơi phố núi Hòa Bình (Tương Dương) là sản phẩm <strong>“Thiết bị truyền dịch thông minh”</strong> hoàn chỉnh với 4 tính năng số hóa vượt trội: <strong>(1)</strong> Cảm biến quang học đếm chính xác tốc độ giọt truyền; <strong>(2)</strong> Động cơ servo tự động khóa ống truyền ngay khi lượng dịch chạm mức giới hạn an toàn, ngăn chặn nguy cơ trào ngược máu; <strong>(3)</strong> Tự động khởi tạo <strong>mã QR</strong> định danh cho từng bệnh nhân; và <strong>(4)</strong> Truyền dữ liệu thời gian thực cùng chuông cảnh báo trực tiếp về <strong>ứng dụng trên điện thoại thông minh (smartphone)</strong> của bác sĩ trực. Vượt qua hơn <strong>1.200 sản phẩm</strong> dự thi từ khắp các tỉnh, thành phố lớn trên cả nước, công trình của cô trò Trường PTDTNT THCS Tương Dương đã hiên ngang tiến vào <strong>Top 10 bảng A toàn quốc</strong> và xuất sắc giành <strong>Giải Cộng đồng chung cuộc</strong> cuộc thi <em>“Solve for Tomorrow – Kiến tạo tương lai”</em>. Một minh chứng sống động rằng: khi người thầy biết thắp lên ngọn lửa công nghệ, khoảng cách giữa bản làng vùng cao và những phòng thí nghiệm hiện đại nơi đô thị hoàn toàn có thể được san phẳng.
+        </p>
+
+        <!-- PHẦN 4 -->
+        <div class="titphu-banner">
+            <img src="images/nguoimoduongso_titphu4.jpg?v=nmds1" alt="Phần 4: Số hóa học liệu song ngữ Việt - Mông và những người giữ lửa">
+        </div>
+
+        <p class="story-p">
+            Hành trình mở đường số trên dải đất biên cương Kỳ Sơn – Tương Dương không phải là bước chân đơn độc của một cá nhân, mà là cuộc tiếp sức bền bỉ của cả một thế hệ nhà giáo quyết tâm dùng tri thức hiện đại để đánh thức tiềm năng con trẻ vùng cao.
+        </p>
+
+        <p class="story-p">
+            Đó là Thạc sĩ, cô giáo <strong>Lê Na</strong> (sinh năm 1982, quê huyện Đô Lương) – người từng có những năm tháng thanh xuân cắm bản tại hai xã biên giới xa xôi bậc nhất Kỳ Sơn là <strong>Mường Lống</strong> và <strong>Nậm Càn</strong> trước khi trở thành Phó Hiệu trưởng <strong>Trường PTDTNT THCS Kỳ Sơn</strong>. Thấu hiểu sự thiếu thốn tài liệu tham khảo của học trò vùng cao, cô Lê Na đã tiên phong xây dựng thư viện học liệu số, hướng dẫn học sinh dân tộc thiểu số khai thác bài giảng trực tuyến và phương pháp tư duy sơ đồ hóa. Chính từ mái trường nội trú nơi biên viễn này, cô đã bồi dưỡng nên những học sinh giỏi cấp tỉnh, trong đó có em <strong>Moong Thị Anh Thơ</strong> xuất sắc đạt giải Nhì và trở thành <strong>Thủ khoa toàn tỉnh tại bảng B</strong> kỳ thi Học sinh giỏi tỉnh Nghệ An. Năm 2022, cô Lê Na vinh dự là <strong>1 trong 68 giáo viên tiêu biểu toàn quốc</strong> được Trung ương Hội Liên hiệp Thanh niên Việt Nam và Bộ Giáo dục và Đào tạo tuyên dương trong chương trình <em>“Chia sẻ cùng thầy cô”</em> tại Thủ đô Hà Nội.
+        </p>
+
+        <figure class="figure-wide">
+            <img src="images/thayco_real_4_lena_kyson.jpg?v=nmds1" alt="Thạc sĩ, cô giáo Lê Na hướng dẫn học sinh dân tộc thiểu số tại Trường PTDTNT THCS Kỳ Sơn" onclick="openLightbox(this.src)">
+            <figcaption class="figure-caption">
+                Ảnh 4 (Ảnh chụp thực tế - Báo Nghệ An): Thạc sĩ, cô giáo Lê Na – Phó Hiệu trưởng Trường PTDTNT THCS Kỳ Sơn (1 trong 68 giáo viên tiêu biểu toàn quốc chương trình “Chia sẻ cùng thầy cô” năm 2022) tận tình hướng dẫn học sinh dân tộc thiểu số khai thác học liệu và ôn luyện kiến thức, bồi dưỡng nhiều học sinh vùng biên đạt giải cao và Thủ khoa cấp tỉnh. (Bấm vào ảnh để xem cỡ lớn)
+            </figcaption>
+        </figure>
+
+        <p class="story-p">
+            Và không thể không nhắc tới Tiến sĩ <strong>Lã Thị Thanh Huyền</strong> (sinh năm 1979) – Phó Hiệu trưởng <strong>Trường PTDTBT Tiểu học và THCS Tây Sơn</strong> (xã Tây Sơn, huyện Kỳ Sơn). Lên Kỳ Sơn nhận công tác từ năm 2003, suốt hơn 20 năm gắn bó với học trò người Mông trên đỉnh Tây Sơn quanh năm mây phủ, cô Huyền nhận ra rằng chuyển đổi số hay đổi mới giáo dục ở vùng cao sẽ không thể thành công nếu không tháo gỡ được rào cản ngôn ngữ giữa tiếng mẹ đẻ của học sinh và tiếng phổ thông.
+        </p>
+
+        <p class="story-p">
+            Vượt qua muôn vàn gian nan vừa làm công tác quản lý trường bán trú vùng sâu, vừa tự học và nghiên cứu khoa học, cô đã bảo vệ thành công luận án Tiến sĩ Giáo dục học, trở thành <strong>nữ Tiến sĩ đầu tiên của ngành giáo dục vùng cao Kỳ Sơn</strong>. Đặc biệt, cô đã biên soạn và số hóa <strong>bộ tài liệu dạy học song ngữ Việt – Mông</strong> cùng hệ thống học liệu điện tử bản địa hóa, giúp các thầy cô giáo miền xuôi mới lên nhận công tác và học sinh người Mông tìm được "tiếng nói chung" ngay từ những tiết học đầu đời.
+        </p>
+
+        <figure class="figure-wide">
+            <img src="images/thayco_real_5_lathithanhhuyen_kyson.jpg?v=nmds1" alt="Tiến sĩ Lã Thị Thanh Huyền cùng học trò người Mông tại Trường PTDTBT Tiểu học và THCS Tây Sơn (Kỳ Sơn)" onclick="openLightbox(this.src)">
+            <figcaption class="figure-caption">
+                Ảnh 5 (Ảnh chụp thực tế - Báo Tuổi Trẻ): Tiến sĩ Lã Thị Thanh Huyền – Phó Hiệu trưởng Trường PTDTBT Tiểu học và THCS Tây Sơn (nữ Tiến sĩ đầu tiên của ngành giáo dục huyện vùng cao Kỳ Sơn, Nghệ An) trò chuyện cùng các em học sinh dân tộc Mông dưới hàng hoa ban trắng tại sân trường Tây Sơn, nơi cô khởi xướng bộ học liệu song ngữ Việt – Mông hỗ trợ dạy và học hiệu quả. (Bấm vào ảnh để xem cỡ lớn)
+            </figcaption>
+        </figure>
+
+        <div class="pull-quote">
+            “Những con đường không mở bằng cuốc xẻng, mà mở bằng khát vọng đổi đời… Ở nơi mây mù che khuất đỉnh Pu Xai Lai Leng hay bên dòng Nậm Mộ cuộn chảy, những người thầy, người cô vẫn đang lặng lẽ bước đi mỗi ngày, dùng trí tuệ và trái tim để mở những con đường số thênh thang cho trẻ em vùng cao bước vào tương lai.”
+        </div>
+
+        <p class="story-p">
+            Chiều muộn nơi rẻo cao Kỳ Sơn, Tương Dương, khi sương mù bắt đầu buông xuống phủ trắng những triền núi Tây Sơn, Bảo Thắng, Nậm Càn, ánh sáng từ những chiếc màn hình tương tác và những phòng học máy tính nơi điểm trường nội trú, bán trú vẫn ấm áp tỏa rạng. Ở đó, không có những lời hoa mỹ về chuyển đổi số. Chỉ có những đôi ủng còn vương bùn đỏ sau chặng đường quấn xích sắt vượt dốc Xao Va, những bàn tay cô giáo vùng cao kiên nhẫn dắt tay học trò chạm vào từng dòng lệnh lập trình STEM hay từng con chữ song ngữ trên màn hình. Chính họ – những người thầy, người cô nơi phên dậu cực Tây xứ Nghệ – đang viết nên định nghĩa đẹp đẽ và chân thực nhất về <strong>“Người mở đường số nơi bản làng”</strong>.
+        </p>
+
+        <div class="timeline-grid">
+            <div class="timeline-card">
+                <h4>Kỳ Sơn • Vượt lũ giữ chữ</h4>
+                <p>Thầy <strong>Xồng Bá Dê, Lầu Bá Xỷ</strong> quấn xích sắt vào lốp xe máy vượt dốc bùn Xao Va; các thầy cô <strong>Bảo Thắng</strong> nắm tay vượt suối lũ giữ khô từng chiếc máy tính và học liệu số.</p>
+            </div>
+            <div class="timeline-card">
+                <h4>Kỳ Sơn • Màn hình tương tác &amp; Song ngữ số</h4>
+                <p>Cô <strong>Trương Thị Lan</strong> (28 năm đưa màn hình tương tác vào giờ Tiếng Anh), Tiến sĩ <strong>Lã Thị Thanh Huyền</strong> (số hóa tài liệu song ngữ Việt – Mông) và Thạc sĩ <strong>Lê Na</strong> (thư viện học liệu số).</p>
+            </div>
+            <div class="timeline-card">
+                <h4>Tương Dương • Kỳ tích STEM Toàn quốc</h4>
+                <p>Cô giáo <strong>Nguyễn Thị Kiều</strong> và 3 học sinh DTTS <strong>Trần Lâm Dũng, Vi Thái Di, Mạc Phương Linh</strong> chế tạo <em>Thiết bị truyền dịch thông minh</em> tích hợp QR &amp; smartphone, lọt <strong>Top 10 toàn quốc</strong>.</p>
+            </div>
+        </div>
+
+        <footer class="article-author-box">
+            <div>
+                <div class="author-name">Tác giả dự thi: Kỹ sư cuongsmile</div>
+                <div class="author-role">Tác phẩm dự thi Cuộc thi viết “Người Mở Đường Số Nơi Bản Làng” • Báo Giáo dục và Thời đại</div>
+            </div>
+            <div style="font-size: 13px; color: #165c2c; font-weight: 700;">
+                ★ 100% Nhân vật thật • Sự kiện thật • Hình ảnh báo chí xác thực
+            </div>
+        </footer>
+
+    </main>
+
+    <div id="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="" alt="Phóng to">
+    </div>
+
+    <script>
+        const audioEl = document.getElementById('article-audio');
+        const audioSrc = document.getElementById('audio-source');
+        const voiceMap = {
+            'nu': 'nguoimoduongso_voice_nu.mp3?v=nmds1',
+            'nam': 'nguoimoduongso_voice_nam.mp3?v=nmds1'
+        };
+
+        function switchVoice(type) {
+            const wasPlaying = !audioEl.paused;
+            const currentRate = audioEl.playbackRate;
+            audioSrc.src = voiceMap[type];
+            audioEl.load();
+            audioEl.playbackRate = currentRate;
+            document.getElementById('btn-nu').classList.toggle('active', type === 'nu');
+            document.getElementById('btn-nam').classList.toggle('active', type === 'nam');
+            if (wasPlaying) audioEl.play();
+        }
+
+        function setSpeed(rate, btn) {
+            audioEl.playbackRate = rate;
+            document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        let currentScale = 1;
+        function adjustFont(delta) {
+            currentScale = Math.min(1.35, Math.max(0.85, currentScale + delta));
+            document.documentElement.style.setProperty('--font-scale', currentScale);
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
