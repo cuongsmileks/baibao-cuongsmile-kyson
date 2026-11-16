@@ -37,6 +37,22 @@
     {
       "source": "/webgis-canh-bao-sat-lo-lu-quet",
       "destination": "/webgis-canh-bao-sat-lo-lu-quet.htm"
+    },
+    {
+      "source": "/20-11",
+      "destination": "/trian20thang11.html"
+    },
+    {
+      "source": "/trian2011",
+      "destination": "/trian20thang11.html"
+    },
+    {
+      "source": "/trian20thang11",
+      "destination": "/trian20thang11.html"
+    },
+    {
+      "source": "/vinhung",
+      "destination": "/trian20thang11.html"
     }
   ]
 }
