@@ -53,6 +53,14 @@
     {
       "source": "/vinhung",
       "destination": "/trian20thang11.html"
+    },
+    {
+      "source": "/vinhung-huukiem-2011",
+      "destination": "/vinhung-huukiem-2011.html"
+    },
+    {
+      "source": "/vinhung2011",
+      "destination": "/vinhung-huukiem-2011.html"
     }
   ]
 }

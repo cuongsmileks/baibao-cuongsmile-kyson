@@ -1,0 +1,34 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/images/:path*",
+      "destination": "https://raw.githubusercontent.com/cuongsmileks/baibao-cuongsmile-kyson/main/images/:path*"
+    },
+    {
+      "source": "/vinhung_voice_nam.mp3",
+      "destination": "https://raw.githubusercontent.com/cuongsmileks/baibao-cuongsmile-kyson/main/vinhung_voice_nam.mp3"
+    },
+    {
+      "source": "/vinhung_voice_nu.mp3",
+      "destination": "https://raw.githubusercontent.com/cuongsmileks/baibao-cuongsmile-kyson/main/vinhung_voice_nu.mp3"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/vinhung-huukiem-2011",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/vinhung2011",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/20-11",
+      "destination": "/index.html"
+    }
+  ]
+}
